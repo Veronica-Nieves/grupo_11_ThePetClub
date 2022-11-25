@@ -18,3 +18,6 @@ Matemática e Ing. Sistemas. Experiencia en programación de algoritmos y desarr
 
 - Ramiro Velardez
 Tengo 21 años, soy de Bs As, Morón y estudio Ingeniería en Electronica en la UNLAM. Trabajo de jardinero y mi experiencia laboral es nula en la tecnología asi que compenso con mis ganas de aprender😜. De paso me gustaría ampliar mi red en linkedin asi que lo comparto por si buscan lo mismo linkedin.com/in/ramiro-velardez
+
+- Ignacio Muela Moyano
+Tengo 22 año, soy de Cordoba , Rio Segundo. Trabajo en una fabrica como operrio. Tambien soy tecnico en PC y Notebooks . Siempre quise estudiar programacion para poder crecer y llegar a mis metas.
