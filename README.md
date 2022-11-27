@@ -21,3 +21,6 @@ Tengo 21 años, soy de Bs As, Morón y estudio Ingeniería en Electronica en la 
 
 - Ignacio Muela Moyano
 Tengo 22 año, soy de Cordoba , Rio Segundo. Trabajo en una fabrica como operrio. Tambien soy tecnico en PC y Notebooks . Siempre quise estudiar programacion para poder crecer y llegar a mis metas.
+
+- Luna Santini Torrontegui
+Tengo 25 años, soy Licenciada en Administración y mamá de dos. Vivo en Bariloche, Argentina, donde nací y me crié. Me gusta mucho la implementación de nuevos procesos, la mejora de los mismos y la resolución de problemas. Mis distintos trabajos me llevaron a encontrar mi pasión por los sistemas de gestión, sus fallas y las ganas de aprender más del dentrás de escena para ver de mejorarlos.
