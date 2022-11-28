@@ -1,14 +1,11 @@
-# grupo_11_ecommerce
+# The Pet Club
 Proyecto integrador grupo 11 Digital house
 
-## DE QUÉ TRATA *?
+## DE QUÉ TRATA ?
 
-*nombre-del-sitio* Es un ecommerce de productos para mascotas donde los usuarios pueden encontrar distintos productos para su mejor amigo, sin importar la especie. Exiten productos para perros, gatos, aves, conejos, hamster, peces y aves. Podrán encontrar alimentos, juguetes, correas, collares, camas, ropa, casas, jaulas y todo lo que necesitan para brindar el mejor cuidado a su mascota. 
+Necesitas encontrar un veterinario de guardia? Querés cortarle el pelo a tu mascosta? Te falta algún elemento esencial? Necesitás encontrar a alguien que cuide de tu mascota o lo saque a pasear en algun momento del día?  En The Pet Club te ofrecemos no solo productos para tu mejor amigo, sino que también te ayudamos a encontrar el servicio que mejor se adapte a lo que estes necesitando. No importa si tenes un perro, un hamster, un gato, un conejo o una lagartija, contamos con un extenso catálogo de diseño simple y dinámico para poder ayudarte con lo que estes precisando. Nuestro foco está en la calidad porque queremos cuidar de tu compañero.
 
-Los usuarios potenciales de * son los dueños de mascotas joves y adultos, entre 20 y 45 años edad que procuran el cuidado y bienestar de su mascotas, por lo que buscan productos especializados y además, cuentan con el poder adquisitivo para adquirirlos. Los clientes potenciales de * son usuarios activos en redes sociales y están acostumbrados a realizar compras online. Les gusta navegar por distintos sitios web buscando productos de calidad y una buena experiencia de compra con métodos de pago confiables como pago con tarjeta, o a través de un código QR.
-
-*nombre-del-sitio* ofrece un extenso catálogo de productos especializados para mascotas, con un diseño simple y dinámico que brinda una grata experiencia a los visitantes, permite la localización de productos desde distintos criterios de busqueda y cuenta con un proceso de compra rápido y fluido. Los colores y el diseño capturan la atención de nuevos usuarios, mientras que el rápido proceso de compra desde cualquier dispositivo es lo que los convierte en clientes recurrentes. 
-
+The Pet Club apunta a aquellas personas que tengan al menos una mascota, que procuren su cuidado y bienestar. Mientras los dueños les brindan todo el amor, nosotros priorizamos los productos y servicios de calidad para seguir esa línea de atención y cariño. Es por eso que creamos este sitio, buscando una experiencia de compra sencilla, rápida y con métodos de pago confiables para que el usuario no tenga más preocupaciones que encontrar lo que más se adapte a su necesidad en una sola página. 
 
 ## INTEGRANTES
 - Veronica Nieves 
@@ -23,4 +20,4 @@ Tengo 21 años, soy de Bs As, Morón y estudio Ingeniería en Electronica en la 
 Tengo 22 año, soy de Cordoba , Rio Segundo. Trabajo en una fabrica como operrio. Tambien soy tecnico en PC y Notebooks . Siempre quise estudiar programacion para poder crecer y llegar a mis metas.
 
 - Luna Santini Torrontegui
-Tengo 25 años, soy Licenciada en Administración y mamá de dos. Vivo en Bariloche, Argentina, donde nací y me crié. Me gusta mucho la implementación de nuevos procesos, la mejora de los mismos y la resolución de problemas. Mis distintos trabajos me llevaron a encontrar mi pasión por los sistemas de gestión, sus fallas y las ganas de aprender más del dentrás de escena para ver de mejorarlos.
+Tengo 25 años, soy Licenciada en Administración y mamá de dos. Vivo en Bariloche, Argentina, donde nací y me crié. Me gusta mucho la implementación de nuevos procesos, la mejora de los mismos y la resolución de problemas. Mis distintos trabajos me llevaron a encontrar mi pasión por los sistemas de gestión, sus fallas y las ganas de aprender más del detrás de escena para ver donde se pueden mejorar.
