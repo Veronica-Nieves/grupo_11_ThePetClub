@@ -12,6 +12,9 @@ The Pet Club apunta a aquellas personas que tengan al menos una mascota, que pro
 Matemática e Ing. Sistemas. Experiencia en programación de algoritmos y desarrollo de modelos matemáticos. Poca experiencia en desarrollo web y diseño. Conocimiento y experiencia en metodologías ágiles.
 
 - Belén Perez
+Tengo 26 años. Vivo en Quilmes, Buenos Aires. Actualmente me encuentro estudiando el profesorado de Artes Visuales. 
+Desde hace dos años que estoy con ganas de entrar al mundo tecnológico, el cual me genera mucha incertidumbre ya que es mucho a conocer, y siento que a su vez es infinita la información que brinda.
+Hoy elijo sacarme el miedo al desconocimiento y adentrarme en él, con muchas ganas de aprender. Veremos que pasa :)
 
 - Ramiro Velardez
 Tengo 21 años, soy de Bs As, Morón y estudio Ingeniería en Electronica en la UNLAM. Trabajo de jardinero y mi experiencia laboral es nula en la tecnología asi que compenso con mis ganas de aprender😜. De paso me gustaría ampliar mi red en linkedin asi que lo comparto por si buscan lo mismo linkedin.com/in/ramiro-velardez
