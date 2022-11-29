@@ -12,7 +12,7 @@ The Pet's Club apunta a aquellas personas que tengan al menos una mascota, que p
 
 #### Petmania | https://petmania.vamtam.com/
 
-Es una plantilla que le gusto en gran medida al equipo, principalmete por la paleta de colores, el diseño y el dinamismo en toda la página. Tiene un estilo más simple y minimalista. En los colores fuertes se encuentra lo que se busca destacar, pero no invade visualmente. Además, la temática de servicios se ajusta perfectamente a la temática de este proyecto. 
+Es una plantilla que le gusto en gran medida al equipo, principalmete por la paleta de colores, el diseño y el dinamismo en toda la página. Tiene un estilo simple y minimalista. En los colores fuertes se encuentra lo que se busca destacar, pero no invade visualmente. Además, la temática de servicios se ajusta perfectamente a la temática de este proyecto. 
 
 #### Wag | https://wagwalking.com/
 
@@ -24,29 +24,34 @@ Rover en una página de servicios para mascotas con un estilo simple y cuenta co
 
 #### Cuida mi mascota | https://tienda.cuidamimascota.com.mx/
 
-Es una página de productos y servicios para mascotas. Tiene un estilo amigable e intuitivo que ofrece. El home es corto pero suficiente para presentar y permitir fácil acesso a la compra de productos y servicios.
+Es una página de productos y servicios para mascotas. Tiene un estilo amigable e intuitivo. El home es corto pero suficiente para presentar y permitir fácil acesso a la compra de productos y servicios.
 
 #### Glamping South | https://glampingsouth.com/
 
-Es un sitio de camping que no se relaciona a este proyecto en cuanto a la temática, sin embargo, tiene cuestiones de diseño y funcionabilidad que nos llamaron la atención. Por ejemplo, el menú principal centrado y con opciones desplegables, o la descripción del lugar con opciones de filtrado y etiquetas que facilitan la exploración de opciones.
+Es un sitio de camping que no se relaciona en temática a este proyecto, sin embargo, tiene cuestiones de diseño y funcionabilidad que nos llamaron la atención. Por ejemplo, el menú principal centrado y con opciones desplegables, o la descripción del lugar con opciones de filtrado y etiquetas que facilitan la exploración de opciones.
 
 
 
 
 ## INTEGRANTES
 **Veronica Nieves** 
+
 ¡Hola! Soy Vero, vivo en Morelia, Michoacán, en México. Estudié Matemáticas y me especialicé es una de sus ramas; la Investigación de Operaciones. En la carrera conocí el mundo de la programación pero mi enfoque siempre fue para el desarrollo de algoritmos y modelos matemáticos. Ahora busco conocer la programación para el desarrollo web.
 
 **Belén Perez**
+
 Tengo 26 años. Vivo en Quilmes, Buenos Aires. Actualmente me encuentro estudiando el profesorado de Artes Visuales. 
 Desde hace dos años que estoy con ganas de entrar al mundo tecnológico, el cual me genera mucha incertidumbre ya que es mucho a conocer, y siento que a su vez es infinita la información que brinda.
 Hoy elijo sacarme el miedo al desconocimiento y adentrarme en él, con muchas ganas de aprender. Veremos que pasa!
 
 **Ramiro Velardez**
+
 Tengo 21 años, soy de Bs As, Morón y estudio Ingeniería en Electronica en la UNLAM. Trabajo de jardinero y mi experiencia laboral es nula en la tecnología asi que compenso con mis ganas de aprender😜. De paso me gustaría ampliar mi red en linkedin asi que lo comparto por si buscan lo mismo linkedin.com/in/ramiro-velardez
 
 **Ignacio Muela Moyano**
+
 Tengo 22 año, soy de Cordoba , Rio Segundo. Trabajo en una fabrica como operrio. Tambien soy tecnico en PC y Notebooks . Siempre quise estudiar programacion para poder crecer y llegar a mis metas.
 
 **Luna Santini Torrontegui**
+
 Tengo 25 años, soy Licenciada en Administración y mamá de dos. Vivo en Bariloche, Argentina, donde nací y me crié. Me gusta mucho la implementación de nuevos procesos, la mejora de los mismos y la resolución de problemas. Mis distintos trabajos me llevaron a encontrar mi pasión por los sistemas de gestión, sus fallas y las ganas de aprender más del detrás de escena para ver donde se pueden mejorar.
