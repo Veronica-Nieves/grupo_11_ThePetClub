@@ -55,3 +55,7 @@ Tengo 22 años, soy de Cordoba , Rio Segundo. Trabajo en una fabrica como operar
 **Luna Santini Torrontegui**
 
 Tengo 25 años, soy Licenciada en Administración y mamá de dos. Vivo en Bariloche, Argentina, donde nací y me crié. Me gusta mucho la implementación de nuevos procesos, la mejora de los mismos y la resolución de problemas. Mis distintos trabajos me llevaron a encontrar mi pasión por los sistemas de gestión, sus fallas y las ganas de aprender más del detrás de escena para ver donde se pueden mejorar.
+
+
+## TABLERO DE TRABAJO
+https://trello.com/b/U1nTaPqm/tablero-1
