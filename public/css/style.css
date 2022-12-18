@@ -27,7 +27,7 @@ header{
 .subheader{
     display: flex;
     justify-content: space-between;
-    padding: 10px 10px;
+    padding: 10px 18px 10px 20px;
     height: 50px;
     position: relative;
     background-color: white;
@@ -39,9 +39,12 @@ header{
     box-shadow: 4px 18px 31px -12px rgba(86,148,148,1);
 }
 .hamburguer-bottom{
-    display: flex;
-    font-size: 20px;
-    padding-left: 25px;
+    color: var(--verde);
+    text-align: left;
+    padding: 2px;
+    border-radius: 8%;
+    font-size: 20px ;
+    
 }
 .main-navbar{
     display: none;
@@ -73,27 +76,38 @@ header{
     padding: 0;
 
 }
-.subheader li{
+.subheader-li{
     border-radius: 25px;
     padding: 5px 3px;
-    margin-right: 18px;
+    margin-right: 12px;
     box-shadow: 0px 0px 10px rgb(100,100,100 );
 }
-.subheader a{
+.navbar-option{
     text-decoration: none;
     color: var(--verde);
     padding: 3px 0;
-    font-size: 17px;
+    font-size: 12px;
 }
 .get-in{
     display: none;
+    color: var(--verde);
 }
-.login-icon{
-    width: 65px;
-    padding:0;
-    border: solid 2px var(--verde);
+
+.icon-option{
+    text-decoration: none;
+    color: var(--verde);
+    padding: 3px 0;
+    font-size: 20px;
+}
+.icon-get-in{
+    padding-right: 15px;
+}
+.icon-user{
+    padding: 1px;
+    border: solid 3px var(--verde);
     border-radius: 50%;
 }
+
 
 
 
@@ -117,7 +131,7 @@ header{
 /*-------- MOVIL-HORIZONTAL (481)-------*/
 @media (min-width: 481px) {
     .subheader{
-        padding: 15px 35px;
+        padding: 15px 35px 15px 45px;
         height: 60px;
     }
     .logo{
@@ -143,7 +157,7 @@ header{
         padding-bottom: 15px;
     }
     .subheader{
-        padding: 20px 45px;
+        padding: 20px 35px;
         height: 80px;
     }
     .main-navbar{
@@ -168,11 +182,12 @@ header{
         width: 30%;
         justify-content: flex-end;
     }
-    .subheader li{
+    .subheader-li{
         padding: 5px 8px;
     }
     .icon-get-in{
         display: none;
+        margin-right: 10px;
     }
     .get-in{
         display: block;
@@ -182,5 +197,15 @@ header{
 
 
 /*--------BREAKPOINT PC (1200)-------*/
-@media (min-width: 1200px) { 
+@media (min-width: 1200px) {
+    .subheader ul{
+        padding: 0;
+    }
+    .subheader-li{
+        margin-right: 12px;
+    }
+    .navbar-option{
+        font-size: 17px;
+    }
+
 }
