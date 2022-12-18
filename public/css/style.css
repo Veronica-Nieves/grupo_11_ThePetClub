@@ -74,19 +74,18 @@ header{
     flex-direction: row;
     align-items: center;
     padding: 0;
-
 }
 .subheader-li{
     border-radius: 25px;
-    padding: 5px 3px;
-    margin-right: 12px;
+    padding: 5px 5px;
+    margin-right: 10px;
     box-shadow: 0px 0px 10px rgb(100,100,100 );
 }
 .navbar-option{
     text-decoration: none;
     color: var(--verde);
     padding: 3px 0;
-    font-size: 12px;
+    font-size: 14px;
 }
 .get-in{
     display: none;
@@ -109,9 +108,6 @@ header{
 }
 
 
-
-
-
 .sample-banner{
     width: 100vw;
     background-color: var(--celeste);
@@ -121,6 +117,72 @@ header{
 
 /*BODY*/
 
+
+
+
+/*FOOTER*/
+footer{
+    background-color: var(--amarillo);
+    color: black;
+    padding: 15px;
+}
+
+footer ul{
+    list-style: none;
+    flex-direction: row;
+    align-items: center;
+    padding: 5px 0;   
+}
+footer li{
+    padding: 6px;
+}
+.footer-option{
+    text-decoration: none;
+    color: black;
+    padding: 3px 0px;
+    font-size: 15px;
+}
+.footer-section-title{
+    font-size: 18px;
+    font-weight: bold;
+    padding: 8px;
+}
+.container-footer-menu{
+    padding: 10px;
+}
+.footer-menu{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-weight: bold; 
+}
+.container-RRSS{
+    text-align: center;
+}
+.RRSS{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.container-contact{
+    text-align: center;
+}
+.contact{
+    text-align: center;
+}
+.container-download-app{
+    text-align: center;
+}
+.download-app{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.all-right-reserve{
+    padding-top: 10px;
+    border-top: solid 1px var(--verde);
+    text-align: center;
+}
 
 
 
@@ -157,7 +219,7 @@ header{
         padding-bottom: 15px;
     }
     .subheader{
-        padding: 20px 35px;
+        padding: 20px 25px;
         height: 80px;
     }
     .main-navbar{
@@ -182,9 +244,6 @@ header{
         width: 30%;
         justify-content: flex-end;
     }
-    .subheader-li{
-        padding: 5px 8px;
-    }
     .icon-get-in{
         display: none;
         margin-right: 10px;
@@ -192,6 +251,31 @@ header{
     .get-in{
         display: block;
     }
+
+
+
+    /*footer*/
+    .container-sections-footer{
+        display:flex;
+        justify-content: space-around;
+    }
+    .container-RRSS{
+        width: 30%;
+        flex-wrap: nowrap;
+    }
+    .container-contact{
+        width: 40%;
+    }
+    .container-download-app{
+        width: 30%;
+    }
+    .footer-option{
+        font-size: 15px;
+    }
+    .footer-section-title{
+        font-size: 18px;
+    }
+    
 }
 
 
