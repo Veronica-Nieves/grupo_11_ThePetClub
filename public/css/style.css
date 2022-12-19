@@ -171,7 +171,7 @@ body{
     margin: 20px 25px;
     background-color: var(--verde);
     border-radius: 15px;
-    box-shadow: 0px 0px 10px rgb(100,100,100 );
+    box-shadow: 0px 0px 10px rgb(100,100,100);
 }
 .team-img{
     width: 80vw;
@@ -184,6 +184,46 @@ body{
     font-size: 18px;;
 }
 
+/* - - - Reviews - - - */
+.review-section{
+    padding-top: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.container-fix-height{
+    width: 95vw;
+    height: 100vw;
+    padding: 25px;
+}
+.review-block{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 12px;
+    position: relative;
+}
+.review-img{
+    width: 90vw;
+    height:70vw;
+    border-radius: 15px;
+    box-shadow: 7px 23px 29px 0px rgb(100,100,100);
+
+}
+.text-review{
+    width: 60%;
+    padding: 5%;
+    background-color: white;
+    border: solid 1px rgb(100,100,100);
+    border-radius: 6px;
+    text-align: center;
+    font-size: 15px;
+
+    position:absolute;
+    left:20%;
+    bottom: -60px;
+}
 
 
 
@@ -356,6 +396,21 @@ footer li{
         width:37vw;
     }
 
+    /* - - Reviews - - */
+    .container-fix-height{
+        width:45vw;
+    }
+    .review-img{
+        width: 40vw;
+        height:30vw;
+    }
+    .text-review{
+        width: 30vw;
+        font-size: 18px;
+        left:4vw;
+        bottom: -60px;
+    }
+    
 
 
     /*footer*/
