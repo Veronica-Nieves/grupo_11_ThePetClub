@@ -15,6 +15,7 @@
 }
 
 h3{
+    font-family: Noto Sans;
     background-color: white;
     color:var(--verde);
     border: solid 2.5px var(--verde);
@@ -22,6 +23,42 @@ h3{
     font-size: 18px;
     font-weight: bold;
     padding: 6px 10px;
+}
+
+h2{
+    font-family: Noto Sans;
+    color:var(--verde);
+    border-bottom: solid 2.5px var(--verde);
+    font-size: 18px;
+    font-weight: bold;
+    padding: 6px 10px;
+    margin:5px;
+}
+
+h2.text-about-us{
+    font-family: Noto Sans;
+    color: white;
+    border-bottom: solid 2.5px var(--verde);
+    font-size: 18px;
+    font-weight: bold;
+    padding: 6px 10px;
+    margin:5px;
+}
+
+h4 {
+    font-family: Noto Sans;
+    color:var(--verde);
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px 20px;
+    margin:5px;
+}
+
+p {
+    font-family: Noto Sans;
+    font-size: 12px;
+    padding: 5px 20px;
+    margin:5px;
 }
 
 
@@ -116,6 +153,19 @@ header{
     border-radius: 50%;
 }
 
+.carrito {
+    text-decoration: none;
+    color: var(--verde);
+    padding: 3px 0;
+    font-size: 20px; 
+    padding-right: 10px;
+}
+
+.canasta {
+    text-decoration: none;
+    color: var(--verde);
+    padding: 3px 0;
+}
 
 .sample-banner{
     width: 100vw;
@@ -181,7 +231,12 @@ body{
     width:85vw;
     color: white;
     text-align: center;
-    font-size: 18px;;
+    font-size: 18px;
+}
+
+.text-about-us {
+    font-family: Novo Sans;
+    font-size: 20px;
 }
 
 /* - - - Reviews - - - */
@@ -292,10 +347,28 @@ footer li{
     text-align: center;
 }
 
+/*-------- CARRITO COMPRAS -------*/
 
+ul.productos-carrito{
+    padding: 5px;
+    margin: 5px;
+}
 
+.imagen {
+    margin-left: 15px;
+    font-size: 40px;
+}
 
+.producto {
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+}
 
+.precio-carrito {
+    font-size: 50px;
+    font-weight: bolder;
+}
 
 
 /*-------- MOVIL-HORIZONTAL (481)-------*/
