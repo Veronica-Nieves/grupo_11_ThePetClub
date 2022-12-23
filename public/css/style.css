@@ -50,14 +50,24 @@ h4 {
     color:var(--verde);
     font-size: 14px;
     font-weight: bold;
-    padding: 5px 20px;
+    padding: 10px;
     margin:5px;
+}
+
+h5 {
+    font-family: Noto Sans;
+    color:var(--verde);
+    font-size: 14px;
+    font-weight: bold;
+    border-bottom: solid 1px var(--verde);
+    margin: 10px;
+    padding: 5px;
 }
 
 p {
     font-family: Noto Sans;
     font-size: 12px;
-    padding: 5px 20px;
+    padding: 10px;
     margin:5px;
 }
 
@@ -365,12 +375,98 @@ ul.productos-carrito{
     justify-content: space-around;
 }
 
+li.producto {
+    border: solid 1.5px var (--verde);
+}
+
 .precio-carrito {
     font-size: 50px;
     font-weight: bolder;
 }
 
+div.resumen-compra {
+    border: solid 1.75px;
+    border-color: var(--verde);
+    width:90%;
+    margin: auto;
+    margin-bottom: 10px;
+}
 
+h5.compra {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+p.envio {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.subtotal {
+    font-family: Noto Sans;
+    color:var(--verde);
+    font-size: 16px;
+    font-weight: bold;
+    border-bottom: solid 1px var(--verde);
+    margin: 0 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width:95%;
+}
+
+div .subtotal h4 {
+    margin:0;
+    padding:5px;
+}
+
+.eleccion-envio {
+    font-family: Noto Sans;
+    font-size: 14px;
+    margin: 3px 25px;
+}
+
+div {
+    padding:5px;
+}
+
+.codigo-postal {
+    border-radius: 5px;
+    border: solid 1.5px var(--verde);
+    background-color: whitesmoke;
+    padding: 10px;
+    width: 20%;
+    margin-left: auto;
+}
+
+.calculo-envio {
+    display: flex;
+    align-items: center;
+}
+
+.total {
+    font-family: Noto Sans;
+    color:var(--verde);
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: solid 1.75px var(--verde);
+    border-top: solid 1.75px var(--verde);
+    margin: 0 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width:95%;
+}
+
+button.pagar {
+    background-color: var(--verde);
+    border-radius: 5px;
+    border: solid 1px var(--verde);
+    color: white;
+    font-size: 14px;
+    padding: 5px;
+}
 /*-------- MOVIL-HORIZONTAL (481)-------*/
 @media (min-width: 481px) {
     h3{
