@@ -1,6 +1,6 @@
 @import url(normalize.css);
 
-:root{
+:root {
     --gris: #DDE4E4;
     --amarillo: #FFB100;
     --verde: #064C3F;
@@ -8,16 +8,16 @@
     --sombra: #569494;
 }
 
-*{
+* {
     box-sizing: border-box;
-    margin: 0 px ;
-    padding: 0 px ;
+    margin: 0 px;
+    padding: 0 px;
 }
 
-h3{
+h3 {
     font-family: Noto Sans;
     background-color: white;
-    color:var(--verde);
+    color: var(--verde);
     border: solid 2.5px var(--verde);
     border-radius: 25px;
     font-size: 18px;
@@ -25,38 +25,38 @@ h3{
     padding: 6px 10px;
 }
 
-h2{
+h2 {
     font-family: Noto Sans;
-    color:var(--verde);
+    color: var(--verde);
     border-bottom: solid 2.5px var(--verde);
     font-size: 18px;
     font-weight: bold;
     padding: 6px 10px;
-    margin:5px;
+    margin: 5px;
 }
 
-h2.text-about-us{
+h2.text-about-us {
     font-family: Noto Sans;
     color: white;
     border-bottom: solid 2.5px var(--verde);
     font-size: 18px;
     font-weight: bold;
     padding: 6px 10px;
-    margin:5px;
+    margin: 5px;
 }
 
 h4 {
     font-family: Noto Sans;
-    color:var(--verde);
+    color: var(--verde);
     font-size: 14px;
     font-weight: bold;
     padding: 10px;
-    margin:5px;
+    margin: 5px;
 }
 
 h5 {
     font-family: Noto Sans;
-    color:var(--verde);
+    color: var(--verde);
     font-size: 14px;
     font-weight: bold;
     border-bottom: solid 1px var(--verde);
@@ -68,19 +68,20 @@ p {
     font-family: Noto Sans;
     font-size: 12px;
     padding: 10px;
-    margin:5px;
+    margin: 5px;
 }
 
 
 /*HEADER*/
-header{
+header {
     background-color: var(--celeste);
     padding-top: 15px;
     padding-left: 10px;
     padding-right: 10px;
     padding-bottom: 10px;
 }
-.subheader{
+
+.subheader {
     display: flex;
     justify-content: space-between;
     padding: 10px 18px 10px 20px;
@@ -88,76 +89,86 @@ header{
     position: relative;
     background-color: white;
 
-    border-top-left-radius: 10px ;
+    border-top-left-radius: 10px;
     border-top-right-radius: 80px;
     border-bottom-left-radius: 80px;
     border-bottom-right-radius: 10px;
-    box-shadow: 4px 18px 31px -12px rgba(86,148,148,1);
+    box-shadow: 4px 18px 31px -12px rgba(86, 148, 148, 1);
 }
-.hamburguer-bottom{
+
+.hamburger-bottom {
     color: var(--verde);
     text-align: left;
     padding: 2px;
     border-radius: 8%;
-    font-size: 20px ;
-    
+    font-size: 20px;
+
 }
-.main-navbar{
+
+.main-navbar {
     display: none;
     width: 40%;
 }
-.navbar{
+
+.navbar {
     width: 100%;
     display: none;
 }
-.logo{
+
+.logo {
     border-radius: 50%;
     width: 17vw;
 
     position: absolute;
     left: 43vw;
-    top:-10%;
-    box-shadow: 4px 18px 31px -12px rgba(86,148,148,1);
+    top: -10%;
+    box-shadow: 4px 18px 31px -12px rgba(86, 148, 148, 1);
 }
-.right-navbar{
+
+.right-navbar {
     display: flex;
     justify-content: flex-end;
 }
 
 
-.subheader ul{
+.subheader ul {
     list-style: none;
     flex-direction: row;
     align-items: center;
     padding: 0;
 }
-.subheader-li{
+
+.subheader-li {
     border-radius: 25px;
     padding: 5px 5px;
     margin-right: 10px;
-    box-shadow: 0px 0px 10px rgb(100,100,100 );
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
 }
-.navbar-option{
+
+.navbar-option {
     text-decoration: none;
     color: var(--verde);
     padding: 3px 0;
     font-size: 14px;
 }
-.get-in{
+
+.get-in {
     display: none;
     color: var(--verde);
 }
 
-.icon-option{
+.icon-option {
     text-decoration: none;
     color: var(--verde);
     padding: 3px 0;
     font-size: 20px;
 }
-.icon-get-in{
+
+.icon-get-in {
     padding-right: 15px;
 }
-.icon-user{
+
+.icon-user {
     padding: 1px;
     border: solid 3px var(--verde);
     border-radius: 50%;
@@ -167,7 +178,7 @@ header{
     text-decoration: none;
     color: var(--verde);
     padding: 3px 0;
-    font-size: 20px; 
+    font-size: 20px;
     padding-right: 10px;
 }
 
@@ -177,17 +188,18 @@ header{
     padding: 3px 0;
 }
 
-.sample-banner{
+.sample-banner {
     width: 100vw;
     background-color: var(--celeste);
 }
 
 
 /*BODY*/
-body{
+body {
     background-color: var(--gris);
 }
-.section-tittle{
+
+.section-tittle {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -196,25 +208,28 @@ body{
 
 
 /* - - - Categorías - - - */
-.category-section{
+.category-section {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 30px 10px;
 }
-.category-block{
+
+.category-block {
     width: 40vw;
     text-align: center;
     margin: 15px 0px;
 }
-.category-img{
+
+.category-img {
     width: 100%;
-    height:40vw;
+    height: 40vw;
     background-color: var(--amarillo);
-    border:solid 2px var(--verde);
+    border: solid 2px var(--verde);
     border-radius: 50%;
 }
-.category-tittle{
+
+.category-tittle {
     text-decoration: none;
     color: var(--verde);
     font-size: 20px;
@@ -223,7 +238,7 @@ body{
 }
 
 /* - - - Nosotros - - - */
-.container-about-us{
+.container-about-us {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -231,14 +246,17 @@ body{
     margin: 20px 25px;
     background-color: var(--verde);
     border-radius: 15px;
-    box-shadow: 0px 0px 10px rgb(100,100,100);
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
 }
-.team-img{
+
+.team-img {
     width: 80vw;
-    border-radius: 15px;;
+    border-radius: 15px;
+    ;
 }
-.about-us{
-    width:85vw;
+
+.about-us {
+    width: 85vw;
     color: white;
     text-align: center;
     font-size: 18px;
@@ -250,43 +268,46 @@ body{
 }
 
 /* - - - Reviews - - - */
-.review-section{
+.review-section {
     padding-top: 60px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 }
 
-.container-fix-height{
+.container-fix-height {
     width: 95vw;
     height: 100vw;
     padding: 25px;
 }
-.review-block{
+
+.review-block {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 12px;
     position: relative;
 }
-.review-img{
+
+.review-img {
     width: 90vw;
-    height:70vw;
+    height: 70vw;
     border-radius: 15px;
-    box-shadow: 7px 23px 29px 0px rgb(100,100,100);
+    box-shadow: 7px 23px 29px 0px rgb(100, 100, 100);
 
 }
-.text-review{
+
+.text-review {
     width: 60%;
     padding: 5%;
     background-color: white;
-    border: solid 1px rgb(100,100,100);
+    border: solid 1px rgb(100, 100, 100);
     border-radius: 6px;
     text-align: center;
     font-size: 15px;
 
-    position:absolute;
-    left:20%;
+    position: absolute;
+    left: 20%;
     bottom: -60px;
 }
 
@@ -294,64 +315,76 @@ body{
 
 
 /*FOOTER*/
-footer{
+footer {
     background-color: var(--amarillo);
     color: black;
     padding: 15px;
 }
 
-footer ul{
+footer ul {
     list-style: none;
     flex-direction: row;
     align-items: center;
-    padding: 5px 0;   
+    padding: 5px 0;
 }
-footer li{
+
+footer li {
     padding: 6px;
 }
-.footer-option{
+
+.footer-option {
     text-decoration: none;
     color: black;
     padding: 3px 0px;
     font-size: 15px;
 }
-.footer-section-title{
+
+.footer-section-title {
     font-size: 18px;
     font-weight: bold;
     padding: 8px;
 }
-.container-footer-menu{
+
+.container-footer-menu {
     padding: 10px;
 }
-.footer-menu{
+
+.footer-menu {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    font-weight: bold; 
+    font-weight: bold;
 }
-.container-RRSS{
+
+.container-RRSS {
     text-align: center;
 }
-.RRSS{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-.container-contact{
-    text-align: center;
-}
-.contact{
-    text-align: center;
-}
-.container-download-app{
-    text-align: center;
-}
-.download-app{
+
+.RRSS {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
-.all-right-reserve{
+
+.container-contact {
+    text-align: center;
+}
+
+.contact {
+    text-align: center;
+}
+
+.container-download-app {
+    text-align: center;
+}
+
+.download-app {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.all-right-reserve {
     padding-top: 10px;
     border-top: solid 1px var(--verde);
     text-align: center;
@@ -359,7 +392,7 @@ footer li{
 
 /*-------- CARRITO COMPRAS -------*/
 
-ul.productos-carrito{
+ul.productos-carrito {
     padding: 5px;
     margin: 5px;
 }
@@ -370,7 +403,7 @@ ul.productos-carrito{
 }
 
 .producto {
-    display:flex;
+    display: flex;
     align-items: center;
     justify-content: space-around;
 }
@@ -387,7 +420,7 @@ li.producto {
 div.resumen-compra {
     border: solid 1.75px;
     border-color: var(--verde);
-    width:90%;
+    width: 90%;
     margin: auto;
     margin-bottom: 10px;
 }
@@ -405,7 +438,7 @@ p.envio {
 
 .subtotal {
     font-family: Noto Sans;
-    color:var(--verde);
+    color: var(--verde);
     font-size: 16px;
     font-weight: bold;
     border-bottom: solid 1px var(--verde);
@@ -413,12 +446,12 @@ p.envio {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width:95%;
+    width: 95%;
 }
 
 div .subtotal h4 {
-    margin:0;
-    padding:5px;
+    margin: 0;
+    padding: 5px;
 }
 
 .eleccion-envio {
@@ -428,7 +461,7 @@ div .subtotal h4 {
 }
 
 div {
-    padding:5px;
+    padding: 5px;
 }
 
 .codigo-postal {
@@ -447,7 +480,7 @@ div {
 
 .total {
     font-family: Noto Sans;
-    color:var(--verde);
+    color: var(--verde);
     font-size: 20px;
     font-weight: bold;
     border-bottom: solid 1.75px var(--verde);
@@ -456,7 +489,7 @@ div {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width:95%;
+    width: 95%;
 }
 
 button.pagar {
@@ -467,33 +500,37 @@ button.pagar {
     font-size: 14px;
     padding: 5px;
 }
+
 /*-------- MOVIL-HORIZONTAL (481)-------*/
 @media (min-width: 481px) {
-    h3{
+    h3 {
         font-size: 20px;
     }
-    .subheader{
+
+    .subheader {
         padding: 15px 35px 15px 45px;
         height: 60px;
     }
-    .logo{
+
+    .logo {
         width: 13vw;
-    
+
         position: absolute;
         left: 45vw;
-        top:-15%;
+        top: -15%;
     }
 
     /*--Categorías--*/
-    .category-block{
+    .category-block {
         width: 25vw;
         text-align: center;
     }
-    .category-img{
-        height:25vw;
+
+    .category-img {
+        height: 25vw;
     }
 
-    .review-img{
+    .review-img {
         width: 85vw;
         height: 50vw;
     }
@@ -505,122 +542,143 @@ button.pagar {
 
 /*--------BREAKPOINT TABLET (770)-------*/
 @media (min-width: 770px) {
-    h3{
+    h3 {
         font-size: 22px;
     }
-    header{
+
+    header {
         padding-top: 50px;
         padding-left: 15px;
         padding-right: 15px;
         padding-bottom: 15px;
     }
-    .subheader{
+
+    .subheader {
         padding: 20px 25px;
         height: 80px;
     }
-    .main-navbar{
+
+    .main-navbar {
         display: flex;
     }
-    .navbar{
+
+    .navbar {
         display: flex;
     }
-    .hamburguer-bottom{
-        display:none;
+
+    .hamburger-bottom {
+        display: none;
     }
-    .logo{
+
+    .logo {
         width: 110px;
-    
+
         position: absolute;
         left: 45%;
-        top:-30%;
-        box-shadow: 4px 18px 31px -12px rgba(86,148,148,1);
+        top: -30%;
+        box-shadow: 4px 18px 31px -12px rgba(86, 148, 148, 1);
     }
-    .right-navbar{
+
+    .right-navbar {
         display: flex;
         width: 30%;
         justify-content: flex-end;
     }
-    .icon-get-in{
+
+    .icon-get-in {
         display: none;
         margin-right: 10px;
     }
-    .get-in{
+
+    .get-in {
         display: block;
     }
 
     /* - - Categorías - - */
-    .category-block{
+    .category-block {
         width: 14vw;
         text-align: center;
     }
-    .category-img{
+
+    .category-img {
         height: 14vw;
     }
 
     /* - - Nosotros - - */
-    .container-about-us{
+    .container-about-us {
         justify-content: space-around;
         align-items: center;
     }
-    .team-img{
+
+    .team-img {
         width: 43vw;
     }
-    .about-us{
-        width:37vw;
+
+    .about-us {
+        width: 37vw;
     }
 
     /* - - Reviews - - */
-    .container-fix-height{
-        width:45vw;
+    .container-fix-height {
+        width: 45vw;
     }
-    .review-img{
+
+    .review-img {
         width: 40vw;
-        height:30vw;
+        height: 30vw;
     }
-    .text-review{
+
+    .text-review {
         width: 30vw;
         font-size: 18px;
-        left:4vw;
+        left: 4vw;
         bottom: -60px;
     }
-    
+
 
 
     /*footer*/
-    .container-sections-footer{
-        display:flex;
+    .container-sections-footer {
+        display: flex;
         justify-content: space-around;
     }
-    .container-RRSS{
+
+    .container-RRSS {
         width: 30%;
         flex-wrap: nowrap;
     }
-    .container-contact{
+
+    .container-contact {
         width: 40%;
     }
-    .container-download-app{
+
+    .container-download-app {
         width: 30%;
     }
-    .footer-option{
+
+    .footer-option {
         font-size: 15px;
     }
-    .footer-section-title{
+
+    .footer-section-title {
         font-size: 18px;
     }
-    
+
 }
 
 
 
 /*--------BREAKPOINT PC (1200)-------*/
 @media (min-width: 1200px) {
-    .subheader ul{
+    .subheader ul {
         padding: 0;
     }
-    .subheader-li{
+
+    .subheader-li {
         margin-right: 12px;
     }
-    .navbar-option{
+
+    .navbar-option {
         font-size: 17px;
     }
 
