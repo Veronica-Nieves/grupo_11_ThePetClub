@@ -6,27 +6,19 @@ const app = express ();
 
 app.use(express.static(path.resolve(__dirname,'../public')));
 
+//funciones para resumir código, que crean rutas con el método post y get. Básicamente hago:
+// app.get('/', (req, res) => {
+//    res.sendFile(path.resolve(__dirname, './views/home.html'));
+// })
+let appGet = (ruta, html) => app.get(ruta, (req, res) => res.sendFile(path.join(__dirname, html)));
+let appPost = (ruta, html) => app.post(ruta, (req, res) => res.sendFile(path.join(__dirname, html)));
 
-
-app.get('/', (req,res) => {
-    res.sendFile(path.resolve(__dirname,'./views/home.html'));
-})
-
-app.get('/productos', (req,res) => {
-    res.sendFile(path.resolve(__dirname,'./views/productos.html'));
-})
-
-app.get('/login', (req,res) => {
-    res.sendFile(path.resolve(__dirname,'./views/login.html'));
-})
-
-app.get('/registro', (req,res) => {
-    res.sendFile(path.resolve(__dirname,'./views/registro.html'));
-})
-
-app.get('/carrito-compras', (req,res) => {
-    res.sendFile(path.resolve(__dirname,'./views/carrito-compras.html'));
-})
+// Recibe como parámetro el nombre de la ruta y dónde busca el archivo
+appGet('/', './views/home.html');
+appGet('/productos', './views/productos.html');
+appGet('/login', './views/login.html');
+appGet('/registro', './views/registro.html');
+appGet('/carrito-compras', './views/carrito-compras.html');
 
 app.listen(3002, () => {
     console.log('Server running in http://localhost:3002');
