@@ -16,8 +16,8 @@ let appPost = (ruta, html) => app.post(ruta, (req, res) => res.sendFile(path.joi
 // Recibe como parámetro el nombre de la ruta y dónde busca el archivo
 appGet('/', './views/home.html');
 appGet('/productos', './views/productos.html');
-appGet('/login', './views/login.html');
-appGet('/registro', './views/registro.html');
+appPost('/login', './views/login.html');
+appPost('/registro', './views/registro.html');
 appGet('/carrito-compras', './views/carrito-compras.html');
 
 app.listen(3002, () => {
