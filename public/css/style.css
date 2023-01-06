@@ -194,7 +194,7 @@ header {
 }
 
 
-/*BODY*/
+/*MAIN*/
 body {
     background-color: var(--gris);
 }
@@ -236,6 +236,71 @@ body {
     font-weight: bold;
 
 }
+
+/* - - - Ofertas - - - */
+
+.section-article-sale {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgba(6, 76, 63, 0.61);
+  box-shadow: inset 0px 0px 48px 16px var(--verde);
+
+}
+.article-img-sale {
+    width: 23%;
+    height: 315px;
+    padding: 5px;
+    background-color: white;
+    margin: 50px;
+    border-radius: 10px;
+}
+.article-img-sale img {
+/* .img-product-sale { */
+    margin: 1px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    vertical-align: top;
+    padding: 3px 3px 22px; 
+}
+.box-description-sale {
+    border-top: 1px solid #ebebeb;
+    padding: 28px 0px 24px 0px;
+    position: relative;
+}
+.price-and-discounts {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.discounts-product-sale {
+    font-size: 16px;
+    width: 50%;
+    font-family: Noto Sans;
+    color: green;
+    text-align: center;
+    font-weight: bolder;
+    border: none;
+    padding: none;
+    border-bottom: none;
+    padding: 6px 10px 0px 64px;
+    margin: 6px 0px 0px -14px;
+    background-color: transparent;
+    border-radius: none;
+
+}
+.price-product-sale {
+    font-size: 18px;
+    width: 50%;
+    font-family: Noto Sans;
+    color: var(--verde);
+    /* text-align: center; */
+    font-weight: bolder;
+    border-bottom: none;
+}
+
 
 /* - - - Nosotros - - - */
 .container-about-us {
