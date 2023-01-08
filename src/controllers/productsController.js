@@ -8,7 +8,7 @@ const controller = {
     
     create: (req, res) => {
 		//res.send("Estamos en la vista de crear producto")
-        res.render('home.ejs');
+        res.render('products-create');
 	}
 
 

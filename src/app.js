@@ -2,7 +2,6 @@ const express = require('express');
 const path = require ('path');
 const app = express ();
 
-//app.use(express.static(path.resolve(__dirname,'../public')));
 app.use(express.static(path.join(__dirname, '../public'))); 
 
 
@@ -23,7 +22,7 @@ appGet('/carrito-compras', './views/carrito-compras.html');
 
 
 
-/* AQUÍ EMPIEZA LA NUEVA ESTRUCTURA DE CONTROLADORES */
+/* AQUÍ EMPIEZA LA NUEVA ESTRUCTURA DE CONTROLADORES y VISTA MVC */
 /* cada uno deberá pasar sus archivos e ir eliminado lo de arriba */
 
 app.set('view engine', 'ejs');
@@ -32,9 +31,9 @@ app.set('views', path.join(__dirname, '/views')); // Definimos ubicación de la 
 const mainRouter = require('./routes/main');
 const productsRouter = require('./routes/products');
 
+
 app.use('/', mainRouter);
 app.use('/products', productsRouter)
-
 
 
 /*--------------------------------------------------------------------*/
