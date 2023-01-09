@@ -1,0 +1,457 @@
+@import url(normalize.css);
+@import url(forms.css);
+
+:root {
+    --gris: #DDE4E4;
+    --amarillo: #FFB100;
+    --verde: #064C3F;
+    --celeste: #CADEDE;
+    --sombra: #569494;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0 px;
+    padding: 0 px;
+}
+
+/*-------- MOVIL-HORIZONTAL (481)-------*/
+@media (min-width: 481px) {
+    h3 {
+        font-size: 20px;
+    }
+
+    .subheader {
+        padding: 15px 35px 15px 45px;
+        height: 60px;
+    }
+
+    .logo {
+        width: 13vw;
+
+        position: absolute;
+        left: 45vw;
+        top: -15%;
+    }
+
+    /*--Categorías--*/
+    .category-block {
+        width: 25vw;
+        text-align: center;
+    }
+
+    .category-img {
+        height: 25vw;
+    }
+
+    .review-img {
+        width: 85vw;
+        height: 50vw;
+    }
+
+}
+
+
+
+
+/*--------BREAKPOINT TABLET (770)-------*/
+@media (min-width: 770px) {
+    h3 {
+        font-size: 22px;
+    }
+
+    header {
+        padding-top: 50px;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-bottom: 15px;
+    }
+
+    .subheader {
+        padding: 20px 25px;
+        height: 80px;
+    }
+
+    .main-navbar {
+        display: flex;
+    }
+
+    .navbar {
+        display: flex;
+    }
+
+    .hamburger-bottom {
+        display: none;
+    }
+
+    .logo {
+        width: 110px;
+
+        position: absolute;
+        left: 45%;
+        top: -30%;
+        box-shadow: 4px 18px 31px -12px rgba(86, 148, 148, 1);
+    }
+
+    .right-navbar {
+        display: flex;
+        width: 30%;
+        justify-content: flex-end;
+    }
+
+    .icon-get-in {
+        display: none;
+        margin-right: 10px;
+    }
+
+    .get-in {
+        display: block;
+    }
+
+    /* - - Categorías - - */
+    .category-block {
+        width: 14vw;
+        text-align: center;
+    }
+
+    .category-img {
+        height: 14vw;
+    }
+
+    /* - - Nosotros - - */
+    .container-about-us {
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .team-img {
+        width: 43vw;
+    }
+
+    .about-us {
+        width: 37vw;
+    }
+
+    /* - - Reviews - - */
+    .container-fix-height {
+        width: 45vw;
+        height: 130vh;
+    }
+
+    .review-img {
+        width: 40vw;
+        height: 30vw;
+    }
+
+    .text-review {
+        width: 30vw;
+        font-size: 18px;
+        left: 4vw;
+        bottom: -60px;
+    }
+
+
+
+    /*footer*/
+    .container-sections-footer {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .container-RRSS {
+        width: 30%;
+        flex-wrap: nowrap;
+    }
+
+    .container-contact {
+        width: 40%;
+    }
+
+    .container-download-app {
+        width: 30%;
+    }
+
+    .footer-option {
+        font-size: 15px;
+    }
+
+    .footer-section-title {
+        font-size: 18px;
+    }
+
+}
+
+
+
+/*--------BREAKPOINT PC (1200)-------*/
+@media (min-width: 1200px) {
+    .subheader ul {
+        padding: 0;
+    }
+
+    .subheader-li {
+        margin-right: 12px;
+    }
+
+    .navbar-option {
+        font-size: 17px;
+    }
+
+}
+
+
+/*-------- Breakpoints MAIN-HOME --------*/
+
+/*-------- Breakpoint-Smaller-smartphones 0-480 --------*/
+@media (min-width: 480px) {
+    /* - - - Ofertas - - - */
+    .section-article-sale {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        background-color: rgba(6, 76, 63, 0.61);
+        box-shadow: inset 0px 0px 48px 16px var(--verde);
+        margin: 50px 0px;
+      }
+      .article-img-sale {
+        width: 23%;
+        height: 240px;
+        padding: 5px;
+        background-color: white;
+        margin: 30px;
+        border-radius: 10px;
+    }
+    .price-product-sale {
+        font-size: 18px;
+        width: 60%;
+        padding: 8px 4px;
+    }
+    .discounts-product-sale {
+        font-size: 16px;
+        width: 40%;
+        padding: 10px 20px;
+        margin: 4px 0px 0px -14px
+    }
+}
+/* - - - Productos - - - */
+    .section-article-products {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        padding: 2px;
+        margin: 50px 0px;
+    }
+    .article-img-product {
+        width: 26%;
+        height: 275px;
+        padding: 5px;
+        background-color: white;
+        margin: 60px 0px;
+        border-radius: 10px;
+}
+    .article-img-product img {
+        margin: 1px;
+        width: 100%;
+        height: 80%;
+        max-width: 100%;
+        box-sizing: border-box;
+        vertical-align: top;
+        padding: 3px 3px 22px;
+    }
+    .box-description-product {
+        border-top: 1px solid #ebebeb;
+        padding: 12px 0px 12px 0px;
+        position: relative;
+    }
+    .price-of-product {
+    
+        text-align: center;
+        padding: 0px 2px 0px 0px;
+        color: grey;
+        border: none;
+    }
+    /* - - - Servicios - - - */
+    .article-img-services {
+        width: 80%;
+        height: 570px;
+        padding: 14px;
+        background-color: white;
+        margin: 50px;
+        border-radius: 10px;
+        border-radius: 100px;
+    }
+    .section-article-services {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        margin: 50px 0px;
+        padding-bottom: 40px;
+    }
+    .article-img-services {
+        width: 28%;
+        height: 185px;
+        padding: 5px;
+        background-color: white;
+        margin: 60px 0px;;
+        border-radius: 60px;
+    }
+    .article-img-services img {
+        margin: 1px;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        vertical-align: top;
+        padding: 0px;
+        border-radius: 80px;
+    }
+    .description-service {
+        font-size: 20px;
+        width: 100%;
+        font-family: 'Roboto Condensed', sans-serif;
+        font-weight: bolder;
+        border-bottom: none;
+        padding: 35px 10px;
+        color: var(--amarillo);
+        text-align: center;
+    }
+
+
+/*-------- Breakpoint-Tablet & large smartphones 481-768 --------*/
+@media (min-width: 768px){
+/* - - - Ofertas - - - */
+.section-article-sale {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(6, 76, 63, 0.61);
+    box-shadow: inset 0px 0px 48px 16px var(--verde);
+  
+  }
+  .article-img-sale {
+      width: 23%;
+      height: 340px;
+      padding: 5px;
+      background-color: white;
+      margin: 50px;
+      border-radius: 10px;
+  }
+  .article-img-sale img {
+      margin: 1px;
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+      vertical-align: top;
+      padding: 3px 3px 22px; 
+  }
+  .box-description-sale {
+      border-top: 1px solid #ebebeb;
+      padding: 28px 0px 24px 0px;
+      position: relative;
+  }
+  .price-and-discounts {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+  }
+  .discounts-product-sale {
+      font-size: 16px;
+      width: 50%;
+      font-family: Noto Sans;
+      color: green;
+      text-align: center;
+      font-weight: bolder;
+      border: none;
+      padding: none;
+      border-bottom: none;
+      padding: 6px 10px 0px 64px;
+      margin: 6px 0px 0px -14px;
+      background-color: transparent;
+      border-radius: none;
+  
+  }
+  .price-product-sale {
+      font-size: 18px;
+      width: 50%;
+      font-family: Noto Sans;
+      color: var(--verde);
+      font-weight: bolder;
+      border-bottom: none;
+  }
+  /* - - - Productos - - - */
+  .article-img-product {
+    height: 340px;
+    
+  }
+  .article-img-product img {
+    padding: 30px 3px 22px;
+  }
+  /* - - - Servicios - - - */
+  .section-article-services {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: 50px 0px;
+    padding-bottom: 88px;
+}
+  .article-img-services {
+    width: 30%;
+    height: 268px;
+    padding: 5px;
+    background-color: white;
+    margin: 60px 0px;
+    border-radius: 80px;
+}
+.article-img-services img {
+    border-radius: 80px;
+}
+.description-service {
+    font-size: 24px;
+    padding: 60px 10px;
+}
+}
+/*-------- Breakpoint-Laptos, larger tablets, and small desktops 769-1279 --------*/
+@media (min-width: 1200px) {
+ /* - - - Ofertas - - - */
+    .article-img-sale {
+        height: 400px;
+    }
+ /* - - - Productos - - - */
+    .article-img-product {
+        height: 450px;  
+    }
+    .article-img-product img {
+        padding: 35px 10px 24px;
+    }
+    .price-of-product {
+        padding: 9px 2px 0px 0px;
+    }
+ /* - - - Servicios - - - */
+ .section-article-services {
+    padding-bottom: 70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: 60px 0px;
+    padding-bottom: 90px;
+}
+.description-service {
+    font-size: 30px;
+    width: 100%;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: bolder;
+    border-bottom: none;
+    padding: 60px 10px;
+    color: var(--amarillo);
+    text-align: center;
+}
+.article-img-services {
+    width: 25%;
+    height: 330px;
+}
+}

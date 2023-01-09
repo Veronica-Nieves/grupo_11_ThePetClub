@@ -1,0 +1,137 @@
+@import url(normalize.css);
+@import url(forms.css);
+
+:root {
+    --gris: #DDE4E4;
+    --amarillo: #FFB100;
+    --verde: #064C3F;
+    --celeste: #CADEDE;
+    --sombra: #569494;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0 px;
+    padding: 0 px;
+}
+
+/*HEADER*/
+header {
+    background-color: var(--celeste);
+    padding-top: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+
+.subheader {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 18px 10px 20px;
+    height: 50px;
+    position: relative;
+    background-color: white;
+
+    border-top-left-radius: 10px;
+    border-top-right-radius: 80px;
+    border-bottom-left-radius: 80px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 4px 18px 31px -12px rgba(86, 148, 148, 1);
+}
+
+.hamburger-bottom {
+    color: var(--verde);
+    text-align: left;
+    padding: 2px;
+    border-radius: 8%;
+    font-size: 20px;
+
+}
+
+.main-navbar {
+    display: none;
+    width: 40%;
+}
+
+.navbar {
+    width: 100%;
+    display: none;
+}
+
+.logo {
+    border-radius: 50%;
+    width: 17vw;
+
+    position: absolute;
+    left: 43vw;
+    top: -10%;
+    box-shadow: 4px 18px 31px -12px rgba(86, 148, 148, 1);
+}
+
+.right-navbar {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.subheader ul {
+    list-style: none;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+}
+
+.subheader-li {
+    border-radius: 25px;
+    padding: 5px 5px;
+    margin-right: 10px;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+}
+
+.navbar-option {
+    text-decoration: none;
+    color: var(--verde);
+    padding: 3px 0;
+    font-size: 14px;
+}
+
+.get-in {
+    display: none;
+    color: var(--verde);
+}
+
+.icon-option {
+    text-decoration: none;
+    color: var(--verde);
+    padding: 3px 0;
+    font-size: 20px;
+}
+
+.icon-get-in {
+    padding-right: 15px;
+}
+
+.icon-user {
+    padding: 1px;
+    border: solid 3px var(--verde);
+    border-radius: 50%;
+}
+
+.carrito {
+    text-decoration: none;
+    color: var(--verde);
+    padding: 3px 0;
+    font-size: 20px;
+    padding-right: 10px;
+}
+
+.canasta {
+    text-decoration: none;
+    color: var(--verde);
+    padding: 3px 0;
+}
+
+.sample-banner {
+    width: 100vw;
+    background-color: var(--celeste);
+}

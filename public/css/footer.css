@@ -1,0 +1,92 @@
+@import url(normalize.css);
+@import url(forms.css);
+
+:root {
+    --gris: #DDE4E4;
+    --amarillo: #FFB100;
+    --verde: #064C3F;
+    --celeste: #CADEDE;
+    --sombra: #569494;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0 px;
+    padding: 0 px;
+}
+
+/*FOOTER*/
+footer {
+    background-color: var(--amarillo);
+    color: black;
+    padding: 15px;
+}
+
+footer ul {
+    list-style: none;
+    flex-direction: row;
+    align-items: center;
+    padding: 5px 0;
+}
+
+footer li {
+    padding: 6px;
+}
+
+.footer-option {
+    text-decoration: none;
+    color: black;
+    padding: 3px 0px;
+    font-size: 15px;
+}
+
+.footer-section-title {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 8px;
+}
+
+.container-footer-menu {
+    padding: 10px;
+}
+
+.footer-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.container-RRSS {
+    text-align: center;
+}
+
+.RRSS {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.container-contact {
+    text-align: center;
+}
+
+.contact {
+    text-align: center;
+}
+
+.container-download-app {
+    text-align: center;
+}
+
+.download-app {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.all-right-reserve {
+    padding-top: 10px;
+    border-top: solid 1px var(--verde);
+    text-align: center;
+}
