@@ -1,20 +1,3 @@
-@import url(normalize.css);
-@import url(forms.css);
-
-:root {
-    --gris: #DDE4E4;
-    --amarillo: #FFB100;
-    --verde: #064C3F;
-    --celeste: #CADEDE;
-    --sombra: #569494;
-}
-
-* {
-    box-sizing: border-box;
-    margin: 0 px;
-    padding: 0 px;
-}
-/* - - - Categorías - - - */
 .category-section {
     display: flex;
     flex-wrap: wrap;
