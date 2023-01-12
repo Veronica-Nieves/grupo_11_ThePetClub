@@ -1,7 +1,7 @@
 const fs=require('fs');
 const path = require('path');
 
-/* dentro de la variable controller listamos la lógica de cada mmétodo*/
+/* dentro de la variable controller listamos la lógica de cada método*/
 const controller = {
   //cree el método para la vista del listado de productos
   list: (req, res) => {
