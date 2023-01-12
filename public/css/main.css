@@ -1,3 +1,5 @@
+
+/* - - - Categorías - - - */
 .category-section {
     display: flex;
     flex-wrap: wrap;
@@ -244,3 +246,4 @@
     left: 20%;
     bottom: -60px;
 }
+

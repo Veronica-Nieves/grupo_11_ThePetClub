@@ -216,7 +216,6 @@
         padding: 10px 20px;
         margin: 4px 0px 0px -14px
     }
-}
 /* - - - Productos - - - */
     .section-article-products {
         display: flex;
@@ -300,7 +299,7 @@
         color: var(--amarillo);
         text-align: center;
     }
-
+}
 
 /*-------- Breakpoint-Tablet & large smartphones 481-768 --------*/
 @media (min-width: 768px){
