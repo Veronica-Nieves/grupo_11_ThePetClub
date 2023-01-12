@@ -11,7 +11,7 @@ router.get('/create/', productsController.create);
 
 router.get('/edit/', productsController.edit);
 
-
+router.get('/list/', productsController.list);
 
 /* ---------------- Fin Listado de rutas -------------------*/
 module.exports =router;

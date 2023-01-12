@@ -5,6 +5,7 @@
 @import url(mediaquery.css);
 @import url(productos.css);
 @import url(forms.css);
+@import url(productslist.css);
 
 :root {
     --gris: #DDE4E4;
