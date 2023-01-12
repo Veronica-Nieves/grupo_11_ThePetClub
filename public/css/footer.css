@@ -73,3 +73,7 @@ footer li {
     border-top: solid 1px var(--verde);
     text-align: center;
 }
+
+.dog-face {
+    position: relative;
+}

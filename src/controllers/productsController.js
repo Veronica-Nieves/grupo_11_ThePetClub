@@ -15,10 +15,16 @@ const controller = {
 
   edit: (req, res) => {
     res.render('products-edit');
-  }
+  },
+
+  carrito: (req, res) => {
+    res.render('carrito-compras');
+  }, 
+
 
 
 
 
 }
+
 module.exports = controller;
