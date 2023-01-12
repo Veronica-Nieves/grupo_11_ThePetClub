@@ -5,8 +5,11 @@ const productsController = require('../controllers/productsController');
 
 /* ------------------- Listado de rutas --------------------*/
 
-//router.get('/create/', productsController.create);
+router.get('/detail/', productsController.detail);
+
 router.get('/create/', productsController.create);
+
+router.get('/edit/', productsController.edit);
 
 
 
