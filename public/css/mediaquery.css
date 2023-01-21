@@ -40,7 +40,7 @@
 /*--------BREAKPOINT TABLET (770)-------*/
 @media (min-width: 770px) {
     h3 {
-        font-size: 22px;
+        font-size: 25px;
     }
 
     header {
@@ -168,6 +168,10 @@
 
 /*--------BREAKPOINT PC (1200)-------*/
 @media (min-width: 1200px) {
+    h3 {
+        font-size: 30px;
+    }
+
     .subheader ul {
         padding: 0;
     }

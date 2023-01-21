@@ -35,16 +35,6 @@ body {
     justify-content: center;
 }
 
-h3 {
-    font-family: Noto Sans;
-    background-color: white;
-    color: var(--verde);
-    border: solid 2.5px var(--verde);
-    border-radius: 25px;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 6px 10px;
-}
 
 h2 {
     font-family: Noto Sans;
@@ -64,6 +54,17 @@ h2.text-about-us {
     font-weight: bold;
     padding: 6px 10px;
     margin: 5px;
+}
+
+h3 {
+    font-family: Noto Sans;
+    background-color: white;
+    color: var(--verde);
+    border: solid 2.5px var(--verde);
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 6px 10px;
 }
 
 h4 {
