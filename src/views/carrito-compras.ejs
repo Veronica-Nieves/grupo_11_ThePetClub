@@ -1,49 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Pet's Club - Carrito</title>
-    <link href="/css/style.css" rel="stylesheet">
-    <link href="/css/normalize.css" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/b177d2389e.js" crossorigin="anonymous"></script>
-<!--Links de Google Fonts-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@100;300&family=Noto+Sans:wght@200&family=Roboto&display=swap" rel="stylesheet">
-<!-- Link de iconos-->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-</head>
-<body>
-    <header>
-<!-- Barra de navegación -->       
-        <div class="subheader">
-            <a href="#" class="hamburguer-bottom">
-                <i class="fas fa-bars"></i>
-            </a>
-            <nav class="main-navbar">
-                <ul class="navbar">
-                    <li class="subheader-li"><a href="#" class="navbar-option">Tienda<i class="fas fa-caret-down"></i></a></li>
-                    <li class="subheader-li"><a href="#" class="navbar-option">Servicios<i class="fas fa-caret-down"></i></a></li>
-                    <li class="subheader-li"><a href="#" class="navbar-option">Sobre Nosotros<i class="fas fa-caret-down"></i></a></li>
-                </ul>
-            </nav>
-            <a href="/"><img href="/" src="/img/logo.png" alt="the pet's club" class="logo"></a>
 
-            <ul class="right-navbar">
-                <li class="subheader-li get-in">
-                    <a href="/user-register" class="navbar-option">Ingresar <i class="fas fa-id-card"></i></a>
-                </li>
-                <li class="icon-get-in">
-                    <a href="/user-register"  class="icon-option"><i class="fas fa-id-card" ></i></a>
-                </li>
-                <li>
-                    <a href="#" class="icon-user icon-option"> <i class="fas fa-user-large"></i></a>
-                </li>
-            </ul>
-        </div>
-    </header>
+<!-- Include Head -->
+    <%- include('partials/head', {title: 'Carrito'}) %>
+
+<body>
+<!-- Include Header y banner-->
+    <%- include('partials/header') %>
+
     <div class="container">
         <h2>Carrito de Compra <i class="fas fa-shopping-basket canasta"></i></i></i></h2>
         <ul type="none" class="productos-carrito">
@@ -116,44 +80,8 @@ carrito-compras        <div>
         </div>
     </div>
 
-    <footer>
-        <div class="containerfooter-menu">
-            <ul class="footer-menu">
-                <li class=""><a href="#" class="footer-option"><i class="fas fa-chevron-right"></i>Tienda</a></li>
-                <li class=""><a href="#" class="footer-option"><i class="fas fa-chevron-right"></i>Categorías</a></li>
-                <li class=""><a href="#" class="footer-option"><i class="fas fa-chevron-right"></i>Servicios</a></li>
-                <li class=""><a href="#" class="footer-option"><i class="fas fa-chevron-right"></i>Sobre nosotros</a></li>
-                <li class=""><a href="#" class="footer-option"><i class="fas fa-chevron-right"></i>Ingresar</a></li>
-            </ul>
-        </div>
+ <!-- Include Footer-->
+ <%- include('partials/footer') %>
 
-        <div class="container-sections-footer">
-            <div class="container-RRSS">
-                <p class="footer-section-title">Seguinos en redes sociales</p>
-                <ul class="RRSS">
-                    <li class=""><a href="#" class="footer-option"><i class="fa-brands fa-instagram"></i> |thepet'sclub|</a></li>
-                    <li class=""><a href="#" class="footer-option"><i class="fa-brands fa-facebook"></i> Thepet'sclub</a></li> 
-                </ul>
-            </div>
-            <div class="container-contact">
-                <p class="footer-section-title">Contactanos</p>
-                <ul class="contact">
-                    <li class=""><a href="#" class="footer-option"><i class="fa-brands fa-whatsapp"></i> +54 637292801</a></li>
-                    <li class=""><a href="#" class="footer-option"><i class="fas fa-envelope-open"></i> thepetsclub@gmail.com</a></li> 
-                </ul>
-            </div>
-            <div class="container-download-app">
-                <p class="footer-section-title">Descarga la app</p>
-                <ul class="download-app">
-                    <li class=""><a href="#" class="footer-option"> App01</a></li>
-                    <li class=""><a href="#" class="footer-option"> App02</a></li> 
-                </ul>
-            </div>
-        </div>
-        <div class="all-right-reserve" >
-            <img href="/" src="/img/dog-face.png" alt="the pet's club" class="dog-face">
-            <h4>Copyright &#169 2022 - Todos los derechos reservados</h4>
-        </div>
-    </footer>
 </body>
 </html>
