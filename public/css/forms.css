@@ -1,5 +1,5 @@
 /*---Estilos aplicados a formularios ---
-Archivos:
+Vistas:
     archivo:products-create.ejs
 */
 
@@ -11,10 +11,6 @@ Archivos:
 
 .form-container{
     margin: 10px Auto;
-}
-
-.form-field{ 
-    font-size: 14px;
 }
 .form-2-columns-container{
     display: flex;
@@ -30,6 +26,10 @@ Archivos:
 .col-30{
     width:30%;
     padding: 0px Auto;
+    font-size: 14px;
+}
+
+.form-field{ 
     font-size: 14px;
 }
 
@@ -77,19 +77,19 @@ Archivos:
 }
 
 .form-buttons-container{
-    text-align: right;
+    text-align: center;
 }
 
 .form-button {
     background-color: var(--verde);
     border: none;
-    font-size: 16px;
+    font-size: 14px;
     padding: 10px 15px;
     color: white;
     border-radius: 10px;
 }
 
-/* class for slider*/
+/* SLIDER */
 /* The switch - the box around the slider */
 .switch {
     position: relative;
@@ -97,14 +97,12 @@ Archivos:
     width: 60px;
     height: 34px;
   }
-
   /* Hide default HTML checkbox */
   .switch input {
     opacity: 0;
     width: 0;
     height: 0;
   }
-  
   /* The slider */
   .slider {
     position: absolute;
@@ -113,7 +111,7 @@ Archivos:
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: var(--gris);
     -webkit-transition: .4s;
     transition: .4s;
   }
@@ -131,11 +129,11 @@ Archivos:
   }
   
   input:checked + .slider {
-    background-color: #2196F3;
+    background-color: var(--verde);
   }
   
   input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
+    box-shadow: 0 0 1px var(--verde);
   }
   
   input:checked + .slider:before {

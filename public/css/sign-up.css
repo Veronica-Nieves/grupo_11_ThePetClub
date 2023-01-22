@@ -1,0 +1,69 @@
+/* El formulario de registro utiliza muchas clases de forms.css y se complementa con el siguiente listado
+*/
+.sign-up-container{
+    margin: 25px 10px;
+    padding: 30px 7px;
+    background-color: var(--sombra);
+    border-radius: 15px;
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+}
+.sign-up-link{
+    color: var(--verde);
+}
+.sing-up-form-container{
+    margin: 10px Auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.sign-up-form-field{
+    font-size: 14px;
+    width: 100%; /*100% solo aplica en celular*/
+}
+.sign-up-button-container{
+    width:100%;
+    padding: 0px Auto;
+}
+
+
+
+
+
+
+
+
+/*-------- MOVIL-HORIZONTAL (481)-------*/
+@media (min-width: 481px) {
+    .sign-up-container{
+        margin: 25px 12%;
+        font-size: 16px;
+    }
+    
+    
+}
+
+
+
+/*--------BREAKPOINT TABLET (770)-------*/
+@media (min-width: 770px) {
+    .sign-up-container{
+        margin: 35px 15%;
+        padding: 30px Auto;
+    }
+    .sign-up-form-field{
+        width: 48%;
+    }
+    
+}
+
+
+/*--------BREAKPOINT PC (1200)-------*/
+@media (min-width: 1200px) {
+    .sign-up-container{
+        margin: 50px 20%;
+    }
+}

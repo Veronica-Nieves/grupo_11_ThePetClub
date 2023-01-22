@@ -4,9 +4,10 @@ const app = express ();
 const path = require ('path');
 
 
+const mainRouter = require ('./routes/main.js');
 const productsRouter = require ('./routes/products.js');
 const usersRouter = require ('./routes/users.js');
-const mainRouter = require ('./routes/main.js');
+
 
 app.use(express.static(path.join(__dirname, '../public'))); 
 
@@ -15,6 +16,7 @@ app.set('views', path.join(__dirname, '/views')); // Definimos ubicación de la 
 
 app.use('/', mainRouter);
 app.use('/products', productsRouter)
+app.use('/users', usersRouter)
 
 
 
