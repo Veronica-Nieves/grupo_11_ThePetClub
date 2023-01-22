@@ -5,20 +5,20 @@ const path = require('path');
 const controller = {
   //cree el método para la vista del listado de productos
   list: (req, res) => {
-    res.render('productslist')
+    res.render('./products/products-list')
 	},
 
   detail: (req, res) => {
 		//res.send("Estamos en la vista de crear producto")
-    res.render('products-detail');
+    res.render('./products/products-detail');
 	},
 
   create: (req, res) => {
-    res.render('products-create');
+    res.render('./products/products-create');
   },
 
   edit: (req, res) => {
-    res.render('products-edit');
+    res.render('./products/products-edit');
   },
 
   carrito: (req, res) => {
