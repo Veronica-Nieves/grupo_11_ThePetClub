@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!-- Include Head -->
+<%- include('../partials/head', {title: 'Inicio'}) %>
+
+<body>
+    <!-- Include Header y banner-->
+    <%- include('../partials/header') %>
+
+    <body>
+        <!-- FORMULARIO SIGN UP - REGISTER-->
+        <div class="login-container"> 
+            <div class="form-title-container"><h3>  Iniciar Sesión  </h3></div>
+            <form action="/" method="GET" class="form-container">
+
+                <p class="form-field">
+                <input type="email" name="mail" id="mail" placeholder="Correo electrónico" required class="form-input">
+                </p>
+        
+                <p class="form-field">
+                <input name="contraseña" placeholder="Contraseña" required class="form-input">
+                </p>
+
+                <!--Botón de formulario -->
+                <p class="button-container">
+                <a href="/"><button type="Crear cuenta" class="form-button"> Iniciar Sesión </button></a>
+                </p>
+
+            </form>
+            <p>¿Aún no te has registrado? <a href="/users/register/" class="register-link"><strong>Crea una cuenta</strong></a></p><br>
+
+        </div>
+    </body>
+
+    <!-- Include Footer-->
+    <%- include('../partials/footer') %>
+    
+</body>
+
+</html>

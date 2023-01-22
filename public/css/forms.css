@@ -12,17 +12,21 @@ Vistas:
 .form-container{
     margin: 10px Auto;
 }
+
 .form-2-columns-container{
     display: flex;
 }
+
 .col-50{
     width:49%;
     padding-left: 0%;
     font-size: 14px;
 }
+
 .form-3-columns-container{
     display: flex;
 }
+
 .col-30{
     width:30%;
     padding: 0px Auto;
@@ -83,7 +87,7 @@ Vistas:
 .form-button {
     background-color: var(--verde);
     border: none;
-    font-size: 14px;
+    font-size: 15px;
     padding: 10px 15px;
     color: white;
     border-radius: 10px;

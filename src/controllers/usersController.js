@@ -6,6 +6,10 @@ const controller = {
     register: (req, res) => {
         res.render('./users/users-register')
 	},
+
+    login: (req, res) => {
+        res.render('./users/login')
+	},
 }
 
 module.exports = controller;
