@@ -1,15 +1,22 @@
 const fs=require('fs');
 const path = require('path');
 
+/* Leemos los datos de productsBBDD.json y lo convertimos a un array*/
+const productsFilePath = path.join(__dirname, '../data/productsBBDD.json');
+const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
+
+/* ------------------------ M É T O D O S ---------------------------*/
 /* dentro de la variable controller listamos la lógica de cada método*/
 const controller = {
-  //cree el método para la vista del listado de productos
+
+  //listado de todos los productos (tambien llamado index)
   list: (req, res) => {
-    res.render('./products/products-list')
+    const productsArray = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+    res.render('./products/products-list', {products: productsArray})
 	},
 
   detail: (req, res) => {
-		//res.send("Estamos en la vista de crear producto")
     res.render('./products/products-detail');
 	},
 

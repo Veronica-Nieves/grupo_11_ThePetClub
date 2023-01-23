@@ -5,6 +5,8 @@ const productsController = require('../controllers/productsController');
 
 /* ------------------- Listado de rutas --------------------*/
 
+router.get('/list/', productsController.list);
+
 router.get('/detail/', productsController.detail);
 
 router.get('/create/', productsController.create);
@@ -12,8 +14,6 @@ router.get('/create/', productsController.create);
 router.get('/edit/', productsController.edit);
 
 router.get('/carrito-compras', productsController.carrito);
-
-router.get('/list/', productsController.list);
 
 /* ---------------- Fin Listado de rutas -------------------*/
 
