@@ -28,7 +28,7 @@
         
                 <p class="form-field">
                 <label for="name">Imagen</label>
-                <input type="file" name="main-product-image" id="main-product-image" accept=".jpg" required class="form-input">
+                <input type="file" name="image" id="image" accept=".jpg" required class="form-input">
                 </p>
 
                 <div class="form-2-columns-container">
@@ -43,37 +43,41 @@
 
                 <div class="form-2-columns-container">
                     <p class="form-field col-50">
-                        <label><strong>Especie</label></strong></label>
-                            <input type="checkbox" value="perro" id="perro"class="form-input-option"> Perro </input><br>
-                            <input type="checkbox" value="gato" id="gato" class="form-input-option"> Gato </input><br>
-                            <input type="checkbox" value="ave" id="ave" class="form-input-option"> Ave </input><br>
-                            <input type="checkbox" value="peces" id="peces" class="form-input-option"> Peces </input><br>
-                            <input type="checkbox" value="mamiferos" id="mamiferos" class="form-input-option"> Mamiferos </input><br>
-                            <input type="checkbox" value="reptiles" id="reptiles" class="form-input-option"> Reptiles </input><br>
+                        <label><strong>Especie</strong></label>
+                            <input type="checkbox" name="specie" value="perros" id="perros"class="form-input-option"> Perros </input><br>
+                            <input type="checkbox" name="specie" value="gatos" id="gatos" class="form-input-option"> Gatos </input><br>
+                            <input type="checkbox" name="specie" value="aves" id="aves" class="form-input-option"> Aves </input><br>
+                            <input type="checkbox" name="specie" value="peces" id="peces" class="form-input-option"> Peces </input><br>
+                            <input type="checkbox" name="specie" value="mamiferos" id="mamiferos" class="form-input-option"> Mamiferos </input><br>
+                            <input type="checkbox" name="specie" value="reptiles" id="reptiles" class="form-input-option"> Reptiles </input><br>
                     </p>
 
                     <p class="form-field col-50">
-                        <label><strong>Categorías</label></strong></label>
-                            <input type="checkbox" value="alimento" id="alimento"class="form-input-option"> Alimento </input><br>
-                            <input type="checkbox" value="juguetes" id="juguetes" class="form-input-option"> Juguetes </input><br>
-                            <input type="checkbox" value="habitat" id="habitat" class="form-input-option"> Habitat </input><br>
-                            <input type="checkbox" value="ropa" id="ropa" class="form-input-option"> Ropa </input><br>
-                            <input type="checkbox" value="accesorios" id="accesorios" class="form-input-option"> Accesorios </input><br>
-                            <input type="checkbox" value="otro" id="Otro" class="form-input-option"> Otro </input><br>
+                        <label><strong>Categorías</strong></label>
+                            <input type="checkbox" name="category" value="alimento" id="alimento"class="form-input-option"> Alimento </input><br>
+                            <input type="checkbox" name="category" value="juguetes" id="juguetes" class="form-input-option"> Juguetes </input><br>
+                            <input type="checkbox" name="category" value="habitat" id="habitat" class="form-input-option"> Habitat </input><br>
+                            <input type="checkbox" name="category" value="ropa" id="ropa" class="form-input-option"> Ropa </input><br>
+                            <input type="checkbox" name="category" value="accesorios" id="accesorios" class="form-input-option"> Accesorios </input><br>
+                            <input type="checkbox" name="category" value="otro" id="Otro" class="form-input-option"> Otro </input><br>
                     </p>
                 </div>
         
                 <div class="form-3-columns-container">
                     <p class="form-field col-30">
-                        <label><strong>En oferta: </label></strong></label>
-                            <input type="radio" name="oferta" value="si" id="si"class="form-input-option"> Sí </input><br>
-                            <input type="radio" name="oferta" value="no" id="no" class="form-input-option"> No </input><br>
-                    </p>
+						<label><strong>En oferta: </label></strong></label>
+						<select name="offer" id="offer" class="form-input">
+							<option value="si">Sí</option>
+							<option value="no">No</option>
+						</select>
+					</p>
                     <p class="form-field col-30">
-                        <label><strong>Destacado: </label></strong></label>
-                            <input type="radio" name="destacado" value="si" id="si"class="form-input-option"> Sí </input><br>
-                            <input type="radio" name="destacado" value="no" id="no" class="form-input-option"> No </input><br>
-                    </p>
+						<label><strong>Destacado </label></strong></label>
+						<select name="featured" id="featured" class="form-input">
+							<option value="si" class="form-input-option">Sí</option>
+							<option value="no" class="form-input-option">No</option>
+						</select>
+					</p>
                     <p class="form-field col-30">
                         <label><strong>Piezas </label></strong></label>
                         <input type="number" name="pieces" id="pieces" placeholder="12" min="0" required class="form-input">
