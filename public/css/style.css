@@ -105,15 +105,14 @@ ul.productos-carrito {
     font-size: 40px;
 }
 
-.producto {
+.producto-carrito {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-around; 
+    border-top: 1.5px var(--verde);
 }
 
-li.producto {
-    border: solid 1.5px var (--verde);
-}
+
 
 .precio-carrito {
     font-size: 50px;

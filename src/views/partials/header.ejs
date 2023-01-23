@@ -1,21 +1,64 @@
 <header>
     <!-- Barra de navegación --> 
-            <div class="subheader">
-                <a href="#" class="hamburger-bottom">
-                    <i class="fas fa-bars"></i>
-                </a>
-                <nav class="main-navbar">
-                    <ul class="navbar">
-                        <li class="subheader-li"><a href="#" class="navbar-option">Tienda<i class="fas fa-caret-down"></i></a></li>
-                        <li class="subheader-li"><a href="#" class="navbar-option">Servicios<i class="fas fa-caret-down"></i></a></li>
-                        <li class="subheader-li"><a href="#" class="navbar-option">Sobre Nosotros<i class="fas fa-caret-down"></i></a></li>
+    <div class="subheader">
+        <div class = 'burger-menu-navbar'>
+            <a href="#" class="hamburger-bottom"><i class="fas fa-bars"></i></a>
+        </div>
+        <div>
+        <nav class="main-navbar">
+            <ul class="navbar">
+
+                <li class="subheader-li">
+                    <div class="list-button list-button--click">
+                        <a href="#" class="navbar-option nav-link">Tienda <i class="fas fa-caret-down list-arrow"></i></a>
+                    </div>
+
+                    <ul class="list-show">
+                        <li class="list-inside">
+                            <a href="#" class="nav-link nav-link nav-link--inside">Crear producto</a> 
+                        </li>
+
+                        <li class="list-inside">
+                            <a href="#" class="nav-link nav-link--inside">Editar producto</a> 
+                        </li>
+
                     </ul>
-                </nav>
-                <img href="/" src="/img/logo.png" alt="the pet's club" class="logo">
+                </li>
+
+                <li class="subheader-li list-item--click">
+                    <div class="list-button list-button--click">
+                        <a href="#" class="navbar-option nav-link">Servicios <i class="fas fa-caret-down list-arrow"></i></a>
+                    </div>
+
+                    <ul class="list-show">
+                        <li class="list-inside">
+                            <a href="#" class="nav-link nav-link--inside">Paseador</a> 
+                        </li>
+
+                        <li class="list-inside">
+                            <a href="#" class="nav-link nav-link--inside">Guardería</a> 
+                        </li>
+
+                        <li class="list-inside">
+                            <a href="#" class="nav-link nav-link--inside">Peluquería</a> 
+                        </li>
+                        
+                    </ul>
+                </li>
+
+                <li class="subheader-li list-item">
+                    <a href="#" class="navbar-option nav-link">Sobre Nosotros</a>
+                </li>
+            </ul>
+        </nav>
+        </div>
+        <a href="/"><img href="/" src="/img/logo.png" alt="the pet's club" class="logo"></a>
 
                 <ul class="right-navbar">
                     <li>
-                        <a href="/products/carrito-compras" class="navbar-option"><i class="fas fa-shopping-cart carrito"></i></a>
+                        <a href="/products/carrito-compras" class="navbar-option">
+                            <i class="fas fa-shopping-cart carrito"></i>
+                        </a>
                     </li>
                     <li class="subheader-li get-in">
                         <a href="/user-register" class="navbar-option">Ingresar <i class="fas fa-id-card"></i></a>
@@ -24,10 +67,10 @@
                         <a href="/user-register"  class="icon-option"><i class="fas fa-id-card" ></i></a>
                     </li>
                     <li>
-                        <a href="#" class="icon-user icon-option"> <i class="fas fa-user-large"></i></a>
+                        <a href="#" class="icon-user icon-option"> <i class="fas fa-user-circle"></i></a>
                     </li>
                 </ul>
-            </div>
-    </header>
+    </div>
+</header>
     
     

@@ -27,54 +27,89 @@ header {
     padding: 2px;
     border-radius: 8%;
     font-size: 20px;
-
+    position: relative;
+    left: 10px;
 }
 
 .main-navbar {
+    width: 210px;
+    position: relative;
+    top: -15px;
+    left: -25px;
     display: none;
-    width: 40%;
 }
 
-.navbar {
+ul.navbar {
+    background-color: var(--gris);
     width: 100%;
-    display: none;
+    height: 38vh;
+    border: solid 2px var(--sombra);
+    border-radius: 25px;
+    padding: 3px 5px;
+    margin-right: 0px;
+    box-shadow: 0px 0px 10px rgb(100 100 100);
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    list-style: none;
+    text-decoration: none;
+}
+
+.subheader-li {
+    list-style: none;
+    width: 100%;
+    text-align: center;
+}
+
+.nav li:hover > ul {
+    display: block;
+}
+
+.list-item--click {
+    cursor:pointer;
+}
+
+.nav-link{
+    text-decoration: none;
+    color: var(--verde);
+    display: block;
+    padding: 5px;
+    text-align: left;
+}
+
+.nav-link--inside:hover {
+    background: var(--celeste);
+}
+
+.nav-link--inside {
+    border-radius: 6px;
+    padding-left: 20px;
+}
+
+.list-show{
+    padding: 0;
+}
+
+.list-show {
+    width: 80%;
+    margin-left: auto;
+    border-left: 2px solid var(--verde);
+    list-style: none;
 }
 
 .logo {
     border-radius: 50%;
-    width: 17vw;
-
+    width: 20vw;
     position: absolute;
-    left: 43vw;
-    top: -10%;
+    left: 40vw;
+    top: -20%;
     box-shadow: 4px 18px 31px -12px rgba(86, 148, 148, 1);
 }
 
 .right-navbar {
     display: flex;
     justify-content: flex-end;
-}
-
-
-.subheader ul {
     list-style: none;
-    flex-direction: row;
-    align-items: center;
-    padding: 0;
-}
-
-.subheader-li {
-    border-radius: 25px;
-    padding: 5px 5px;
-    margin-right: 10px;
-    box-shadow: 0px 0px 10px rgb(100, 100, 100);
-}
-
-.navbar-option {
-    text-decoration: none;
-    color: var(--verde);
-    padding: 3px 0;
-    font-size: 14px;
 }
 
 .get-in {
@@ -90,13 +125,23 @@ header {
 }
 
 .icon-get-in {
+    text-decoration: none;
+    color: var(--verde);
+    padding: 3px 0;
+    font-size: 25px;
     padding-right: 15px;
+    position: relative;
+    top: -15px;
 }
 
 .icon-user {
-    padding: 1px;
-    border: solid 3px var(--verde);
-    border-radius: 50%;
+    text-decoration: none;
+    color: var(--verde);
+    padding: 3px 0;
+    font-size: 25px;
+    padding-right: 15px;
+    position: relative;
+    top: -10px;
 }
 
 .carrito {
@@ -104,7 +149,9 @@ header {
     color: var(--verde);
     padding: 3px 0;
     font-size: 20px;
-    padding-right: 10px;
+    padding-right: 15px;
+    position: relative;
+    top: -10px;
 }
 
 .canasta {
