@@ -6,6 +6,7 @@
 @import url(productos.css);
 @import url(forms.css);
 @import url(productslist.css);
+@import url(register.css);
 
 :root {
     --gris: #DDE4E4;

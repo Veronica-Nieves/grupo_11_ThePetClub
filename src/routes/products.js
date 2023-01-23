@@ -16,4 +16,5 @@ router.get('/carrito-compras', productsController.carrito);
 router.get('/list/', productsController.list);
 
 /* ---------------- Fin Listado de rutas -------------------*/
+
 module.exports =router;
