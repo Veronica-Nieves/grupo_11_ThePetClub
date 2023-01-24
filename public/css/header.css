@@ -1,9 +1,11 @@
 header {
     background-color: var(--celeste);
+    width: 100%;
     padding-top: 15px;
     padding-left: 10px;
     padding-right: 10px;
     padding-bottom: 10px;
+    margin-bottom: -86px;
 }
 
 .subheader {
@@ -150,5 +152,5 @@ ul.navbar {
 
 .sample-banner {
     width: 100%;
-    background-color: var(--celeste);
+    
 }

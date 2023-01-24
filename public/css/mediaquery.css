@@ -47,6 +47,8 @@
         padding-left: 15px;
         padding-right: 15px;
         padding-bottom: 15px;
+        margin-bottom: -150px;
+    width: 100%;
     }
 
     .subheader {
