@@ -5,33 +5,38 @@
 <%- include('../partials/head', {title: 'Inicio'}) %>
 
 <body>
-    <!-- Include Header y banner-->
-    <%- include('../partials/header') %>
+    <!-- Include Header y banner -->
 
     <main>
-        <div>
-            <div class="producto">
-                <img href="/" src="/img/category-dog.png" alt="the pet's club-dog" class="category-img">
-                <div class="info-producto">
-                    <h2>Titulo del producto</h2>
-                    <h3>$999</h3>
+        <div class="gap"> <p>--- Espacio de header --- </p></div>
+        <div class="product-detail-container">
+            <p class="product-detail-title"> Detalles del producto </p>
+            <div class="product-detail-card">
+                <div class="pd-image-wrap">
+                    <img href="/" src="/img/category-dog.png" alt="the pet's club-dog" class="pd-image">
+                    <p>Descripción:</p>
+                    <p>------------------------------------------------------------------------------------
+                            -----------------------------------------------------------------------------------
+                            ------------------------------------------------------------------------------------
+                            -----------------------------------------------------------------------------------
+                            ------------------------------------------------------------------------------------
+                    </p>
+                </div>
+                <div class="pd-information">
+                    <p class="pd-title">Titulo del producto</p>
+                    <p>Precio: </p><p class="pd-price">$999</p>
+                    <p>Adquierelo por tan solo: </p><p class="pd-price-offer">$999</p>
+                    <p>Este producto es adecuado para </p><p class="pd-price-offer">perros, gatos</p>
+
                     <div>
-                        <h4>Descripcion:</h4>
-                        <p>------------------------------------------------------------------------------------
-                            -----------------------------------------------------------------------------------
-                            ------------------------------------------------------------------------------------
-                            -----------------------------------------------------------------------------------
-                            ------------------------------------------------------------------------------------
-                        </p>
-
-                        <ul class="navbar">
-                            <li class="subheader-li botones-compra"><a href="#" class="navbar-option">Comprar Ahora</a>
-                            </li>
-                            <li class="subheader-li botones-compra"><a href="#" class="navbar-option">Agregar Al
-                                    Carrito</a></li>
-
-                        </ul>
-
+                        <div class="pd-user-buttons">
+                            <a class="button-add-to-cart" href="/">agregar al carrito</a>
+                            <a class="button-buy" href="/">agregar al carrito</a>
+                        </div>
+                        <div class="pd-admin-buttons">
+                            <a class="edit-product" href="/">Editar</a>
+                            <a class="new-product" href="/">Nuevo</a>
+                        </div>
                     </div>
                 </div>
             </div>

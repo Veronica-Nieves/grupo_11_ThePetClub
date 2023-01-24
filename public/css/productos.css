@@ -1,11 +1,65 @@
-.producto{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    background-color: #569494;
-    flex-direction: column;
-    
+.gap{
+    height: 500px;
 }
+.product-detail-container{
+    padding: 20px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.product-detail-tittle{
+    font-size: 18px;
+    color: var(--verde);
+}
+.product-detail-card{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 90%;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 0px 30px -15px black;
+    border-radius: 15px;
+}
+.pd-img-wrap{
+    width: 100%;
+}
+.pd-image{
+    border-radius: 10px;
+    width: 80%;
+    margin: 20px;
+}
+
+.pd-information{
+    padding: 20px;
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    color: var(--verde);
+}
+.pd-title{
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    border-bottom: solid 2px var(--verde);
+}
+.pd-price{
+    color: var(--verde);
+    font-size: 20px;
+}
+.pd-price-offer{
+    font-weight: 800;
+    color: maroon;
+    font-size: 20px;
+}
+.pd-price-species{
+    font-size: 16px;
+}
+
+
+/* Todo lo comentado son clases de nacho. 
+Tenemos que investigar si las tomó del documento principal y si se están usando en otras vistas.
 .navbar{
     display: flex;
     justify-content: flex-start;
@@ -14,12 +68,9 @@
 }
 .botones-compra{
     background-color: #ffffff;
-}
-/* .category-img{
-    width: 80%;
-    border-radius: 4%;
-    height: 90%;
-} */
+}*/
+
+/*
 h3{
     display: inline;
 }
@@ -35,26 +86,26 @@ h4{
 p{
     margin-top: 0px;
     padding-top: 0px;
-}
+}*/
 
 
+
+
+
+
+/*-------- MOVIL-HORIZONTAL (481)-------*/
 @media (min-width: 481px) {
-    .producto{
-        display: flex;
-    align-items: center;
-    justify-content: space-around;
-    background-color: #569494;
-    height: 400px;
-    flex-direction: row;
-        
-    }
+    
 }
 
 
 
+/*--------BREAKPOINT TABLET (770)-------*/
 @media (min-width: 770px) {
-    .producto{
-        width: 70%;
-        margin: auto;
-    }
+    
+}
+
+/*--------BREAKPOINT PC (1200)-------*/
+@media (min-width: 1200px) {
+    
 }
