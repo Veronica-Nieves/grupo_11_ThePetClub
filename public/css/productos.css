@@ -30,7 +30,7 @@
     margin: 20px;
 }
 
-.pd-information{
+#pd-information{
     padding: 20px;
     display:flex;
     flex-wrap: wrap;
@@ -38,20 +38,35 @@
     justify-content: center;
     color: var(--verde);
 }
-.pd-title{
+#pd-information .title{
     width: 100%;
+    padding: 10px;
     text-align: center;
     font-size: 18px;
+    font-weight: 900;
     border-bottom: solid 2px var(--verde);
 }
-.pd-price{
+#pd-information .price-wrap{
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+#pd-information .text{
+    font-size: 16px;
+    font-weight: 500;
+}
+#pd-information .price{
     color: var(--verde);
     font-size: 20px;
+    font-weight: 700;
+    
 }
-.pd-price-offer{
-    font-weight: 800;
+#pd-information .price-offer{
+    font-weight: 900;
     color: maroon;
-    font-size: 20px;
+    font-size: 25px;
 }
 .pd-price-species{
     font-size: 16px;

@@ -2,7 +2,7 @@
 <html lang="es">
 
 <!-- Include Head -->
-<%- include('../partials/head', {title: 'Inicio'}) %>
+<%- include('../partials/head', {title: 'Detalles de producto'}) %>
 
 <body>
     <!-- Include Header y banner -->
@@ -14,21 +14,14 @@
             <div class="product-detail-card">
                 <div class="pd-image-wrap">
                     <img href="/" src="/img/category-dog.png" alt="the pet's club-dog" class="pd-image">
-                    <p>Descripción:</p>
-                    <p>------------------------------------------------------------------------------------
-                            -----------------------------------------------------------------------------------
-                            ------------------------------------------------------------------------------------
-                            -----------------------------------------------------------------------------------
-                            ------------------------------------------------------------------------------------
-                    </p>
                 </div>
-                <div class="pd-information">
-                    <p class="pd-title">Titulo del producto</p>
-                    <p>Precio regular: </p><p class="pd-price">$999</p>
-                    <p>Adquierelo por tan solo: </p><p class="pd-price-offer">$999</p>
-                    <p>Este producto es adecuado para </p><p class="pd-species">perros, gatos</p>
+                <div id="pd-information">
+                    <strong class="title">Titulo del producto</strong>
+                    <div class="price-wrap"><p class="text">Precio regular:</p><strong class="price">$999</strong></div>
+                    <div class="price-wrap"><p class="text">Adquierelo por tan solo: </p><strong class="price-offer">$999</strong></div>
+                    <p class="text">Este producto es adecuado para </p><p class="species">perros, gatos</p>
 
-                    <div>
+                    <div class="pd-buttons-wrap">
                         <div class="pd-user-buttons">
                             <a class="button-add-to-cart" href="/">agregar al carrito</a>
                             <a class="button-buy" href="/">agregar al carrito</a>
@@ -39,6 +32,16 @@
                         </div>
                     </div>
                 </div>
+                </div> Descripcion larga
+                <p>Descripción:</p>
+                        <p>------------------------------------------------------------------------------------
+                                -----------------------------------------------------------------------------------
+                                ------------------------------------------------------------------------------------
+                                -----------------------------------------------------------------------------------
+                                ------------------------------------------------------------------------------------
+                        </p>
+                <div>
+
             </div>
         </div>
 
