@@ -1,8 +1,6 @@
+
 /*-------- MOVIL-HORIZONTAL (481)-------*/
 @media (min-width: 481px) {
-    h3 {
-        font-size: 20px;
-    }
 
     .subheader {
         padding: 15px 35px 15px 45px;
@@ -38,10 +36,7 @@
 
 /*--------BREAKPOINT TABLET (770)-------*/
 @media (min-width: 770px) {
-    h3 {
-        font-size: 25px;
-    }
-
+    
     header {
         padding-top: 50px;
         padding-left: 15px;
@@ -222,10 +217,7 @@
 
 /*--------BREAKPOINT PC (1200)-------*/
 @media (min-width: 1200px) {
-    h3 {
-        font-size: 30px;
-    }
-
+    
     .subheader ul {
         padding: 0;
     }
@@ -237,7 +229,6 @@
     .navbar-option {
         font-size: 17px;
     }
-
     .main-navbar {
         position: relative;
         top: -5px;
@@ -250,6 +241,10 @@
 
 /*-------- Breakpoint-Smaller-smartphones 0-480 --------*/
 @media (min-width: 480px) {
+    .section-tittle{
+        font-size: 18px;
+        margin: 100px 180px 100px 180px;
+    }
     /* - - - Ofertas - - - */
     .section-article-sale {
         display: flex;
@@ -366,7 +361,14 @@
 
 /*-------- Breakpoint-Tablet & large smartphones 481-768 --------*/
 @media (min-width: 768px){
+
+.section-tittle {
+    font-size: 20px;
+    margin: 150px 350px 150px 350px;
+}
 /* - - - Ofertas - - - */
+
+
 .section-article-sale {
     display: flex;
     flex-direction: row;
@@ -374,7 +376,7 @@
     align-items: center;
     background-color: rgba(6, 76, 63, 0.61);
     box-shadow: inset 0px 0px 48px 16px var(--verde);
-  
+    
   }
   .article-img-sale {
       width: 23%;
@@ -461,6 +463,12 @@
 }
 /*-------- Breakpoint-Laptos, larger tablets, and small desktops 769-1279 --------*/
 @media (min-width: 1200px) {
+    .section-tittle {
+        margin: 180px 560px 180px 560px;
+        border-radius: 100px;
+        box-shadow: 0px 15px 29px 0px #898989;
+    }
+
  /* - - - Ofertas - - - */
     .article-img-sale {
         height: 400px;

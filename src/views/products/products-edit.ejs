@@ -2,15 +2,15 @@
 <html lang="es">
 
 <!-- Include Head -->
-<%- include('../partials/head', {title: 'Inicio'}) %>
+<%- include('../partials/head', {title: 'Editar producto'}) %>
 
 <body>
     <!-- Include Header y banner-->
     <%- include('../partials/header') %>
 
     <body>
-        <div> <!--formulario Editar producto-->
-            <div class="section-tittle"><h3>Editar producto</h3></div>
+        <div> <!-- FORMULARIO EDITAR PRODUCTO -->
+            <div class="form-title-container"><h3>Editar producto</h3></div>
             <form action="/" method="GET" class="form-container">
 
                 <p class="form-field">
@@ -18,66 +18,76 @@
                 </p>
 
                 <p class="form-field">
-                    <input type="text" name="sku" id="sku" placeholder="SKU" required class="form-input">
+                <input type="text" name="id" id="id" placeholder="SKU" required class="form-input">
                 </p>
         
                 <p class="form-field">
                 <label>Descripción</label>
-                <textarea name="description" placeholder="Indica las características del prodcuto" required class="form-input"></textarea>
+                <textarea name="description" placeholder="Indica las características del prodcuto como color, peso, sabor, contenido, talla, etc. " required class="form-input-text-area"></textarea>
                 </p>
         
                 <p class="form-field">
                 <label for="name">Imagen</label>
-                <input type="file" name="main-product-image" id="main-product-image" accept=".jpg" required class="form-input">
+                <input type="file" name="image" id="image" accept=".jpg" required class="form-input">
                 </p>
 
-                <p class="form-field">
-                    <label><strong>Categorías</label></strong></label>
-                        <input type="checkbox" value="Alimento" id="Alimento"class="form-input-option"> Alimento </input><br>
-                        <input type="checkbox" value="Juguetes" id="Juguetes" class="form-input-option"> Juguetes </input><br>
-                        <input type="checkbox" value="Habitat" id="Habitat" class="form-input-option"> Habitat </input><br>
-                        <input type="checkbox" value="Accesorios" id="Accesorios" class="form-input-option"> Accesorios </input><br>
-                        <input type="checkbox" value="Correas-y-collares" id="Correas y collares" class="form-input-option"> Correas y collares </input><br>
-                        <input type="checkbox" value="Otro" id="Otro" class="form-input-option"> Otro </input><br>
-                </p>
-
-                <p class="form-field">
-                    <label><strong>Talla</label></strong></label>
-                        <input type="radio" value="Extra-Chica" id="Extra Chica"class="form-input-option"> Extra Chica </input><br>
-                        <input type="radio" value="Chica" id="Chica" class="form-input-option"> Chica </input><br>
-                        <input type="radio" value="Mediana" id="Mediana" class="form-input-option"> Mediana </input><br>
-                        <input type="radio" value="Grande" id="Grande" class="form-input-option"> Grande </input><br>
-                        <input type="radio" value="Extra Grande" id="Extra Grande" class="form-input-option"> Extra Grande </input><br>
-                        <input type="radio" value="Unica" id="Unica" class="form-input-option"> Única </input><br>
-                </p>
-        
-                <p class="form-field">
-                <label><strong>Color</label></strong></label>
-                <input type="color" name="color" id="color" placeholder="Color" required class="form-box-color">
-                </p>
-
-                <p class="form-field">
+                <div class="form-2-columns-container">
+                    <p class="form-field  col-50">
                     <input type="number" name="price" id="price" placeholder="Precio" min="0"required class="form-input">
-                </p>
+                    </p>
 
-                <p class="form-field">
+                    <p class="form-field col-50">
                     <input type="number" name="price-offer" id="price-offer" placeholder="Precio de oferta" min="0" required class="form-input">
-                </p>
-        
-                <p class="form-field">
-                <label><strong>En oferta:</strong></label>
-                    <input type="radio" name="oferta" value="si" class="form-input-option"> Si </input><br>
-                    <input type="radio" name="oferta" value="no" class="form-input-option"> No </input>
-                </p>
+                    </p>
+                </div>
 
-                <p class="form-field">
-                    <input type="number" name="pieces" id="pieces" placeholder="Piezas disponibles" min="0" required class="form-input">
-                </p>
+                <div class="form-2-columns-container">
+                    <p class="form-field col-50">
+                        <label><strong>Especie</strong></label>
+                            <input type="checkbox" name="specie" value="perros" id="perros"class="form-input-option"> Perros </input><br>
+                            <input type="checkbox" name="specie" value="gatos" id="gatos" class="form-input-option"> Gatos </input><br>
+                            <input type="checkbox" name="specie" value="aves" id="aves" class="form-input-option"> Aves </input><br>
+                            <input type="checkbox" name="specie" value="peces" id="peces" class="form-input-option"> Peces </input><br>
+                            <input type="checkbox" name="specie" value="mamiferos" id="mamiferos" class="form-input-option"> Mamiferos </input><br>
+                            <input type="checkbox" name="specie" value="reptiles" id="reptiles" class="form-input-option"> Reptiles </input><br>
+                    </p>
+
+                    <p class="form-field col-50">
+                        <label><strong>Categorías</strong></label>
+                            <input type="checkbox" name="category" value="alimento" id="alimento"class="form-input-option"> Alimento </input><br>
+                            <input type="checkbox" name="category" value="juguetes" id="juguetes" class="form-input-option"> Juguetes </input><br>
+                            <input type="checkbox" name="category" value="habitat" id="habitat" class="form-input-option"> Habitat </input><br>
+                            <input type="checkbox" name="category" value="ropa" id="ropa" class="form-input-option"> Ropa </input><br>
+                            <input type="checkbox" name="category" value="accesorios" id="accesorios" class="form-input-option"> Accesorios </input><br>
+                            <input type="checkbox" name="category" value="otro" id="Otro" class="form-input-option"> Otro </input><br>
+                    </p>
+                </div>
+        
+                <div class="form-3-columns-container">
+                    <p class="form-field col-30">
+						<label><strong>En oferta: </label></strong></label>
+						<select name="offer" id="offer" class="form-input">
+							<option value="si">Sí</option>
+							<option value="no">No</option>
+						</select>
+					</p>
+                    <p class="form-field col-30">
+						<label><strong>Destacado </label></strong></label>
+						<select name="featured" id="featured" class="form-input">
+							<option value="si" class="form-input-option">Sí</option>
+							<option value="no" class="form-input-option">No</option>
+						</select>
+					</p>
+                    <p class="form-field col-30">
+                        <label><strong>Piezas </label></strong></label>
+                        <input type="number" name="pieces" id="pieces" placeholder="12" min="0" required class="form-input">
+                    </p>
+                </div>
                 
                 <!--boton de formulario -->
                 <p class="form-buttons-container">
                 <button type="reset" class="form-button">Limpiar formulario</button>
-                <a href="/"><button type="submit" class="form-button"> Guardar cambios </button></a>
+                <a href="/"><button type="submit" class="form-button"> Crear producto </button></a>
                 </p>
 
             </form>

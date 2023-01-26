@@ -1,4 +1,19 @@
+.section-tittle {
 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-family: Noto Sans;
+    background-color: white;
+    color: #064c3fde;
+    border-radius: 60px;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 0px 46px;
+    box-shadow: 0px 4px 15px 0px grey;
+    margin: 100px 140px 100px 140px
+
+}
 /* - - - Categorías - - - */
 .category-section {
     display: flex;
