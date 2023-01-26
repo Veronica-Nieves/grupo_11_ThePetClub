@@ -1,63 +1,77 @@
 <header>
     <!-- Barra de navegación --> 
-            <div class="subheader">
-                <a href="#" class="hamburger-bottom">
-                    <i class="fas fa-bars"></i>
-                </a>
-                <nav class="main-navbar">
-                    <ul class="navbar">
-                        <li class="subheader-li">
-                            <a href="#" class="navbar-option">Tienda <i class="fas fa-caret-right"></i></a>
-                                <ul class="dropdown">
-                                    <li class="nav-link">
-                                        <a href="#" class="nav-link">Productos</a>
-                                    </li>
-                                    <li class="nav-link">
-                                        <a href="#" class="nav-link">Crear productos</a>
-                                    </li>
-                                    <li class="nav-link">
-                                        <a href="#" class="nav-link">Editar productos</a>
-                                    </li>
-                                </ul>
+
+
+
+    <nav class="main-navbar">
+             
+        <ul class="left-navbar">
+            <div class="hamburger-menu">
+                <input type="checkbox" class="hamburger">
+                <i class="fas fa-bars hamburger"></i>
+                <i class="fas fa-times hamburger"></i>
+            </div>
+            <li class="subheader-li">
+                <a href="#" class="navbar-option">Tienda <i class="fas fa-caret-right"></i></a>
+                    <ul class="dropdown">
+                        <li class="nav-link">
+                            <a href="#" class="nav-link">Productos</a>
                         </li>
-                        <li class="subheader-li">
-                            <a href="#" class="navbar-option">Servicios <i class="fas fa-caret-right"></i></i></a>
-                            <ul class="dropdown">
-                                <li class="nav-link">
-                                    <a href="#" class="nav-link">Guardería</a>
-                                </li>
-                                <li class="nav-link">
-                                    <a href="#" class="nav-link">Paseador</a>
-                                </li>
-                                <li class="nav-link">
-                                    <a href="#" class="nav-link">Veterinario</a>
-                                </li>
-                            </ul>
+                        <li class="nav-link">
+                            <a href="#" class="nav-link">Crear productos</a>
                         </li>
-                        <li class="subheader-li">
-                            <a href="#" class="navbar-option">Sobre Nosotros</a>
+                        <li class="nav-link">
+                            <a href="#" class="nav-link">Editar productos</a>
                         </li>
                     </ul>
-                </nav>
-                <a href="/"><img href="/" src="/img/logo.png" alt="the pet's club" class="logo"></a>
+            </li>
 
-                <ul class="right-navbar">
-                    <li>
-                        <a href="/products/carrito-compras" class="navbar-option">
-                            <i class="fas fa-shopping-cart carrito"></i>
-                        </a>
-                    </li>
-                    <li class="subheader-li get-in"> <!-- Opcion de crear cuenta desde desktop-->
-                        <a href="/users/register" class="navbar-option">Crear una cuenta <i class="fas fa-id-card"></i></a>
-                    </li>
-                    <li class="icon-get-in"> <!-- Opcion de crear cuenta desde movil-->
-                        <a href="/users/register"  class="icon-option"><i class="fas fa-id-card" ></i></a>
-                    </li>
-                    <li>
-                        <a href="#" class="icon-user icon-option"> <i class="fas fa-user-circle"></i></a>
-                    </li>
-                </ul>
-    </div>
+            <li class="subheader-li">
+                <a href="#" class="navbar-option">Servicios <i class="fas fa-caret-right"></i></i></a>
+                    <ul class="dropdown">
+                        <li class="nav-link">
+                            <a href="#" class="nav-link">Guardería</a>
+                        </li>
+                        <li class="nav-link">
+                            <a href="#" class="nav-link">Paseador</a>
+                        </li>
+                        <li class="nav-link">
+                            <a href="#" class="nav-link">Veterinario</a>
+                        </li>
+                    </ul>
+            </li>
+
+            <li class="subheader-li">
+                <a href="#" class="navbar-option">Sobre Nosotros</a>
+            </li>
+
+        </ul>
+
+        <ul class="media-navbar">
+        <a href="/"><img href="/" src="/img/logo.png" alt="the pet's club" class="logo"></a>
+        </ul>
+
+        <ul class="right-navbar">
+            <li class="subheader-li">
+                <a href="/products/carrito-compras" class="navbar-option">
+                <i class="fas fa-shopping-cart carrito"></i>
+                </a>
+            </li>
+
+            <li class="subheader-li get-in"> <!-- Opcion de crear cuenta desde desktop-->
+                <a href="/users/register" class="navbar-option login-desktop">Creá tu cuenta<i class="fas fa-id-card cuenta"></i></a>
+             </li>
+
+             <li class="icon-get-in"> <!-- Opcion de crear cuenta desde movil-->
+                <a href="/users/register"  class="icon-option"><i class="fas fa-id-card" ></i></a>
+            </li>
+            
+            <li class="subheader-li">
+                <a href="#" class="icon-user icon-option"> <i class="fas fa-user-circle login"></i></a>
+            </li>
+        </ul>
+    </nav>
+
 </header>
     
     

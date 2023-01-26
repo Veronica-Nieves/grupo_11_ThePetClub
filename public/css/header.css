@@ -8,12 +8,13 @@ header {
     margin-bottom: -86px;
 }
 
-.subheader {
+.main-navbar {
     display: flex;
     justify-content: space-between;
     padding: 10px 18px 10px 20px;
     height: 50px;
     position: relative;
+    top: 15px;
     background-color: white;
 
     border-top-left-radius: 10px;
@@ -23,45 +24,33 @@ header {
     box-shadow: 4px 18px 31px -12px rgba(86, 148, 148, 1);
 }
 
-.hamburger-bottom {
+.hamburger-menu {
     color: var(--verde);
-    text-align: left;
+    text-align: right;
     padding: 2px;
     border-radius: 8%;
     font-size: 20px;
     position: relative;
-    left: 10px;
+    left: -20px;
 }
 
-.main-navbar {
-    width: 210px;
-    position: relative;
-    top: -15px;
-    left: -25px;
-    display: block;
-}
-
-ul.navbar {
-    background-color: white;
-    width: 100%;
-    height: 38vh;
-    border-radius: 25px;
-    padding: 3px 5px;
-    margin-right: 0px;
-    display: flex;
-    justify-content: space-around;
+.left-navbar {
+    display: none;
+    flex-wrap: wrap;
     flex-direction: column;
+    justify-content: center;
+}
+
+.right-navbar {
+    display: flex;
+    justify-content: flex-end;
     list-style: none;
-    text-decoration: none;
-    position: absolute;
-    right: 17px;
-    top: -10px;
 }
 
 .subheader-li {
     list-style: none;
-    width: 100%;
     text-align: center;
+    padding: 5px 5px;
 }
 
 .dropdown {
@@ -87,31 +76,29 @@ ul.navbar {
     text-align: left;
 }
 
+.hamburger-menu input [type="checkbox"], .hamburger-menu .fas-bar, .hamburger-menu fas-times {
+    position: absolute;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    right: 0;
+    top: 0;
+    width: 48px;
+    height: 48px;
+}
+
 .logo {
     border-radius: 50%;
     width: 20vw;
-    position: absolute;
+    position: relative;
     left: 40vw;
-    top: -20%;
+    top: -25px;
     box-shadow: 4px 18px 31px -12px rgba(86, 148, 148, 1);
-}
-
-.right-navbar {
-    display: flex;
-    justify-content: flex-end;
-    list-style: none;
 }
 
 .get-in {
     display: none;
     color: var(--verde);
-}
-
-.icon-option {
-    text-decoration: none;
-    color: var(--verde);
-    padding: 3px 0;
-    font-size: 20px;
 }
 
 .icon-get-in {
@@ -124,14 +111,26 @@ ul.navbar {
     top: -15px;
 }
 
-.icon-user {
+.login {
     text-decoration: none;
     color: var(--verde);
     padding: 3px 0;
     font-size: 25px;
     padding-right: 15px;
     position: relative;
-    top: -10px;
+    top: -20px;
+    right: -10px;
+}
+
+.fa-id-card {
+    text-decoration: none;
+    color: var(--verde);
+    padding: 3px 0;
+    font-size: 25px;
+    padding-right: 15px;
+    position: relative;
+    top: -4px;
+    right: -34px;
 }
 
 .carrito {
@@ -141,7 +140,8 @@ ul.navbar {
     font-size: 20px;
     padding-right: 15px;
     position: relative;
-    top: -10px;
+    top: -22px;
+    right: -45px;
 }
 
 .canasta {
