@@ -1,5 +1,5 @@
 .gap{
-    height: 500px;
+    height: 150px;
 }
 .product-detail-container{
     padding: 20px 0px;
@@ -13,38 +13,67 @@
 }
 .product-detail-card{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     flex-direction: column;
     width: 90%;
-    padding: 20px;
+    padding: 10px;
     background-color: white;
     box-shadow: 0px 0px 30px -15px black;
     border-radius: 15px;
 }
-.pd-img-wrap{
+#image-wrap{
+    display:flex;
     width: 100%;
+    justify-content: center;
 }
-.pd-image{
+#image-wrap .image{
     border-radius: 10px;
     width: 80%;
+    padding: auto;
     margin: 20px;
 }
 
+
+/* Caracteristicas*/
 #pd-information{
-    padding: 20px;
     display:flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
     color: var(--verde);
 }
-#pd-information .title{
+#pd-information .title-wrap{
     width: 100%;
-    padding: 10px;
-    text-align: center;
+    padding: 7px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-bottom: solid 2px var(--verde);
+}
+#pd-information .title{
+    text-align: left;
     font-size: 18px;
     font-weight: 900;
-    border-bottom: solid 2px var(--verde);
+}
+
+#pd-information .featured-product{
+    display:flex;
+    width:90px;
+    font-size: 10px;
+    font-weight: 600;;
+    background-color: rgb(111, 181, 183);
+    color: var(--verde);
+    border-radius: 8px;
+    align-items: center;
+    margin: 8px;
+}
+#pd-information .featured-product-icon{
+    font-size: 15px;
+    margin-right: 5px;
+    color: var(--verde);
 }
 #pd-information .price-wrap{
     display:flex;
@@ -53,55 +82,97 @@
     justify-content: space-around;
     align-items: center;
 }
-#pd-information .text{
-    font-size: 16px;
-    font-weight: 500;
+#pd-information .text1{
+    font-size: 15px;
+    font-weight: 600;
+}
+#pd-information .text2{
+    
+    font-size: 14px;
+    font-weight: 600;
 }
 #pd-information .price{
     color: var(--verde);
     font-size: 20px;
-    font-weight: 700;
-    
+    font-weight: 700;  
 }
 #pd-information .price-offer{
     font-weight: 900;
     color: maroon;
     font-size: 25px;
 }
-.pd-price-species{
-    font-size: 16px;
+#pd-information .crossed-out{
+    text-decoration: line-through;
+}
+#pd-information .tags-wrap{
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    color: var(--verde);
+}
+#pd-information .wrap-subtitle{
+    width: 100%;
+    text-align: left;
+}
+#pd-information .species{
+    color: var(--verde);
+    font-size: 13px;
+    font-weight: 600;
+}
+#pd-information .category-tag{
+    color: var(--verde);
+    font-size: 13px;
+    font-weight: 600;
+    background-color: var(--celeste);
+    border: solid 1px var(--sombra);
+    border-radius: 5px;
+    margin: 3px;
+}
+#pd-information .set-buttons-wrap{
+    width: 100%;
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    margin: 10px 0px;
+}
+#pd-information .button{
+    width: 95%;
+    background-color: var(--gris);
+    border: solid 3px var(--verde);
+    border-radius: 10px;
+    margin: 5px;
+    padding: 10px;
+    text-align: center;
+}
+#pd-information .button-text{
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--verde);
 }
 
 
-/* Todo lo comentado son clases de nacho. 
-Tenemos que investigar si las tomó del documento principal y si se están usando en otras vistas.
-.navbar{
-    display: flex;
-    justify-content: flex-start;
-    list-style: none;
-    
+/* description */
+#description{
+    padding-top: 10px;
+    border-top: solid 1px var(--gris);
 }
-.botones-compra{
-    background-color: #ffffff;
-}*/
+#description .title{
+    text-align: left;
+    font-size: 17px;
+    font-weight: 900;
+    color: var(--verde);
+}
+#description .text{
+    text-align: left;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--verde);
+}
 
-/*
-h3{
-    display: inline;
-}
-.info-producto{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-h4{
-    margin-bottom: 0px;
-    padding-bottom: 0px;
-}
-p{
-    margin-top: 0px;
-    padding-top: 0px;
-}*/
 
 
 
@@ -110,14 +181,33 @@ p{
 
 /*-------- MOVIL-HORIZONTAL (481)-------*/
 @media (min-width: 481px) {
-    
+    #pd-information .button{
+        width: 45%;
+    }
+    #image-wrap .image{
+        width: 55%;
+    }
 }
 
 
 
 /*--------BREAKPOINT TABLET (770)-------*/
 @media (min-width: 770px) {
-    
+    .product-detail-card{
+        flex-direction: row;
+        align-items: center;
+    }
+    #image-wrap{
+        width: 45%;
+    }
+    #image-wrap .image{
+        width: 95%;
+    }
+
+    #pd-information{
+        width: 53%;
+    }
+
 }
 
 /*--------BREAKPOINT PC (1200)-------*/

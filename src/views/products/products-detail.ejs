@@ -5,48 +5,68 @@
 <%- include('../partials/head', {title: 'Detalles de producto'}) %>
 
 <body>
-    <!-- Include Header y banner -->
+    <!-- Include Header -->
+    
+<%- include('../partials/header') %>
 
     <main>
-        <div class="gap"> <p>--- Espacio de header --- </p></div>
+        <!--Espacio header -->
+        <div class="gap"></div>
+
         <div class="product-detail-container">
             <p class="product-detail-title"> Detalles del producto </p>
             <div class="product-detail-card">
-                <div class="pd-image-wrap">
-                    <img href="/" src="/img/category-dog.png" alt="the pet's club-dog" class="pd-image">
+                <div id="image-wrap">
+                    <img href="/" src="/img/category-dog.png" alt="the pet's club-dog" class="image">
                 </div>
-                <div id="pd-information">
-                    <strong class="title">Titulo del producto</strong>
-                    <div class="price-wrap"><p class="text">Precio regular:</p><strong class="price">$999</strong></div>
-                    <div class="price-wrap"><p class="text">Adquierelo por tan solo: </p><strong class="price-offer">$999</strong></div>
-                    <p class="text">Este producto es adecuado para </p><p class="species">perros, gatos</p>
-
-                    <div class="pd-buttons-wrap">
-                        <div class="pd-user-buttons">
-                            <a class="button-add-to-cart" href="/">agregar al carrito</a>
-                            <a class="button-buy" href="/">agregar al carrito</a>
-                        </div>
-                        <div class="pd-admin-buttons">
-                            <a class="edit-product" href="/">Editar</a>
-                            <a class="new-product" href="/">Nuevo</a>
-                        </div>
+                <div id="pd-information"><!--Inicia caracteristicas-->
+                    <div class="title-wrap">
+                        <strong class="title">Titulo del producto</strong>
+                        <p class="featured-product"><i class="fas fa-solid fa-circle featured-product-icon"></i> Producto destacado</p>
                     </div>
-                </div>
-                </div> Descripcion larga
-                <p>Descripción:</p>
-                        <p>------------------------------------------------------------------------------------
-                                -----------------------------------------------------------------------------------
-                                ------------------------------------------------------------------------------------
-                                -----------------------------------------------------------------------------------
-                                ------------------------------------------------------------------------------------
-                        </p>
-                <div>
-
-            </div>
-        </div>
+                    <div class="price-wrap"><p class="text1">Precio regular:</p><strong class="price">$999</strong></div>
+                    <div class="price-wrap"><p class="text1">Precio regular:</p><strong class="price crossed-out">$999</strong></div>
+                    <div class="price-wrap"><p class="text1">Adquierelo por tan solo: </p><strong class="price-offer"><i class="fa-sharp fa-solid fa-bolt-lightning"></i> $999</strong></div>
+                    <div class="tags-wrap">
+                        <p class="wrap-subtitle text2">Recomendado para:</p>
+                        <p class="species"><i class="fas fa-solid fa-dog"></i> perros </p>
+                        <p class="species"><i class="fas fa-solid fa-cat"></i> gatos </p>
+                        <p class="species"><i class="fas fa-solid fa-crow"></i> aves </p>
+                        <p class="species"><i class="fas fa-fish-fins"></i> peces </p>
+                        <p class="species"><i class="fas fa-solid fa-rabbit"></i> mamiferos </p>
+                        <p class="species"><i class="fa-sharp fa-solid fa-snake"></i> reptiles </p>
+                    </div>
+                    <div class="tags-wrap">
+                        <p class="category-tag"> Alimento </p>
+                        <p class="category-tag"> Juguetes </p>
+                        <p class="category-tag"> Habitat </p>
+                        <p class="category-tag"> Ropa </p>
+                        <p class="category-tag"> Accesorios </p>
+                        <p class="category-tag"> Otro </p>
+                    </div>
+                    
+                    <div class="set-buttons-wrap"> <!--para el usuario-->
+                        <p class="button"><a class="button-text" href="/">Agregar al carrito</a></p>
+                        <p class="button"><a class="button-text" href="/">Comprar</a></p>
+                    </div>
+                    <div class="set-buttons-wrap"> <!--para admin-->
+                        <p class="button"><a class="button-text" href="/">Editar</a></p>
+                        <p class="button"><a class="button-text" href="/">Nuevo</a></p>
+                    </div>
+                </div><!--termina Caracteristicas-->
+                <div id="description"><!--inicia description-->
+                    <p class="title">Descripción:</p>
+                    <p class="text">------------------------------------------------------------------------------------
+                        -----------------------------------------------------------------------------------
+                        ------------------------------------------------------------------------------------
+                        -----------------------------------------------------------------------------------
+                        ------------------------------------------------------------------------------------
+                    </p>
+                </div><!--termina description-->
+            </div><!--termina product-detail-card-->
+        </div><!--termina product-detail-container-->
 
     </main>
-
     <!-- Include Footer-->
     <%- include('../partials/footer') %>
 </body>
