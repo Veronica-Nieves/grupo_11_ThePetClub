@@ -11,7 +11,11 @@ router.get('/detail/:id', productsController.detail);
 
 router.get('/create/', productsController.create);
 
+//router.post('/create/', productsController.processCreate);
 router.post('/create/', productsController.processCreate);
+
+router.get('/newcreate', productsController.newCreate);
+router.post('/newcreate', productsController.processNewCreate);
 
 router.get('/edit/', productsController.edit);
 

@@ -8,14 +8,15 @@
     <!-- Include Header y banner-->
     <%- include('../partials/header') %>
 
-    <body>
+    <main>
         <!--Espacio header -->
         <div class="gap"></div>
 
-        <div class="form-container"> <!-- FORMULARIO CREAR PRODUCTO -->
+        <div id="products-form"> <!-- FORMULARIO CREAR PRODUCTO -->
             <h3 class="page-title">Crear producto</h3>
-            <!--<form action="/products/create" method="POST" class="form-container">-->
-            <form action="/products/create" method="POST" >
+
+            <form action="/products/create" method="POST" class="form-container">
+            <!--<form action="/products/create" method="POST">-->
 
                 <p class="form-field">
                 <input type="text" name="name" id="name" placeholder="Nombre del producto" required class="form-input">
@@ -47,7 +48,7 @@
 
                 <div class="form-2-columns-container">
                     <p class="form-field col-50">
-                        <label><strong>Especie</strong></label>
+                        <label>Especie</label>
                             <input type="checkbox" name="specie" value="perros" id="perros"class="form-input-option"> Perros </input><br>
                             <input type="checkbox" name="specie" value="gatos" id="gatos" class="form-input-option"> Gatos </input><br>
                             <input type="checkbox" name="specie" value="aves" id="aves" class="form-input-option"> Aves </input><br>
@@ -57,7 +58,7 @@
                     </p>
 
                     <p class="form-field col-50">
-                        <label><strong>Categorías</strong></label>
+                        <label>Categorías</label>
                             <input type="checkbox" name="category" value="alimento" id="alimento"class="form-input-option"> Alimento </input><br>
                             <input type="checkbox" name="category" value="juguetes" id="juguetes" class="form-input-option"> Juguetes </input><br>
                             <input type="checkbox" name="category" value="habitat" id="habitat" class="form-input-option"> Habitat </input><br>
@@ -69,37 +70,33 @@
         
                 <div class="form-3-columns-container">
                     <p class="form-field col-30">
-						<label><strong>En oferta: </label></strong></label>
+						<label>En oferta:</label>
 						<select name="offer" id="offer" class="form-input">
 							<option value="si">Sí</option>
 							<option value="no">No</option>
 						</select>
 					</p>
                     <p class="form-field col-30">
-						<label><strong>Destacado </label></strong></label>
+						<label>Destacado </label>
 						<select name="featured" id="featured" class="form-input">
 							<option value="si" class="form-input-option">Sí</option>
 							<option value="no" class="form-input-option">No</option>
 						</select>
 					</p>
                     <p class="form-field col-30">
-                        <label><strong>Piezas </label></strong></label>
+                        <label>Piezas </label>
                         <input type="number" name="pieces" id="pieces" placeholder="12" min="0" required class="form-input">
                     </p>
                 </div>
                 
-                <!--boton de formulario -->
                 <p class="form-buttons-container">
                 <button type="reset" class="form-button">Limpiar formulario</button>
                 <button type="submit" class="form-button"> Crear producto </button>
                 </p>
-
             </form>
+            
         </div>
-        
-
-
-    </body>
+    </main>
 
     <!-- Include Footer-->
     <%- include('../partials/footer') %>

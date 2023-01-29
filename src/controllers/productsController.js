@@ -31,22 +31,34 @@ const controller = {
     res.render('./products/products-create');
   },
 
-// procesa los datos enviados en el formulario
+// procesa los datos enviados en el formulariode crear un nuevo producto
   processCreate: (req, res) => {
     //const productsArray = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
     //let productoNuevo = "hol2";
 
 
 
-    res.send("producto enviado exitosamente");
+    //res.send("nuevo formulario enviado");
     console.log(req.body);
-    //res.send(req.body);
+    res.send(req.body);
+  },
+
+
+
+
+/* ------------experimeinto vero ------------------------*/
+  newCreate: (req, res) => {
+    res.render('./products/create');
+  },
+  processNewCreate: (req, res)=>{
+    console.log(req.body);
+    res.send(req.body);
   },
 
 
 /* Nacho*/
   edit: (req, res) => {
-    res.render('./products/products-create');
+    res.render('./products/products-edit');
     
   },
 
