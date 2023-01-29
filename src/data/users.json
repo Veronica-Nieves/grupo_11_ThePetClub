@@ -1,0 +1,92 @@
+[
+    {
+    "id": 1,
+    "firstName": "Veronica",
+    "lastName": "Nieves",
+    "email": "vnieves@gmail.com",
+    "role": "Customer",
+    "password": "pwbv8yut",
+    "passwordConfirmed": "qDxDM6fc"
+  }, 
+  {
+    "id": 2,
+    "firstName": "in magna",
+    "lastName": "platea",
+    "email": "cofairy1@timesonline.co.uk",
+    "role": "Admin",
+    "password": "WQDiRU",
+    "passwordConfirmed": "7KdMhbte"
+  }, 
+  {
+    "id": 3,
+    "firstName": "Luna",
+    "lastName": "Santini",
+    "email": "lsantini@gmail.com",
+    "role": "Admin",
+    "password": "YEyUPC",
+    "passwordConfirmed": "tKwDr8zF32"
+  }, 
+  {
+    "id": 4,
+    "firstName": "nonummy integer",
+    "lastName": "orci luctus",
+    "email": "kchristal3@loc.gov",
+    "role": "Customer",
+    "password": "fDIQlKL",
+    "passwordConfirmed": "mdmRGd4mXYKX"
+  }, 
+  {
+    "id": 5,
+    "firstName": "dictumst",
+    "lastName": "dignissim vestibulum",
+    "email": "sbenka4@cdc.gov",
+    "role": "Customer",
+    "password": "z7ByI3",
+    "passwordConfirmed": "LCXV8K"
+  }, 
+  {
+    "id": 6,
+    "firstName": "Ignacio",
+    "lastName": "Muela",
+    "email": "imuela@gmail.com",
+    "role": "Admin",
+    "password": "A7TQNvEKu",
+    "passwordConfirmed": "3TYY0Voj"
+  }, 
+  {
+    "id": 7,
+    "firstName": "Ramiro",
+    "lastName": "Velar",
+    "email": "rvelar@gmail.com",
+    "role": "Admin",
+    "password": "gOWlszhp2",
+    "passwordConfirmed": "2v8P7Xn1"
+  }, 
+  {
+    "id": 8,
+    "firstName": "Belen",
+    "lastName": "Perez",
+    "email": "bperez@gmail.com",
+    "role": "Admin",
+    "password": "fl2jpeGelgos",
+    "passwordConfirmed": "Mw34thSo51q8"
+  }, 
+  {
+    "id": 9,
+    "firstName": "etiam pretium",
+    "lastName": "nonummy integer",
+    "email": "wkiddey8@multiply.com",
+    "role": "Admin",
+    "password": "4WC0XYga",
+    "passwordConfirmed": "suOsNRT"
+  }, 
+  {
+    "id": 10,
+    "firstName": "est lacinia",
+    "lastName": "elementum eu",
+    "email": "ptaylor9@google.com.au",
+    "role": "Customer",
+    "password": "JUsqfHuE5",
+    "passwordConfirmed": "fljBoQ5k"
+  }
+]
