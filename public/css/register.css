@@ -17,7 +17,7 @@
 
 /* Formulario de registro */
 .register-container{
-    margin: 25px 10px;
+    margin: 180px 15px 20px 15px;
     padding: 30px 7px;
     background-color: var(--sombra);
     border-radius: 15px;
@@ -45,10 +45,40 @@
     padding: 0px Auto;
 }
 
+.form-label-avatar {
+    display: block;
+    width: 30%;
+    height: 35px;
+    font-size: 13px;
 
+    border-radius: 7px;
+    border-style: None;
+    text-align: left;
+}
 
+.input-administrator-user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 
+}
 
+.label-user {
+    margin:10px;
+    font-size: 16px;
+}
+.label-user input{
+    margin:10px;
+}
+
+.label-administrator {
+    margin:10px;
+    font-size: 16px;
+}
+.label-administrator input{
+    margin:10px;
+}
 
 
 
@@ -58,7 +88,7 @@
         margin: 35px 15%;
     }
     .register-container{
-        margin: 25px 12%;
+        margin: 200px 15% 20px 15%;
         font-size: 16px;
     }
     
@@ -75,7 +105,7 @@
     }
 
     .register-container{
-        margin: 35px 15%;
+        margin: 200px 20% 20px 20%;
         padding: 30px Auto;
     }
     .register-form-field{
@@ -92,6 +122,6 @@
     }
 
     .register-container{
-        margin: 50px 20%;
+        margin: 220px 20% 20px 20%;
     }
 }

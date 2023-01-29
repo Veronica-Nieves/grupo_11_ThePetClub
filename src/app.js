@@ -9,7 +9,7 @@ const productsRouter = require ('./routes/products.js');
 const usersRouter = require ('./routes/users.js');
 
 
-app.use(express.static(path.join(__dirname, '../public'))); 
+app.use(express.static(path.join(__dirname, '../public'))); // Necesario para los archivos estáticos
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/views')); // Definimos ubicación de la carpeta views
