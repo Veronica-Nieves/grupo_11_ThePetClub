@@ -17,7 +17,13 @@ const controller = {
 	},
 
   detail: (req, res) => {
-    res.render('./products/products-detail');
+    const productsArray = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+    let productoSolicitado = productsArray.find(producto => {
+      return producto.id == req.params.id;
+    });
+    console.log(productoSolicitado)
+    
+    res.render('./products/products-detail', {producto: productoSolicitado})
 	},
 
   create: (req, res) => {

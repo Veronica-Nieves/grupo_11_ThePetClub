@@ -7,55 +7,28 @@
 <%- include('../partials/header') %>
 
 <main>
-    <!-- VISTA ESTÁTICA DE TRES PRODUCTOS -->
-    <section class="category-section-products">
-        <div class="section-tittle-products-list"><h3>Todos los productos</h3></div>
-        <section class="section-article-products">
-            <article class="article-img-product">
-                <img class="img-product-product" src="/img/productslist/pouch-royal-canin-medium-puppy.jpg" alt="img-productslist">
-                <article class="box-description-product">
-                    <i></i>
-                    <article class="price-of-product">
-                        <h2 class="price-of-product">$ 450</h2>
-                    </article>
-                </article>
-            </article>
-            <article class="article-img-product">
-                <img class="img-product-product" src="/img/productslist/purina-mills.jpg" alt="img-productslist">
-                <article class="box-description-product">
-                    <i></i>
-                    <article class="price-of-product">
-                        <h2 class="price-of-product">$ 1350</h2>
-                    </article>
-                </article>
-            </article>
-            <article class="article-img-product">
-                <img class="img-product-product" src="/img/productslist/reptile-sticks.jpg" alt="img-productslist">
-                <article class="box-description-product">
-                    <i></i>
-                    <article class="price-of-product">
-                        <h2 class="price-of-product">$ 1890</h2>
-                    </article>
-                </article>
-            </article>
-        </section>
-    </section>
+    <!--Espacio header -->
+    <div class="gap"></div>
 
     <!-- VISTA DÍNAMICA DE PRODUCTOS -->
     <section>
-        <div class=""><h3>Todos los producto (Dinamico)</h3></div>
+        <div class="page-title"><h3>Todos los producto (Dinamico)</h3></div>
         <section class="product-list-container">
+
             <% products.forEach(producto => { %>
                 <article class="product-card">
-                    <div class="product-image-wrapper"><img class="product-image" src="/img/productslist/reptile-sticks.jpg" alt="products-image"></div>
-                    <div class="product-detail-wrapper">
-                        <p class="product-name"><strong><%= producto.name %></strong></p>
-                        <div class="product-price-wrapper">
-                            <p class="product-price"><strong>Precio: <%= producto.price %>$</strong></p>
-                            <p class="product-price-offer"><strong>Oferta: <%= producto.price %>$</strong></p>
+                    <a href="/products/detail/<%= producto.id %>">
+                        <div class="product-image-wrapper"><img class="product-image" src="/img/productslist/reptile-sticks.jpg" alt="products-image"></div>
+                        <div class="product-detail-wrapper">
+                            <p class="product-name"><strong><%= producto.name %></strong></p>
+                            <div class="product-price-wrapper">
+                                <p class="product-price"><strong>Precio: $<%= producto.price %></strong></p>
+                                <p class="product-price-offer"><strong>Oferta: $<%= producto.price %></strong></p>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </article>
+                
             <% }) %>
 
         </section>

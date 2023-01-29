@@ -14,54 +14,49 @@
         <div class="gap"></div>
 
         <div class="product-detail-container">
-            <p class="product-detail-title"> Detalles del producto </p>
+            <h3 class="page-title"> Detalles del producto </h3>
             <div class="product-detail-card">
                 <div id="image-wrap">
+                    <p class="featured-product"><i class="fas fa-solid fa-circle featured-product-icon"></i> Producto destacado</p>
                     <img href="/" src="/img/category-dog.png" alt="the pet's club-dog" class="image">
                 </div>
                 <div id="pd-information"><!--Inicia caracteristicas-->
                     <div class="title-wrap">
-                        <strong class="title">Titulo del producto</strong>
-                        <p class="featured-product"><i class="fas fa-solid fa-circle featured-product-icon"></i> Producto destacado</p>
+                        <strong class="title"><%= producto.name %></strong>
                     </div>
-                    <div class="price-wrap"><p class="text1">Precio regular:</p><strong class="price">$999</strong></div>
-                    <div class="price-wrap"><p class="text1">Precio regular:</p><strong class="price crossed-out">$999</strong></div>
-                    <div class="price-wrap"><p class="text1">Adquierelo por tan solo: </p><strong class="price-offer"><i class="fa-sharp fa-solid fa-bolt-lightning"></i> $999</strong></div>
+                    <% if (producto.priceOffer == null){ %>
+                        <div class="price-wrap"><p class="text1">Precio:</p><strong class="price">$<%= producto.price %></strong></div>
+                    <% }else{ %>
+                        <div class="price-wrap"><p class="text1">Precio regular:</p><strong class="price crossed-out">$<%= producto.price %></strong></div>
+                        <div class="price-wrap"><p class="text1">Adquierelo por tan solo: </p><strong class="offer"><i class="fa-sharp fa-solid fa-bolt-lightning"></i> $<%= producto.priceOffer %></strong></div>
+                    <% } %>
+
                     <div class="tags-wrap">
-                        <p class="wrap-subtitle text2">Recomendado para:</p>
-                        <p class="species"><i class="fas fa-solid fa-dog"></i> perros </p>
-                        <p class="species"><i class="fas fa-solid fa-cat"></i> gatos </p>
-                        <p class="species"><i class="fas fa-solid fa-crow"></i> aves </p>
-                        <p class="species"><i class="fas fa-fish-fins"></i> peces </p>
-                        <p class="species"><i class="fas fa-solid fa-rabbit"></i> mamiferos </p>
-                        <p class="species"><i class="fa-sharp fa-solid fa-snake"></i> reptiles </p>
-                    </div>
+                        <p class="wrap-subtitle text1">Recomendado para:</p>
+                        <p class="species"></i> <%= producto.especie %> </p>
+                    </div> <!-- si se puede sellecionar mas de una especia deberá guaradarse como lista-->
+                    
+
                     <div class="tags-wrap">
-                        <p class="category-tag"> Alimento </p>
-                        <p class="category-tag"> Juguetes </p>
-                        <p class="category-tag"> Habitat </p>
-                        <p class="category-tag"> Ropa </p>
-                        <p class="category-tag"> Accesorios </p>
-                        <p class="category-tag"> Otro </p>
+                        <% producto.category.forEach(tag => { %>
+                            <p class="category-tag"> <%= tag %> </p>
+                        <% }) %>
                     </div>
                     
-                    <div class="set-buttons-wrap"> <!--para el usuario-->
+                    <!--para el usuario--><!--
+                    <div class="set-buttons-wrap"> 
                         <p class="button"><a class="button-text" href="/">Agregar al carrito</a></p>
                         <p class="button"><a class="button-text" href="/">Comprar</a></p>
-                    </div>
+                    </div>-->
                     <div class="set-buttons-wrap"> <!--para admin-->
                         <p class="button"><a class="button-text" href="/">Editar</a></p>
                         <p class="button"><a class="button-text" href="/">Nuevo</a></p>
                     </div>
                 </div><!--termina Caracteristicas-->
                 <div id="description"><!--inicia description-->
-                    <p class="title">Descripción:</p>
-                    <p class="text">------------------------------------------------------------------------------------
-                        -----------------------------------------------------------------------------------
-                        ------------------------------------------------------------------------------------
-                        -----------------------------------------------------------------------------------
-                        ------------------------------------------------------------------------------------
-                    </p>
+                    <p class="title">Descripción: </p>
+                    <p class="text">SKU: <%= producto.id%></p>
+                    <p class="text"><%= producto.description %></p>
                 </div><!--termina description-->
             </div><!--termina product-detail-card-->
         </div><!--termina product-detail-container-->

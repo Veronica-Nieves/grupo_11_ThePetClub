@@ -1,7 +1,15 @@
 .gap{
-    height: 150px;
+    height: 100px;
 }
+
+.page-title{
+    width: 100%;
+    color: var(--verde);
+    text-align: center;
+}
+
 .product-detail-container{
+    width: 100%;
     padding: 20px 0px;
     display: flex;
     flex-wrap: wrap;
@@ -17,49 +25,29 @@
     justify-content: space-around;
     flex-direction: column;
     width: 90%;
+    max-width: 800px;
     padding: 10px;
     background-color: white;
     box-shadow: 0px 0px 30px -15px black;
     border-radius: 15px;
 }
 #image-wrap{
+    position: relative;
     display:flex;
     width: 100%;
     justify-content: center;
 }
+
 #image-wrap .image{
     border-radius: 10px;
-    width: 80%;
+    height: 300px;
     padding: auto;
     margin: 20px;
 }
-
-
-/* Caracteristicas*/
-#pd-information{
-    display:flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-    color: var(--verde);
-}
-#pd-information .title-wrap{
-    width: 100%;
-    padding: 7px 10px;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    border-bottom: solid 2px var(--verde);
-}
-#pd-information .title{
-    text-align: left;
-    font-size: 18px;
-    font-weight: 900;
-}
-
-#pd-information .featured-product{
+.featured-product{
+    position: absolute;
+    left: 2px;
+    top:2px;
     display:flex;
     width:90px;
     font-size: 10px;
@@ -70,11 +58,42 @@
     align-items: center;
     margin: 8px;
 }
-#pd-information .featured-product-icon{
+.featured-product-icon{
     font-size: 15px;
     margin-right: 5px;
     color: var(--verde);
 }
+
+
+/* Caracteristicas*/
+#pd-information{
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    color: var(--verde);
+    background-color: #f7fafd;
+    border-radius: 7px;
+}
+#pd-information .title-wrap{
+    width: 100%;
+    height: auto;
+    padding: 0px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-bottom: solid 2px var(--verde);
+    margin-bottom: 10px;
+}
+#pd-information .title{
+    text-align: left;
+    font-size: 18px;
+    font-weight: 900;
+}
+
+
 #pd-information .price-wrap{
     display:flex;
     flex-wrap: wrap;
@@ -83,11 +102,11 @@
     align-items: center;
 }
 #pd-information .text1{
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 600;
+    padding: 0px;
 }
 #pd-information .text2{
-    
     font-size: 14px;
     font-weight: 600;
 }
@@ -96,7 +115,7 @@
     font-size: 20px;
     font-weight: 700;  
 }
-#pd-information .price-offer{
+#pd-information .offer{
     font-weight: 900;
     color: maroon;
     font-size: 25px;
@@ -105,21 +124,22 @@
     text-decoration: line-through;
 }
 #pd-information .tags-wrap{
+    width: 100%;
     display:flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     color: var(--verde);
 }
 #pd-information .wrap-subtitle{
-    width: 100%;
     text-align: left;
 }
 #pd-information .species{
     color: var(--verde);
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 600;
+    padding: 0px;
 }
 #pd-information .category-tag{
     color: var(--verde);
@@ -128,7 +148,7 @@
     background-color: var(--celeste);
     border: solid 1px var(--sombra);
     border-radius: 5px;
-    margin: 3px;
+    margin: 7px;
 }
 #pd-information .set-buttons-wrap{
     width: 100%;
@@ -181,36 +201,50 @@
 
 /*-------- MOVIL-HORIZONTAL (481)-------*/
 @media (min-width: 481px) {
+    .gap{
+        height: 130px;
+    }
     #pd-information .button{
         width: 45%;
     }
-    #image-wrap .image{
-        width: 55%;
+    
+    #pd-information{
+        padding: 10px 10%;
     }
 }
 
 
 
-/*--------BREAKPOINT TABLET (770)-------*/
-@media (min-width: 770px) {
+/*--------BREAKPOINT TABLET (600)-------*/
+@media (min-width: 600px) {
     .product-detail-card{
         flex-direction: row;
         align-items: center;
     }
     #image-wrap{
-        width: 45%;
+        width: 55%;
     }
     #image-wrap .image{
-        width: 95%;
+        height: 350px;
     }
 
     #pd-information{
-        width: 53%;
+        width: 43%;
+        padding: 10px;
+        border-left: solid 1px var(--gris);
+    }
+    #pd-information .button{
+        width: 75%;
     }
 
 }
 
 /*--------BREAKPOINT PC (1200)-------*/
 @media (min-width: 1200px) {
-    
+    .gap{
+        height: 170px;
+    }
+    #pd-information .button{
+        width: 40%;
+    }
 }
