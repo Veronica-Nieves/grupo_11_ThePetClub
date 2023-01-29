@@ -9,9 +9,13 @@
     <%- include('../partials/header') %>
 
     <body>
-        <div> <!-- FORMULARIO CREAR PRODUCTO -->
-            <div class="form-title-container"><h3>Crear producto</h3></div>
-            <form action="/" method="GET" class="form-container">
+        <!--Espacio header -->
+        <div class="gap"></div>
+
+        <div class="form-container"> <!-- FORMULARIO CREAR PRODUCTO -->
+            <h3 class="page-title">Crear producto</h3>
+            <!--<form action="/products/create" method="POST" class="form-container">-->
+            <form action="/products/create" method="POST" >
 
                 <p class="form-field">
                 <input type="text" name="name" id="name" placeholder="Nombre del producto" required class="form-input">
@@ -84,19 +88,10 @@
                     </p>
                 </div>
                 
-
-                <!-- Rounded switch -->
-                <!-- 
-                <label class="switch">
-                    <input type="checkbox">
-                    <span class="slider round"></span>
-                </label>
-                -->
-                
                 <!--boton de formulario -->
                 <p class="form-buttons-container">
                 <button type="reset" class="form-button">Limpiar formulario</button>
-                <a href="/"><button type="submit" class="form-button"> Crear producto </button></a>
+                <button type="submit" class="form-button"> Crear producto </button>
                 </p>
 
             </form>
