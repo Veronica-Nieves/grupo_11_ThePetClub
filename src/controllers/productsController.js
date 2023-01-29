@@ -33,27 +33,30 @@ const controller = {
 
 // procesa los datos enviados en el formulariode crear un nuevo producto
   processCreate: (req, res) => {
-    //const productsArray = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-    //let productoNuevo = "hol2";
+    /* Nota: Si el usuario solo selecciona una especie el dato se guarda como string, pero si selecciona dos, se guarda lista. Antes de guardarlo debemos convertirlo SIEMPRE a lista []. Sucede lo mismo con categoría */
+    let listSpecie = [];
+    let listCategory = [];
+    if (typeof req.body.specie === 'string') { listSpecie[0] = req.body.specie } else { listSpecie = req.body.specie};
+    if (typeof req.body.category === 'string') { listCategory[0] = req.body.category} else { listCategory = req.body.category};
 
-
-
-    //res.send("nuevo formulario enviado");
-    console.log(req.body);
+    let productoNuevo = {
+      name:req.body.name,
+      id:req.body.id,
+      description:req.body.description,
+      image: "purina-mills.jpg",
+      price:req.body.price,
+      priceOffer: req.body.priceOffer,
+      specie: listSpecie,
+      category: listCategory,
+      offer: req.body.offer,
+      featured: req.body.featured,
+      pieces: req.body.pieces
+      }
     res.send(req.body);
   },
 
 
 
-
-/* ------------experimeinto vero ------------------------*/
-  newCreate: (req, res) => {
-    res.render('./products/create');
-  },
-  processNewCreate: (req, res)=>{
-    console.log(req.body);
-    res.send(req.body);
-  },
 
 
 /* Nacho*/

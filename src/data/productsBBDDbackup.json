@@ -6,8 +6,8 @@
         "image":"purina-mills.jpg",
         "price":800835,
         "priceOffer":471671,
-        "especie":"gatos",
-        "category":"habitat",
+        "specie":["gatos"],
+        "category":["habitat", "alimento"],
         "offer":"no",
         "featured":"si",
         "pieces":15
@@ -19,8 +19,8 @@
         "image":"purina-mills.jpg",
         "price":360591,
         "priceOffer":459764,
-        "especie":"aves",
-        "category":"otro",
+        "specie":["aves"],
+        "category":["otro"],
         "offer":"si",
         "featured":"no",
         "pieces":6
@@ -32,8 +32,8 @@
         "image":"purina-mills.jpg",
         "price":762259,
         "priceOffer":190538,
-        "especie":"peces",
-        "category":"alimento",
+        "specie":["peces"],
+        "category":["alimento"],
         "offer":"no",
         "featured":"si",
         "pieces":0
@@ -45,8 +45,8 @@
         "image":"purina-mills.jpg",
         "price":567655,
         "priceOffer":812226,
-        "especie":"gatos",
-        "category":"otro",
+        "specie":["gatos"],
+        "category":["otro"],
         "offer":"si",
         "featured":"no",
         "pieces":5
@@ -58,8 +58,8 @@
         "image":"purina-mills.jpg",
         "price":284161,
         "priceOffer":867736,
-        "especie":"mamiferos",
-        "category":"accesorios",
+        "specie":["mamiferos"],
+        "category":["accesorios"],
         "offer":"no",
         "featured":"si",
         "pieces":17
@@ -71,8 +71,8 @@
         "image":"purina-mills.jpg",
         "price":693422,
         "priceOffer":606744,
-        "especie":"reptiles",
-        "category":"accesorios",
+        "specie":["reptiles"],
+        "category":["accesorios"],
         "offer":"no",
         "featured":"si",
         "pieces":0
@@ -84,8 +84,8 @@
         "image":"purina-mills.jpg",
         "price":286754,
         "priceOffer":251348,
-        "especie":"gatos",
-        "category":"alimento",
+        "specie":["gatos"],
+        "category":["alimento"],
         "offer":"no",
         "featured":"no",
         "pieces":3
@@ -97,8 +97,8 @@
         "image":"purina-mills.jpg",
         "price":851998,
         "priceOffer":7469,
-        "especie":"gatos",
-        "category":"otro",
+        "specie":["gatos"],
+        "category":["otro"],
         "offer":"no",
          "featured":"no",
          "pieces":31
@@ -110,8 +110,8 @@
         "image":"purina-mills.jpg",
         "price":293409,
         "priceOffer":879622,
-        "especie":"aves",
-        "category":"otro",
+        "specie":["aves"],
+        "category":["otro"],
         "offer":"si",
         "featured":"si",
         "pieces":11
@@ -123,8 +123,8 @@
         "image":"purina-mills.jpg",
         "price":274672,
         "priceOffer":702788,
-        "especie":"mamiferos",
-        "category":"juguetes",
+        "specie":["mamiferos"],
+        "category":["juguetes"],
         "offer":"no",
         "featured":"no",
         "pieces":8
@@ -136,8 +136,8 @@
         "image":"purina-mills.jpg",
         "price":236693,
         "priceOffer":843644,
-        "especie":"reptiles",
-        "category":"ropa",
+        "specie":["reptiles"],
+        "category":["ropa"],
         "offer":"no",
         "featured":"no",
         "pieces":40
@@ -149,8 +149,8 @@
         "image":"purina-mills.jpg",
         "price":794889,
         "priceOffer":505317,
-        "especie":"aves",
-        "category":"accesorios",
+        "specie":["aves"],
+        "category":["accesorios"],
         "offer":"si",
         "featured":"no",
         "pieces":2
@@ -162,8 +162,8 @@
         "image":"purina-mills.jpg",
         "price":614749,
         "priceOffer":825293,
-        "especie":"mamiferos",
-        "category":"juguetes",
+        "specie":["mamiferos"],
+        "category":["juguetes"],
         "offer":"no",
         "featured":"no",
         "pieces":22
@@ -175,8 +175,8 @@
         "image":"purina-mills.jpg",
         "price":590961,
         "priceOffer":227102,
-        "especie":"aves",
-        "category":"habitat",
+        "specie":["aves"],
+        "category":["habitat"],
         "offer":"si",
         "featured":"no",
         "pieces":8
@@ -188,10 +188,10 @@
         "image":"purina-mills.jpg",
         "price":650181,
         "priceOffer":245454,
-        "especie":"mamiferos",
-        "category":"juguetes",
+        "specie":["mamiferos"],
+        "category":["juguetes"],
         "offer":"si",
         "featured":"si",
         "pieces":10
     }
-]
+    ]
