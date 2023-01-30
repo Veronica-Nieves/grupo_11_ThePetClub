@@ -52,7 +52,8 @@
 }
 
 .product-image{
-    height: 100%;
+    max-height: 300px;
+    max-width: 90%;
 }
 
 .product-detail-wrapper{

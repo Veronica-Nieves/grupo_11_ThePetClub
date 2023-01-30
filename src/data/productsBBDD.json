@@ -1,197 +1,350 @@
 [
-{
-    "name":"est donec",
-    "id":1,
-    "description":"pharetra magna vestibulum aliquet ultrices erat tortor sollicitudin mi sit amet lobortis sapien sapien non mi integer ac neque duis bibendum morbi non quam nec",
-    "image":"purina-mills.jpg",
-    "price":800835,
-    "priceOffer":471671,
-    "specie":["gatos"],
-    "category":["habitat", "alimento"],
-    "offer":"no",
-    "featured":"si",
-    "pieces":15
-},
-{
-    "name":"enim blandit mi in porttitor pede",
-    "id":2,
-    "description":"mus vivamus vestibulum sagittis sapien cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus etiam vel augue vestibulum rutrum rutrum neque aenean auctor gravida sem praesent id massa id nisl venenatis lacinia aenean sit amet justo morbi ut odio cras mi pede malesuada in imperdiet et commodo vulputate justo in blandit ultrices enim lorem ipsum dolor sit amet consectetuer adipiscing elit proin interdum mauris",
-    "image":"purina-mills.jpg",
-    "price":360591,
-    "priceOffer":459764,
-    "specie":["aves"],
-    "category":["otro"],
-    "offer":"si",
-    "featured":"no",
-    "pieces":6
-},
-{   
-    "name":"nisi vulputate nonummy maecenas tincidunt lacus at velit vivamus vel",
-    "id":3,
-    "description":"erat vestibulum sed magna at nunc commodo placerat praesent blandit nam nulla integer pede justo lacinia eget tincidunt",
-    "image":"purina-mills.jpg",
-    "price":762259,
-    "priceOffer":190538,
-    "specie":["peces"],
-    "category":["alimento"],
-    "offer":"no",
-    "featured":"si",
-    "pieces":0
-},
-{
-    "name":"sit amet eleifend",
-    "id":4,
-    "description":"mauris eget massa tempor convallis nulla neque libero convallis eget eleifend luctus ultricies eu nibh quisque id justo sit amet sapien dignissim vestibulum vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae nulla dapibus dolor vel est donec odio justo sollicitudin ut suscipit a feugiat et eros vestibulum ac est lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium nisl ut volutpat sapien arcu sed augue aliquam erat volutpat in congue etiam justo etiam pretium",
-    "image":"purina-mills.jpg",
-    "price":567655,
-    "priceOffer":812226,
-    "specie":["gatos"],
-    "category":["otro"],
-    "offer":"si",
-    "featured":"no",
-    "pieces":5
-},
-{
-    "name":"tortor",
-    "id":5,
-    "description":"augue vel accumsan tellus nisi eu orci mauris lacinia sapien quis libero nullam sit amet turpis elementum ligula vehicula consequat morbi a ipsum integer a nibh in quis justo maecenas rhoncus aliquam lacus morbi quis tortor id nulla ultrices aliquet maecenas leo odio condimentum id luctus nec molestie sed justo pellentesque viverra pede ac diam cras pellentesque volutpat dui maecenas tristique est et tempus semper est quam pharetra magna ac consequat metus sapien ut nunc vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae mauris viverra diam vitae",
-    "image":"purina-mills.jpg",
-    "price":284161,
-    "priceOffer":867736,
-    "specie":["mamiferos"],
-    "category":["accesorios"],
-    "offer":"no",
-    "featured":"si",
-    "pieces":17
-},
-{
-    "name":"nisl venenatis lacinia aenean",
-    "id":6,
-    "description":"massa tempor convallis nulla neque libero convallis eget eleifend luctus ultricies eu nibh quisque id justo sit amet sapien dignissim vestibulum vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae nulla dapibus dolor vel est donec odio justo sollicitudin ut suscipit a feugiat et",
-    "image":"purina-mills.jpg",
-    "price":693422,
-    "priceOffer":606744,
-    "specie":["reptiles"],
-    "category":["accesorios"],
-    "offer":"no",
-    "featured":"si",
-    "pieces":0
-},
-{
-    "name":"ac",
-    "id":7,
-    "description":"placerat praesent blandit nam nulla integer pede justo lacinia eget tincidunt eget tempus vel pede morbi porttitor lorem id ligula suspendisse ornare consequat lectus in est risus auctor sed tristique in tempus sit amet sem fusce consequat nulla nisl nunc nisl duis bibendum felis sed interdum venenatis turpis",
-    "image":"purina-mills.jpg",
-    "price":286754,
-    "priceOffer":251348,
-    "specie":["gatos"],
-    "category":["alimento"],
-    "offer":"no",
-    "featured":"no",
-    "pieces":3
-},
-{
-    "name":"ac lobortis vel dapibus at diam nam tristique tortor eu pede",
-    "id":8,
-    "description":"et ultrices posuere cubilia curae donec pharetra magna vestibulum aliquet ultrices erat tortor sollicitudin mi sit amet lobortis sapien sapien non mi integer ac neque duis bibendum morbi non quam nec dui luctus rutrum nulla tellus in sagittis dui vel nisl duis ac nibh fusce lacus purus aliquet at feugiat non pretium quis lectus suspendisse potenti in eleifend quam a odio in hac habitasse platea dictumst maecenas ut massa quis augue luctus tincidunt nulla mollis molestie lorem quisque ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst aliquam augue quam sollicitudin vitae",
-    "image":"purina-mills.jpg",
-    "price":851998,
-    "priceOffer":7469,
-    "specie":["gatos"],
-    "category":["otro"],
-    "offer":"no",
-     "featured":"no",
-     "pieces":31
-    },
-{
-    "name":"mollis",
-    "id":9,
-    "description":"enim lorem ipsum dolor sit amet consectetuer adipiscing elit proin interdum mauris non ligula pellentesque ultrices phasellus id sapien in sapien iaculis congue vivamus metus arcu adipiscing molestie hendrerit at vulputate vitae nisl aenean lectus pellentesque eget nunc donec quis orci eget orci vehicula condimentum curabitur in libero ut massa volutpat convallis morbi odio odio elementum eu interdum eu tincidunt in leo maecenas pulvinar lobortis est phasellus sit amet erat nulla tempus vivamus in felis eu sapien cursus vestibulum proin eu mi nulla ac enim in tempor turpis nec euismod scelerisque",
-    "image":"purina-mills.jpg",
-    "price":293409,
-    "priceOffer":879622,
-    "specie":["aves"],
-    "category":["otro"],
-    "offer":"si",
-    "featured":"si",
-    "pieces":11
-},
-{
-    "name":"quis odio consequat",
-    "id":10,
-    "description":"faucibus accumsan odio curabitur convallis duis consequat dui nec nisi volutpat eleifend donec ut dolor morbi vel lectus",
-    "image":"purina-mills.jpg",
-    "price":274672,
-    "priceOffer":702788,
-    "specie":["mamiferos"],
-    "category":["juguetes"],
-    "offer":"no",
-    "featured":"no",
-    "pieces":8
-},
-{
-    "name":"nisl nunc rhoncus dui vel sem sed sagittis nam congue",
-    "id":11,
-    "description":"adipiscing elit proin risus praesent lectus vestibulum quam sapien varius ut blandit non interdum in ante vestibulum ante ipsum",
-    "image":"purina-mills.jpg",
-    "price":236693,
-    "priceOffer":843644,
-    "specie":["reptiles"],
-    "category":["ropa"],
-    "offer":"no",
-    "featured":"no",
-    "pieces":40
-},
-{
-    "name":"turpis nec euismod scelerisque quam turpis adipiscing lorem vitae",
-    "id":12,
-    "description":"dolor vel est donec odio justo sollicitudin ut suscipit a feugiat et eros vestibulum ac est lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna",
-    "image":"purina-mills.jpg",
-    "price":794889,
-    "priceOffer":505317,
-    "specie":["aves"],
-    "category":["accesorios"],
-    "offer":"si",
-    "featured":"no",
-    "pieces":2
-},
-{
-    "name":"sem fusce consequat nulla nisl nunc nisl",
-    "id":13,
-    "description":"erat id mauris vulputate elementum nullam varius nulla facilisi cras non velit nec nisi vulputate nonummy maecenas tincidunt lacus at velit vivamus vel nulla eget eros elementum pellentesque quisque porta volutpat erat quisque erat eros viverra eget congue eget semper rutrum nulla nunc purus phasellus in felis donec semper sapien a libero nam dui proin leo odio porttitor id consequat in consequat ut nulla sed accumsan felis ut at dolor quis odio consequat varius integer ac leo pellentesque ultrices mattis odio",
-    "image":"purina-mills.jpg",
-    "price":614749,
-    "priceOffer":825293,
-    "specie":["mamiferos"],
-    "category":["juguetes"],
-    "offer":"no",
-    "featured":"no",
-    "pieces":22
-},
-{
-    "name":"habitasse platea dictumst aliquam augue quam sollicitudin vitae",
-    "id":14,
-    "description":"nisl venenatis lacinia aenean sit amet justo morbi ut odio cras mi pede malesuada in imperdiet et commodo vulputate justo in blandit ultrices enim lorem ipsum dolor sit amet consectetuer adipiscing elit proin",
-    "image":"purina-mills.jpg",
-    "price":590961,
-    "priceOffer":227102,
-    "specie":["aves"],
-    "category":["habitat"],
-    "offer":"si",
-    "featured":"no",
-    "pieces":8
-},
-{
-    "name":"morbi non",
-    "id":15,
-    "description":"amet erat nulla tempus vivamus in felis eu sapien cursus vestibulum proin eu mi nulla ac enim in tempor turpis nec euismod scelerisque quam turpis adipiscing lorem vitae mattis nibh ligula",
-    "image":"purina-mills.jpg",
-    "price":650181,
-    "priceOffer":245454,
-    "specie":["mamiferos"],
-    "category":["juguetes"],
-    "offer":"si",
-    "featured":"si",
-    "pieces":10
-}
+ {
+  "name": "est donec",
+  "id": 1,
+  "sku": "sku1",
+  "description": "pharetra magna vestibulum aliquet ultrices erat tortor sollicitudin mi sit amet lobortis sapien sapien non mi integer ac neque duis bibendum morbi non quam nec",
+  "image": "purina-mills.jpg",
+  "price": 800835,
+  "priceOffer": 471671,
+  "specie": [
+   "gatos"
+  ],
+  "category": [
+   "habitat",
+   "alimento"
+  ],
+  "offer": "no",
+  "featured": "si",
+  "pieces": 15
+ },
+ {
+  "name": "enim blandit mi in porttitor pede",
+  "id": 2,
+  "sku": "sku2",
+  "description": "mus vivamus vestibulum sagittis sapien cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus etiam vel augue vestibulum rutrum rutrum neque aenean auctor gravida sem praesent id massa id nisl venenatis lacinia aenean sit amet justo morbi ut odio cras mi pede malesuada in imperdiet et commodo vulputate justo in blandit ultrices enim lorem ipsum dolor sit amet consectetuer adipiscing elit proin interdum mauris",
+  "image": "purina-mills.jpg",
+  "price": 360591,
+  "priceOffer": 459764,
+  "specie": [
+   "aves"
+  ],
+  "category": [
+   "otro"
+  ],
+  "offer": "si",
+  "featured": "no",
+  "pieces": 6
+ },
+ {
+  "name": "nisi vulputate nonummy maecenas tincidunt lacus at velit vivamus vel",
+  "id": 3,
+  "sku": "sku3",
+  "description": "erat vestibulum sed magna at nunc commodo placerat praesent blandit nam nulla integer pede justo lacinia eget tincidunt",
+  "image": "purina-mills.jpg",
+  "price": 762259,
+  "priceOffer": 190538,
+  "specie": [
+   "peces"
+  ],
+  "category": [
+   "alimento"
+  ],
+  "offer": "no",
+  "featured": "si",
+  "pieces": 0
+ },
+ {
+  "name": "sit amet eleifend",
+  "id": 4,
+  "sku": "sku4",
+  "description": "mauris eget massa tempor convallis nulla neque libero convallis eget eleifend luctus ultricies eu nibh quisque id justo sit amet sapien dignissim vestibulum vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae nulla dapibus dolor vel est donec odio justo sollicitudin ut suscipit a feugiat et eros vestibulum ac est lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium nisl ut volutpat sapien arcu sed augue aliquam erat volutpat in congue etiam justo etiam pretium",
+  "image": "purina-mills.jpg",
+  "price": 567655,
+  "priceOffer": 812226,
+  "specie": [
+   "gatos"
+  ],
+  "category": [
+   "otro"
+  ],
+  "offer": "si",
+  "featured": "no",
+  "pieces": 5
+ },
+ {
+  "name": "tortor",
+  "id": 5,
+  "sku": "sku5",
+  "description": "augue vel accumsan tellus nisi eu orci mauris lacinia sapien quis libero nullam sit amet turpis elementum ligula vehicula consequat morbi a ipsum integer a nibh in quis justo maecenas rhoncus aliquam lacus morbi quis tortor id nulla ultrices aliquet maecenas leo odio condimentum id luctus nec molestie sed justo pellentesque viverra pede ac diam cras pellentesque volutpat dui maecenas tristique est et tempus semper est quam pharetra magna ac consequat metus sapien ut nunc vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae mauris viverra diam vitae",
+  "image": "purina-mills.jpg",
+  "price": 284161,
+  "priceOffer": 867736,
+  "specie": [
+   "mamiferos"
+  ],
+  "category": [
+   "accesorios"
+  ],
+  "offer": "no",
+  "featured": "si",
+  "pieces": 17
+ },
+ {
+  "name": "nisl venenatis lacinia aenean",
+  "id": 6,
+  "sku": "sku6",
+  "description": "massa tempor convallis nulla neque libero convallis eget eleifend luctus ultricies eu nibh quisque id justo sit amet sapien dignissim vestibulum vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae nulla dapibus dolor vel est donec odio justo sollicitudin ut suscipit a feugiat et",
+  "image": "purina-mills.jpg",
+  "price": 693422,
+  "priceOffer": 606744,
+  "specie": [
+   "reptiles"
+  ],
+  "category": [
+   "accesorios"
+  ],
+  "offer": "no",
+  "featured": "si",
+  "pieces": 0
+ },
+ {
+  "name": "ac",
+  "id": 7,
+  "sku": "sku7",
+  "description": "placerat praesent blandit nam nulla integer pede justo lacinia eget tincidunt eget tempus vel pede morbi porttitor lorem id ligula suspendisse ornare consequat lectus in est risus auctor sed tristique in tempus sit amet sem fusce consequat nulla nisl nunc nisl duis bibendum felis sed interdum venenatis turpis",
+  "image": "purina-mills.jpg",
+  "price": 286754,
+  "priceOffer": 251348,
+  "specie": [
+   "gatos"
+  ],
+  "category": [
+   "alimento"
+  ],
+  "offer": "no",
+  "featured": "no",
+  "pieces": 3
+ },
+ {
+  "name": "ac lobortis vel dapibus at diam nam tristique tortor eu pede",
+  "id": 8,
+  "sku": "sku8",
+  "description": "et ultrices posuere cubilia curae donec pharetra magna vestibulum aliquet ultrices erat tortor sollicitudin mi sit amet lobortis sapien sapien non mi integer ac neque duis bibendum morbi non quam nec dui luctus rutrum nulla tellus in sagittis dui vel nisl duis ac nibh fusce lacus purus aliquet at feugiat non pretium quis lectus suspendisse potenti in eleifend quam a odio in hac habitasse platea dictumst maecenas ut massa quis augue luctus tincidunt nulla mollis molestie lorem quisque ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst aliquam augue quam sollicitudin vitae",
+  "image": "purina-mills.jpg",
+  "price": 851998,
+  "priceOffer": 7469,
+  "specie": [
+   "gatos"
+  ],
+  "category": [
+   "otro"
+  ],
+  "offer": "no",
+  "featured": "no",
+  "pieces": 31
+ },
+ {
+  "name": "mollis",
+  "id": 9,
+  "sku": "sku9",
+  "description": "enim lorem ipsum dolor sit amet consectetuer adipiscing elit proin interdum mauris non ligula pellentesque ultrices phasellus id sapien in sapien iaculis congue vivamus metus arcu adipiscing molestie hendrerit at vulputate vitae nisl aenean lectus pellentesque eget nunc donec quis orci eget orci vehicula condimentum curabitur in libero ut massa volutpat convallis morbi odio odio elementum eu interdum eu tincidunt in leo maecenas pulvinar lobortis est phasellus sit amet erat nulla tempus vivamus in felis eu sapien cursus vestibulum proin eu mi nulla ac enim in tempor turpis nec euismod scelerisque",
+  "image": "purina-mills.jpg",
+  "price": 293409,
+  "priceOffer": 879622,
+  "specie": [
+   "aves"
+  ],
+  "category": [
+   "otro"
+  ],
+  "offer": "si",
+  "featured": "si",
+  "pieces": 11
+ },
+ {
+  "name": "quis odio consequat",
+  "id": 10,
+  "sku": "sku10",
+  "description": "faucibus accumsan odio curabitur convallis duis consequat dui nec nisi volutpat eleifend donec ut dolor morbi vel lectus",
+  "image": "purina-mills.jpg",
+  "price": 274672,
+  "priceOffer": 702788,
+  "specie": [
+   "mamiferos"
+  ],
+  "category": [
+   "juguetes"
+  ],
+  "offer": "no",
+  "featured": "no",
+  "pieces": 8
+ },
+ {
+  "name": "nisl nunc rhoncus dui vel sem sed sagittis nam congue",
+  "id": 11,
+  "sku": "sku11",
+  "description": "adipiscing elit proin risus praesent lectus vestibulum quam sapien varius ut blandit non interdum in ante vestibulum ante ipsum",
+  "image": "purina-mills.jpg",
+  "price": 236693,
+  "priceOffer": 843644,
+  "specie": [
+   "reptiles"
+  ],
+  "category": [
+   "ropa"
+  ],
+  "offer": "no",
+  "featured": "no",
+  "pieces": 40
+ },
+ {
+  "name": "turpis nec euismod scelerisque quam turpis adipiscing lorem vitae",
+  "id": 12,
+  "sku": "sku2",
+  "description": "dolor vel est donec odio justo sollicitudin ut suscipit a feugiat et eros vestibulum ac est lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna",
+  "image": "purina-mills.jpg",
+  "price": 794889,
+  "priceOffer": 505317,
+  "specie": [
+   "aves"
+  ],
+  "category": [
+   "accesorios"
+  ],
+  "offer": "si",
+  "featured": "no",
+  "pieces": 2
+ },
+ {
+  "name": "sem fusce consequat nulla nisl nunc nisl",
+  "id": 13,
+  "sku": "sku13",
+  "description": "erat id mauris vulputate elementum nullam varius nulla facilisi cras non velit nec nisi vulputate nonummy maecenas tincidunt lacus at velit vivamus vel nulla eget eros elementum pellentesque quisque porta volutpat erat quisque erat eros viverra eget congue eget semper rutrum nulla nunc purus phasellus in felis donec semper sapien a libero nam dui proin leo odio porttitor id consequat in consequat ut nulla sed accumsan felis ut at dolor quis odio consequat varius integer ac leo pellentesque ultrices mattis odio",
+  "image": "purina-mills.jpg",
+  "price": 614749,
+  "priceOffer": 825293,
+  "specie": [
+   "mamiferos"
+  ],
+  "category": [
+   "juguetes"
+  ],
+  "offer": "no",
+  "featured": "no",
+  "pieces": 22
+ },
+ {
+  "name": "habitasse platea dictumst aliquam augue quam sollicitudin vitae",
+  "id": 14,
+  "sku": "sku14",
+  "description": "nisl venenatis lacinia aenean sit amet justo morbi ut odio cras mi pede malesuada in imperdiet et commodo vulputate justo in blandit ultrices enim lorem ipsum dolor sit amet consectetuer adipiscing elit proin",
+  "image": "purina-mills.jpg",
+  "price": 590961,
+  "priceOffer": 227102,
+  "specie": [
+   "aves"
+  ],
+  "category": [
+   "habitat"
+  ],
+  "offer": "si",
+  "featured": "no",
+  "pieces": 8
+ },
+ {
+  "name": "morbi non",
+  "id": 15,
+  "sku": "sku15",
+  "description": "amet erat nulla tempus vivamus in felis eu sapien cursus vestibulum proin eu mi nulla ac enim in tempor turpis nec euismod scelerisque quam turpis adipiscing lorem vitae mattis nibh ligula",
+  "image": "purina-mills.jpg",
+  "price": 650181,
+  "priceOffer": 245454,
+  "specie": [
+   "mamiferos"
+  ],
+  "category": [
+   "juguetes"
+  ],
+  "offer": "si",
+  "featured": "si",
+  "pieces": 10
+ },
+ {
+  "name": "Alimento para hamster",
+  "id": 16,
+  "sku": "ALHA123",
+  "description": "Descripción del alimento para hamster",
+  "image": "purina-mills.jpg",
+  "price": "250",
+  "priceOffer": "229",
+  "specie": [
+   "perros",
+   "gatos",
+   "mamiferos"
+  ],
+  "category": [
+   "alimento"
+  ],
+  "offer": "si",
+  "featured": "si",
+  "pieces": "5"
+ },
+ {
+  "name": "Rueda Hamster",
+  "id": 17,
+  "sku": "RUE123",
+  "description": "Rueda para hamaster",
+  "image": "purina-mills.jpg",
+  "price": "300",
+  "priceOffer": "247",
+  "specie": [
+   "mamiferos"
+  ],
+  "category": [
+   "juguetes",
+   "habitat"
+  ],
+  "offer": "si",
+  "featured": "si",
+  "pieces": "6"
+ },
+ {
+  "name": "Rueda Hamster",
+  "id": 18,
+  "sku": "RUE123",
+  "description": "Rueda para hamaster",
+  "image": "image-1675049856716.jpg",
+  "price": "300",
+  "priceOffer": "247",
+  "specie": [
+   "mamiferos"
+  ],
+  "category": [
+   "juguetes",
+   "habitat"
+  ],
+  "offer": "si",
+  "featured": "si",
+  "pieces": "6"
+ },
+ {
+  "name": "Alimento Mazuri para Hamter",
+  "id": 19,
+  "sku": "MAZ001",
+  "description": "Alimento Mazuri para hasmter y pequeños roedores",
+  "image": "image-1675050314198.jpg",
+  "price": "250",
+  "priceOffer": "233",
+  "specie": [
+   "mamiferos"
+  ],
+  "category": [
+   "alimento",
+   "otro"
+  ],
+  "offer": "si",
+  "featured": "si",
+  "pieces": "9"
+ }
 ]

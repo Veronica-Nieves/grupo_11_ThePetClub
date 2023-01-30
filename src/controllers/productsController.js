@@ -16,6 +16,7 @@ const controller = {
     res.render('./products/products-list', {products: productsArray})
 	},
 
+
 // muestra la vista del detalle del producto correpondiente al id pasado en la url
   detail: (req, res) => {
     const productsArray = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -26,13 +27,17 @@ const controller = {
     res.render('./products/products-detail', {producto: productoSolicitado})
 	},
 
+
 // renderiza el formulario para la carga de un nuevo producto
   create: (req, res) => {
     res.render('./products/products-create');
   },
 
+
 // procesa los datos enviados en el formulariode crear un nuevo producto
   processCreate: (req, res) => {
+    const productsArray = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
     /* Nota: Si el usuario solo selecciona una especie el dato se guarda como string, pero si selecciona dos, se guarda lista. Antes de guardarlo debemos convertirlo SIEMPRE a lista []. Sucede lo mismo con categoría */
     let listSpecie = [];
     let listCategory = [];
@@ -41,9 +46,10 @@ const controller = {
 
     let productoNuevo = {
       name:req.body.name,
-      id:req.body.id,
+      id: products[products.length-1].id + 1,
+      sku: req.body.sku,
       description:req.body.description,
-      image: "purina-mills.jpg",
+      image: req.file ? req.file.filename : "product-default-image.jpg",
       price:req.body.price,
       priceOffer: req.body.priceOffer,
       specie: listSpecie,
@@ -52,7 +58,10 @@ const controller = {
       featured: req.body.featured,
       pieces: req.body.pieces
       }
-    res.send(req.body);
+    /*agregamos el nuevo producto en el array de productos*/
+    productsArray.push(productoNuevo);
+    fs.writeFileSync(productsFilePath, JSON.stringify(productsArray, null, " "));
+    res.redirect("/products/")
   },
 
 

@@ -11,19 +11,18 @@
     <main>
         <!--Espacio header -->
         <div class="gap"></div>
+        <div class="page-title"><h3>Crear producto</h3></div>
 
-        <div id="products-form"> <!-- FORMULARIO CREAR PRODUCTO -->
-            <div class="page-title"><h3>Crear producto</h3></div>
-
-            <form action="/products/create" method="POST" class="form-container">
-            <!--<form action="/products/create" method="POST">-->
+        <!-- FORMULARIO CREAR PRODUCTO -->
+        <div id="products-form">
+            <form action="/products/create" method="POST" enctype="multipart/form-data" class="form-container" >
 
                 <p class="form-field">
                 <input type="text" name="name" id="name" placeholder="Nombre del producto" required class="form-input">
                 </p>
 
                 <p class="form-field">
-                <input type="text" name="id" id="id" placeholder="SKU" required class="form-input">
+                <input type="text" name="sku" id="sku" placeholder="SKU" required class="form-input">
                 </p>
         
                 <p class="form-field">
@@ -33,7 +32,7 @@
         
                 <p class="form-field">
                 <label for="name">Imagen</label>
-                <input type="file" name="image" id="image" accept=".jpg" required class="form-input">
+                <input type="file" name="image" id="image" accept=".jpg" class="form-input">
                 </p>
 
                 <div class="form-2-columns-container">

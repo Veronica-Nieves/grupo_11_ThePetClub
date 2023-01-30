@@ -12,15 +12,19 @@
     <main>
         <!--Espacio header -->
         <div class="gap"></div>
-
+        
         <div class="product-detail-container">
             <h3 class="page-title"> Detalles del producto </h3>
             <div class="product-detail-card">
+
+            <!--IMAGEN-->
                 <div id="image-wrap">
                     <p class="featured-product"><i class="fas fa-solid fa-circle featured-product-icon"></i> Producto destacado</p>
-                    <img href="/" src="/img/category-dog.png" alt="the pet's club-dog" class="image">
+                    <img href="/" src="/img/productslist/<%= producto.image %>" alt="the pet's club-dog" class="image">
                 </div>
-                <div id="pd-information"><!--Inicia caracteristicas-->
+
+            <!--CARACTERISTICAS-->
+                <div id="pd-information">
                     <div class="title-wrap">
                         <strong class="title"><%= producto.name %></strong>
                     </div>
@@ -33,9 +37,10 @@
 
                     <div class="tags-wrap">
                         <p class="wrap-subtitle text1">Recomendado para:</p>
-                        <p class="species"></i> <%= producto.especie %> </p>
-                    </div> <!-- si se puede sellecionar mas de una especia deberá guaradarse como lista-->
-                    
+                        <% producto.specie.forEach(pet => { %>
+                            <p class="species"><%= pet %>, </p>
+                        <% }) %>
+                    </div> 
 
                     <div class="tags-wrap">
                         <% producto.category.forEach(tag => { %>
@@ -43,21 +48,26 @@
                         <% }) %>
                     </div>
                     
-                    <!--para el usuario--><!--
+                    <!--botones visisbles para un usuario cliente, se usaran después--><!--
                     <div class="set-buttons-wrap"> 
                         <p class="button"><a class="button-text" href="/">Agregar al carrito</a></p>
                         <p class="button"><a class="button-text" href="/">Comprar</a></p>
                     </div>-->
-                    <div class="set-buttons-wrap"> <!--para admin-->
+
+                    <!--botones visisbles para un usuario admin-->
+                    <div class="set-buttons-wrap">
                         <p class="button"><a class="button-text" href="/">Editar</a></p>
                         <p class="button"><a class="button-text" href="/">Nuevo</a></p>
                     </div>
-                </div><!--termina Caracteristicas-->
-                <div id="description"><!--inicia description-->
+                </div>
+
+            <!--DESCRIPCIÓN-->
+                <div id="description">
                     <p class="title">Descripción: </p>
-                    <p class="text">SKU: <%= producto.id%></p>
+                    <p class="text">SKU: <%= producto.sku%></p>
                     <p class="text"><%= producto.description %></p>
-                </div><!--termina description-->
+                </div>
+
             </div><!--termina product-detail-card-->
         </div><!--termina product-detail-container-->
 

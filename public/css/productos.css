@@ -40,7 +40,8 @@
 
 #image-wrap .image{
     border-radius: 10px;
-    height: 300px;
+    max-height: 300px;
+    max-width: 90%;
     padding: auto;
     margin: 20px;
 }
@@ -51,8 +52,8 @@
     display:flex;
     width:90px;
     font-size: 10px;
-    font-weight: 600;;
-    background-color: rgb(111, 181, 183);
+    font-weight: 600;
+    background-color: var(--amarillo);
     color: var(--verde);
     border-radius: 8px;
     align-items: center;
@@ -78,13 +79,14 @@
 #pd-information .title-wrap{
     width: 100%;
     height: auto;
-    padding: 0px 10px;
+    padding: 10px 5px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     border-bottom: solid 2px var(--verde);
+
     margin-bottom: 10px;
 }
 #pd-information .title{
@@ -177,6 +179,7 @@
 
 /* description */
 #description{
+    width: 100%;
     padding-top: 10px;
     border-top: solid 1px var(--gris);
 }
