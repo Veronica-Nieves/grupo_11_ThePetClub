@@ -33,7 +33,7 @@ router.get('/create/', productsController.create);
 
 router.post('/create/', upload.single("image") , productsController.processCreate);
 
-router.get('/edit/', productsController.edit);
+router.get('/edit/:id', productsController.edit);
 
 router.get('/carrito-compras', productsController.carrito);
 

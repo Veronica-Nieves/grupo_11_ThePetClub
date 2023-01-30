@@ -70,8 +70,11 @@ const controller = {
 
 /* Nacho*/
   edit: (req, res) => {
-    res.render('./products/products-edit');
-    
+    let id = req.params.id
+    const productsArray = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+    let userToEdit = productsArray[id]
+
+    res.render("./products/products-edit", {userToEdit: userToEdit})
   },
 
   carrito: (req, res) => {
