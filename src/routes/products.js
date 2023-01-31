@@ -35,6 +35,8 @@ router.post('/create/', upload.single("image") , productsController.processCreat
 
 router.get('/edit/:id', productsController.edit);
 
+router.put('/edit/:id', productsController.update)
+
 router.get('/carrito-compras', productsController.carrito);
 
 /* -------------------- F I N   D E   R U T A S ---------------------*/

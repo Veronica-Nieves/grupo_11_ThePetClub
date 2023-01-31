@@ -56,21 +56,15 @@
  },
  {
   "name": "sit amet eleifend",
-  "id": 4,
+  "id": 5,
   "sku": "sku4",
-  "description": "mauris eget massa tempor convallis nulla neque libero convallis eget eleifend luctus ultricies eu nibh quisque id justo sit amet sapien dignissim vestibulum vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae nulla dapibus dolor vel est donec odio justo sollicitudin ut suscipit a feugiat et eros vestibulum ac est lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium nisl ut volutpat sapien arcu sed augue aliquam erat volutpat in congue etiam justo etiam pretium",
+  "description": "mauris eget massa tempor convallis nulla neque libero convallis eget eleifend luctus ultricies eu nibh quisque id justo sit amet sapien dignissim vestibulum vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae nulla dapibus dolor vel est donec odio justo sollicitudin ut suscipit a feugiat et eros vestibulum ac est lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium nisl ut volutpat sapien arcu sed augue aliquam erat volutpat in congue etiam justo etiam pretium\"",
   "image": "purina-mills.jpg",
-  "price": 567655,
-  "priceOffer": 812226,
-  "specie": [
-   "gatos"
-  ],
-  "category": [
-   "otro"
-  ],
+  "price": "567655",
+  "specie": "perros",
   "offer": "si",
-  "featured": "no",
-  "pieces": 5
+  "featured": "si",
+  "pieces": "5"
  },
  {
   "name": "tortor",
@@ -254,21 +248,15 @@
  },
  {
   "name": "morbi non",
-  "id": 15,
+  "id": 16,
   "sku": "sku15",
-  "description": "amet erat nulla tempus vivamus in felis eu sapien cursus vestibulum proin eu mi nulla ac enim in tempor turpis nec euismod scelerisque quam turpis adipiscing lorem vitae mattis nibh ligula",
+  "description": "amet erat nulla tempus vivamus in felis eu sapien cursus vestibulum proin eu mi nulla ac enim in tempor turpis nec euismod scelerisque quam turpis adipiscing lorem vitae mattis nibh ligula\"",
   "image": "purina-mills.jpg",
-  "price": 650181,
-  "priceOffer": 245454,
-  "specie": [
-   "mamiferos"
-  ],
-  "category": [
-   "juguetes"
-  ],
+  "price": "650181",
+  "specie": "aves",
   "offer": "si",
   "featured": "si",
-  "pieces": 10
+  "pieces": "10"
  },
  {
   "name": "Alimento para hamster",
