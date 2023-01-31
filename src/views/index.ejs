@@ -56,57 +56,67 @@
 
         <section class="category-section-sale">
             <div class="section-tittle"><h3>Ofertas</h3></div>
+            <!-- Mostrar los productos en OFERTA dinámicamente -->
             <section class="section-article-sale">
+                <% productsSale.forEach(producto => { %>
                 <article class="article-img-sale">
-                    <img class="img-product-sale" src="img/section-sale/dog-food.jpg" alt="img-sale-dog">
+                    <a href="/products/detail/<%= producto.id %>">
+                    <img class="img-product-sale" src="img/section-sale/<%= producto.image %>" alt="img-sale-dog">
                     <article class="box-description-sale">
-                        <i></i>
                         <article class="price-and-discounts">
-                            <h2 class="price-product-sale">$ 5000</h2>
-                            <h3 class="discounts-product-sale">25%</h3>
+                            <p><%= producto.name %></p>
+                            <h2 class="price-product-sale">$ <%= producto.price %></h2>
+                            <h3 class="discounts-product-sale"><%= producto.discounts %> %</h3>
                         </article>
+                    </a>
                     </article>
                 </article>
-                <article class="article-img-sale">
+                <% }) %>
+                <!-- <article class="article-img-sale">
+                    <a href="/products/detail/">
                     <img class="img-product-sale" src="img/section-sale/pack-royal-canin-cat.png" alt="img-sale-cat">
                     <article class="box-description-sale">
-                        <i></i>
                         <article class="price-and-discounts">
                             <h2 class="price-product-sale">$ 2500</h2>
                             <h3 class="discounts-product-sale">30%</h3>
                         </article>
                     </article>
+                    </a>
                 </article>
                 <article class="article-img-sale">
+                    <a href="/products/detail/">
                     <img class="img-product-sale" src="img/section-sale/fish-food.jpg" alt="img-sale-fish">
                     <article class="box-description-sale">
-                        <i></i>
                         <article class="price-and-discounts">
                             <h2 class="price-product-sale">$ 1900</h2>
                             <h3 class="discounts-product-sale">15%</h3>
                         </article>
+                        </a>
                     </article>
-                </article>
+                </article> -->
             </section>
         </section>
 
     <!-- Productos-->
         <section class="category-section-products">
             <div class="section-tittle"><h3>Productos</h3></div>
+            <!-- Mostrar los productos de home dinámicamente -->
             <section class="section-article-products">
-                <article class="article-img-product">
-                    <img class="img-product-product" src="img/section-products/fragance-dogs.jpg" alt="img-sale-dog">
+                <% productsFeatured.forEach(producto => { %>
+                <article class="article-img-product"> 
+                    <a href="/products/detail/<%= producto.id %>">
+                    <img class="img-product-product" src="img/section-products-home/<%= producto.image %>" alt="img-sale-dog">
                     <article class="box-description-product">
-                        <i></i>
                         <article class="price-of-product">
-                            <h2 class="price-of-product">$ 1220</h2>
+                            <h2 class="price-of-product">$ <%= producto.price %></h2>
                         </article>
                     </article>
+                    </a>
                 </article>
-                <article class="article-img-product">
+                <% }) %>
+                <!-- <article class="article-img-product">
                     <img class="img-product-product" src="img/section-products/toys-animals.jpg" alt="img-sale-cat">
                     <article class="box-description-product">
-                        <i></i>
                         <article class="price-of-product">
                             <h2 class="price-of-product">$ 950</h2>
                         </article>
@@ -115,12 +125,11 @@
                 <article class="article-img-product">
                     <img class="img-product-product" src="img/section-products/animals-transporter.jpg" alt="img-sale-fish">
                     <article class="box-description-product">
-                        <i></i>
                         <article class="price-of-product">
                             <h2 class="price-of-product">$ 6450</h2>
                         </article>
                     </article>
-                </article>
+                </article> -->
             </section>
         </section>
         
