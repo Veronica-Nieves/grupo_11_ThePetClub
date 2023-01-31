@@ -70,11 +70,44 @@ const controller = {
 
 /* Nacho*/
   edit: (req, res) => {
+
     let id = req.params.id
     const productsArray = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
     let userToEdit = productsArray[id]
 
     res.render("./products/products-edit", {userToEdit: userToEdit})
+  },
+
+  update: (req,res) => {
+
+    const productsArray = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
+    let id = req.params.id
+
+    let userToEdit = productsArray[id]
+
+    let productoEditado = {
+      name:req.body.name,
+      id: userToEdit.id,
+      sku: req.body.sku,
+      description:req.body.description,
+      image: userToEdit.image,
+      price:req.body.price,
+      priceOffer: req.body.priceOffer,
+      specie: userToEdit.specie,
+      category: userToEdit.category,
+      offer: userToEdit.offer,
+      featured: userToEdit.featured,
+      pieces: userToEdit.pieces
+      }
+
+    let indice = productsArray.findIndex(product =>{
+      return product.id == id
+    });
+    
+    productsArray[indice] = productoEditado;
+    fs.writeFileSync(productsFilePath, JSON.stringify(productsArray, null, " "));
+    res.redirect("/products/")
   },
 
   carrito: (req, res) => {

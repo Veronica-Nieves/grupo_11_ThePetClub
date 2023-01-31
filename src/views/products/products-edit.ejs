@@ -15,33 +15,33 @@
 
         <!--FORMULARIO EDITAR PRODUCTO -->
         <div id="products-form">
-            <form action="/" method="GET" class="form-container">
+            <form action="/products/edit/<%= userToEdit.id %>?_method=PUT" method="POST" class="form-container">
 
                 <p class="form-field">
                 <input type="text" name="name" id="name" placeholder="Nombre del producto" required class="form-input" value="<%= userToEdit.name %>">
                 </p>
 
                 <p class="form-field">
-                <input type="text" name="sku" id="sku" placeholder="SKU" required class="form-input">
+                <input type="text" name="sku" id="sku" placeholder="SKU" required class="form-input" value="<%= userToEdit.sku %>">
                 </p>
         
                 <p class="form-field">
                 <label>Descripción</label>
-                <textarea name="description" placeholder="Indica las características del prodcuto como color, peso, sabor, contenido, talla, etc. " required class="form-input-text-area"></textarea>
+                <textarea name="description" placeholder="Indica las características del prodcuto como color, peso, sabor, contenido, talla, etc. " required class="form-input-text-area" ><%= userToEdit.description %>"</textarea>
                 </p>
         
                 <p class="form-field">
                 <label for="name">Imagen</label>
-                <input type="file" name="image" id="image" accept=".jpg" required class="form-input">
+                <input type="file" name="image" id="image" accept=".jpg" required class="form-input" value="<%= userToEdit.image %>">
                 </p>
 
                 <div class="form-2-columns-container">
                     <p class="form-field  col-50">
-                    <input type="number" name="price" id="price" placeholder="Precio" min="0"required class="form-input">
+                    <input type="number" name="price" id="price" placeholder="Precio" min="0"required class="form-input" value="<%= userToEdit.price %>">
                     </p>
 
                     <p class="form-field col-50">
-                    <input type="number" name="price-offer" id="price-offer" placeholder="Precio de oferta" min="0" required class="form-input">
+                    <input type="number" name="price-offer" id="price-offer" placeholder="Precio de oferta" min="0" required class="form-input" value="<%= userToEdit.priceOffer %>">
                     </p>
                 </div>
 
@@ -70,7 +70,7 @@
                 <div class="form-3-columns-container">
                     <p class="form-field col-30">
 						<label><strong>En oferta: </label></strong></label>
-						<select name="offer" id="offer" class="form-input">
+						<select name="offer" id="offer" class="form-input" >
 							<option value="si">Sí</option>
 							<option value="no">No</option>
 						</select>
@@ -84,14 +84,14 @@
 					</p>
                     <p class="form-field col-30">
                         <label><strong>Piezas </label></strong></label>
-                        <input type="number" name="pieces" id="pieces" placeholder="12" min="0" required class="form-input">
+                        <input type="number" name="pieces" id="pieces" placeholder="12" min="0" required class="form-input" value="<%= userToEdit.pieces %>">
                     </p>
                 </div>
                 
                 <!--boton de formulario -->
                 <p class="form-buttons-container">
                 <button type="reset" class="form-button">Limpiar formulario</button>
-                <a href="/"><button type="submit" class="form-button"> Crear producto </button></a>
+                <button type="submit" class="form-button"> Editar producto </button>
                 </p>
 
             </form>
