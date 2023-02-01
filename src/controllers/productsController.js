@@ -114,6 +114,18 @@ const controller = {
     res.render('carrito-compras');
   }, 
 
+  
+  delete: (req, res) => {
+    let id = req.params.id
+    const productsArray = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
+    let productosActuales = productsArray.filter(producto => {
+      return producto.id != id;
+    })
+
+    fs.writeFileSync(productsFilePath, JSON.stringify(productosActuales, null, " "));
+    res.redirect("/products/");
+  },
 
 
 

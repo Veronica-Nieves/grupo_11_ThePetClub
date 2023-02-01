@@ -193,42 +193,6 @@
   "pieces": 40
  },
  {
-  "name": "turpis nec euismod scelerisque quam turpis adipiscing lorem vitae",
-  "id": 12,
-  "sku": "sku2",
-  "description": "dolor vel est donec odio justo sollicitudin ut suscipit a feugiat et eros vestibulum ac est lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna",
-  "image": "purina-mills.jpg",
-  "price": 794889,
-  "priceOffer": 505317,
-  "specie": [
-   "aves"
-  ],
-  "category": [
-   "accesorios"
-  ],
-  "offer": "si",
-  "featured": "no",
-  "pieces": 2
- },
- {
-  "name": "sem fusce consequat nulla nisl nunc nisl",
-  "id": 13,
-  "sku": "sku13",
-  "description": "erat id mauris vulputate elementum nullam varius nulla facilisi cras non velit nec nisi vulputate nonummy maecenas tincidunt lacus at velit vivamus vel nulla eget eros elementum pellentesque quisque porta volutpat erat quisque erat eros viverra eget congue eget semper rutrum nulla nunc purus phasellus in felis donec semper sapien a libero nam dui proin leo odio porttitor id consequat in consequat ut nulla sed accumsan felis ut at dolor quis odio consequat varius integer ac leo pellentesque ultrices mattis odio",
-  "image": "purina-mills.jpg",
-  "price": 614749,
-  "priceOffer": 825293,
-  "specie": [
-   "mamiferos"
-  ],
-  "category": [
-   "juguetes"
-  ],
-  "offer": "no",
-  "featured": "no",
-  "pieces": 22
- },
- {
   "name": "habitasse platea dictumst aliquam augue quam sollicitudin vitae",
   "id": 14,
   "sku": "sku14",
