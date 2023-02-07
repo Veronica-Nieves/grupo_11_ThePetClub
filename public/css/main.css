@@ -97,7 +97,9 @@
 }
 
 /* - - - Ofertas - - - */
-
+a {
+    text-decoration:none;
+}
 .section-article-sale {
   display: block;
   background-color: rgba(6, 76, 63, 0.61);
@@ -123,11 +125,19 @@
     vertical-align: top;
     padding: 10px 10px 22px;
 }
+
 .box-description-sale {
     border-top: 1px solid #ebebeb;
     padding: 12px 0px 24px 0px;
     position: relative;
 }
+.description-product-sale {
+    font-size: 16px;
+    width: 100%;
+    margin: 0px;
+    padding: 0px 10px 0px 14px;
+}
+
 .price-and-discounts {
     display: flex;
     flex-wrap: wrap;

@@ -266,7 +266,7 @@
     .price-product-sale {
         font-size: 18px;
         width: 60%;
-        padding: 8px 4px;
+        padding: 8px 10px;
     }
     .discounts-product-sale {
         font-size: 16px;
@@ -471,7 +471,7 @@
 
  /* - - - Ofertas - - - */
     .article-img-sale {
-        height: 400px;
+        height: 425px;
     }
  /* - - - Productos - - - */
     .article-img-product {
