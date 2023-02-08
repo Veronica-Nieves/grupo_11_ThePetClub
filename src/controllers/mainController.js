@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 /* En la constante "products" ya tienen los productos que están 
 	guardados en la carpeta Data como Json (un array de objetos literales) */
-	const productsFilePath = path.join(__dirname, '../data/productsIndex.json');
+	const productsFilePath = path.join(__dirname, '../data/productsBBDD.json');
 	const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 	
 /* dentro de la variable controller listamos la lógica de cada método*/
