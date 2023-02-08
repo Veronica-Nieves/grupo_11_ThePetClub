@@ -300,87 +300,113 @@
   "pieces": "9"
  },
  {
-    "name":"Dog chow 24kg",
-    "id":20,
-    "description":"Bolsa de alimento marca Dog Chow de 24kg",
-    "image":"dog-food.jpg",
-    "price":8900,
-    "priceOffer":7500,
+  "name": "Dog chow 24kg",
+  "id": 20,
+  "description": "Bolsa de alimento marca Dog Chow de 24kg",
+  "image": "dog-food.jpg",
+  "price": 8900,
+  "priceOffer": 7500,
+  "discounts": 25,
+  "especie": [
+   "perros"
+  ],
+  "category": [
+   "alimento"
+  ],
+  "offer": "si, sale en home",
+  "featured": "si",
+  "pieces": 10
+ },
+ {
+    "name": "Alimento para gato",
+    "id": 21,
+    "description": "Alimento Húmedo para gato de 6-12 meses ROYAL CANIN",
+    "image": "pack-royal-canin-cat.png",
+    "price": 1000,
+    "priceOffer": 250,
     "discounts": 25,
-    "especie":["perros"],
-    "category":["alimento"],
-    "offer":"si, sale en home",
-    "featured":"si",
-    "pieces":10
-},
-{
-    "name":"Alimento húmedo, Gato ",
-    "id":21,
-    "description":"Alimento húmedo especial para gatitos en etapa de crecimiento hasta los 12 meses de edad.",
-    "image":"pack-royal-canin-cat.png",
-    "price":1000,
-    "priceOffer":700,
-    "discounts": 30,
-    "especie":["gatos"],
-    "category":["alimento"],
-    "offer":"si, sale en home",
-    "featured":"si",
-    "pieces":10
-},
-{
-    "name":"Alimento peces",
-    "id":22,
-    "description":"Alimento para peces.",
-    "image":"fish-food.jpg",
-    "price":1900,
-    "priceOffer":1615,
-    "discounts": 15,
-    "especie":["peces"],
-    "category":["alimento"],
-    "offer":"si, sale en home",
-    "featured":"si",
-    "pieces":10
-},
-{
-    "name": "Perfume Green Pet",
-    "id": 23,
-    "description": "Perfume para perro macho (?",
-    "image": "fragance-dogs.jpg",
-    "price": 1220,
-    "priceOffer": 0,
-    "discounts": 0,
-    "especie": ["perros"],
-    "category": ["otro"],
-    "offer": "no",
-    "featured": "Destacado para home",
-    "pieces": 16
-},
-{
-    "name": "Juguete para perro o gato",
-    "id": 24,
-    "description": "Pelota con sonido",
-    "image": "toys-animals.jpg",
-    "price": 1950,
-    "priceOffer": 0,
-    "discounts": 0,
-    "especie": ["perros", "gatos"],
-    "category": ["juguetes"],
-    "offer": "no",
-    "featured": "Destacado para home",
-    "pieces": 16
-},
-{
-    "name": "Canil",
-    "id": 25,
-    "description": "Canil para transportar perros o gatos de tamaños pequeños",
-    "image": "animals-transporter.jpg",
-    "price": 6450,
-    "priceOffer": 0,
-    "discounts": 0,
-    "especie": ["perros", "gatos"],
-    "category": ["otro"],
-    "offer": "no",
-    "featured": "Destacado para home",
-    "pieces": 15
-}
+    "especie": [
+     "gatos"
+    ],
+    "category": [
+     "alimento"
+    ],
+    "offer": "si, sale en home",
+    "featured": "si",
+    "pieces": 10
+   },
+ {
+  "name": "Alimento peces",
+  "id": 22,
+  "description": "Alimento para peces.",
+  "image": "fish-food.jpg",
+  "price": 1900,
+  "priceOffer": 1615,
+  "discounts": 15,
+  "especie": [
+   "peces"
+  ],
+  "category": [
+   "alimento"
+  ],
+  "offer": "si, sale en home",
+  "featured": "si",
+  "pieces": 10
+ },
+ {
+  "name": "Perfume Green Pet",
+  "id": 23,
+  "description": "Perfume para perro macho (?",
+  "image": "fragance-dogs.jpg",
+  "price": 1220,
+  "priceOffer": 0,
+  "discounts": 0,
+  "especie": [
+   "perros"
+  ],
+  "category": [
+   "otro"
+  ],
+  "offer": "no",
+  "featured": "Destacado para home",
+  "pieces": 16
+ },
+ {
+  "name": "Juguete para perro o gato",
+  "id": 24,
+  "description": "Pelota con sonido",
+  "image": "toys-animals.jpg",
+  "price": 1950,
+  "priceOffer": 0,
+  "discounts": 0,
+  "especie": [
+   "perros",
+   "gatos"
+  ],
+  "category": [
+   "juguetes"
+  ],
+  "offer": "no",
+  "featured": "Destacado para home",
+  "pieces": 16
+ },
+ {
+  "name": "Canil",
+  "id": 25,
+  "description": "Canil para transportar perros o gatos de tamaños pequeños",
+  "image": "animals-transporter.jpg",
+  "price": 6450,
+  "priceOffer": 0,
+  "discounts": 0,
+  "especie": [
+   "perros",
+   "gatos"
+  ],
+  "category": [
+   "otro"
+  ],
+  "offer": "no",
+  "featured": "Destacado para home",
+  "pieces": 15
+ }
 ]

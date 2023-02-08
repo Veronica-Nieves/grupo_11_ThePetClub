@@ -61,7 +61,7 @@
                 <% productsSale.forEach(producto => { %>
                 <article class="article-img-sale">
                     <a href="/products/detail/<%= producto.id %>">
-                    <img class="img-product-sale" src="img/section-sale/<%= producto.image %>" alt="img-sale-dog">
+                    <img class="img-product-sale" src="img/productslist/<%= producto.image %>" alt="img-sale-dog">
                     <article class="box-description-sale">
                         <article class="price-and-discounts">
                             <p class="description-product-sale"><%= producto.name %></p>
@@ -105,7 +105,7 @@
                 <% productsFeatured.forEach(producto => { %>
                 <article class="article-img-product"> 
                     <a href="/products/detail/<%= producto.id %>">
-                    <img class="img-product-product" src="img/section-products-home/<%= producto.image %>" alt="img-sale-dog">
+                    <img class="img-product-product" src="img/productslist/<%= producto.image %>" alt="img-sale-dog">
                     <article class="box-description-product">
                         <article class="price-of-product">
                             <h2 class="price-of-product">$ <%= producto.price %></h2>
