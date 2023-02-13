@@ -2,21 +2,21 @@
  {
   "name": "est donec",
   "id": 1,
-  "sku": "sku1",
-  "description": "pharetra magna vestibulum aliquet ultrices erat tortor sollicitudin mi sit amet lobortis sapien sapien non mi integer ac neque duis bibendum morbi non quam nec",
+  "sku": "skuPrimerProducto",
+  "description": "pharetra magna vestibulum aliquet ultrices erat tortor sollicitudin mi sit amet lobortis sapien sapien non mi integer ac neque duis bibendum morbi non quam nec\"",
   "image": "purina-mills.jpg",
-  "price": 800835,
-  "priceOffer": 471671,
+  "price": "800835",
   "specie": [
+   "perros",
    "gatos"
   ],
   "category": [
-   "habitat",
-   "alimento"
+   "alimento",
+   "habitat"
   ],
-  "offer": "no",
+  "offer": "si",
   "featured": "si",
-  "pieces": 15
+  "pieces": "15"
  },
  {
   "name": "enim blandit mi in porttitor pede",
@@ -87,20 +87,19 @@
  {
   "name": "nisl venenatis lacinia aenean",
   "id": 6,
-  "sku": "sku6",
-  "description": "massa tempor convallis nulla neque libero convallis eget eleifend luctus ultricies eu nibh quisque id justo sit amet sapien dignissim vestibulum vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae nulla dapibus dolor vel est donec odio justo sollicitudin ut suscipit a feugiat et",
+  "sku": "skunisl",
+  "description": "massa tempor convallis nulla neque libero convallis eget eleifend luctus ultricies eu nibh quisque id justo sit amet sapien dignissim vestibulum vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae nulla dapibus dolor vel est donec odio justo sollicitudin ut suscipit a feugiat et\"",
   "image": "purina-mills.jpg",
-  "price": 693422,
-  "priceOffer": 606744,
+  "price": "693422",
   "specie": [
-   "reptiles"
+   "gatos"
   ],
   "category": [
-   "accesorios"
+   "alimento"
   ],
   "offer": "no",
-  "featured": "si",
-  "pieces": 0
+  "featured": "no",
+  "pieces": 3
  },
  {
   "name": "ac",
@@ -394,19 +393,18 @@
  {
   "name": "Dog-Chow Alimento para perros",
   "id": 26,
-  "description": "Alimento para perros. Extra life 24kg.",
+  "sku": "SkuDG",
+  "description": "Alimento para perros. Extra life 24kg. Sabor a pollo con salmón. ",
   "image": "dog-food.jpg",
-  "price": 1450,
-  "priceOffer": 1315,
-  "discounts": 15,
+  "price": "1450",
   "specie": [
    "perros"
   ],
   "category": [
    "alimento"
   ],
-  "offer": "si, sale en home",
+  "offer": "no",
   "featured": "si",
-  "pieces": 7
+  "pieces": "7"
  }
 ]

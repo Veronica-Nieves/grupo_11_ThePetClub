@@ -56,9 +56,9 @@
 
                     <!--botones visisbles para un usuario admin-->
                     <div class="set-buttons-wrap">
-                        <p class="button"><a class="button-text" href="/">Editar</a></p>
+                        <a class="button button-text" href="/products/edit/<%=producto.id%>">EDITAR</a>
                         <form action="/products/delete/<%= producto.id %>?_method=DELETE" method="POST" class="button">
-							<button type="submit"><a class="button-text">Editar</a></button>
+							<button type="submit" class="button-delete"><a class="button-text">ELIMINAR</a></button>
 						</form>
                     </div>
                 </div>

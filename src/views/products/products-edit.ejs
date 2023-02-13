@@ -15,55 +15,118 @@
 
         <!--FORMULARIO EDITAR PRODUCTO -->
         <div id="products-form">
-            <form action="/products/edit/<%= userToEdit.id %>?_method=PUT" method="POST" class="form-container">
+            <form action="/products/edit/<%= productToEdit.id %>?_method=PUT" method="POST" class="form-container">
 
                 <p class="form-field">
-                <input type="text" name="name" id="name" placeholder="Nombre del producto" required class="form-input" value="<%= userToEdit.name %>">
+                <input type="text" name="name" id="name" placeholder="Nombre del producto" required class="form-input" value="<%= productToEdit.name %>">
                 </p>
 
                 <p class="form-field">
-                <input type="text" name="sku" id="sku" placeholder="SKU" required class="form-input" value="<%= userToEdit.sku %>">
+                <input type="text" name="sku" id="sku" placeholder="SKU" required class="form-input" value="<%= productToEdit.sku %>">
                 </p>
         
                 <p class="form-field">
                 <label>Descripción</label>
-                <textarea name="description" placeholder="Indica las características del prodcuto como color, peso, sabor, contenido, talla, etc. " required class="form-input-text-area" ><%= userToEdit.description %>"</textarea>
+                <textarea name="description" placeholder="Indica las características del prodcuto como color, peso, sabor, contenido, talla, etc. " required class="form-input-text-area" ><%= productToEdit.description %>"</textarea>
                 </p>
-        
+                
+                <!-- El editar imagen queda pendiente
                 <p class="form-field">
                 <label for="name">Imagen</label>
-                <input type="file" name="image" id="image" accept=".jpg" required class="form-input" value="<%= userToEdit.image %>">
-                </p>
+                <input type="file" name="image" id="image" accept=".jpg" required class="form-input" value="<%= productToEdit.image %>">
+                </p> -->
 
                 <div class="form-2-columns-container">
                     <p class="form-field  col-50">
-                    <input type="number" name="price" id="price" placeholder="Precio" min="0"required class="form-input" value="<%= userToEdit.price %>">
+                    <input type="number" name="price" id="price" placeholder="Precio" min="0"required class="form-input" value="<%= productToEdit.price %>">
                     </p>
 
                     <p class="form-field col-50">
-                    <input type="number" name="price-offer" id="price-offer" placeholder="Precio de oferta" min="0" required class="form-input" value="<%= userToEdit.priceOffer %>">
+                    <input type="number" name="price-offer" id="price-offer" placeholder="Precio de oferta" min="0" required class="form-input" value="<%= productToEdit.priceOffer %>">
                     </p>
                 </div>
 
                 <div class="form-2-columns-container">
+                    <!--Verificamos especie por especie si se encuentra seleccionada-->
                     <p class="form-field col-50">
                         <label><strong>Especie</strong></label>
+
+                        <% if (productToEdit.specie.includes("perros")){%>
+                            <input type="checkbox" name="specie" value="perros" id="perros"class="form-input-option" checked> Perros </input><br>
+                            <% } else { %>
                             <input type="checkbox" name="specie" value="perros" id="perros"class="form-input-option"> Perros </input><br>
-                            <input type="checkbox" name="specie" value="gatos" id="gatos" class="form-input-option"> Gatos </input><br>
-                            <input type="checkbox" name="specie" value="aves" id="aves" class="form-input-option"> Aves </input><br>
-                            <input type="checkbox" name="specie" value="peces" id="peces" class="form-input-option"> Peces </input><br>
-                            <input type="checkbox" name="specie" value="mamiferos" id="mamiferos" class="form-input-option"> Mamiferos </input><br>
-                            <input type="checkbox" name="specie" value="reptiles" id="reptiles" class="form-input-option"> Reptiles </input><br>
+                            <% } %>
+                        
+                        <% if (productToEdit.specie.includes("gatos")){%>
+                            <input type="checkbox" name="specie" value="gatos" id="gatos" class="form-input-option" checked> Gatos </input><br>
+                            <% } else { %>
+                                <input type="checkbox" name="specie" value="gatos" id="gatos" class="form-input-option"> Gatos </input><br>
+                            <% } %>
+
+                        <% if (productToEdit.specie.includes("aves")){%>
+                            <input type="checkbox" name="specie" value="aves" id="aves" class="form-input-option" checked> Aves </input><br>
+                            <% } else { %>
+                            <input type="checkbox" name="specie" value="aves" id="aves" class="form-input-option"> Aves </input><br>  
+                            <% } %>
+
+                        <% if (productToEdit.specie.includes("peces")){%>
+                            <input type="checkbox" name="specie" value="peces" id="peces" class="form-input-option" checked> Peces </input><br>
+                            <% } else { %>
+                            <input type="checkbox" name="specie" value="peces" id="peces" class="form-input-option"> Peces </input><br>   
+                            <% } %>
+
+                        <% if (productToEdit.specie.includes("mamiferos")){%>
+                            <input type="checkbox" name="specie" value="mamiferos" id="mamiferos" class="form-input-option" checked> Mamiferos </input><br>
+                            <% } else { %>
+                            <input type="checkbox" name="specie" value="mamiferos" id="mamiferos" class="form-input-option"> Mamiferos </input><br>     
+                            <% } %>
+
+                        <% if (productToEdit.specie.includes("reptiles")){%>
+                            <input type="checkbox" name="specie" value="reptiles" id="reptiles" class="form-input-option" checked> Reptiles </input><br>
+                            <% } else { %>
+                            <input type="checkbox" name="specie" value="reptiles" id="reptiles" class="form-input-option"> Reptiles </input><br> 
+                            <% } %>     
                     </p>
 
+                    <!--Verificamos categoría por categoría si se encuentra seleccionada-->
                     <p class="form-field col-50">
                         <label><strong>Categorías</strong></label>
-                            <input type="checkbox" name="category" value="alimento" id="alimento"class="form-input-option"> Alimento </input><br>
-                            <input type="checkbox" name="category" value="juguetes" id="juguetes" class="form-input-option"> Juguetes </input><br>
-                            <input type="checkbox" name="category" value="habitat" id="habitat" class="form-input-option"> Habitat </input><br>
-                            <input type="checkbox" name="category" value="ropa" id="ropa" class="form-input-option"> Ropa </input><br>
-                            <input type="checkbox" name="category" value="accesorios" id="accesorios" class="form-input-option"> Accesorios </input><br>
-                            <input type="checkbox" name="category" value="otro" id="Otro" class="form-input-option"> Otro </input><br>
+                
+                        <% if (productToEdit.category.includes("alimento")){%>
+                            <input type="checkbox" name="category" value="alimento" id="alimento"class="form-input-option" checked> Alimento </input><br>   
+                            <% } else { %>
+                            <input type="checkbox" name="category" value="alimento" id="alimento"class="form-input-option"> Alimento </input><br>            
+                            <% } %>
+                        
+                        <% if (productToEdit.category.includes("juguetes")){%>
+                            <input type="checkbox" name="category" value="juguetes" id="juguetes" class="form-input-option" checked> Juguetes </input><br>   
+                            <% } else { %>
+                            <input type="checkbox" name="category" value="juguetes" id="juguetes" class="form-input-option"> Juguetes </input><br>                
+                            <% } %>
+
+                        <% if (productToEdit.category.includes("habitat")){%>
+                            <input type="checkbox" name="category" value="habitat" id="habitat" class="form-input-option" checked> Habitat </input><br>    
+                            <% } else { %>
+                            <input type="checkbox" name="category" value="habitat" id="habitat" class="form-input-option"> Habitat </input><br>               
+                            <% } %>
+
+                        <% if (productToEdit.category.includes("ropa")){%>
+                            <input type="checkbox" name="category" value="ropa" id="ropa" class="form-input-option" checked> Ropa </input><br>    
+                            <% } else { %>
+                            <input type="checkbox" name="category" value="ropa" id="ropa" class="form-input-option"> Ropa </input><br>           
+                            <% } %>
+                        
+                        <% if (productToEdit.category.includes("accesorios")){%>
+                            <input type="checkbox" name="category" value="accesorios" id="accesorios" class="form-input-option" checked> Accesorios </input><br>
+                            <% } else { %>
+                            <input type="checkbox" name="category" value="accesorios" id="accesorios" class="form-input-option"> Accesorios </input><br>               
+                            <% } %>
+                            
+                        <% if (productToEdit.category.includes("otro")){%>
+                            <input type="checkbox" name="category" value="otro" id="Otro" class="form-input-option" checked> Otro </input><br>
+                            <% } else { %>
+                            <input type="checkbox" name="category" value="otro" id="Otro" class="form-input-option"> Otro </input><br>               
+                            <% } %>
                     </p>
                 </div>
         
@@ -71,27 +134,37 @@
                     <p class="form-field col-30">
 						<label><strong>En oferta: </label></strong></label>
 						<select name="offer" id="offer" class="form-input" >
-							<option value="si">Sí</option>
-							<option value="no">No</option>
+                            <% if (productToEdit.offer == "si"){%>
+                                <option value="si" selected>Sí</option>
+                                <option value="no">No</option>     
+                            <% } else { %>
+                                <option value="si">Sí</option>
+                                <option value="no" selected>No</option>           
+                            <% } %>
+
 						</select>
 					</p>
                     <p class="form-field col-30">
 						<label><strong>Destacado </label></strong></label>
 						<select name="featured" id="featured" class="form-input">
-							<option value="si" class="form-input-option">Sí</option>
-							<option value="no" class="form-input-option">No</option>
+                            <% if (productToEdit.featured == "si"){%>
+                                <option value="si" class="form-input-option" selected>Sí</option>
+							    <option value="no" class="form-input-option">No</option>   
+                            <% } else { %>
+                                <option value="si" class="form-input-option">Sí</option>
+							    <option value="no" class="form-input-option" selected>No</option>           
+                            <% } %>
 						</select>
 					</p>
                     <p class="form-field col-30">
                         <label><strong>Piezas </label></strong></label>
-                        <input type="number" name="pieces" id="pieces" placeholder="12" min="0" required class="form-input" value="<%= userToEdit.pieces %>">
+                        <input type="number" name="pieces" id="pieces" placeholder="12" min="0" required class="form-input" value="<%= productToEdit.pieces %>">
                     </p>
                 </div>
                 
                 <!--boton de formulario -->
                 <p class="form-buttons-container">
-                <button type="reset" class="form-button">Limpiar formulario</button>
-                <button type="submit" class="form-button"> Editar producto </button>
+                <button type="submit" class="form-button"> Guardar producto</button>
                 </p>
 
             </form>

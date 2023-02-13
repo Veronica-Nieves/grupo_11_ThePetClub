@@ -74,32 +74,42 @@ const controller = {
 
     let id = req.params.id
     const productsArray = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-    let userToEdit = productsArray[id]
+    let productToEdit = productsArray.find(producto =>{
+      return producto.id == id
+    })
 
-    res.render("./products/products-edit", {userToEdit: userToEdit})
+    res.render("./products/products-edit", {productToEdit: productToEdit})
   },
 
   update: (req,res) => {
 
     const productsArray = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-
     let id = req.params.id
+    let productoGuardado = productsArray.find(producto =>{
+      return producto.id == id
+    })
 
-    let userToEdit = productsArray[id]
+    /* Nota: Si el usuario solo selecciona una especie el dato se guarda como string, pero si selecciona dos, se guarda lista. Antes de guardarlo debemos convertirlo SIEMPRE a lista []. Sucede lo mismo con categoría */
+    let listSpecie = [];
+    let listCategory = [];
+    if (typeof req.body.specie === 'string') { listSpecie[0] = req.body.specie } else { listSpecie = req.body.specie};
+    if (typeof req.body.category === 'string') { listCategory[0] = req.body.category} else { listCategory = req.body.category};
+		
 
     let productoEditado = {
       name:req.body.name,
-      id: userToEdit.id,
+      id: productoGuardado.id, // no cambia
       sku: req.body.sku,
       description:req.body.description,
-      image: userToEdit.image,
+      // falta configurar que pueda subir una nueva aimagen. De momento se deja la anterior
+      image: productoGuardado.image,
       price:req.body.price,
       priceOffer: req.body.priceOffer,
-      specie: userToEdit.specie,
-      category: userToEdit.category,
-      offer: userToEdit.offer,
-      featured: userToEdit.featured,
-      pieces: userToEdit.pieces
+      specie: listSpecie,
+      category: listCategory,
+      offer: req.body.offer,
+      featured: req.body.featured,
+      pieces: req.body.pieces
       }
 
     let indice = productsArray.findIndex(product =>{

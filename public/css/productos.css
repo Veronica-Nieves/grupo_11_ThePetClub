@@ -175,6 +175,10 @@
     font-weight: 700;
     color: var(--verde);
 }
+#pd-information .button-delete{
+    background-color: var(--gris);
+    border: none;
+}
 
 
 /* description */
