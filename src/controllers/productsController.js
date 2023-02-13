@@ -69,6 +69,7 @@ const controller = {
 
 
 /* Nacho*/
+/*EDITAR PRODUCTO*/
   edit: (req, res) => {
 
     let id = req.params.id
@@ -114,7 +115,7 @@ const controller = {
     res.render('carrito-compras');
   }, 
 
-  
+  /* ELIMINAR */
   delete: (req, res) => {
     let id = req.params.id
     const productsArray = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
