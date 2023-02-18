@@ -1,7 +1,8 @@
 // ************ Require's ************
 const express = require('express');
 const path = require ('path');
-const methodOverride = require('method-override');// Para poder usar los métodos PUT y DELETE
+const session = require('express-session'); //
+const methodOverride = require('method-override');// para poder usar los métodos PUT y DELETE
 
 // ************ express() ************
 const app = express ();
@@ -11,11 +12,13 @@ const app = express ();
 app.use(express.static(path.join(__dirname, '../public'))); // Necesario para los archivos estáticos
 app.use(express.urlencoded({extended: false})); // para capturar el body de los formularios
 app.use(express.json()); // capturar el body de los forms en formato JSON
-app.use(methodOverride('_method')); // Para poder usar los métodos PUT y DELETE
+app.use(methodOverride('_method')); // para poder usar los métodos PUT y DELETE
+app.use(session({secret: 'The Pets Club', resave: false, saveUninitialized: true})); // para habilitar las sesiones
+
 
 // ************ Template Engine ************
 app.set('view engine', 'ejs'); // para indicarle que las vistas son de tipo ejs
-app.set('views', path.join(__dirname, '/views')); // Definimos ubicación de la carpeta views
+app.set('views', path.join(__dirname, '/views')); // definimos ubicación de la carpeta views
 
 // ************ Route System require and use() ************
 const mainRouter = require('./routes/main.js'); // Rutas main
