@@ -17,10 +17,12 @@ const controller = {
         const resultValidation = validationResult(req);
         
         if (resultValidation.errors.length > 0) {
-            return res.render('userRegisterForm', {
+            return res.render('./users/register', {
                 errors: resultValidation.mapped(),
+                oldData: req.body
             });
         }
+        return res.send('Ok, las validaciones estan correctas');
 	},
 
     login: (req, res) => {

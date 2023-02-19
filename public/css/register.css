@@ -80,6 +80,17 @@
     margin:10px;
 }
 
+.form-input-register {
+    width: 100%;
+    height: 35px;
+    font-size: 13px;
+    padding-left: 30px;
+    border-radius: 7px;
+    border-style: None;
+}
+.form-input-register:invalid {
+    border: 1px solid red;
+}
 
 
 /*-------- MOVIL-HORIZONTAL (481)-------*/
@@ -113,6 +124,7 @@
     }
     
 }
+
 
 
 /*--------BREAKPOINT PC (1200)-------*/

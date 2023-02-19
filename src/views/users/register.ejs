@@ -13,41 +13,107 @@
         <div class="register-container"> 
             <div class="form-title-container"><h3>  Registrate en The Pet's Club  </h3></div>
             <form action="/users/register/" method="POST" enctype="multipart/form-data" class="sing-up-form-container">
-
-                <div>
                     <p class="register-form-field">
-                    <input type="text" name="firstName" id="name" placeholder="Nombre" required class="form-input">
+                        <input type="text" 
+                               name="firstName" 
+                               id="name" placeholder="Nombre"  
+                               class="form-input-register <%= locals.errors && errors.firstName ? 'invalid' : null %> " 
+                               value="<%= locals.oldData ? oldData.firstName : null %>">
+                        <% if (locals.errors && errors.firstName) { %>
+                            <div class="text">
+                                <%= errors.firstName.msg %>
+                            </div>
+
+                        <% } %>
                     </p>
-                </div>
 
-                
                     <p class="register-form-field">
-                        <input type="text" name="lastName" id="name" placeholder="Apellido" required class="form-input">
+                        <input type="text"
+                               name="lastName"
+                               id="name" 
+                               placeholder="Apellido"  
+                               class="form-input-register <%= locals.errors && errors.lastName ? 'invalid' : null %> "
+                               value="<%= locals.oldData ? oldData.lastName : null %>">
+                        <% if (locals.errors && errors.lastName) { %>
+                            <div class="text">
+                                <%= errors.lastName.msg %>
+                            </div>
+
+                        <% } %>
                     </p>
 
                 <p class="register-form-field">
-                    <input type="text" name="name-user" id="name" placeholder="Nombre de usuario" required class="form-input">
+                    <input type="text"
+                           name="nameUser" 
+                           id="name" placeholder="Nombre de usuario" 
+                           class="form-input-register <%= locals.errors && errors.nameUser ? 'invalid' : null %> "
+                           value="<%= locals.oldData ? oldData.nameUser : null %>">
+                    <% if (locals.errors && errors.nameUser) { %>
+                        <div class="text">
+                            <%= errors.nameUser.msg %>
+                        </div>
+
+                    <% } %>
                 </p>
+
                 <p class="register-form-field">
-                <input type="email" name="email" id="email" placeholder="Correo electrónico" required class="form-input">
+                <input type="email" 
+                        name="email" 
+                        id="email" placeholder="Correo electrónico" 
+                        class="form-input-register <%= locals.errors && errors.email ? 'invalid' : null %> " 
+                        value="<%= locals.oldData ? oldData.email : null %>">
+                <% if (locals.errors && errors.email) { %>
+                    <div class="text">
+                        <%= errors.email.msg %>
+                    </div>
+
+                <% } %>
                 </p>
         
                 <p class="register-form-field">
-                <input type="password" name="password" placeholder="Ingresa una contraseña" required class="form-input">
+                <input type="password" 
+                        name="password" 
+                        placeholder="Ingresa una contraseña"  
+                        class="form-input-register <%= locals.errors && errors.password ? 'invalid' : null %> ">
+                <% if (locals.errors && errors.password) { %>
+                    <div class="text">
+                        <%= errors.password.msg %>
+                    </div>
+
+                <% } %>
                 </p>
 
                 <p class="register-form-field">
-                <input name="passwordConfirmed" placeholder="Confirma la contraseña" required class="form-input">
+                <input name="passwordConfirmed" placeholder="Confirma la contraseña"  class="form-input-register <%= locals.errors && errors.passwordConfirmed ? 'invalid' : null %> ">
+                <% if (locals.errors && errors.passwordConfirmed) { %>
+                    <div class="text">
+                        <%= errors.passwordConfirmed.msg %>
+                    </div>
+
+                <% } %>
                 </p>
 
                 <p class="register-form-field">
-                    <label for="avatarRegister" class="form-label-avatar">Imagen de perfil: <input type="file" id="avatarRegister" name="avatar" required></label> 
+                    <label for="avatarRegister" class="form-label-avatar">Imagen de perfil: </label> 
+                    <input type="file" id="avatarRegister" name="avatar" >
+                        <% if (locals.errors && errors.avatar) { %>
+                            <div class="text">
+                                <%= errors.avatar.msg %>
+                            </div>
+
+                        <% } %>
                 </p>
                 
                 
                 <p class="input-administrator-user">
-                        <label class="label-user" for="administrator-user" id="administrator-user">Usuario <input type="radio" name="administrator-user" value="Usuario" checked></label>
-                        <label class="label-administrator" for="administrator-user">Administrador <input type="radio" name="administrator-user" value="Administrador"></label>
+                        <label class="label-user" for="administrator-user" id="administrator-user">Usuario <input type="radio" name="role" value="Usuario" checked></label>
+                        <label class="label-administrator" for="administrator-user">Administrador <input type="radio" name="role" value="Administrador"></label>
+                        <% if (locals.errors && errors.role) { %>
+                            <div class="text">
+                                <%= errors.role.msg %>
+                            </div>
+
+                        <% } %>
                     </label> 
                 
                 </p>
@@ -55,7 +121,7 @@
                 <p class="form-field">
                     Al crear una cuenta en <strong>thepetsclubs.com</strong> acepta los 
                     <a href="/" class="register-link"><strong>Términos y Condiciones</strong></a> y nuestro 
-                    <a href="/" class="register-link"><strong>Aviso de Privacidad</strong> </a>
+                    <a href="/" class="register-link"><strong>Aviso de privacidad</strong> </a>
                 </p><br>
 
 
@@ -63,7 +129,7 @@
                 <p class="register-button-container">
                 <a href="/"><button type="Crear cuenta" class="form-button"> Crear cuenta </button></a>
                 </p>
-
+-
             </form>
             <p>¿Ya tienes una cuenta? <a href="/users/login/" class="register-link"><strong>Iniciar Sesión</strong></a></p><br>
 
