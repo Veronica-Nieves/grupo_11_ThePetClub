@@ -8,15 +8,16 @@ const path = require('path');
 /* dentro de la variable controller listamos la lógica de cada método*/
 const controller = {
 	index: (req, res) => {
-	const productsRead= JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+	const productsRead = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 	
 	let productsSaleFilter = productsRead.filter( producto => {
-		return producto.offer == "si, sale en home"
+		return producto.offer == "oferta en home"
 	})
 
 	let productsFeaturedForHome = productsRead.filter( producto => {
-		return producto.featured == "Destacado para home"
-	})
+		return producto.featured == "destacado de home"
+	});
+	console.log(productsFeaturedForHome)
 
 		// el primer parámetro que se pasa, es el que se utiliza en ejs
 		res.render("index", {
