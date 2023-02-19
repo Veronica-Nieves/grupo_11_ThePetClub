@@ -3,90 +3,100 @@
     "id": 1,
     "firstName": "Veronica",
     "lastName": "Nieves",
+    "name-user": "veronica.nieves",
     "email": "vnieves@gmail.com",
     "role": "Customer",
     "password": "pwbv8yut",
-    "passwordConfirmed": "qDxDM6fc"
+    "passwordConfirmed": "pwbv8yut"
   }, 
   {
     "id": 2,
     "firstName": "in magna",
     "lastName": "platea",
+    "name-user": "inmagna.platea",
     "email": "cofairy1@timesonline.co.uk",
     "role": "Admin",
     "password": "WQDiRU",
-    "passwordConfirmed": "7KdMhbte"
+    "passwordConfirmed": "WQDiRU"
   }, 
   {
     "id": 3,
     "firstName": "Luna",
     "lastName": "Santini",
+    "name-user": "luna.santini",
     "email": "lsantini@gmail.com",
     "role": "Admin",
     "password": "YEyUPC",
-    "passwordConfirmed": "tKwDr8zF32"
+    "passwordConfirmed": "YEyUPC"
   }, 
   {
     "id": 4,
-    "firstName": "nonummy integer",
-    "lastName": "orci luctus",
+    "firstName": "carla",
+    "lastName": "rinaldi",
+    "name-user": "carla.rinaldi",
     "email": "kchristal3@loc.gov",
     "role": "Customer",
     "password": "fDIQlKL",
-    "passwordConfirmed": "mdmRGd4mXYKX"
+    "passwordConfirmed": "fDIQlKL"
   }, 
   {
     "id": 5,
-    "firstName": "dictumst",
-    "lastName": "dignissim vestibulum",
+    "firstName": "Hugo",
+    "lastName": "Martinez",
+    "name-user": "hugo.martinez",
     "email": "sbenka4@cdc.gov",
     "role": "Customer",
     "password": "z7ByI3",
-    "passwordConfirmed": "LCXV8K"
+    "passwordConfirmed": "z7ByI3"
   }, 
   {
     "id": 6,
     "firstName": "Ignacio",
     "lastName": "Muela",
+    "name-user": "ignacio.muela",
     "email": "imuela@gmail.com",
     "role": "Admin",
     "password": "A7TQNvEKu",
-    "passwordConfirmed": "3TYY0Voj"
+    "passwordConfirmed": "A7TQNvEKu"
   }, 
   {
     "id": 7,
     "firstName": "Ramiro",
     "lastName": "Velar",
+    "name-user": "ramiro.velar",
     "email": "rvelar@gmail.com",
     "role": "Admin",
     "password": "gOWlszhp2",
-    "passwordConfirmed": "2v8P7Xn1"
+    "passwordConfirmed": "gOWlszhp2"
   }, 
   {
     "id": 8,
     "firstName": "Belen",
     "lastName": "Perez",
+    "name-user": "belen.perez",
     "email": "bperez@gmail.com",
     "role": "Admin",
     "password": "fl2jpeGelgos",
-    "passwordConfirmed": "Mw34thSo51q8"
+    "passwordConfirmed": "fl2jpeGelgos"
   }, 
   {
     "id": 9,
-    "firstName": "etiam pretium",
-    "lastName": "nonummy integer",
+    "firstName": "micaela",
+    "lastName": "Fernandez",
+    "name-user": "micaela.fernandez",
     "email": "wkiddey8@multiply.com",
     "role": "Admin",
     "password": "4WC0XYga",
-    "passwordConfirmed": "suOsNRT"
+    "passwordConfirmed": "4WC0XYga"
   }, 
   {
     "id": 10,
-    "firstName": "est lacinia",
-    "lastName": "elementum eu",
+    "firstName": "Dante",
+    "lastName": "clemente",
+    "name-user": "dante.clemente",
     "email": "ptaylor9@google.com.au",
     "role": "Customer",
     "password": "JUsqfHuE5",
-    "passwordConfirmed": "fljBoQ5k"
+    "passwordConfirmed": "JUsqfHuE5"
   }
 ]

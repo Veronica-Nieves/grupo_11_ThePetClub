@@ -4,6 +4,7 @@ const path = require ('path');
 const session = require('express-session'); //
 const methodOverride = require('method-override');// para poder usar los métodos PUT y DELETE
 
+
 // ************ express() ************
 const app = express ();
 
@@ -20,16 +21,17 @@ app.use(session({secret: 'The Pets Club', resave: false, saveUninitialized: true
 app.set('view engine', 'ejs'); // para indicarle que las vistas son de tipo ejs
 app.set('views', path.join(__dirname, '/views')); // definimos ubicación de la carpeta views
 
+
 // ************ Route System require and use() ************
 const mainRouter = require('./routes/main.js'); // Rutas main
 const productsRouter = require('./routes/products.js'); // Rutas /products
 const usersRouter = require('./routes/users.js'); // Rutas /users
 
+
+app.use(express.urlencoded({ extended: false }));
 app.use('/', mainRouter);
-app.use('/products', productsRouter)
-app.use('/users', usersRouter)
-
-
+app.use('/products', productsRouter);
+app.use('/users', usersRouter);
 
 
 // ************ Set the server to listen ************
