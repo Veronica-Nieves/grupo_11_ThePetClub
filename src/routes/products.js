@@ -25,18 +25,21 @@ const productsController = require('../controllers/productsController');
 
 /* -------------- R U T A S   D E   P R O D U C T O S ---------------*/
 
+/* TODOS LOS PRODUCTOS */
 router.get('/', productsController.list);
 
+/* IR A UN PRODUCTO */
 router.get('/detail/:id', productsController.detail);
 
+/* CREAR UN PRODUCTO */
 router.get('/create/', productsController.create);
-
 router.post('/create/', upload.single("image") , productsController.processCreate);
 
+/* EDITAR UN PRODUCTO */
 router.get('/edit/:id', productsController.edit);
-
 router.put('/edit/:id', productsController.update)
 
+/* ELIMINAR UN PRODUCTO */
 router.delete('/delete/:id', productsController.delete);
 
 router.get('/carrito-compras', productsController.carrito);
