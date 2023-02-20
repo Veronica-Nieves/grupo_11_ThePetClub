@@ -43,4 +43,15 @@ router.get('/carrito-compras', productsController.carrito);
 
 /* -------------------- F I N   D E   R U T A S ---------------------*/
 
+
+
+/* ---------------------RUTAS DE USERS-LOGIN ------------------------*/
+
+router.get('/login/', productsController.login);
+router.post('/login/', upload.single("image") , productsController.processLogin);
+
+/* ------------------FIN RUTAS DE USERS-LOGIN ----------------------*/
+
+
+
 module.exports =router;

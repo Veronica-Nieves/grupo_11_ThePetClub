@@ -53,8 +53,10 @@ router.get('/register/', usersController.register);
 /* Procesar el registro */
 router.post('/register/', uploadFile.single('avatar'), validations, usersController.processRegister);
 
-/* Formulario de login */
-router.get('/login/', usersController.login);
+
+// ******  IMPORTANTE *****
+/* Las rutas de login se encuentran en el router de productos y en el productController
+
 
 /* Perfil del usuario */
 router.get('/profile/:userId', usersController.profile);

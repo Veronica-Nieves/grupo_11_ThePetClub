@@ -68,7 +68,6 @@ const controller = {
 
 
 
-/* Nacho*/
 /*EDITAR PRODUCTO*/
   edit: (req, res) => {
 
@@ -139,6 +138,56 @@ const controller = {
   },
 
 
+
+
+
+  
+/* ---------------------RUTAS DE USERS-LOGIN ------------------------*/
+  
+login: (req, res) => {
+  return res.render('./users/login')
+},
+
+processLogin: (req, res) => {
+  /* Leemos los datos de users.json y lo convertimos a un array*/
+  const usersFilePath = path.join(__dirname, '../data/users.json');
+  const usersArray = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+  // definimos bcrypt para poder usarla pero deberia ir por fuera del controller
+  const bcrypt = require('bcryptjs');
+
+  let userToVerify = usersArray.find(user => {
+    return user.email == req.body.email
+  });
+  let verifyErrors = [];
+
+  if(userToVerify == undefined){
+    res.send("El usuario no se encuentra resistrado. Intentalo nuevamente. ")
+  } 
+    
+  res.send("Se encontró un usuario");
+
+    let usuarioEditado = {
+      id: 1,
+      firstName: "Vero",
+      lastName: "Nieves",
+      nameUser: "veronica",
+      email: "v.nievescruz@gmail.com",
+      role: "Customer",
+      password: bcrypt.hashSync('vero123') ,
+      passwordConfirmed: bcrypt.hashSync('vero123') 
+    }
+  
+  usersArray[0] = usuarioEditado;
+  fs.writeFileSync(usersFilePath, JSON.stringify(usersArray, null, " "));
+  
+    
+
+  console.log("to verify", userToVerify);
+  console.log("editado", usuarioEditado);
+
+
+},
+/* ------------------FIN RUTAS DE USERS-LOGIN ----------------------*/
 
 
 }
