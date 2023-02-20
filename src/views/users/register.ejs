@@ -84,7 +84,7 @@
                 </p>
 
                 <p class="register-form-field">
-                <input name="passwordConfirmed" placeholder="Confirma la contraseña"  class="form-input-register <%= locals.errors && errors.passwordConfirmed ? 'invalid' : null %> ">
+                <input type="password" name="passwordConfirmed" placeholder="Confirma la contraseña"  class="form-input-register <%= locals.errors && errors.passwordConfirmed ? 'invalid' : null %> ">
                 <% if (locals.errors && errors.passwordConfirmed) { %>
                     <div class="text">
                         <%= errors.passwordConfirmed.msg %>
