@@ -46,9 +46,15 @@ router.get('/carrito-compras', productsController.carrito);
 
 
 /* ---------------------RUTAS DE USERS-LOGIN ------------------------*/
+let guestMiddleware = require('../middlewares/guestMiddleware');
+let authMiddleware = require('../middlewares/authMiddleware');
+
 
 router.get('/login/', productsController.login);
 router.post('/login/', upload.single("image") , productsController.processLogin);
+
+router.get('/profile/', authMiddleware, productsController.profile);
+
 
 /* ------------------FIN RUTAS DE USERS-LOGIN ----------------------*/
 

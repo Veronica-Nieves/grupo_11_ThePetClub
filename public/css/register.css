@@ -15,6 +15,11 @@
 .link-register{
     text-align: center;
 }
+.error-message{
+    color: var(--amarillo);
+    font-size: 15;
+    font-weight: 700;
+}
 
 
 

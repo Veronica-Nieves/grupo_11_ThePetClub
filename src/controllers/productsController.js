@@ -141,11 +141,11 @@ const controller = {
 
 
 
-  
+
 /* ---------------------RUTAS DE USERS-LOGIN ------------------------*/
   
 login: (req, res) => {
-  return res.render('./users/login')
+  return res.render('./users/login', {error: undefined})
 },
 
 processLogin: (req, res) => {
@@ -161,32 +161,21 @@ processLogin: (req, res) => {
   let verifyErrors = [];
 
   if(userToVerify == undefined){
-    res.send("El usuario no se encuentra resistrado. Intentalo nuevamente. ")
-  } 
-    
-  res.send("Se encontró un usuario");
-
-    let usuarioEditado = {
-      id: 1,
-      firstName: "Vero",
-      lastName: "Nieves",
-      nameUser: "veronica",
-      email: "v.nievescruz@gmail.com",
-      role: "Customer",
-      password: bcrypt.hashSync('vero123') ,
-      passwordConfirmed: bcrypt.hashSync('vero123') 
-    }
-  
-  usersArray[0] = usuarioEditado;
-  fs.writeFileSync(usersFilePath, JSON.stringify(usersArray, null, " "));
-  
-    
-
-  console.log("to verify", userToVerify);
-  console.log("editado", usuarioEditado);
-
-
+    res.render('./users/login', {error: "El usuario no se encuentra resistrado. Vuelve a intentarlo."})
+  } else if ( !(bcrypt.compareSync(req.body.password, userToVerify.password)) ) {
+    res.render('./users/login', {error: "Credenciales invalidas"})
+  } else {
+    // Si el correo está registrado y la contraseña encryptada conincide, entonces guardamos al usuario logueado
+    req.session.usuarioLogueado = userToVerify;
+    res.redirect("/products/profile")
+  }
 },
+
+
+profile: (req, res) => {
+  return res.render('./users/user-profile',)
+},
+
 /* ------------------FIN RUTAS DE USERS-LOGIN ----------------------*/
 
 

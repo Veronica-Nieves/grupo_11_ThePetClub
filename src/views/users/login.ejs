@@ -13,16 +13,20 @@
         <div> 
             <div class="form-title-container"><h3>  Iniciar Sesión  </h3></div>
 
-            <!--formulario -->
             <form action="/products/login" method="POST" enctype="multipart/form-data" class="form-container" >
 
                 <p class="form-field">
-                <input type="email" name="email" id="email" placeholder="Correo" required class="form-input">
+                <input type="email" name="email" id="email" placeholder="Correo electrónico" required class="form-input">
                 </p>
 
                 <p class="form-field">
                 <input type="password" name="password" id="password" placeholder="Contraseña" required class="form-input">
                 </p>
+
+                <!--Mostrar errores cuando haya-->
+                <% if (error != undefined){ %>
+                    <p class="error-message"> <%= error %> </p>
+                <% } %>
 
                 <p class="form-buttons-container">
                     <button type="submit" class="form-button"> Crear producto </button>
