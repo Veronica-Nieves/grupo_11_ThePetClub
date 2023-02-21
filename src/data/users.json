@@ -99,5 +99,15 @@
   "role": "Customer",
   "password": "JUsqfHuE5",
   "passwordConfirmed": "JUsqfHuE5"
+ },
+ {
+  "id": 11,
+  "firstName": "Renata",
+  "lastName": "Villanueva",
+  "nameUser": "ReniV",
+  "email": "reni@reni.com",
+  "password": "reni1910",
+  "passwordConfirmed": "reni1910",
+  "role": "Usuario"
  }
 ]

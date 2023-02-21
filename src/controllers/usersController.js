@@ -25,8 +25,14 @@ const controller = {
                 oldData: req.body
             });
         }
-        User.create(req.body);
-        return res.send('Ok, las validaciones estan correctas');
+
+        let userToCreate = {
+            ...req.body,
+            avatar: req.file.filename
+        }
+
+        User.create(userToCreate);
+        return res.send('Usuario creado con éxito');
 	},
 
         /* ---------------------RUTAS DE USERS-LOGIN ------------------------*/
@@ -36,7 +42,7 @@ const controller = {
 	},
 
     profile: (req, res) => {
-        return res.render('./users/user-profile', {usuario: []})
+        return res.render('./users/profile')
     },
 
     processLogin: (req, res) => {
@@ -58,7 +64,7 @@ const controller = {
       // Si el correo está registrado y la contraseña encryptada conincide, entonces guardamos al usuario logueado
       req.session.usuarioLogueado = userToVerify;
       console.log(userToVerify);
-      res.redirect('/profile/:userId'), {usuario: userToVerify};
+      res.redirect('/users/user-profile'), {usuario: userToVerify};
     }
   },
   
