@@ -11,10 +11,10 @@
     <body>
         <!-- PERFIL DE USUARIO - solo se debe mostrar para los usuarios logueados -->
         <div> 
-            <div class="form-title-container"><h3>  Perfil de usuario  </h3></div>
+            <div class="form-title-container"><h3>  Hola <%= user.firstName %> <%= user.lastName %>! </h3></div>
 
-            <h2> Bienvenido</h2>
-
+            <img src="/img/avatars/<%= user.avatars%>">
+        
             
 
         </div>

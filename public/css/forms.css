@@ -5,7 +5,7 @@ Vistas:
 
 .form-title-container{
     text-align: center;
-    padding-top: 40px;
+    padding-top: 120px;
     padding-bottom: 20px;
 }
 
@@ -136,6 +136,8 @@ Vistas:
     .form-input-option{
         padding-left: 25px;
     }
+
+
 }
 
 
@@ -145,6 +147,13 @@ Vistas:
     .form-container{
         width: 500px;
     }
+
+    .form-title-container{
+        text-align: center;
+        padding-top: 155px;
+        padding-bottom: 20px;
+    }
+
 }
 
 
