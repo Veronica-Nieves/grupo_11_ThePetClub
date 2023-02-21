@@ -4,7 +4,8 @@ const path = require('path');
 const { validationResult } = require('express-validator')
 
 const User = require ('../models/Users');
-const { findAll } = require('../models/Users');
+
+const bcryptjs = require ('bcryptjs');
 
 /* dentro de la variable controller listamos la lógica de cada método*/
 const controller = {
@@ -22,47 +23,69 @@ const controller = {
             });
         }
 
+        let userInDB = User.findByField('email', req.body.email);
+
+        if (userInDB) {
+            return res.render('./users/register', {
+                errors: {
+                    email: {
+                        msg: 'Este email ya se encuentra registrado'
+                    },
+                oldData: req.body
+                }
+            });
+        }
+
         let userToCreate = {
             ...req.body,
+            password: bcryptjs.hashSync(req.body.password,10),
+            passwordConfirmed: bcryptjs.hashSync(req.body.passwordConfirmed,10),
             avatar: req.file.filename
         }
 
-        User.create(userToCreate);
-        return res.send('Usuario creado con éxito');
+        let userCreate = User.create(userToCreate);
+        return res.redirect('/users/login');
 	},
 
-        /* ---------------------RUTAS DE USERS-LOGIN ------------------------*/
+        /* ---------------------RUTAS DE LOGIN ------------------------*/
 
     login: (req, res) => {
-        return res.render('./users/login', {error: undefined})
+        return res.render('./users/login')
 	},
 
-    profile: (req, res) => {
-        return res.render('./users/profile')
+    processLogin: (req, res) => {
+    
+    let userToLogin = User.findByField('email', req.body.email);
+
+    if(userToLogin) {
+
+        let isOkPassword = bcryptjs.compareSync(req.body.password, userToLogin.password)
+       if (isOkPassword) {
+        delete userToLogin.password;
+        req.session.userLogged = userToLogin; 
+        return res.redirect('/users/profile');
+       } 
+
+       return res.render('./users/login', {errors: 'Las credenciales son inválidas'}
+        );
+    }
+
+    return res.render('./users/login', {
+        errors: {
+            email: {
+                msg: 'El usuario no se encuentra registrado'
+            }
+        }
+    })
+
     },
 
-    processLogin: (req, res) => {
-    /* Leemos los datos de users.json y lo convertimos a un array*/
-    let allUsers = JSON.parse(fs.readFileSync('src/data/users.json', 'utf-8'));;
-    // definimos bcrypt para poder usarla pero deberia ir por fuera del controller
-    const bcrypt = require('bcryptjs');
-  
-    let userToVerify = allUsers.find(user => {
-      return user.email == req.body.email
-    });
-    let verifyErrors = [];
-  
-    if(userToVerify == undefined){
-      res.render('./users/login', {error: "El usuario no se encuentra registrado. Vuelve a intentarlo."})
-    } else if ( !(bcrypt.compareSync(req.body.password, userToVerify.password)) ) {
-      res.render('./users/login', {error: "Credenciales invalidas"})
-    } else {
-      // Si el correo está registrado y la contraseña encryptada conincide, entonces guardamos al usuario logueado
-      req.session.usuarioLogueado = userToVerify;
-      console.log(userToVerify);
-      res.redirect('/users/user-profile'), {usuario: userToVerify};
-    }
-  },
+  profile: (req, res) => {
+    return res.render('./users/user-profile', {
+        user: req.session.userLogged
+        })
+    },
+
   
  
   /* ------------------FIN RUTAS DE USERS-LOGIN ----------------------*/
