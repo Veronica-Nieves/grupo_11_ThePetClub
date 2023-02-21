@@ -109,5 +109,49 @@
   "password": "reni1910",
   "passwordConfirmed": "reni1910",
   "role": "Usuario"
+ },
+ {
+  "id": 12,
+  "firstName": "Carlos",
+  "lastName": "Alberto",
+  "nameUser": "carlos.alberto",
+  "email": "carlos.alberto@gmail.com",
+  "password": "123456",
+  "passwordConfirmed": "123456",
+  "role": "Usuario",
+  "avatar": "1676988615713_img.png"
+ },
+ {
+  "id": 13,
+  "firstName": "tomas",
+  "lastName": "Perez",
+  "nameUser": "tomas_perez",
+  "email": "tomasp@hotmail.com",
+  "password": "tomas",
+  "passwordConfirmed": "tomas",
+  "role": "Administrador",
+  "avatar": "1676996613878_img.png"
+ },
+ {
+  "id": 14,
+  "firstName": "lucrecia",
+  "lastName": "sanchez",
+  "nameUser": "lucresanchez",
+  "email": "lucre@gmail.com",
+  "password": "8456",
+  "passwordConfirmed": "8456",
+  "role": "Usuario",
+  "avatar": "1676997069267_img.jpg"
+ },
+ {
+  "id": 15,
+  "firstName": "Belen",
+  "lastName": "Perez",
+  "nameUser": "beperez",
+  "email": "beperez@gmail.com",
+  "password": "1456",
+  "passwordConfirmed": "1456",
+  "role": "Administrador",
+  "avatar": "1676997337723_img.jpg"
  }
 ]
