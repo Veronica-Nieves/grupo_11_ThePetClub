@@ -4,7 +4,8 @@ const path = require('path');
 const { validationResult } = require('express-validator')
 
 const User = require ('../models/Users');
-const { findAll } = require('../models/Users');
+
+const bcryptjs = require ('bcryptjs');
 
 /* dentro de la variable controller listamos la lógica de cada método*/
 const controller = {
@@ -26,8 +27,23 @@ const controller = {
             });
         }
 
+        let userInDB = User.findByField('email', req.body.email);
+
+        if (userInDB) {
+            return res.render('./users/register', {
+                errors: {
+                    email: {
+                        msg: 'Este email ya se encuentra registrado'
+                    },
+                oldData: req.body
+                }
+            });
+        }
+
         let userToCreate = {
             ...req.body,
+            password: bcryptjs.hashSync(req.body.password,10),
+            passwordConfirmed: bcryptjs.hashSync(req.body.passwordConfirmed,10),
             avatar: req.file.filename
         }
 
@@ -64,7 +80,8 @@ const controller = {
       // Si el correo está registrado y la contraseña encryptada conincide, entonces guardamos al usuario logueado
       req.session.usuarioLogueado = userToVerify;
       console.log(userToVerify);
-      res.redirect('/users/user-profile'), {usuario: userToVerify};
+      res.send('Usuario logueado con exito')
+      //res.redirect('/users/user-profile'), {usuario: userToVerify};
     }
   },
   

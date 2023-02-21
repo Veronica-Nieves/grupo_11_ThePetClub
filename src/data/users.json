@@ -106,8 +106,9 @@
   "lastName": "Villanueva",
   "nameUser": "ReniV",
   "email": "reni@reni.com",
-  "password": "reni1910",
-  "passwordConfirmed": "reni1910",
-  "role": "Usuario"
+  "password": "$2a$10$D7LgkHYRk1lug./3QI817eR7LANmmD.zYhvwmKDc8YYVtIiGYKCnq",
+  "passwordConfirmed": "$2a$10$reQCLVaq6vDiXuodPGUoM.8EigRUjhnKwCk4gqQ3AhgC48BPyR9hG",
+  "role": "Usuario",
+  "avatar": "1676989764552_img.jpg"
  }
 ]
