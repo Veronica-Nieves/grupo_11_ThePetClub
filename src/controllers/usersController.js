@@ -43,8 +43,9 @@ const controller = {
             avatar: req.file.filename
         }
 
-        let userCreate = User.create(userToCreate);
-        return res.redirect('/users/login');
+        let userCreated = User.create(userToCreate);
+
+        return res.redirect('/users/login/');
 	},
 
         /* ---------------------RUTAS DE LOGIN ------------------------*/

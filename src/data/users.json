@@ -109,5 +109,16 @@
   "password": "reni1910",
   "passwordConfirmed": "reni1910",
   "role": "Usuario"
+ },
+ {
+  "id": 12,
+  "firstName": "Walter",
+  "lastName": "White",
+  "nameUser": "walter_white",
+  "email": "walter_white@gmail.com",
+  "password": "$2a$10$Aeez6FbiznApQLkHskV7C.HdVtwxIpb/EcZwlNjvZW/tz3g2N3cii",
+  "passwordConfirmed": "$2a$10$/biJHFdOT0/Ip7s85r1hGu.jcy.diM2O8gDUMQP.Vj7VTbW0Cyijy",
+  "role": "Usuario",
+  "avatar": "1677005938896_img.jpg"
  }
 ]
