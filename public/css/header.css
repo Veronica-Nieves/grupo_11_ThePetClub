@@ -16,7 +16,7 @@ header {
     position: relative;
     top: 15px;
     background-color: white;
-
+    z-index:1;
     border-top-left-radius: 10px;
     border-top-right-radius: 80px;
     border-bottom-left-radius: 80px;
@@ -91,8 +91,8 @@ header {
     border-radius: 50%;
     width: 20vw;
     position: relative;
-    left: 40vw;
-    top: -25px;
+    left: 25vw;
+    top: -40px;
     box-shadow: 4px 18px 31px -12px rgba(86, 148, 148, 1);
 }
 
@@ -152,5 +152,8 @@ header {
 
 .sample-banner {
     width: 100%;
-    
+    position: relative;
+    top:85px;
+    left: -2px;
+    z-index:inherit
 }

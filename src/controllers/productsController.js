@@ -67,8 +67,6 @@ const controller = {
 
 
 
-
-/* Nacho*/
 /*EDITAR PRODUCTO*/
   edit: (req, res) => {
 
@@ -137,9 +135,6 @@ const controller = {
     fs.writeFileSync(productsFilePath, JSON.stringify(productosActuales, null, " "));
     res.redirect("/products/");
   },
-
-
-
 
 }
 

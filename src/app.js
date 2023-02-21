@@ -16,6 +16,7 @@ app.use(express.json()); // capturar el body de los forms en formato JSON
 app.use(methodOverride('_method')); // para poder usar los métodos PUT y DELETE
 app.use(session({secret: 'The Pets Club', resave: false, saveUninitialized: true})); // para habilitar las sesiones
 
+// ************ Middlewares propios ************
 
 // ************ Template Engine ************
 app.set('view engine', 'ejs'); // para indicarle que las vistas son de tipo ejs

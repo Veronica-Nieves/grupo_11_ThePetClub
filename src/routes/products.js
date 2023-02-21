@@ -2,7 +2,8 @@ const express= require('express');
 const router = express.Router();
 const multer = require ("multer");
 const path = require("path")
-
+const guestMiddleware = require('../middlewares/routes/guestMiddleware');
+const authMiddleware = require('../middlewares/routes/authMiddleware');
 
 /* **************************** multer ***************************** */
 const storage = multer.diskStorage({
@@ -25,21 +26,24 @@ const productsController = require('../controllers/productsController');
 
 /* -------------- R U T A S   D E   P R O D U C T O S ---------------*/
 
+/* TODOS LOS PRODUCTOS */
 router.get('/', productsController.list);
 
+/* IR A UN PRODUCTO */
 router.get('/detail/:id', productsController.detail);
 
-router.get('/create/', productsController.create);
+/* CREAR UN PRODUCTO */
+router.get('/create/',guestMiddleware, productsController.create);
+router.post('/create/',guestMiddleware,  upload.single("image") , productsController.processCreate);
 
-router.post('/create/', upload.single("image") , productsController.processCreate);
+/* EDITAR UN PRODUCTO */
+router.get('/edit/:id',guestMiddleware,  productsController.edit);
+router.put('/edit/:id',guestMiddleware,  productsController.update)
 
-router.get('/edit/:id', productsController.edit);
+/* ELIMINAR UN PRODUCTO */
+router.delete('/delete/:id',guestMiddleware, productsController.delete);
 
-router.put('/edit/:id', productsController.update)
-
-router.delete('/delete/:id', productsController.delete);
-
-router.get('/carrito-compras', productsController.carrito);
+router.get('/carrito-compras',guestMiddleware, productsController.carrito);
 
 /* -------------------- F I N   D E   R U T A S ---------------------*/
 

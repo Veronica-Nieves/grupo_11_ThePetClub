@@ -10,9 +10,11 @@
     .logo {
         width: 20vw;
         position: absolute;
-        left: 40vw;
+        left: 37vw;
         top: -15px;
     }
+
+    
 
     /*--Categorías--*/
     .category-block {
