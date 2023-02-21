@@ -67,7 +67,6 @@ const controller = {
 
 
 
-
 /*EDITAR PRODUCTO*/
   edit: (req, res) => {
 
@@ -136,48 +135,6 @@ const controller = {
     fs.writeFileSync(productsFilePath, JSON.stringify(productosActuales, null, " "));
     res.redirect("/products/");
   },
-
-
-
-
-
-
-/* ---------------------RUTAS DE USERS-LOGIN ------------------------*/
-  
-login: (req, res) => {
-  return res.render('./users/login', {error: undefined})
-},
-
-processLogin: (req, res) => {
-  /* Leemos los datos de users.json y lo convertimos a un array*/
-  const usersFilePath = path.join(__dirname, '../data/users.json');
-  const usersArray = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-  // definimos bcrypt para poder usarla pero deberia ir por fuera del controller
-  const bcrypt = require('bcryptjs');
-
-  let userToVerify = usersArray.find(user => {
-    return user.email == req.body.email
-  });
-  let verifyErrors = [];
-
-  if(userToVerify == undefined){
-    res.render('./users/login', {error: "El usuario no se encuentra resistrado. Vuelve a intentarlo."})
-  } else if ( !(bcrypt.compareSync(req.body.password, userToVerify.password)) ) {
-    res.render('./users/login', {error: "Credenciales invalidas"})
-  } else {
-    // Si el correo está registrado y la contraseña encryptada conincide, entonces guardamos al usuario logueado
-    req.session.usuarioLogueado = userToVerify;
-    res.redirect("/products/profile")
-  }
-},
-
-
-profile: (req, res) => {
-  return res.render('./users/user-profile',)
-},
-
-/* ------------------FIN RUTAS DE USERS-LOGIN ----------------------*/
-
 
 }
 

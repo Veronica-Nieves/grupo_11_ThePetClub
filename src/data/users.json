@@ -7,7 +7,8 @@
   "email": "v.nievescruz@gmail.com",
   "role": "Customer",
   "password": "$2a$10$krD4sssCsqufu7MlMvlFxOuzxLw6xPpergCBxjliZ8N6zhW1NTLxa",
-  "passwordConfirmed": "$2a$10$AuT18NRW0ugubtr4o6/UVe861ENswlQ2FPYJJWQJ/wuUxNzeFlKge"
+  "passwordConfirmed": "$2a$10$AuT18NRW0ugubtr4o6/UVe861ENswlQ2FPYJJWQJ/wuUxNzeFlKge",
+  "avatar": "./user-photo.png"
  },
  {
   "id": 2,

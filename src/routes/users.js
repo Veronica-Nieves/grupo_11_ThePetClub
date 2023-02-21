@@ -1,24 +1,16 @@
 const express= require('express');
 const router = express.Router();
-
 const path = require('path');
-const multer = require('multer');
+
+//Controller
+const usersController = require('../controllers/usersController');
 
 const { body } = require('express-validator');
 
-const storage = multer.diskStorage({
-    detination: (req, file, cb) => {
-        cb(null, './public/img/avatars')
-    },
-    filename: (req, file, cb) => {
-        let fileName = `${Date.now()}_img${path.extname(file.originalname)}`;
-        cb(null, fileName);
-        }
-});
-
-const uploadFile = multer({ storage });
-
-const usersController = require('../controllers/usersController');
+//Middlewares
+const guestMiddleware = require('../middlewares/routes/guestMiddleware');
+const authMiddleware = require('../middlewares/routes/authMiddleware');
+const uploadFile = require ('../middlewares/global/multerMiddleware')
 
 const validations = [
     body('firstName').notEmpty().withMessage('Debes escribir tu nombre'),
@@ -45,20 +37,24 @@ const validations = [
     })
 ];
 
+
 /* ------------------- Listado de rutas de users --------------------*/
 
-/* Formulario de registro */
+// Formulario de registro
 router.get('/register/', usersController.register);
 
-/* Procesar el registro */
+// Procesar el registro
 router.post('/register/', uploadFile.single('avatar'), validations, usersController.processRegister);
 
 
-// ******  IMPORTANTE *****
-/* Las rutas de login se encuentran en el router de productos y en el productController
+/* ---------------------RUTAS DE USERS-LOGIN ------------------------*/
 
+// Formulario de login
+router.get('/login/', usersController.login);
+router.post('/login/', uploadFile.single("image") , usersController.processLogin);
 
-/* Perfil del usuario */
+// Perfil del usuario
+router.get('/profile/', guestMiddleware, usersController.profile);
 router.get('/profile/:userId', usersController.profile);
 
 /* ---------------- Fin Listado de rutas -------------------*/
