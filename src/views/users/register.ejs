@@ -18,7 +18,8 @@
                                name="firstName" 
                                id="name" placeholder="Nombre"  
                                class="form-input-register <%= locals.errors && errors.firstName ? 'invalid' : null %> " 
-                               value="<%= locals.oldData ? oldData.firstName : null %>">
+                               value="<%= locals.oldData ? oldData.firstName : null %>" >
+                               <i class="fa-solid fa-circle-xmark"></i>
                         <% if (locals.errors && errors.firstName) { %>
                             <div class="text">
                                 <%= errors.firstName.msg %>
