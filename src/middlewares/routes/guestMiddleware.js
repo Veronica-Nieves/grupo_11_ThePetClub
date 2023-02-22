@@ -1,12 +1,9 @@
 /* Esta Middleware se encarga de revisar que el usuario NO esté checkeado (con sesion iniciada)*/
 function guestMiddleware (req, res, next) {
-    if (req.session.usuarioLogueado == undefined){
-        res.redirect('/users/login/')
+    if (req.session.userLogged == undefined){
+        res.redirect('/user-profile')
 
-    }
-    else {
-        next();
-    }
+    } next();
 }
 
 module.exports = guestMiddleware;

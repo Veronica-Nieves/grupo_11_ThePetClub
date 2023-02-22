@@ -12,106 +12,6 @@
  },
  {
   "id": 2,
-  "firstName": "in magna",
-  "lastName": "platea",
-  "nameUser": "inmagna.platea",
-  "email": "cofairy1@timesonline.co.uk",
-  "role": "Admin",
-  "password": "WQDiRU",
-  "passwordConfirmed": "WQDiRU"
- },
- {
-  "id": 3,
-  "firstName": "Luna",
-  "lastName": "Santini",
-  "nameUser": "luna.santini",
-  "email": "lsantini@gmail.com",
-  "role": "Admin",
-  "password": "YEyUPC",
-  "passwordConfirmed": "YEyUPC"
- },
- {
-  "id": 4,
-  "firstName": "carla",
-  "lastName": "rinaldi",
-  "nameUser": "carla.rinaldi",
-  "email": "kchristal3@loc.gov",
-  "role": "Customer",
-  "password": "fDIQlKL",
-  "passwordConfirmed": "fDIQlKL"
- },
- {
-  "id": 5,
-  "firstName": "Hugo",
-  "lastName": "Martinez",
-  "nameUser": "hugo.martinez",
-  "email": "sbenka4@cdc.gov",
-  "role": "Customer",
-  "password": "z7ByI3",
-  "passwordConfirmed": "z7ByI3"
- },
- {
-  "id": 6,
-  "firstName": "Ignacio",
-  "lastName": "Muela",
-  "nameUser": "ignacio.muela",
-  "email": "imuela@gmail.com",
-  "role": "Admin",
-  "password": "A7TQNvEKu",
-  "passwordConfirmed": "A7TQNvEKu"
- },
- {
-  "id": 7,
-  "firstName": "Ramiro",
-  "lastName": "Velar",
-  "nameUser": "ramiro.velar",
-  "email": "rvelar@gmail.com",
-  "role": "Admin",
-  "password": "gOWlszhp2",
-  "passwordConfirmed": "gOWlszhp2"
- },
- {
-  "id": 8,
-  "firstName": "Belen",
-  "lastName": "Perez",
-  "nameUser": "belen.perez",
-  "email": "bperez@gmail.com",
-  "role": "Admin",
-  "password": "fl2jpeGelgos",
-  "passwordConfirmed": "fl2jpeGelgos"
- },
- {
-  "id": 9,
-  "firstName": "micaela",
-  "lastName": "Fernandez",
-  "nameUser": "micaela.fernandez",
-  "email": "wkiddey8@multiply.com",
-  "role": "Admin",
-  "password": "4WC0XYga",
-  "passwordConfirmed": "4WC0XYga"
- },
- {
-  "id": 10,
-  "firstName": "Dante",
-  "lastName": "clemente",
-  "nameUser": "dante.clemente",
-  "email": "ptaylor9@google.com.au",
-  "role": "Customer",
-  "password": "JUsqfHuE5",
-  "passwordConfirmed": "JUsqfHuE5"
- },
- {
-  "id": 11,
-  "firstName": "Renata",
-  "lastName": "Villanueva",
-  "nameUser": "ReniV",
-  "email": "reni@reni.com",
-  "password": "reni1910",
-  "passwordConfirmed": "reni1910",
-  "role": "Usuario"
- },
- {
-  "id": 12,
   "firstName": "Walter",
   "lastName": "White",
   "nameUser": "walter_white",
@@ -120,5 +20,71 @@
   "passwordConfirmed": "$2a$10$/biJHFdOT0/Ip7s85r1hGu.jcy.diM2O8gDUMQP.Vj7VTbW0Cyijy",
   "role": "Usuario",
   "avatar": "1677005938896_img.jpg"
+ },
+ {
+  "id": 3,
+  "firstName": "Gabriela",
+  "lastName": "Gomez",
+  "nameUser": "gabi_gomez",
+  "email": "gabi_gomez@gmail.com",
+  "password": "$2a$10$fq19aayPX7NKChXU3h7mwu.R4ESQGu3Xg5oPtcKRWf81V2Hos2KTi",
+  "passwordConfirmed": "$2a$10$v7tJDWYNFGxUE93xzgB7Yu8Q53.VOWkDOi0wgEzO8nAB2ghS5BYr.",
+  "role": "Usuario",
+  "avatar": "1677022502369_img.jpg"
+ },
+ {
+  "id": 4,
+  "firstName": "hugo",
+  "lastName": "martinez",
+  "nameUser": "hugomartinez",
+  "email": "hugomartinez@gmail.com",
+  "password": "$2a$10$u9ep22p3ZziNMlPrYbHw6OVu9EV8Ikww9wK7czog5gow/7tA2CHRC",
+  "passwordConfirmed": "$2a$10$nvLas/.b5Xkj0zMMwYA21OCS4r3Aigm4HSVlju2WpObprYHrv2Fqa",
+  "role": "Usuario",
+  "avatar": "1677023186366_img.png"
+ },
+ {
+  "id": 5,
+  "firstName": "tomas",
+  "lastName": "Gomez",
+  "nameUser": "tomas",
+  "email": "tomasG@hotmail.com",
+  "password": "$2a$10$lctD0ozUdSRmxwxJ3d7fJOhOlA/KSCRUf5DpWc8HSje6sloaKcNki",
+  "passwordConfirmed": "$2a$10$e56MtGRr3bmFBuIUtcqUTuRIPFSKs7WoWC.ee.jtkF9y/a3iu.ZG2",
+  "role": "Usuario",
+  "avatar": "1677023249728_img.png"
+ },
+ {
+  "id": 6,
+  "firstName": "jorge",
+  "lastName": "drexler",
+  "nameUser": "jorgedrexler",
+  "email": "jorgedrexler@gmail.com",
+  "password": "$2a$10$njAx/A8fLs3KAI7XnqP1heD6igx8sBqKxmstGkLpSEjCsBnezLPhS",
+  "passwordConfirmed": "$2a$10$1F5s0z0GSiNlyPQjJyZ/1OnsY4h6a6ItuuqjEEpv20laMIVygPceu",
+  "role": "Usuario",
+  "avatar": "1677031968129_img.png"
+ },
+ {
+  "id": 7,
+  "firstName": "jorge",
+  "lastName": "drexler",
+  "nameUser": "jorgedrexler",
+  "email": "jorgedrexler2@gmail.com",
+  "password": "$2a$10$IfEpaTcuGBUIm4tY3wY50O2b/srPC1xPv5HW9qQVnD2eXDvAQEeCm",
+  "passwordConfirmed": "$2a$10$65WrkSjO/StV3h4CJWI.0uH9vPOvkQv.YTpyxtDKn64GbXL4y8L3.",
+  "role": "Usuario",
+  "avatar": "1677032225904_img.jpg"
+ },
+ {
+  "id": 8,
+  "firstName": "Walter",
+  "lastName": "White",
+  "nameUser": "walter_white",
+  "email": "walter_white2@gmail.com",
+  "password": "$2a$10$eQUww9/lCY4RejbknPMLMuKXwj65i8FSBriM8sb3TdUa4hwYqBFdO",
+  "passwordConfirmed": "$2a$10$Cioqko6AuJ0BXcDfQjLhdeEFhIlEl0jGXSgzYD.YsnvEJRUd3uJ.K",
+  "role": "Administrador",
+  "avatar": "1677032354321_img.jpg"
  }
 ]

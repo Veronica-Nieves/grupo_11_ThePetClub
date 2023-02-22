@@ -26,13 +26,11 @@ router.post('/register/', uploadFile.single('avatar'), validations, usersControl
 
 // Formulario de login
 router.get('/login/', usersController.login);
-
-//Procesar el login
 router.post('/login/', uploadFile.single("image") , usersController.processLogin);
 
 // Perfil del usuario
-router.get('/profile/', usersController.profile);
-
+router.get('/profile/', guestMiddleware, usersController.profile);
+router.get('/profile/:userId', usersController.profile);
 
 /* ---------------- Fin Listado de rutas -------------------*/
 module.exports = router;

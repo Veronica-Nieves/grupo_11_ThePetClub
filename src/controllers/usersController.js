@@ -1,18 +1,16 @@
-const fs=require('fs');
+const fs = require('fs');
 const path = require('path');
 
+const bcryptjs = require ('bcryptjs');
 const { validationResult } = require('express-validator')
 
 const User = require ('../models/Users');
-
-const bcryptjs = require ('bcryptjs');
 
 /* dentro de la variable controller listamos la lógica de cada método*/
 const controller = {
     register: (req, res) => {
         return res.render('./users/register')
 	},
-
     processRegister: (req, res) => {
         const resultValidation = validationResult(req);
         
@@ -45,7 +43,7 @@ const controller = {
 
         let userCreated = User.create(userToCreate);
 
-        return res.redirect('/users/login/');
+        return res.redirect('/users/login');
 	},
 
         /* ---------------------RUTAS DE LOGIN ------------------------*/
@@ -61,31 +59,43 @@ const controller = {
     if(userToLogin) {
 
         let isOkPassword = bcryptjs.compareSync(req.body.password, userToLogin.password)
-       if (isOkPassword) {
-        delete userToLogin.password;
-        req.session.userLogged = userToLogin; 
-        return res.redirect('/users/profile');
-       } 
+        if (isOkPassword) {
+            delete userToLogin.password;
+            req.session.userLogged = userToLogin; 
+       
+                if (req.body.remember_user) {
+                res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 2 })
+                }
+                
+                return res.redirect('/users/profile');
+        
+            } 
 
-       return res.render('./users/login', {errors: 'Las credenciales son inválidas'}
-        );
-    }
-
-    return res.render('./users/login', {
+       return res.render('./users/login', {
         errors: {
             email: {
-                msg: 'El usuario no se encuentra registrado'
-            }
-        }
-    })
+                msg:'Las credenciales son inválidas'}}
+        });
+    }
 
+    return res.render('./users/login/', {
+        errors: {
+            email: {
+                msg: 'El usuario no se encuentra registrado'}}
+        });
     },
 
-  profile: (req, res) => {
-    return res.render('./users/user-profile', {
-        user: req.session.userLogged
-        })
-    },
+    profile: (req, res) => {
+      return res.render('./users/user-profile', {
+          user: req.session.userLogged
+          })
+        },
+
+    logout: (req, res) => {
+      req.clearCookie('userEmail');
+      req.session.destroy();
+      return res.redirect('/');
+    }
 
   
  
