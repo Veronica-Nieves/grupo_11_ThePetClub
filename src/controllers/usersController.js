@@ -72,10 +72,9 @@ const controller = {
             } 
 
        return res.render('./users/login', {
-        errors: {
-            email: {
-                msg:'Las credenciales son inválidas'}}
-        });
+        errors: 'Las credenciales son inválidas'
+            }
+        );
     }
 
     return res.render('./users/login/', {
