@@ -10,7 +10,7 @@ Vistas:
 }
 
 .form-container{
-    margin: 10px Auto;
+    margin: 10px;
     padding: 30px 7px;
     background-color: var(--sombra);
     border-radius: 15px;
@@ -146,6 +146,7 @@ Vistas:
 @media (min-width: 770px) {
     .form-container{
         width: 500px;
+        text-align: center;
     }
 
     .form-title-container{
