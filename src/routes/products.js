@@ -43,7 +43,7 @@ router.put('/edit/:id',guestMiddleware,  productsController.update)
 /* ELIMINAR UN PRODUCTO */
 router.delete('/delete/:id',guestMiddleware, productsController.delete);
 
-router.get('/carrito-compras',guestMiddleware, productsController.carrito);
+router.get('/carrito-compras', productsController.carrito);
 
 /* -------------------- F I N   D E   R U T A S ---------------------*/
 

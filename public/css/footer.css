@@ -37,7 +37,7 @@ footer li {
 .footer-menu {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
     font-weight: bold;
 }
 
@@ -61,6 +61,7 @@ footer li {
 
 .container-download-app {
     text-align: center;
+    margin-bottom: 10px;
 }
 
 .download-app {
