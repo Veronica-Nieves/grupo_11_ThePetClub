@@ -86,5 +86,16 @@
   "passwordConfirmed": "$2a$10$Cioqko6AuJ0BXcDfQjLhdeEFhIlEl0jGXSgzYD.YsnvEJRUd3uJ.K",
   "role": "Administrador",
   "avatar": "1677032354321_img.jpg"
+ },
+ {
+  "id": 9,
+  "firstName": "Vero2",
+  "lastName": "Nieves",
+  "nameUser": "vnc",
+  "email": "vnc@gmail.com",
+  "password": "$2a$10$Y/ndV/1ikbH2usbJs0RId.bRi95WKz01m4mfaFpNWdQVOxEGP8a7y",
+  "passwordConfirmed": "$2a$10$qbjw92200/qIT2JRCmFTs.GmK6YJxWrIzryJo54Q0S.t25Bkt/qpy",
+  "role": "Usuario",
+  "avatar": "1677033305731_img.jpg"
  }
 ]

@@ -6,6 +6,7 @@ const { validationResult } = require('express-validator')
 
 const User = require ('../models/Users');
 
+
 /* dentro de la variable controller listamos la lógica de cada método*/
 const controller = {
     register: (req, res) => {
