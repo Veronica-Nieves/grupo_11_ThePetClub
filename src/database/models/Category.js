@@ -35,8 +35,8 @@ module.exports = (sequelize, dataTypes) => {
     /* --- RELACIONES DE ESTE MODELO CON OTROS MODELOS --- */
 
     // Cada categoria tiene asociada muchos products (N:1)
-    Category.associate = function(modelos){
-        Category.hasMany(modelos.Product, {
+    Category.associate = function(models){
+        Category.hasMany(models.Product, {
             as: "products", // alias de la relación
             foreignKey: "category_id",
         });

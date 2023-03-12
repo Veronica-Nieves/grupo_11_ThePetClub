@@ -48,22 +48,23 @@
                 <div class="form-2-columns-container">
                     <p class="form-field col-50">
                         <label>Especie</label>
-                            <input type="checkbox" name="specie" value="perros" id="perros"class="form-input-option"> Perros </input><br>
-                            <input type="checkbox" name="specie" value="gatos" id="gatos" class="form-input-option"> Gatos </input><br>
-                            <input type="checkbox" name="specie" value="aves" id="aves" class="form-input-option"> Aves </input><br>
-                            <input type="checkbox" name="specie" value="peces" id="peces" class="form-input-option"> Peces </input><br>
-                            <input type="checkbox" name="specie" value="mamiferos" id="mamiferos" class="form-input-option"> Mamiferos </input><br>
-                            <input type="checkbox" name="specie" value="reptiles" id="reptiles" class="form-input-option"> Reptiles </input><br>
+                        <select name="specie" class="form-input">
+                            <%for(let i=0; i< especies.length; i++){ %>
+                                <option value="<%=especies[i].id%>" class="form-input-option"> 
+                                    <%= especies[i].name%>
+                                </option>
+                            <% } %>
+                        </select>
                     </p>
-
                     <p class="form-field col-50">
                         <label>Categorías</label>
-                            <input type="checkbox" name="category" value="alimento" id="alimento"class="form-input-option"> Alimento </input><br>
-                            <input type="checkbox" name="category" value="juguetes" id="juguetes" class="form-input-option"> Juguetes </input><br>
-                            <input type="checkbox" name="category" value="habitat" id="habitat" class="form-input-option"> Habitat </input><br>
-                            <input type="checkbox" name="category" value="ropa" id="ropa" class="form-input-option"> Ropa </input><br>
-                            <input type="checkbox" name="category" value="accesorios" id="accesorios" class="form-input-option"> Accesorios </input><br>
-                            <input type="checkbox" name="category" value="otro" id="Otro" class="form-input-option"> Otro </input><br>
+                        <select name="category" class="form-input">
+                            <%for(let i=0; i< categorias.length; i++){ %>
+                                <option value="<%=categorias[i].id%>" class="form-input-option"> 
+                                    <%= categorias[i].name%>
+                                </option>
+                            <% } %>
+                        </select>
                     </p>
                 </div>
         
@@ -84,7 +85,7 @@
 					</p>
                     <p class="form-field col-30">
                         <label>Piezas </label>
-                        <input type="number" name="pieces" id="pieces" placeholder="12" min="0" required class="form-input">
+                        <input type="number" name="pieces" id="pieces" placeholder="Ej:12" min="0" required class="form-input">
                     </p>
                 </div>
                 

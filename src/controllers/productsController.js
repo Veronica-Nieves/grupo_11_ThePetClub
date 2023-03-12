@@ -13,15 +13,15 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 /* dentro de la variable controller listamos la lógica de cada método*/
 const controller = {
 
-// listado de todos las especies. Solo para probar la conexion con la base de datos
-especies: (req, res) => {
-  //db.Specie.findAll() // Este funciona bien
-  //db.Category.findAll() // Este funciona bien
-  db.Product.findAll()
-    .then(function(especies) {
-      res.send(especies);
-    });
-},
+// SOLO PARA PROBAR LA CONEXION CON LA BASE DE DATOS, listado de todos las especies. 
+  especies: (req, res) => {
+    //db.Specie.findAll() // Este funciona bien
+    //db.Category.findAll() // Este funciona bien
+    db.Product.findAll()
+      .then(function(especies) {
+        res.send(especies);
+      });
+  },
 
 // listado de todos los productos (tambien llamado index)
   list: (req, res) => {
@@ -48,17 +48,24 @@ especies: (req, res) => {
 	},  
 
 
-// renderiza el formulario para la carga de un nuevo producto
-  create: (req, res) => {
-    res.render('./products/products-create');
+// renderiza el formulario para la carga de un nuevo producto tomando desde la bd las especies y las categorias
+  create: async(req, res) => {
+    db.Specie.findAll()
+    .then(function(especies){
+          db.Category.findAll()
+          .then(function(categorias){
+              res.render('./products/products-create', {especies: especies, categorias: categorias});
+          })
+    });
+    
   },
 
 
 // procesa los datos enviados en el formulariode crear un nuevo producto
-  processCreate: (req, res) => {
+  /*processCreate: (req, res) => {
     const productsArray = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
-    /* Nota: Si el usuario solo selecciona una especie el dato se guarda como string, pero si selecciona dos, se guarda lista. Antes de guardarlo debemos convertirlo SIEMPRE a lista []. Sucede lo mismo con categoría */
+    // Nota: Si el usuario solo selecciona una especie el dato se guarda como string, pero si selecciona dos, se guarda lista. Antes de guardarlo debemos convertirlo SIEMPRE a lista []. Sucede lo mismo con categoría
     let listSpecie = [];
     let listCategory = [];
     if (typeof req.body.specie === 'string') { listSpecie[0] = req.body.specie } else { listSpecie = req.body.specie};
@@ -78,11 +85,28 @@ especies: (req, res) => {
       featured: req.body.featured,
       pieces: req.body.pieces
       }
-    /*agregamos el nuevo producto en el array de productos*/
+    //agregamos el nuevo producto en el array de productos
     productsArray.push(productoNuevo);
     fs.writeFileSync(productsFilePath, JSON.stringify(productsArray, null, " "));
     res.redirect("/products/")
-  },
+  }, */  
+  processCreate: (req, res) => {
+    db.Product.create({
+      sku: req.body.sku,
+      name: req.body.name,
+      description: req.body.description,
+      //image: "product-default-image.jpg",
+      image: req.file ? req.file.filename : "product-default-image.jpg",
+      price: req.body.price,
+      price_offer: req.body.priceOffer,
+      specie_id: req.body.specie,//req.body.specie,
+      category_id: req.body.category,//req.body.category,
+      offer: req.body.offer,
+      featured: req.body.featured,
+      pieces: req.body.pieces
+    })
+    res.send (req.body)
+  }, 
 
 
 
