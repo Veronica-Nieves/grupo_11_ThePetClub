@@ -1,6 +1,7 @@
 const fs=require('fs');
 const path = require('path');
-// leemos los datos desde la base de datos a través de los modelos
+
+// leemos los datos desde la base de datos de workbench a través de los modelos
 const db = require("../database/models");
 
 /* Leemos los datos de productsBBDD.json y lo convertimos a un array*/
@@ -11,25 +12,15 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 /* ------------------------ M É T O D O S ---------------------------*/
 /* dentro de la variable controller listamos la lógica de cada método*/
 const controller = {
-// listado de todos las especies. Solo para probar
-especies: (req, res) => {
-  let misEspecies = [
-    { id: 1,
-      name:"Perritos"
-    },
-    {
-      id: 2,
-      name:"gatitos"
-    }
-  ];
-  /*db.Especies.findAll()
-    .then(function(especies) {
-      res.send(misEspecies);
-      console.log(misEspecies);
-    });*/
 
-  res.send(misEspecies);
-  console.log(misEspecies)
+// listado de todos las especies. Solo para probar la conexion con la base de datos
+especies: (req, res) => {
+  //db.Specie.findAll() // Este funciona bien
+  db.Category.findAll()
+    .then(function(especies) {
+      res.send(especies);
+      console.log(misEspecies);
+    });
 },
 
 // listado de todos los productos (tambien llamado index)
