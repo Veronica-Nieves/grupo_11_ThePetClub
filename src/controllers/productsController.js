@@ -99,8 +99,8 @@ const controller = {
       image: req.file ? req.file.filename : "product-default-image.jpg",
       price: req.body.price,
       price_offer: req.body.priceOffer,
-      specie_id: req.body.specie,//req.body.specie,
-      category_id: req.body.category,//req.body.category,
+      specie_id: req.body.specie,
+      category_id: req.body.category,
       offer: req.body.offer,
       featured: req.body.featured,
       pieces: req.body.pieces
