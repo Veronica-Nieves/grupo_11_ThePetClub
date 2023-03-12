@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Include Head -->
+<%- include('../partials/head', {title: 'Listado de Productos'}) %>
+<body>
+<!-- Include Header y banner-->
+<%- include('../partials/header') %>
+
+<main>
+
+    <!-- VISTA DÍNAMICA DE ESPECIES -->
+    <section>
+        <div class="page-title"><h3>LISTADO DE ESPECIES</h3></div>
+        <section>
+
+            <% especies.forEach(especie => { %>
+                <p class="product-name"><strong><%= especie.name %></strong></p>
+            <% }) %>
+
+        </section>
+    </section>
+</main>
+
+<!-- Include Footer-->
+<%- include('../partials/footer') %>
+</body>
+</html>
