@@ -19,7 +19,9 @@
 
             <!--IMAGEN-->
                 <div id="image-wrap">
-                    <p class="featured-product"><i class="fas fa-solid fa-circle featured-product-icon"></i> Producto destacado</p>
+                    <% if (producto.featured != "no"){ %>
+                        <p class="featured-product"><i class="fas fa-solid fa-circle featured-product-icon"></i> Producto destacado</p>
+                    <% } %>
                     <img href="/" src="/img/productslist/<%= producto.image %>" alt="the pet's club-dog" class="image">
                 </div>
 
@@ -28,25 +30,27 @@
                     <div class="title-wrap">
                         <strong class="title"><%= producto.name %></strong>
                     </div>
-                    <% if (producto.priceOffer == null){ %>
+                    
+                <!--PRECIOS-->
+                    <% if (producto.offer == "no"){ %>
                         <div class="price-wrap"><p class="text1">Precio:</p><strong class="price">$<%= producto.price %></strong></div>
                     <% }else{ %>
                         <div class="price-wrap"><p class="text1">Precio regular:</p><strong class="price crossed-out">$<%= producto.price %></strong></div>
-                        <div class="price-wrap"><p class="text1">Adquierelo por tan solo: </p><strong class="offer"><i class="fa-sharp fa-solid fa-bolt-lightning"></i> $<%= producto.priceOffer %></strong></div>
+                        <div class="price-wrap"><p class="text1">Adquierelo por tan solo: </p><strong class="offer"><i class="fa-sharp fa-solid fa-bolt-lightning"></i> $<%= producto.price_offer %></strong></div>
                     <% } %>
 
+                <!--ESPECIES-->
                     <div class="tags-wrap">
                         <p class="wrap-subtitle text1">Recomendado para:</p>
-                        <% producto.specie.forEach(pet => { %>
-                            <p class="species"><%= pet %>, </p>
-                        <% }) %>
+                        <p class="species"><%= producto.specie_id %> </p>
                     </div> 
 
+                <!--CATEGORIA-->
                     <div class="tags-wrap">
-                        <% producto.category.forEach(tag => { %>
-                            <p class="category-tag"> <%= tag %> </p>
-                        <% }) %>
+                        <p class="wrap-subtitle text1">Categoría: </p>
+                        <p class="category-tag"> <%= producto.category_id %> </p>
                     </div>
+
                     
                     <!--botones visisbles para un usuario cliente, se usaran después--><!--
                     <div class="set-buttons-wrap"> 
@@ -54,7 +58,7 @@
                         <p class="button"><a class="button-text" href="/">Comprar</a></p>
                     </div>-->
 
-                    <!--botones visisbles para un usuario admin-->
+                <!--botones visisbles para un usuario admin-->
                     <div class="set-buttons-wrap">
                         <a class="button button-text" href="/products/edit/<%=producto.id%>">EDITAR</a>
                         <form action="/products/delete/<%= producto.id %>?_method=DELETE" method="POST" class="button">

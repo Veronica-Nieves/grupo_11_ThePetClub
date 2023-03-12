@@ -16,30 +16,36 @@ const controller = {
 // listado de todos las especies. Solo para probar la conexion con la base de datos
 especies: (req, res) => {
   //db.Specie.findAll() // Este funciona bien
-  db.Category.findAll()
+  //db.Category.findAll() // Este funciona bien
+  db.Product.findAll()
     .then(function(especies) {
       res.send(especies);
-      console.log(misEspecies);
     });
 },
 
 // listado de todos los productos (tambien llamado index)
   list: (req, res) => {
-    const productsArray = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-    console.log(productsArray)
-    res.render('./products/products-list', {products: productsArray})
+    db.Product.findAll()
+      .then(function(productList){
+        res.render('./products/products-list', {products: productList})
+      })
+    
 	},
 
 
 // muestra la vista del detalle del producto correpondiente al id pasado en la url
   detail: (req, res) => {
-    const productsArray = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-    let productoSolicitado = productsArray.find(producto => {
-      return producto.id == req.params.id;
-    });
-    console.log(productoSolicitado)
-    res.render('./products/products-detail', {producto: productoSolicitado})
-	},
+    db.Product.findByPk(req.params.id)
+      // falta conectar las relaciones con los id de especie y categorias
+      /*,{
+      include:[
+        {association: "specie"}
+      ]})*/
+      .then(function(product){
+        res.render('./products/products-detail', {producto: product})
+        console.log(product)
+      })
+	},  
 
 
 // renderiza el formulario para la carga de un nuevo producto

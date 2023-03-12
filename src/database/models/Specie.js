@@ -31,6 +31,16 @@ module.exports = (sequelize, dataTypes) => {
     }
 
     const Specie = sequelize.define(alias, cols, config);
-    //Aquí especificamos las relaciones de esta tabla con otras tablas
+
+    /* --- RELACIONES DE ESTE MODELO CON OTROS MODELOS --- */
+
+    // Cada especie tiene asociada muchos products (N:1)
+    Specie.associate = function(modelos){
+        Specie.hasMany(modelos.Product, {
+            as: "products", // alias de la relación
+            foreignKey: "specie_id",
+        });
+    }
+
     return Specie
 };

@@ -71,7 +71,25 @@ module.exports = (sequelize, dataTypes) => {
         //deletedAt: false
     }
 
-    const product = sequelize.define(alias, cols, config);
-    //Aquí especificamos las relaciones de esta tabla con otras tablas
-    return product
+    const Product = sequelize.define(alias, cols, config);
+
+    /* --- RELACIONES DE ESTE MODELO CON OTROS MODELOS --- */
+
+    // Cada producto "pertenece a" una especie (1:N)
+    Product.associate = function(modelos){
+        Product.belongsTo(modelos.Specie, {
+            as: "specie", // alias de la relación
+            foreignKey: "specie_id",
+        });
+    }
+
+    // Cada producto "pertenece a" una categoria (1:N)
+    Product.associate = function(modelos){
+        Product.belongsTo(modelos.Category, {
+            as: "category", // alias de la relación
+            foreignKey: "category_id",
+        });
+    }
+
+    return Product
 };
