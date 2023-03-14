@@ -5,7 +5,8 @@ const path = require("path")
 const guestMiddleware = require('../middlewares/routes/guestMiddleware');
 const authMiddleware = require('../middlewares/routes/authMiddleware');
 
-/* **************************** multer ***************************** */
+/* **************************** MULTER ***************************** */
+
 const storage = multer.diskStorage({
     destination:function(req, file, cb){
          // ubicación pensada como si estuvieramos en la carpeta raíz del proyecto
@@ -18,9 +19,8 @@ const storage = multer.diskStorage({
 })
 
 const upload = multer ({storage: storage});
+
 /* *************************** Fin-multer ************************** */
-
-
 
 const productsController = require('../controllers/productsController');
 
@@ -33,21 +33,21 @@ router.get('/', productsController.list);
 router.get('/detail/:id', productsController.detail);
 
 /* CREAR UN PRODUCTO */
-router.get('/create/',guestMiddleware, productsController.create);
-router.post('/create/',guestMiddleware,  upload.single("image") , productsController.processCreate);
+router.get('/create/', productsController.create);
+router.post('/create/',  upload.single("image") , productsController.processCreate);
 
 /* EDITAR UN PRODUCTO */
-router.get('/edit/:id',guestMiddleware,  productsController.edit);
-router.put('/edit/:id',guestMiddleware,  productsController.update)
+router.get('/edit/:id',  productsController.edit);
+router.put('/edit/:id',  productsController.update)
 
 /* ELIMINAR UN PRODUCTO */
-router.delete('/delete/:id',guestMiddleware, productsController.delete);
+router.delete('/delete/:id', productsController.delete);
 
 router.get('/carrito-compras', productsController.carrito);
 
 /* RUTA TEMPORAL DE ESPECIES - solo para probar conexion con la base de datos */
-router.get('/especies', productsController.especies);
+//router.get('/especies', productsController.especies);
 
 /* -------------------- F I N   D E   R U T A S ---------------------*/
 
-module.exports =router;
+module.exports = router;

@@ -1,58 +1,52 @@
 const fs=require('fs');
 const path = require('path');
 
-// leemos los datos desde la base de datos de workbench a través de los modelos
-const db = require("../database/models");
-
-/* Leemos los datos de productsBBDD.json y lo convertimos a un array*/
-const productsFilePath = path.join(__dirname, '../data/productsBBDD.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-
+// Leemos los datos desde la base de datos de workbench a través de los modelos
+const db = require('../database/models');
 
 /* ------------------------ M É T O D O S ---------------------------*/
 /* dentro de la variable controller listamos la lógica de cada método*/
 const controller = {
 
-// SOLO PARA PROBAR LA CONEXION CON LA BASE DE DATOS, listado de todos las especies. 
-  especies: (req, res) => {
-    //db.Specie.findAll() // Este funciona bien
-    //db.Category.findAll() // Este funciona bien
-    db.Product.findAll()
-      .then(function(especies) {
-        res.send(especies);
-      });
-  },
-
-// listado de todos los productos (tambien llamado index)
+  // Listado de todos los productos 
   list: (req, res) => {
-    db.Product.findAll()
+    db.products.findAll()
       .then(function(productList){
         res.render('./products/products-list', {products: productList})
       })
-    
+      .catch((error) => {
+        res.send(error)
+      })
 	},
 
+// Vista del detalle del producto correpondiente al id pasado en la url
+  detail: async(req, res) => {
+    db.species.findAll()
+      .then(function(especies){
+    
+    db.category.findAll()
+      .then(function(categorias){
 
-// muestra la vista del detalle del producto correpondiente al id pasado en la url
-  detail: (req, res) => {
-    db.Product.findByPk(req.params.id)
-      // falta conectar las relaciones con los id de especie y categorias
-      /*,{
-      include:[
-        {association: "specie"}
-      ]})*/
+    db.products.findByPk(req.params.id)
       .then(function(product){
-        res.render('./products/products-detail', {producto: product})
+        res.render('./products/products-detail', {producto: product, especies: especies, categorias: categorias})
         console.log(product)
       })
+      })
+      })
+
+    // falta conectar las relaciones con los id de especie y categorias
+    /*,{
+    include:[
+      {association: "specie"}
+    ]})*/
 	},  
 
-
-// renderiza el formulario para la carga de un nuevo producto tomando desde la bd las especies y las categorias
+// Crear un nuevo producto
   create: async(req, res) => {
-    db.Specie.findAll()
+    db.species.findAll()
     .then(function(especies){
-          db.Category.findAll()
+          db.category.findAll()
           .then(function(categorias){
               res.render('./products/products-create', {especies: especies, categorias: categorias});
           })
@@ -60,38 +54,10 @@ const controller = {
     
   },
 
-
-// procesa los datos enviados en el formulariode crear un nuevo producto
-  /*processCreate: (req, res) => {
-    const productsArray = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-
-    // Nota: Si el usuario solo selecciona una especie el dato se guarda como string, pero si selecciona dos, se guarda lista. Antes de guardarlo debemos convertirlo SIEMPRE a lista []. Sucede lo mismo con categoría
-    let listSpecie = [];
-    let listCategory = [];
-    if (typeof req.body.specie === 'string') { listSpecie[0] = req.body.specie } else { listSpecie = req.body.specie};
-    if (typeof req.body.category === 'string') { listCategory[0] = req.body.category} else { listCategory = req.body.category};
-
-    let productoNuevo = {
-      name:req.body.name,
-      id: products[products.length-1].id + 1,
-      sku: req.body.sku,
-      description:req.body.description,
-      image: req.file ? req.file.filename : "product-default-image.jpg",
-      price:req.body.price,
-      priceOffer: req.body.priceOffer,
-      specie: listSpecie,
-      category: listCategory,
-      offer: req.body.offer,
-      featured: req.body.featured,
-      pieces: req.body.pieces
-      }
-    //agregamos el nuevo producto en el array de productos
-    productsArray.push(productoNuevo);
-    fs.writeFileSync(productsFilePath, JSON.stringify(productsArray, null, " "));
-    res.redirect("/products/")
-  }, */  
+//Proceso de guardar al producto creado
   processCreate: (req, res) => {
-    db.Product.create({
+
+    db.products.create({
       sku: req.body.sku,
       name: req.body.name,
       description: req.body.description,
@@ -105,62 +71,52 @@ const controller = {
       featured: req.body.featured,
       pieces: req.body.pieces
     })
-    res.send (req.body)
+    res.redirect('/products');
   }, 
 
+// Editar un producto
+  edit: async(req, res) => {
 
+    db.species.findAll()
+      .then(function(especies){
+    
+    db.category.findAll()
+      .then(function(categorias){
+    
+    db.products.findByPk(req.params.id)
+      .then((productToEdit) => {
+    
+      res.render("./products/products-edit", {productToEdit: productToEdit, especies: especies, categorias: categorias})
+      console.log(productToEdit)
+      })
+      })
+      })
+    },
 
-
-/*EDITAR PRODUCTO*/
-  edit: (req, res) => {
-
-    let id = req.params.id
-    const productsArray = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-    let productToEdit = productsArray.find(producto =>{
-      return producto.id == id
-    })
-
-    res.render("./products/products-edit", {productToEdit: productToEdit})
-  },
-
+// Guardar un producto editado
   update: (req,res) => {
-
-    const productsArray = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-    let id = req.params.id
-    let productoGuardado = productsArray.find(producto =>{
-      return producto.id == id
-    })
-
-    /* Nota: Si el usuario solo selecciona una especie el dato se guarda como string, pero si selecciona dos, se guarda lista. Antes de guardarlo debemos convertirlo SIEMPRE a lista []. Sucede lo mismo con categoría */
-    let listSpecie = [];
-    let listCategory = [];
-    if (typeof req.body.specie === 'string') { listSpecie[0] = req.body.specie } else { listSpecie = req.body.specie};
-    if (typeof req.body.category === 'string') { listCategory[0] = req.body.category} else { listCategory = req.body.category};
-		
-
-    let productoEditado = {
-      name:req.body.name,
-      id: productoGuardado.id, // no cambia
+     
+    db.products.update({
       sku: req.body.sku,
-      description:req.body.description,
-      // falta configurar que pueda subir una nueva aimagen. De momento se deja la anterior
-      image: productoGuardado.image,
-      price:req.body.price,
-      priceOffer: req.body.priceOffer,
-      specie: listSpecie,
-      category: listCategory,
+      name: req.body.name,
+      description: req.body.description,
+      //image: "product-default-image.jpg",
+      image: req.file ? req.file.filename : "product-default-image.jpg",
+      price: req.body.price,
+      price_offer: req.body.priceOffer,
+      specie_id: req.body.specie,
+      category_id: req.body.category,
       offer: req.body.offer,
       featured: req.body.featured,
       pieces: req.body.pieces
+    }, {
+      where: {
+        id: req.params.id
       }
-
-    let indice = productsArray.findIndex(product =>{
-      return product.id == id
     });
-    
-    productsArray[indice] = productoEditado;
-    fs.writeFileSync(productsFilePath, JSON.stringify(productsArray, null, " "));
-    res.redirect("/products/")
+
+    res.redirect("/products/detail/" + req.params.id)
+
   },
 
   carrito: (req, res) => {

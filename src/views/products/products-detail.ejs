@@ -41,14 +41,26 @@
 
                 <!--ESPECIES-->
                     <div class="tags-wrap">
-                        <p class="wrap-subtitle text1">Recomendado para:</p>
-                        <p class="species"><%= producto.specie_id %> </p>
+                        <p class="wrap-subtitle text1">Recomendado para: </p>
+                        <p class="species">                           
+                            <%for(let i=0; i< especies.length; i++){ %>
+                                <%if(especies[i].id == producto.specie_id){%> 
+                                    <%= especies[i].name%>
+                                <% } %>
+                                <% } %>
+                        </p>
                     </div> 
 
                 <!--CATEGORIA-->
                     <div class="tags-wrap">
                         <p class="wrap-subtitle text1">Categoría: </p>
-                        <p class="category-tag"> <%= producto.category_id %> </p>
+                        <p class="category-tag">                             
+                            <%for(let i=0; i< categorias.length; i++){ %>
+                            <%if(categorias[i].id == producto.category_id){%> 
+                                <%= categorias[i].name%>
+                            <% } %>
+                            <% } %> 
+                        </p>
                     </div>
 
                     

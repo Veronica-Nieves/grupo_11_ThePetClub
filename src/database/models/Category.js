@@ -2,7 +2,7 @@
 /* ----------DEFINIMOS EL MODELO DE CATEGORIAS----------- */
 module.exports = (sequelize, dataTypes) => {
    
-    let alias = 'Category';
+    let alias = 'category';
 
     let cols = {
             id: {
@@ -35,12 +35,12 @@ module.exports = (sequelize, dataTypes) => {
     /* --- RELACIONES DE ESTE MODELO CON OTROS MODELOS --- */
 
     // Cada categoria tiene asociada muchos products (N:1)
-    Category.associate = function(models){
-        Category.hasMany(models.Product, {
-            as: "products", // alias de la relación
-            foreignKey: "category_id",
-        });
-    }
+    // category.associate = function(models){
+    //     category.hasMany(models.Product, {
+    //         as: "products", // alias de la relación
+    //         foreignKey: "category_id",
+    //     });
+    // }
 
     return Category
 };

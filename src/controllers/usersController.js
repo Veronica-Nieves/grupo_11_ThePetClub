@@ -4,7 +4,7 @@ const path = require('path');
 const bcryptjs = require ('bcryptjs');
 const { validationResult } = require('express-validator')
 
-const User = require ('../models/Users');
+const db = require ('../database/models');
 
 
 /* dentro de la variable controller listamos la lógica de cada método*/
@@ -12,6 +12,7 @@ const controller = {
     register: (req, res) => {
         return res.render('./users/register')
 	},
+    
     processRegister: (req, res) => {
         const resultValidation = validationResult(req);
         
@@ -22,7 +23,7 @@ const controller = {
             });
         }
 
-        let userInDB = User.findByField('email', req.body.email);
+        let userInDB = db.users.findByField('email', req.body.email);
 
         if (userInDB) {
             return res.render('./users/register', {
@@ -42,7 +43,7 @@ const controller = {
             avatar: req.file.filename
         }
 
-        let userCreated = User.create(userToCreate);
+        let userCreated = db.users.create(userToCreate);
 
         return res.redirect('/users/login');
 	},
@@ -55,7 +56,7 @@ const controller = {
 
     processLogin: (req, res) => {
     
-    let userToLogin = User.findByField('email', req.body.email);
+    let userToLogin = db.users.findByField('email', req.body.email);
 
     if(userToLogin) {
 

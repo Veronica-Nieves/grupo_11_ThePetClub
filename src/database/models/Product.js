@@ -1,8 +1,9 @@
 
 /* ----------DEFINIMOS EL MODELO DE PRODUCTOS----------- */
+
 module.exports = (sequelize, dataTypes) => {
    
-    let alias = 'Product';
+    let alias = 'products';
 
     let cols = {
             id: {
@@ -63,6 +64,7 @@ module.exports = (sequelize, dataTypes) => {
                 type: dataTypes.DATE,
             }*/
         };
+
     let config = {
         tableName: "products",
         timestamps: false,
@@ -75,22 +77,18 @@ module.exports = (sequelize, dataTypes) => {
 
     /* --- RELACIONES DE ESTE MODELO CON OTROS MODELOS --- */
     
-    Product.associate = function(models){
-    // Cada producto "pertenece a" una especie (1:N)
-        Product.belongsTo(models.Specie, {
-            as: "specie", // alias de la relación
-            foreignKey: "specie_id",
-        });
-
-    // Cada producto "pertenece a" una categoria (1:N)
-        Product.belongsTo(models.Category, {
-            as: "category", // alias de la relación
-            foreignKey: "category_id",
-        });
-    }
-
-    
-    
+    // Product.associate = function(models){
+    // // Cada producto "pertenece a" una especie (1:N)
+    //     Product.belongsTo(models.Specie, {
+    //         as: "species", // alias de la relación
+    //         foreignKey: "specie_id",
+    //     });
+    // // Cada producto "pertenece a" una categoria (1:N)
+    //     Product.belongsTo(models.Category, {
+    //         as: "category", // alias de la relación
+    //         foreignKey: "category_id",
+    //     });
+    // }
 
     return Product
 };
