@@ -41,9 +41,20 @@ module.exports = (sequelize, dataTypes) => {
     };
 
     let config = {
-        tableName: "products",
+        tableName: "users",
         timestamps: false,
     };
     const User = sequelize.define(alias, cols, config);
+
+    /* Relación de esta tabla con otra */
+    /* Variable que representa al modelo de usuarios */
+    User.associate = function(models){
+    User.belongsTo(models.Role, {
+        /* Se asigna un alias con el que luego se llamara luego la relación */
+                 as: "users", 
+        /* Se aclara la foreignKey donde se relacionan ambas tablas */
+                 foreignKey: "rol_id",
+    });
+    };
     return User;
 }

@@ -2,7 +2,9 @@ const express= require('express');
 const router = express.Router();
 const path = require('path');
 
-//Controller
+/* Requiero la base de datos */
+const db = require('../database/models/');
+/* Controller */
 const usersController = require('../controllers/usersController');
 
 const { body } = require('express-validator');

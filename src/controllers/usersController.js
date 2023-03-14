@@ -4,7 +4,6 @@ const path = require('path');
 const bcryptjs = require ('bcryptjs');
 const { validationResult } = require('express-validator')
 
-const db = require ('../database/models');
 
 
 /* dentro de la variable controller listamos la lógica de cada método*/
