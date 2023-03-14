@@ -8,7 +8,7 @@ const db = require('../database/models');
 /* dentro de la variable controller listamos la lógica de cada método*/
 const controller = {
 
-  // Listado de todos los productos 
+// Listado de todos los productos 
   list: (req, res) => {
     db.products.findAll()
       .then(function(productList){
@@ -61,7 +61,6 @@ const controller = {
       sku: req.body.sku,
       name: req.body.name,
       description: req.body.description,
-      //image: "product-default-image.jpg",
       image: req.file ? req.file.filename : "product-default-image.jpg",
       price: req.body.price,
       price_offer: req.body.priceOffer,
@@ -87,7 +86,7 @@ const controller = {
       .then((productToEdit) => {
     
       res.render("./products/products-edit", {productToEdit: productToEdit, especies: especies, categorias: categorias})
-      console.log(productToEdit)
+      //console.log(productToEdit)
       })
       })
       })
@@ -100,7 +99,6 @@ const controller = {
       sku: req.body.sku,
       name: req.body.name,
       description: req.body.description,
-      //image: "product-default-image.jpg",
       image: req.file ? req.file.filename : "product-default-image.jpg",
       price: req.body.price,
       price_offer: req.body.priceOffer,
@@ -123,16 +121,13 @@ const controller = {
     res.render('carrito-compras');
   }, 
 
-  /* ELIMINAR */
+// Eliminar un producto por id
   delete: (req, res) => {
-    let id = req.params.id
-    const productsArray = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-
-    let productosActuales = productsArray.filter(producto => {
-      return producto.id != id;
+    db.products.destroy({
+        where: { 
+          id:req.params.id
+        }
     })
-
-    fs.writeFileSync(productsFilePath, JSON.stringify(productosActuales, null, " "));
     res.redirect("/products/");
   },
 

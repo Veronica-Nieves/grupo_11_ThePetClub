@@ -37,7 +37,28 @@ app.use('/products', productsRouter);
 app.use('/users', usersRouter);
 
 
+// ********** Probamos conexion  con la base de datos local **********
+var mysql2 = require('mysql2'); //<----- requiere: npm install mysql2 
+
+var conexion = mysql2.createConnection({
+    host:'127.0.0.1',
+    database:"the_pets_club",
+    user:'root',
+    password: null});
+
+    conexion.connect (function (error){
+        if (error){
+            throw error;
+        } else { console.log("Conecto con éxito la base de Datos")}
+    });
+    conexion.end();
+
+
 // ************ Set the server to listen ************
 app.listen(3002, () => {
     console.log('Server running in http://localhost:3002');
+
+
+
+
 });

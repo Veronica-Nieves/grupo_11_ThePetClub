@@ -45,8 +45,6 @@ router.delete('/delete/:id', productsController.delete);
 
 router.get('/carrito-compras', productsController.carrito);
 
-/* RUTA TEMPORAL DE ESPECIES - solo para probar conexion con la base de datos */
-//router.get('/especies', productsController.especies);
 
 /* -------------------- F I N   D E   R U T A S ---------------------*/
 
