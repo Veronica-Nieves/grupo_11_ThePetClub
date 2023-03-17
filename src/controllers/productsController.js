@@ -1,5 +1,6 @@
 const fs=require('fs');
 const path = require('path');
+const { Association } = require('sequelize');
 
 // Leemos los datos desde la base de datos de workbench a través de los modelos
 const db = require('../database/models');
@@ -9,7 +10,9 @@ const db = require('../database/models');
 const controller = {
 
   conexion:(req, res) => {
-    db.products.findAll()
+    db.products.findAll({
+        include:["specie","category"],
+      })
       .then(function(productList){
         res.send(productList)
       })
@@ -28,26 +31,14 @@ const controller = {
 
 // Vista del detalle del producto correpondiente al id pasado en la url
   detail: async(req, res) => {
-    db.species.findAll()
-      .then(function(especies){
-    
-    db.category.findAll()
-      .then(function(categorias){
-
-    db.products.findByPk(req.params.id)
+    db.products.findByPk(req.params.id,{
+      include:["specie", "category"],
+    })
       .then(function(product){
-        res.render('./products/products-detail', {producto: product, especies: especies, categorias: categorias})
+        res.render('./products/products-detail', {producto: product});
         console.log(product)
       })
-      })
-      })
-
-    // falta conectar las relaciones con los id de especie y categorias
-    /*,{
-    include:[
-      {association: "specie"}
-    ]})*/
-	},  
+	}, 
 
 // Crear un nuevo producto
   create: async(req, res) => {

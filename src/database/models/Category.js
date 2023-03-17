@@ -34,13 +34,13 @@ module.exports = (sequelize, dataTypes) => {
     
     /* --- RELACIONES DE ESTE MODELO CON OTROS MODELOS --- */
 
-    // Cada categoria tiene asociada muchos products (N:1)
-    // category.associate = function(models){
-    //     category.hasMany(models.Product, {
-    //         as: "products", // alias de la relación
-    //         foreignKey: "category_id",
-    //     });
-    // }
+    // Cada especie tiene asociada muchos products (1:N)
+    Category.associate = function(models){
+        Category.hasMany(models.products, {
+            as: "products", // alias de la relación
+            foreignKey: "category_id",
+         });
+    }
 
     return Category
 };
