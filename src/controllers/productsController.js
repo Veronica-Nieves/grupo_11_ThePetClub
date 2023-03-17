@@ -8,6 +8,13 @@ const db = require('../database/models');
 /* dentro de la variable controller listamos la lógica de cada método*/
 const controller = {
 
+  conexion:(req, res) => {
+    db.products.findAll()
+      .then(function(productList){
+        res.send(productList)
+      })
+  },
+
 // Listado de todos los productos 
   list: (req, res) => {
     db.products.findAll()

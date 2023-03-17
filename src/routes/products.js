@@ -45,6 +45,8 @@ router.delete('/delete/:id', productsController.delete);
 
 router.get('/carrito-compras', productsController.carrito);
 
+router.get('/conexion', productsController.conexion);
+
 
 /* -------------------- F I N   D E   R U T A S ---------------------*/
 
