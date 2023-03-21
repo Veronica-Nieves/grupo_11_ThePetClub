@@ -97,7 +97,7 @@ const controller = {
       sku: req.body.sku,
       name: req.body.name,
       description: req.body.description,
-      image: req.file ? req.file.filename : "product-default-image.jpg",
+      //image: req.file ? req.file.filename : "product-default-image.jpg",
       price: req.body.price,
       price_offer: req.body.priceOffer,
       specie_id: req.body.specie,

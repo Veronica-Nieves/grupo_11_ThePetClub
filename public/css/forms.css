@@ -10,7 +10,7 @@ Vistas:
 }
 
 .form-container{
-    margin: 10px;
+    margin: 10px Auto;
     padding: 30px 7px;
     background-color: var(--sombra);
     border-radius: 15px;
@@ -108,7 +108,9 @@ Vistas:
 
 
 /* Formulario de crear y editar productos */
-
+#products-form{ 
+    margin: auto;
+}
 #products-form .form-field{ 
     font-size: 14px;
     text-align: left;

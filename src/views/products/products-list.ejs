@@ -7,10 +7,15 @@
 <%- include('../partials/header') %>
 
 <main>
-
+    <div class="gap"></div>
     <!-- VISTA DÍNAMICA DE PRODUCTOS -->
     <section>
-        <div class="page-title"><h3>Todos los producto (Dinamico)</h3></div>
+        <div class="page-title">
+            <h3>Todos los producto (Dinamico)</h3>
+            <p class="form-buttons-container">
+                <a class="form-button" href="/products/create"> Agregar un nuevo producto</a>
+            </p>
+        </div>
         <section class="product-list-container">
 
             <% products.forEach(producto => { %>

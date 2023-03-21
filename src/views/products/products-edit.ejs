@@ -49,22 +49,19 @@
                 <div class="form-2-columns-container">
                     <!--Verificamos especie por especie si se encuentra seleccionada-->
                     <p class="form-field col-50">
-                        <p class="form-field col-50">
-                            <label>Especie</label>
-                         
-                                <select name="specie" class="form-input">
-                                    <%for(let i=0; i< especies.length; i++){ %>
-                                        <option value="<%=especies[i].id%>" class="form-input-option"> 
-                                            <%= especies[i].name%>
-                                        </option>
-                                    <% } %>
-                                </select>        
-                                
+                        <label>Especie</label>
+                        <select name="specie" class="form-input">
+                            <%for(let i=0; i< especies.length; i++){ %>
+                                <option value="<%=especies[i].id%>" class="form-input-option"> 
+                                    <%= especies[i].name%>
+                                </option>
+                            <% } %>
+                        </select>        
+                    </p>      
 
                     <!--Verificamos categoría por categoría si se encuentra seleccionada-->
                     <p class="form-field col-50">
                         <label><strong>Categorías</strong></label>
-                
                         <select name="category" class="form-input">
                             <%for(let i=0; i< categorias.length; i++){ %>
                                 <option value="<%=categorias[i].id%>" class="form-input-option"> 
