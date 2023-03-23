@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!-- Include Head -->
+<%- include('../partials/head', {title: 'Detalle de usuario'}) %>
+
+<body>
+    <!-- Include Header y banner-->
+    <%- include('../partials/header') %>
+
+    <body>
+        <!-- Listado de usuarios -->
+        <h1>Detalle de usuarios</h1>
+        <dl>
+            Usuario:  
+                <dl>
+                    <dt>
+                        <%= usuarios[i].user_name %>
+                        <dd>
+                            <%= usuarios[i].fisrt_name %>
+                            <%= usuarios[i].last_name %>
+                            <!-- Pendiente queda ver si funciona y hacer un condicional para mostrar el id de rol y depende que numero sea, mostrar si es usuario o administrador -->
+                        </dd>
+                    </dt>
+                </dl>
+        </dl>
+    </body>
+
+
+    <!-- Include Footer-->
+    <%- include('../partials/footer') %>
+    
+</body>
+
+</html>

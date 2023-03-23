@@ -5,8 +5,9 @@ const path = require('path');
 /* Requiero la base de datos */
 const db = require('../database/models/');
 /* Controller */
-const usersController = require('../controllers/usersController');
-
+/* const usersController = require('../controllers/usersController'); */
+/* nuevo controlador */
+const usersController = require('../controllers/userControllerNuevo');
 const { body } = require('express-validator');
 
 //Middlewares
@@ -16,6 +17,12 @@ const uploadFile = require ('../middlewares/global/multerMiddleware')
 const validations = require ('../middlewares/global/validateMiddleware')
 
 /* ------------------- Listado de rutas de users --------------------*/
+
+/* Ruta para mostrar el listado de usuarios registrados */
+router.get('/list', usersController.list);
+
+/* Ruta de detalle de usuario */
+router.get('/list/:id', usersController.detailUser);
 
 // Formulario de registro
 router.get('/register/', usersController.register);
