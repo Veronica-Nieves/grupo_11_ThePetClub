@@ -24,6 +24,11 @@
                     </li>
             <% } %> 
         </ul>
+        <form action="/users/delete/<%=usuarios.id%>" method="POST" enctype="multipart/form-data" class="sing-up-form-container">
+            <p class="register-button-container">
+                <a href="/users/list/"><button type="submit" class="form-button"> Eliminar usuario </button></a>
+            </p>
+        </form>
     </body>
 
 
