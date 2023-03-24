@@ -12,128 +12,81 @@
         <!-- FORMULARIO SIGN UP - REGISTER-->
         <div class="register-container"> 
             <div class="form-title-container"><h3>  Registrate en The Pet's Club  </h3></div>
+            <!-- Errores de db -->
+            <% if(typeof(errors) != 'undefined'){%>
+                <ul class="alert alert-danger">
+                    <% errors.forEach(error => { %>
+                        <li><%= error.msg%></li>
+                    <%});%>
+                </ul>
+            <%}%>
+            <!-- Fin de mostrar los errores -->
             <form action="/users/register/" method="POST" enctype="multipart/form-data" class="sing-up-form-container">
                     <p class="register-form-field">
                         <input type="text" 
                                name="firstName" 
-                               id="name" placeholder="Nombre"  
-                               class="form-input-register <%= locals.errors && errors.firstName ? 'invalid' : null %> " 
-                               value="<%= locals.oldData ? oldData.firstName : null %>" >
+                               id="name" 
+                               placeholder="Nombre"  
+                               class="form-input-register" 
+                               value="<%= typeof old != 'undefined' ? old.firstName : '' %>" >
                                <!-- <i class="fa-solid fa-circle-xmark"></i> -->
-                        <% if (locals.errors && errors.firstName) { %>
-                            <div class="text">
-                                <%= errors.firstName.msg %>
-                            </div>
-
-                        <% } %>
                     </p>
-
                     <p class="register-form-field">
                         <input type="text"
                                name="lastName"
                                id="name" 
                                placeholder="Apellido"  
-                               class="form-input-register <%= locals.errors && errors.lastName ? 'invalid' : null %> "
-                               value="<%= locals.oldData ? oldData.lastName : null %>">
-                        <% if (locals.errors && errors.lastName) { %>
-                            <div class="text">
-                                <%= errors.lastName.msg %>
-                            </div>
-
-                        <% } %>
+                               class="form-input-register"
+                               value="<%= typeof old != 'undefined' ? old.lastName : '' %>">
                     </p>
-
                 <p class="register-form-field">
                     <input type="text"
                            name="nameUser" 
                            id="name" placeholder="Nombre de usuario" 
-                           class="form-input-register <%= locals.errors && errors.nameUser ? 'invalid' : null %> "
-                           value="<%= locals.oldData ? oldData.nameUser : null %>">
-                    <% if (locals.errors && errors.nameUser) { %>
-                        <div class="text">
-                            <%= errors.nameUser.msg %>
-                        </div>
-
-                    <% } %>
+                           class="form-input-register"
+                           value="<%= typeof old != 'undefined' ? old.nameUser : '' %>">
                 </p>
-
                 <p class="register-form-field">
                 <input type="email" 
                         name="email" 
                         id="email" placeholder="Correo electrónico" 
-                        class="form-input-register <%= locals.errors && errors.email ? 'invalid' : null %> " 
-                        value="<%= locals.oldData ? oldData.email : null %>">
-                <% if (locals.errors && errors.email) { %>
-                    <div class="text">
-                        <%= errors.email.msg %>
-                    </div>
-
-                <% } %>
+                        class="form-input-register" 
+                        value="<%= typeof old != 'undefined' ? old.email : '' %>">
                 </p>
-        
                 <p class="register-form-field">
                 <input type="password" 
                         name="password" 
                         placeholder="Ingresa una contraseña"  
-                        class="form-input-register <%= locals.errors && errors.password ? 'invalid' : null %> ">
-                <% if (locals.errors && errors.password) { %>
-                    <div class="text">
-                        <%= errors.password.msg %>
-                    </div>
-
-                <% } %>
+                        class="form-input-register">
                 </p>
-
                 <p class="register-form-field">
-                <input type="password" name="passwordConfirmed" placeholder="Confirma la contraseña"  class="form-input-register <%= locals.errors && errors.passwordConfirmed ? 'invalid' : null %> ">
-                <% if (locals.errors && errors.passwordConfirmed) { %>
-                    <div class="text">
-                        <%= errors.passwordConfirmed.msg %>
-                    </div>
-
-                <% } %>
+                <input type="password" 
+                        name="passwordConfirmed" 
+                        placeholder="Confirma la contraseña"  
+                        class="form-input-register">
                 </p>
-
                 <p class="register-form-field">
                     <label for="avatarRegister" class="form-label-avatar">Imagen de perfil: </label> 
-                    <input type="file" id="avatarRegister" name="avatar" >
-                        <% if (locals.errors && errors.avatar) { %>
-                            <div class="text">
-                                <%= errors.avatar.msg %>
-                            </div>
-
-                        <% } %>
+                    <input type="file" id="avatarRegister" 
+                            name="avatar" >
                 </p>
-                
-                
                 <p class="input-administrator-user">
-                        <label class="label-user" for="administrator-user" id="administrator-user">Usuario <input type="radio" name="role" value="Usuario" checked></label>
-                        <label class="label-administrator" for="administrator-user">Administrador <input type="radio" name="role" value="Administrador"></label>
-                        <% if (locals.errors && errors.role) { %>
-                            <div class="text">
-                                <%= errors.role.msg %>
-                            </div>
-
-                        <% } %>
-                    </label> 
-                
+                        <label class="label-user" for="administrator-user" id="administrator-user">Usuario <input type="radio" name="role" value="2" checked></label>
+                        <label class="label-administrator" for="administrator-user">Administrador <input type="radio" name="role" value="1"></label></label>
                 </p>
-                
                 <p class="form-field">
                     Al crear una cuenta en <strong>thepetsclubs.com</strong> acepta los 
                     <a href="/" class="register-link"><strong>Términos y Condiciones</strong></a> y nuestro 
                     <a href="/" class="register-link"><strong>Aviso de privacidad</strong> </a>
-                </p><br>
-
-
+                </p>
+                <br>
                 <!--Botón de formulario -->
                 <p class="register-button-container">
-                <a href="/"><button type="Crear cuenta" class="form-button"> Crear cuenta </button></a>
+                <button type="Crear cuenta" class="form-button"> Crear cuenta </button>
                 </p>
 -
             </form>
-            <p>¿Ya tienes una cuenta? <a href="/users/login/" class="register-link"><strong>Iniciar Sesión</strong></a></p><br>
-
+            <p>¿Ya tienes una cuenta? <a href="/users/login" class="register-link"><strong>Iniciar Sesión</strong></a></p><br>
         </div>
     </body>
 

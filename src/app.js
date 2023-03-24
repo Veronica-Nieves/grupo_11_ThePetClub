@@ -15,8 +15,8 @@ app.use(express.static(path.join(__dirname, '../public'))); // Necesario para lo
 app.use(express.urlencoded({extended: false})); // para capturar el body de los formularios
 app.use(express.json()); // capturar el body de los forms en formato JSON
 app.use(methodOverride('_method')); // para poder usar los métodos PUT y DELETE
-app.use(cookies())
-app.use(session({secret: 'The Pets Club', resave: false, saveUninitialized: false})); // para habilitar las sesiones
+app.use(cookies());
+app.use(session({secret: 'The Pets Club', resave: false, saveUninitialized: true})); // para habilitar las sesiones
 
 // ************ Middlewares propios ************
 
