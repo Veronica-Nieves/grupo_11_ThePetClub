@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!-- Include Head -->
+<%- include('../partials/head', {title: 'Inicio'}) %>
+
+<body>
+    <!-- Include Header y banner-->
+    <%- include('../partials/header') %>
+
+    <body>
+        <!-- FORMULARIO SIGN UP - REGISTER-->
+        <div class="register-container"> 
+            <div class="form-title-container"><h3>  Editar el usuario  </h3></div>
+            <form action="/users/edit/<%=usuarios.id%>" method="POST" enctype="multipart/form-data" class="sing-up-form-container">
+                <p class="register-form-field">
+                    <input type="text" 
+                            name="firstName" 
+                            id="name" 
+                            placeholder="Nombre"  
+                            class="" 
+                            value="<%=usuarios.fisrt_name%>" >
+                </p>
+                <p class="register-form-field">
+                    <input type="text"
+                            name="lastName"
+                            id="name" 
+                            placeholder="Apellido"  
+                            class=""
+                            value="<%=usuarios.last_name%>">
+                </p>
+
+                <p class="register-form-field">
+                    <input type="text"
+                           name="nameUser" 
+                           id="name" placeholder="Nombre de usuario" 
+                           class=""
+                           value="<%=usuarios.user_name%>">
+                </p>
+                <!-- Para modificar la contraseña, hay que verificar la anterior contraseña (PENDIENTE) 
+                    <p class="register-form-field">
+                    <input type="password" 
+                            name="password" 
+                            placeholder="Nueva contraseña"  
+                            class="">
+                </p>
+                <p class="register-form-field">
+                    <input type="password" 
+                            name="passwordConfirmed" 
+                            placeholder="Confirma la contraseña"  
+                            class="">
+                </p> -->
+
+                <p class="register-form-field">
+                    <label for="avatarRegister" class="form-label-avatar">Imagen de perfil: </label> 
+                    <input type="file" id="avatarRegister" name="avatar" >
+                </p>
+                <!--Botón de formulario -->
+                <p class="register-button-container">
+                <a href="/profile"><button type="submit" class="form-button"> Editar usuario </button></a>
+                </p>
+-
+            </form>
+        </div>
+    </body>
+
+    <!-- Include Footer-->
+    <%- include('../partials/footer') %>
+    
+</body>
+
+</html>

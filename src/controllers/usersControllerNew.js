@@ -34,8 +34,12 @@ const controller = {
           if (!req.file) {
             return true;
           }
-          let extension = path.extname(req.file.filename).toLowerCase();
-          if (extension == '.jpg' || extension == '.jpeg' || extension == '.png' || extension == '.gif') {
+          let extension = "" + path.extname(req.file[0].filename).toLowerCase();
+          if (
+              extension == '.jpg' || 
+              extension == '.jpeg' || 
+              extension == '.png' || 
+              extension == '.gif') {
             return true;
           }
           return false;
