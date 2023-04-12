@@ -13,26 +13,34 @@
         <div> 
             <div class="form-title-container"><h3>  Iniciar Sesión  </h3></div>
 
-            <form action="/users/login" method="POST" enctype="multipart/form-data" class="form-container" >
+            <form action="/users/login/" method="POST" class="form-container">
 
             <div class="form-field">
-                <input type="email" name="email" id="email" placeholder="Correo electrónico" required class="form-input">
-                <% if (locals.errors && errors.email){ %>
+                <input type="email" 
+                        name="email"   
+                        id="email" 
+                        placeholder="Correo electrónico" required 
+                        class="form-input" value="">
+                <% if (typeof(errors) != 'undefined'){ %>
                     <div class="error-message">
-                        <%= errors.email.msg %> 
+                        <%= errors[0].msg %> 
                     </div>
                 <% } %>
             </div>
 
             <div class="form-field">
-                <input type="password" name="password" id="password" placeholder="Contraseña" required class="form-input">
+                <input type="password" 
+                        name="password" 
+                        id="password" 
+                        placeholder="Contraseña" required 
+                        class="form-input">
             </div>
             
             <!--Mostrar errores cuando haya-->
             <div>
-                <% if (locals.errors){ %>
+                <% if (typeof(errors) != 'undefined'){ %>
                     <div class="error-message">
-                        <%= errors %> 
+                        <%= errors[0].msg %> 
                     </div>
                 <% } %>
             </div>

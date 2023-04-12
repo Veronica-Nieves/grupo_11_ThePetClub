@@ -80,11 +80,12 @@ User.findAll()
             }
           }).withMessage('Las contraseñas deben ser iguales'),
           /* Validación de extensiones de los archivos de los avatar */
+          /* Con el método body obtengo el valor del campo de 'avatar'| Se utiliza el método "custom" para definir una función de validación personalizada que toma dos parámetros: el valor del campo "avatar" y el objeto de solicitud HTTP "req" */
           body('avatar').custom(function (value, { req }) {
             if (!req.file) {
               return true;
             }
-            let extension = "" + path.extname(req.file[0].filename).toLowerCase();
+            let extension = "" + path.extname(req.file.filename).toLowerCase();
             if (
                 extension == '.jpg' || 
                 extension == '.jpeg' || 
@@ -109,16 +110,16 @@ router.post('/delete/:id', usersController.delete);
 /* ---------------------RUTAS DE USERS-LOGIN ------------------------*/
 
 /* Ruta que se encarga de mostrar el formulario de login */
-router.get('/login/', usersController.login);
+router.get('/login', usersController.login);
 
 /* Ruta que se encarga de validar los datos del usuario registrado e ingresar si son correctos */
-router.post('/login/', [
+router.post('/login', [
     check('email').isEmail().withMessage('Email invalido'),
     check('password').isLength({ min: 6 }).withMessage('La contraseña debe tener un mínimo de 6 caracteres, al menos una letra y un número')], usersController.loginPost);
 
 // Perfil del usuario
-//router.get('/profile/'/* , guestMiddleware, usersController.profile */);
-//router.get('/profile/:userId'/* , usersController.profile */);
+/* router.get('/profile', guestMiddleware, usersController.profile); */
+router.get('/profile/:id', usersController.profile);
 
 /* ---------------- Fin Listado de rutas -------------------*/
 module.exports = router;

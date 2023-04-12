@@ -41,7 +41,7 @@ const controller = {
             });
         }
         let user = {
-            fisrt_name: req.body.firstName,
+            first_name: req.body.firstName,
             last_name: req.body.lastName,
             user_name: req.body.nameUser,
             email: req.body.email,
@@ -52,7 +52,7 @@ const controller = {
         }
         db.User.create(user)
         .then((storedUser) => {
-            return res.redirect('users/login')
+            return res.redirect('/users/login')
         })
         .catch(error => console.log(error))
     },
@@ -77,7 +77,7 @@ const controller = {
                 id: req.params.id
             }
         });
-        res.redirect('/users/profile/' + req.params.id);
+        res.redirect('/users/profile' + req.params.id);
     },
     delete: function(req, res){
         db.User.destroy({
@@ -110,7 +110,7 @@ const controller = {
             /* Aquí se determina si el usuario fue encontrado ó no en la db */
             if(userLogin.length === 0){
                 return res.render(path.resolve(__dirname,'../views/users/login'), {
-                errors: [{ msg: 'Las credenciales son inválidas' }]}); 
+                    errors: [{ msg: 'Las credenciales son inválidas' }]}); 
             } else {
                 /* Aquí se guarda el usuario logueado en Session */
                 req.session.usuario = userLogin[0];
@@ -120,9 +120,15 @@ const controller = {
                 res.cookie('email', userLogin[0].email,{ maxAge: (1000 * 60) * 2 })
             }
             /* Aquí se redirige al usuario al perfil del usuario */
-            return res.redirect('/users/profile');
+            return res.redirect('/users/profile/' + userLogin[0].id);
             })
-    }
+    },
+    profile: function(req, res) {
+        db.User.findByPk(req.params.id)
+        .then(function(users){
+            res.render(path.resolve(__dirname, "../views/users/user-profile"), { usuarios: users });
+        })
+    },
 };
 
 module.exports = controller;
