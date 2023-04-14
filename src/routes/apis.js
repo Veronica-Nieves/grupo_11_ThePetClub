@@ -9,7 +9,7 @@ router.get("/users", apisController.users);
 router.get("/users/:id", apisController.userDetail);
 
 // API LISTA DE PRODUCTOS
-router.get("/products/", apisController.products);
+router.get("/products", apisController.products);
 
 // API DETALLE DEL PRODUCTO
 router.get("/products/:id", apisController.productDetail);
