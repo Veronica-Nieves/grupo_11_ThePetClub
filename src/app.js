@@ -29,12 +29,14 @@ app.set('views', path.join(__dirname, '/views')); // definimos ubicación de la 
 const mainRouter = require('./routes/main.js'); // Rutas main
 const productsRouter = require('./routes/products.js'); // Rutas /products
 const usersRouter = require('./routes/users.js'); // Rutas /users
+const apiRouter = require('./routes/apis.js'); // Rutas /users
 
 
 app.use(express.urlencoded({ extended: false }));
 app.use('/', mainRouter);
 app.use('/products', productsRouter);
 app.use('/users', usersRouter);
+app.use('/api', apiRouter);
 
 
 // ********** Probamos conexion  con la base de datos local **********
@@ -55,8 +57,10 @@ var conexion = mysql2.createConnection({
 
 
 // ************ Set the server to listen ************
-app.listen(3002, () => {
-    console.log('Server running in http://localhost:3002');
+let port = process.env.PORT || 3002
+//port es para desplegar el proyecto sin problemas
+app.listen(port, () => {
+    console.log('Server running in http://localhost:' + port);
 
 
 
