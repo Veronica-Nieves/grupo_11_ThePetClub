@@ -41,7 +41,7 @@ const controller = {
             });
         }
         let user = {
-            first_name: req.body.firstName,
+            fisrt_name: req.body.fisrtName,
             last_name: req.body.lastName,
             user_name: req.body.nameUser,
             email: req.body.email,
@@ -64,7 +64,7 @@ const controller = {
     },
     update: function(req, res){
         db.User.update({
-            fisrt_name: req.body.firstName,
+            first_name: req.body.firstName,
             last_name: req.body.lastName,
             /* Para actualizar la contraseña, se debe validar la anterior contraseña (PENDIENTE)
             password: bcrypt.hashSync(req.body.password, 10),
