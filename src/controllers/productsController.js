@@ -18,6 +18,7 @@ const controller = {
       })
   },
 
+
 // Listado de todos los productos 
   list: (req, res) => {
     db.products.findAll()
@@ -28,6 +29,7 @@ const controller = {
         res.send(error)
       })
 	},
+
 
 // Vista del detalle del producto correpondiente al id pasado en la url
   detail: async(req, res) => {
@@ -40,6 +42,7 @@ const controller = {
       })
 	}, 
 
+
 // Crear un nuevo producto
   create: async(req, res) => {
     db.species.findAll()
@@ -51,6 +54,7 @@ const controller = {
     });
     
   },
+
 
 //Proceso de guardar al producto creado
   processCreate: (req, res) => {
@@ -71,6 +75,7 @@ const controller = {
     res.redirect('/products');
   }, 
 
+
 // Editar un producto
   edit: async(req, res) => {
 
@@ -89,6 +94,7 @@ const controller = {
       })
       })
     },
+
 
 // Guardar un producto editado
   update: (req,res) => {
@@ -119,6 +125,7 @@ const controller = {
     res.render('carrito-compras');
   }, 
 
+  
 // Eliminar un producto por id
   delete: (req, res) => {
     db.products.destroy({

@@ -3,6 +3,34 @@ Vistas:
     archivo:products-create.ejs
 */
 
+/* Inicia Validaciones Front-End */
+.is-valid{
+    border: 2px #198754;
+}
+.is-invalid{
+    background-color: #ffffd9;
+    border: 2px solid red;
+}
+.alert-warning{
+    color:#842029;
+    background-color: #ffd2c0;
+    text-align: center;
+    list-style: none;
+    border-radius: 10px;
+    
+    padding: 20px 30px;
+    margin: 25px;
+}
+
+.hide{
+    display: none;
+}
+
+/* Termina Validaciones Front-End */
+
+
+
+
 .form-title-container{
     text-align: center;
     padding-top: 120px;

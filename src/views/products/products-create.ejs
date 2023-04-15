@@ -16,32 +16,32 @@
         <!-- FORMULARIO CREAR PRODUCTO -->
         <div id="products-form">
             <form action="/products/create" method="POST" enctype="multipart/form-data" class="form-container" >
-
+                
                 <p class="form-field">
-                <input type="text" name="name" id="name" placeholder="Nombre del producto" required class="form-input">
+                    <input type="text" name="name" id="name" placeholder="Nombre del producto" class="form-input">
                 </p>
 
                 <p class="form-field">
-                <input type="text" name="sku" id="sku" placeholder="SKU" required class="form-input">
+                <input type="text" name="sku" id="sku" placeholder="SKU" class="form-input">
                 </p>
         
                 <p class="form-field">
                 <label>Descripción</label>
-                <textarea name="description" placeholder="Indica las características del prodcuto como color, peso, sabor, contenido, talla, etc. " required class="form-input-text-area"></textarea>
+                <textarea name="description" placeholder="Indica las características del prodcuto como color, peso, sabor, contenido, talla, etc. " class="form-input-text-area"></textarea>
                 </p>
         
                 <p class="form-field">
-                <label for="name">Imagen</label>
+                <label>Imagen</label>
                 <input type="file" name="image" id="image" accept=".jpg" class="form-input">
                 </p>
 
                 <div class="form-2-columns-container">
                     <p class="form-field  col-50">
-                    <input type="number" name="price" id="price" placeholder="Precio" min="0"required class="form-input">
+                    <input type="text" name="price" id="price" placeholder="Precio" min="0" class="form-input">
                     </p>
 
                     <p class="form-field col-50">
-                    <input type="number" name="priceOffer" id="priceOffer" placeholder="Precio de oferta" min="0" required class="form-input">
+                    <input type="text" name="priceOffer" id="priceOffer" placeholder="Precio de oferta" min="0" class="form-input">
                     </p>
                 </div>
 
@@ -85,18 +85,29 @@
 					</p>
                     <p class="form-field col-30">
                         <label>Piezas </label>
-                        <input type="number" name="pieces" id="pieces" placeholder="Ej:12" min="0" required class="form-input">
+                        <input type="number" name="pieces" id="pieces" placeholder="Ej:12" min="0" class="form-input">
                     </p>
                 </div>
+        
                 
                 <p class="form-buttons-container">
-                <button type="reset" class="form-button">Limpiar formulario</button>
+                <button type="reset" class="clean-form form-button">Limpiar formulario</button>
                 <button type="submit" class="form-button"> Crear producto </button>
                 </p>
+
+                <!-- Mostrar alertas Validación Frot End -->
+                <ul class="errores alert-warning hide">
+                <ul>
+
             </form>
+
+            
 
         </div>
     </main>
+
+    <!-- Include Front End Validation -->
+    <script src="/js/productsAddValidation.js"></script>
 
     <!-- Include Footer-->
     <%- include('../partials/footer') %>
