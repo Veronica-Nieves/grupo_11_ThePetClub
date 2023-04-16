@@ -91,19 +91,23 @@
         
                 
                 <p class="form-buttons-container">
+                <button type="submit" class="form-button button-50-width"> Crear producto </button>
                 <button type="reset" class="clean-form form-button">Limpiar formulario</button>
-                <button type="submit" class="form-button"> Crear producto </button>
                 </p>
 
                 <!-- Mostrar alertas Validación Frot End -->
-                <ul class="errores alert-warning hide">
-                <ul>
+                <div class="warning-block hide">
+                    <strong class="warning-title">¡¡ ADVERTENCIA !!</strong>
+                    <ul class="errors hide"><ul></ul>
+                </div>
 
             </form>
-
-            
-
         </div>
+
+        <p class="form-buttons-container hide">
+            <a class="form-button" href="/products/"> Ver todos los productos </a>
+        </p>
+
     </main>
 
     <!-- Include Front End Validation -->
