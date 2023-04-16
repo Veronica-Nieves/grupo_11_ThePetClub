@@ -1,9 +1,13 @@
 const express= require('express');
 const router = express.Router();
 const multer = require ("multer");
-const path = require("path")
-const guestMiddleware = require('../middlewares/routes/guestMiddleware');
-const authMiddleware = require('../middlewares/routes/authMiddleware');
+const path = require("path");
+//const guestMiddleware = require('../middlewares/routes/guestMiddleware');
+//const authMiddleware = require('../middlewares/routes/authMiddleware');
+
+const { check, body } = require('express-validator') 
+
+const productsController = require('../controllers/productsController');
 
 /* **************************** MULTER ***************************** */
 
@@ -17,12 +21,37 @@ const storage = multer.diskStorage({
         cb(null, file.fieldname + "-" + Date.now() + path.extname(file.originalname))
     }
 })
-
 const upload = multer ({storage: storage});
 
-/* *************************** Fin-multer ************************** */
+/* ************************* Fin-multer **************************** */
 
-const productsController = require('../controllers/productsController');
+/* ******************* VALIDACIONES NEW PRODUCT ******************** */
+const validateNewProduct = [
+    check('name')
+        .notEmpty().withMessage("Debe ingresar un nombre.")
+        .isLength({ min: 5}).withMessage("El nombre debe tener al menos 5 caracteres."),
+
+    check('sku')
+        .notEmpty().withMessage("Debe ingresar un SKU.")
+        .isLength({ min: 3}).withMessage("El SKU debe tener al menos 3 caracteres.")
+        .isAlphanumeric().withMessage("El SKU no debe incluir espacios en blanco ni caracteres especiales."),
+
+    check('description')
+        .notEmpty().withMessage("Debe ingresar la descripción del producto.")
+        .isLength({ min: 20}).withMessage("La descripción debe tener al menos 20 caracteres."),
+
+    check("price")
+        .notEmpty().withMessage("Indique el precio del producto.")
+        .isFloat({ min: 0 }).withMessage("El precio debe ser un valor numérico mayor que cero."),
+
+    check("priceOffer")
+        .notEmpty().withMessage("Indique el precio de oferta del producto (solo se mostratrá si indica que el producto está en oferta).")
+        .isFloat({ min: 0 }).withMessage("El precio de oferta debe ser un valor numérico mayor que cero."),
+
+    check("pieces")
+        .notEmpty().withMessage("Indique el inventario del producto.")
+        .isInt({ min: 0 }).withMessage("El número de piezas de inventario debe ser un valor numérico mayor o igual a cero.")
+];
 
 /* -------------- R U T A S   D E   P R O D U C T O S ---------------*/
 
@@ -34,7 +63,8 @@ router.get('/detail/:id', productsController.detail);
 
 /* CREAR UN PRODUCTO */
 router.get('/create/', productsController.create);
-router.post('/create/',  upload.single("image") , productsController.processCreate);
+//router.post('/create/', productsController.processCreate);
+router.post('/create/',  upload.single("image"), validateNewProduct, productsController.processCreate);
 
 /* EDITAR UN PRODUCTO */
 router.get('/edit/:id',  productsController.edit);
@@ -43,8 +73,8 @@ router.put('/edit/:id',  productsController.update)
 /* ELIMINAR UN PRODUCTO */
 router.delete('/delete/:id', productsController.delete);
 
+/* OTROS */
 router.get('/carrito-compras', productsController.carrito);
-
 router.get('/conexion', productsController.conexion);
 
 

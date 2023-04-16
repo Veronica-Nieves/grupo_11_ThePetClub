@@ -18,18 +18,20 @@
             <form action="/products/create" method="POST" enctype="multipart/form-data" class="form-container" >
                 
                 <p class="form-field">
-                    <input type="text" name="name" id="name" placeholder="Nombre del producto" class="form-input">
+                <label>Nombre del producto</label>
+                <input type="text" name="name" id="name" placeholder="Nombre del producto" class="form-input" value="<%= locals.preregistro && preregistro.name ? preregistro.name : '' %>">
                 </p>
 
                 <p class="form-field">
-                <input type="text" name="sku" id="sku" placeholder="SKU" class="form-input">
+                <label>SKU</label>
+                <input type="text" name="sku" id="sku" placeholder="SKU" class="form-input" value="<%= locals.preregistro && preregistro.sku ? preregistro.sku : '' %>">
                 </p>
         
                 <p class="form-field">
                 <label>Descripción</label>
-                <textarea name="description" placeholder="Indica las características del prodcuto como color, peso, sabor, contenido, talla, etc. " class="form-input-text-area"></textarea>
+                <input name="description" placeholder="Indica las características del prodcuto como color, peso, sabor, contenido, talla, etc. " class="form-input-text-area" value="<%= locals.preregistro && preregistro.description ? preregistro.description : '' %>"></input>
                 </p>
-        
+
                 <p class="form-field">
                 <label>Imagen</label>
                 <input type="file" name="image" id="image" accept=".jpg" class="form-input">
@@ -37,11 +39,13 @@
 
                 <div class="form-2-columns-container">
                     <p class="form-field  col-50">
-                    <input type="text" name="price" id="price" placeholder="Precio" min="0" class="form-input">
+                    <label>Precio</label>
+                    <input type="text" name="price" id="price" placeholder="Precio" min="0" class="form-input" value="<%= locals.preregistro && preregistro.price ? preregistro.price : '' %>">
                     </p>
 
                     <p class="form-field col-50">
-                    <input type="text" name="priceOffer" id="priceOffer" placeholder="Precio de oferta" min="0" class="form-input">
+                    <label>Precio de oferta</label>
+                    <input type="text" name="priceOffer" id="priceOffer" placeholder="Precio de oferta" min="0" class="form-input" value="<%= locals.preregistro && preregistro.priceOffer ? preregistro.priceOffer : '' %>">
                     </p>
                 </div>
 
@@ -50,7 +54,7 @@
                         <label>Especie</label>
                         <select name="specie" class="form-input">
                             <%for(let i=0; i< especies.length; i++){ %>
-                                <option value="<%=especies[i].id%>" class="form-input-option"> 
+                                <option value="<%=especies[i].id%>" class="form-input-option" <%= locals.preregistro && preregistro.specie == especies[i].id ? 'selected' : '' %> >
                                     <%= especies[i].name%>
                                 </option>
                             <% } %>
@@ -60,7 +64,7 @@
                         <label>Categorías</label>
                         <select name="category" class="form-input">
                             <%for(let i=0; i< categorias.length; i++){ %>
-                                <option value="<%=categorias[i].id%>" class="form-input-option"> 
+                                <option value="<%=categorias[i].id%>" class="form-input-option" <%= locals.preregistro && preregistro.category == categorias[i].id ? 'selected' : '' %>> 
                                     <%= categorias[i].name%>
                                 </option>
                             <% } %>
@@ -72,20 +76,20 @@
                     <p class="form-field col-30">
 						<label>En oferta:</label>
 						<select name="offer" id="offer" class="form-input">
-							<option value="si">Sí</option>
-							<option value="no">No</option>
+							<option value="si" <%= locals.preregistro && preregistro.offer == "si" ? "selected" : "" %> >Sí</option>
+							<option value="no" <%= locals.preregistro && preregistro.offer == "no" ? "selected" : "" %> >No</option>
 						</select>
 					</p>
                     <p class="form-field col-30">
 						<label>Destacado </label>
 						<select name="featured" id="featured" class="form-input">
-							<option value="si" class="form-input-option">Sí</option>
-							<option value="no" class="form-input-option">No</option>
+							<option value="si" <%= locals.preregistro && preregistro.featured == "si" ? 'selected' : '' %> class="form-input-option">Sí</option>
+							<option value="no" <%= locals.preregistro && preregistro.featured == "no" ? "selected" : "" %> class="form-input-option">No</option>
 						</select>
 					</p>
                     <p class="form-field col-30">
                         <label>Piezas </label>
-                        <input type="number" name="pieces" id="pieces" placeholder="Ej:12" min="0" class="form-input">
+                        <input type="text" name="pieces" id="pieces" placeholder="Ej:12" min="0" class="form-input" value="<%= locals.preregistro && preregistro.pieces ? preregistro.pieces : '' %>">
                     </p>
                 </div>
         
@@ -94,6 +98,18 @@
                 <button type="submit" class="form-button button-50-width"> Crear producto </button>
                 <button type="reset" class="clean-form form-button">Limpiar formulario</button>
                 </p>
+
+                <!-- Mostrar errores Validación Back End-->
+                <% if (locals.errors) { %>
+                    <div class="warning-block">
+                        <strong class="warning-title">¡¡ ADVERTENCIA !!</strong>
+                        <ul class="errors">
+                    <% errors.forEach(error => { %>
+                        <li><i class='fa-solid fa-triangle-exclamation' style='color: #eb0505;'></i> 
+                            <%= error.msg %>
+                        </li>
+                    <% }) %>
+                <% } %>
 
                 <!-- Mostrar alertas Validación Frot End -->
                 <div class="warning-block hide">
@@ -110,8 +126,8 @@
 
     </main>
 
-    <!-- Include Front End Validation -->
-    <script src="/js/productsAddValidation.js"></script>
+    <!-- Include Front End Validation 
+    <script src="/js/productsAddValidation.js"></script>-->
 
     <!-- Include Footer-->
     <%- include('../partials/footer') %>

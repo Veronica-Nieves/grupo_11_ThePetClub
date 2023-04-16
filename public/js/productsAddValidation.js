@@ -30,8 +30,8 @@ window.onload = function(){
             errors.push("Debe ingresar un nombre.");
             form.name.classList.remove("is-valid")
             form.name.classList.add("is-invalid")
-        } else if (form.name.value.length < 3 ) {
-            errors.push("El nombre debe tener al menos 3 caracteres.");
+        } else if (form.name.value.length < 5 ) {
+            errors.push("El nombre debe tener al menos 5 caracteres.");
             form.name.classList.remove("is-valid")
             form.name.classList.add("is-invalid")
         } else {
@@ -39,7 +39,6 @@ window.onload = function(){
             form.name.classList.add("is-valid")
         }
 
-        
 
     // SKU
         if (form.sku.value == "") {
@@ -55,19 +54,21 @@ window.onload = function(){
             form.name.classList.add("is-valid")
         }
 
+
     // DESCRIPCIÓN
     if (form.description.value == "") {
         errors.push("Debe ingresar la descripción del producto.");
         form.description.classList.remove("is-valid")
         form.description.classList.add("is-invalid")
-    } else if (form.description.value.length < 10 ) {
-        errors.push("El nombre debe tener al menos 10 caracteres.");
+    } else if (form.description.value.length < 20 ) {
+        errors.push("La descripción debe tener al menos 20 caracteres.");
         form.description.classList.remove("is-valid")
         form.description.classList.add("is-invalid")
     } else {
         form.description.classList.remove("is-invalid")
         form.description.classList.add("is-valid")
     }
+
 
     // PRECIO
     if (form.price.value == "") {
@@ -83,11 +84,10 @@ window.onload = function(){
         form.price.classList.add("is-valid")
     }
 
-    console.log("opcion oferta")
-    console.log(form.offer.value)
+    
     // PRECIO DE OFERTA
     if (form.priceOffer.value == "" && form.offer.value == "si") {
-        errors.push("Indique el precio de oferta del producto (solo se mostratrá si indica que el producto está en oferta)");
+        errors.push("Indique el precio de oferta del producto (solo se mostratrá si indica que el producto está en oferta).");
         form.priceOffer.classList.remove("is-valid")
         form.priceOffer.classList.add("is-invalid")
     } else if ( !(Number(form.priceOffer.value)) || form.priceOffer.value <= 0 || form.priceOffer.value >= form.price.value ) {
@@ -106,7 +106,7 @@ window.onload = function(){
         form.pieces.classList.remove("is-valid")
         form.pieces.classList.add("is-invalid")
     } else if ( !(Number(form.pieces.value)) || form.pieces.value <= 0) {
-        errors.push("El inventario debe ser un valor numérico mayor que cero.");
+        errors.push("El número de piezas de inventario debe ser un valor numérico mayor que cero.");
         form.pieces.classList.remove("is-valid")
         form.pieces.classList.add("is-invalid")
     } else {

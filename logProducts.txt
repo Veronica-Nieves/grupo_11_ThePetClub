@@ -1,0 +1,1 @@
+Se ingresó a la vista para crear un nuevo producto/create
