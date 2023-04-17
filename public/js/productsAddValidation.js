@@ -106,7 +106,7 @@ window.onload = function(){
         form.pieces.classList.remove("is-valid")
         form.pieces.classList.add("is-invalid")
     } else if ( !(Number(form.pieces.value)) || form.pieces.value <= 0) {
-        errors.push("El número de piezas de inventario debe ser un valor numérico mayor que cero.");
+        errors.push("El número de piezas de inventario debe ser un valor numérico mayor o igual a cero.");
         form.pieces.classList.remove("is-valid")
         form.pieces.classList.add("is-invalid")
     } else {

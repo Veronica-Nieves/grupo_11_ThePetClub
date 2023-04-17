@@ -26,7 +26,7 @@ const upload = multer ({storage: storage});
 /* ************************* Fin-multer **************************** */
 
 /* ******************* VALIDACIONES NEW PRODUCT ******************** */
-const validateNewProduct = [
+const validateProducts = [
     check('name')
         .notEmpty().withMessage("Debe ingresar un nombre.")
         .isLength({ min: 5}).withMessage("El nombre debe tener al menos 5 caracteres."),
@@ -44,7 +44,7 @@ const validateNewProduct = [
         .notEmpty().withMessage("Indique el precio del producto.")
         .isFloat({ min: 0 }).withMessage("El precio debe ser un valor numérico mayor que cero."),
 
-    check("priceOffer")
+    check("price_offer")
         .notEmpty().withMessage("Indique el precio de oferta del producto (solo se mostratrá si indica que el producto está en oferta).")
         .isFloat({ min: 0 }).withMessage("El precio de oferta debe ser un valor numérico mayor que cero."),
 
@@ -63,12 +63,11 @@ router.get('/detail/:id', productsController.detail);
 
 /* CREAR UN PRODUCTO */
 router.get('/create/', productsController.create);
-//router.post('/create/', productsController.processCreate);
-router.post('/create/',  upload.single("image"), validateNewProduct, productsController.processCreate);
+router.post('/create/', upload.single("image"), validateProducts, productsController.processCreate);
 
 /* EDITAR UN PRODUCTO */
-router.get('/edit/:id',  productsController.edit);
-router.put('/edit/:id',  productsController.update)
+router.get('/edit/:id', productsController.edit);
+router.put('/edit/:id', validateProducts, productsController.update)
 
 /* ELIMINAR UN PRODUCTO */
 router.delete('/delete/:id', productsController.delete);

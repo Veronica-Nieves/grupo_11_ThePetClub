@@ -15,56 +15,61 @@
 
         <!--FORMULARIO EDITAR PRODUCTO -->
         <div id="products-form">
-            <form action="/products/edit/<%= productToEdit.id %>?_method=PUT" method="POST" class="form-container">
+            <form action="/products/edit/<%= productToEdit.id ? productToEdit.id : productId %>?_method=PUT" method="POST" class="form-container">
 
                 <p class="form-field">
-                <input type="text" name="name" id="name" placeholder="Nombre del producto" required class="form-input" value="<%= productToEdit.name %>">
+                <label>Nombre</label>
+                <input type="text" name="name" id="name" placeholder="Nombre del producto" class="form-input" value="<%= productToEdit.name %>">
                 </p>
 
                 <p class="form-field">
-                <input type="text" name="sku" id="sku" placeholder="SKU" required class="form-input" value="<%= productToEdit.sku %>">
+                <label>SKU</label>
+                <input type="text" name="sku" id="sku" placeholder="SKU" class="form-input" value="<%= productToEdit.sku %>">
                 </p>
         
                 <p class="form-field">
                 <label>Descripción</label>
-                <textarea name="description" placeholder="Indica las características del prodcuto como color, peso, sabor, contenido, talla, etc. " required class="form-input-text-area" ><%= productToEdit.description %>"</textarea>
+                <input name="description" placeholder="Indica las características del prodcuto como color, peso, sabor, contenido, talla, etc. " class="form-input-text-area" value="<%= productToEdit.description %>">
                 </p>
                 
                 <!-- El editar imagen queda pendiente
                 <p class="form-field">
-                <label for="name">Imagen</label>
+                <label>Imagen</label>
                 <input type="file" name="image" id="image" accept=".jpg" required class="form-input" value="<%= productToEdit.image %>">
                 </p> -->
 
                 <div class="form-2-columns-container">
                     <p class="form-field  col-50">
-                    <input type="number" name="price" id="price" placeholder="Precio" min="0"required class="form-input" value="<%= productToEdit.price %>">
+                    <label>Precio</label>
+                    <input type="text" name="price" id="price" placeholder="Precio" class="form-input" value="<%= productToEdit.price %>">
                     </p>
 
                     <p class="form-field col-50">
-                    <input type="number" name="price-offer" id="price-offer" placeholder="Precio de oferta" min="0" required class="form-input" value="<%= productToEdit.price_offer %>">
+                    <label>Precio de oferta</label>
+                    <input type="text" name="price_offer" id="price_offer" placeholder="Precio de oferta" class="form-input" value= "<%= productToEdit.price_offer ? productToEdit.price_offer : '' %>">
                     </p>
+                    
                 </div>
 
                 <div class="form-2-columns-container">
-                    <!--Verificamos especie por especie si se encuentra seleccionada-->
+                    <!--Falta que Verificamos especie por especie si se encuentra seleccionada-->
                     <p class="form-field col-50">
                         <label>Especie</label>
                         <select name="specie" class="form-input">
                             <%for(let i=0; i< especies.length; i++){ %>
-                                <option value="<%=especies[i].id%>" class="form-input-option"> 
+                                <option value="<%=especies[i].id%>" class="form-input-option" <%= locals.productToEdit && productToEdit.specie == especies[i].id ? 'selected' : '' %> >
                                     <%= especies[i].name%>
                                 </option>
                             <% } %>
-                        </select>        
+                        </select>       
                     </p>      
 
-                    <!--Verificamos categoría por categoría si se encuentra seleccionada-->
+                    <!-- Falta que Verificamos categoría por categoría si se encuentra seleccionada-->
                     <p class="form-field col-50">
                         <label><strong>Categorías</strong></label>
                         <select name="category" class="form-input">
                             <%for(let i=0; i< categorias.length; i++){ %>
-                                <option value="<%=categorias[i].id%>" class="form-input-option"> 
+                                <option value="<%=categorias[i].id%>" class="form-input-option" <%= locals.productToEdit && productToEdit.category == categorias[i].id ? 'selected' : '' %>> 
                                     <%= categorias[i].name%>
                                 </option>
                             <% } %>
@@ -76,7 +81,8 @@
                     <p class="form-field col-30">
 						<label><strong>En oferta: </label></strong></label>
 						<select name="offer" id="offer" class="form-input" >
-                            <% if (productToEdit.offer == "si"){%>
+                            
+                            <% if (productToEdit.offer == "si") { %>
                                 <option value="si" selected>Sí</option>
                                 <option value="no">No</option>     
                             <% } else { %>
@@ -89,6 +95,7 @@
                     <p class="form-field col-30">
 						<label><strong>Destacado </label></strong></label>
 						<select name="featured" id="featured" class="form-input">
+                            
                             <% if (productToEdit.featured == "si"){%>
                                 <option value="si" class="form-input-option" selected>Sí</option>
 							    <option value="no" class="form-input-option">No</option>   
@@ -96,11 +103,12 @@
                                 <option value="si" class="form-input-option">Sí</option>
 							    <option value="no" class="form-input-option" selected>No</option>           
                             <% } %>
+
 						</select>
 					</p>
                     <p class="form-field col-30">
                         <label><strong>Piezas </label></strong></label>
-                        <input type="number" name="pieces" id="pieces" placeholder="12" min="0" required class="form-input" value="<%= productToEdit.pieces %>">
+                        <input type="text" name="pieces" id="pieces" placeholder="Ej:12" class="form-input" value="<%= productToEdit.pieces %>">
                     </p>
                 </div>
                 
@@ -108,6 +116,18 @@
                 <p class="form-buttons-container">
                 <button type="submit" class="form-button"> Guardar producto</button>
                 </p>
+
+                <!-- Mostrar errores Validación Back End-->
+                <% if (locals.errors) { %>
+                    <div class="warning-block">
+                        <strong class="warning-title">¡¡ ADVERTENCIA !!</strong>
+                        <ul class="errors">
+                    <% errors.forEach(error => { %>
+                        <li><i class='fa-solid fa-triangle-exclamation' style='color: #eb0505;'></i> 
+                            <%= error.msg %>
+                        </li>
+                    <% }) %>
+                <% } %>
 
             </form>
         </div>

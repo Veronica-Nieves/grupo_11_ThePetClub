@@ -18,7 +18,7 @@
             <form action="/products/create" method="POST" enctype="multipart/form-data" class="form-container" >
                 
                 <p class="form-field">
-                <label>Nombre del producto</label>
+                <label>Nombre</label>
                 <input type="text" name="name" id="name" placeholder="Nombre del producto" class="form-input" value="<%= locals.preregistro && preregistro.name ? preregistro.name : '' %>">
                 </p>
 
@@ -45,7 +45,7 @@
 
                     <p class="form-field col-50">
                     <label>Precio de oferta</label>
-                    <input type="text" name="priceOffer" id="priceOffer" placeholder="Precio de oferta" min="0" class="form-input" value="<%= locals.preregistro && preregistro.priceOffer ? preregistro.priceOffer : '' %>">
+                    <input type="text" name="price_offer" id="price_offer" placeholder="Precio de oferta" class="form-input" value="<%= locals.preregistro && preregistro.price_offer ? preregistro.price_offer : '' %>">
                     </p>
                 </div>
 
