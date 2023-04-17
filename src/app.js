@@ -50,19 +50,17 @@ var conexion = mysql2.createConnection({
 
     conexion.connect (function (error){
         if (error){
-            throw error;
+            throw error; // recuerda empezar mySQL
         } else { console.log("Conecto con éxito la base de Datos")}
     });
     conexion.end();
 
 
 // ************ Set the server to listen ************
+
 let port = process.env.PORT || 3002
 //port es para desplegar el proyecto sin problemas
+
 app.listen(port, () => {
     console.log('Server running in http://localhost:' + port);
-
-
-
-
 });

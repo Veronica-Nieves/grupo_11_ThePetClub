@@ -41,7 +41,7 @@ const controller = {
             });
         }
         let user = {
-            fisrt_name: req.body.fisrtName,
+            first_name: req.body.firstName,
             last_name: req.body.lastName,
             user_name: req.body.nameUser,
             email: req.body.email,
