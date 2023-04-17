@@ -52,7 +52,6 @@
                 </div>
 
                 <div class="form-2-columns-container">
-                    <!--Falta que Verificamos especie por especie si se encuentra seleccionada-->
                     <p class="form-field col-50">
                         <label>Especie</label>
                         <select name="specie" class="form-input">
@@ -64,7 +63,6 @@
                         </select>       
                     </p>      
 
-                    <!-- Falta que Verificamos categoría por categoría si se encuentra seleccionada-->
                     <p class="form-field col-50">
                         <label><strong>Categorías</strong></label>
                         <select name="category" class="form-input">
@@ -129,12 +127,20 @@
                     <% }) %>
                 <% } %>
 
+
+                <!-- Mostrar alertas Validación Frot End -->
+                <div class="warning-block hide">
+                    <strong class="warning-title">¡¡ ADVERTENCIA !!</strong>
+                    <ul class="errors hide"><ul></ul>
+                </div>
+
+                
             </form>
         </div>
-        
-
-
     </main>
+
+    <!-- Include Front End Validation -->
+    <script src="/js/productsAddValidation.js"></script>
 
     <!-- Include Footer-->
     <%- include('../partials/footer') %>

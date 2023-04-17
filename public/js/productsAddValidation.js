@@ -86,17 +86,17 @@ window.onload = function(){
 
     
     // PRECIO DE OFERTA
-    if (form.priceOffer.value == "" && form.offer.value == "si") {
+    if (form.price_offer.value == "" && form.offer.value == "si") {
         errors.push("Indique el precio de oferta del producto (solo se mostratrá si indica que el producto está en oferta).");
-        form.priceOffer.classList.remove("is-valid")
-        form.priceOffer.classList.add("is-invalid")
-    } else if ( !(Number(form.priceOffer.value)) || form.priceOffer.value <= 0 || form.priceOffer.value >= form.price.value ) {
+        form.price_offer.classList.remove("is-valid")
+        form.price_offer.classList.add("is-invalid")
+    } else if ( !(Number(form.price_offer.value)) || form.price_offer.value <= 0 || form.price_offer.value >= form.price.value ) {
         errors.push("El precio de oferta debe ser un valor numérico mayor que cero y menor que el precio regular del producto.");
-        form.priceOffer.classList.remove("is-valid")
-        form.priceOffer.classList.add("is-invalid")
+        form.price_offer.classList.remove("is-valid")
+        form.price_offer.classList.add("is-invalid")
     } else {
-        form.priceOffer.classList.remove("is-invalid")
-        form.priceOffer.classList.add("is-valid")
+        form.price_offer.classList.remove("is-invalid")
+        form.price_offer.classList.add("is-valid")
     }
 
 
@@ -117,7 +117,7 @@ window.onload = function(){
     
     // Mostrar Errores
     console.log(errors);
-    if (errors.length > 1) {
+    if (errors.length > 0) {
 
         event.preventDefault();
         errorsHtml.innerHTML = "";
@@ -148,7 +148,7 @@ window.onload = function(){
         form.sku.classList.remove("is-invalid");
         form.description.classList.remove("is-invalid");
         form.price.classList.remove("is-invalid");
-        form.priceOffer.classList.remove("is-invalid");
+        form.price_offer.classList.remove("is-invalid");
         form.pieces.classList.remove("is-invalid");
 
     });

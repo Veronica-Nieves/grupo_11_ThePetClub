@@ -19,12 +19,12 @@
                 
                 <p class="form-field">
                 <label>Nombre</label>
-                <input type="text" name="name" id="name" placeholder="Nombre del producto" class="form-input" value="<%= locals.preregistro && preregistro.name ? preregistro.name : '' %>">
+                <input type="text" name="name" id="name" placeholder="Ej: Rueda para hamster color verde claro" class="form-input" value="<%= locals.preregistro && preregistro.name ? preregistro.name : '' %>">
                 </p>
 
                 <p class="form-field">
                 <label>SKU</label>
-                <input type="text" name="sku" id="sku" placeholder="SKU" class="form-input" value="<%= locals.preregistro && preregistro.sku ? preregistro.sku : '' %>">
+                <input type="text" name="sku" id="sku" placeholder="Ej: RUEDA257" class="form-input" value="<%= locals.preregistro && preregistro.sku ? preregistro.sku : '' %>">
                 </p>
         
                 <p class="form-field">
@@ -40,12 +40,12 @@
                 <div class="form-2-columns-container">
                     <p class="form-field  col-50">
                     <label>Precio</label>
-                    <input type="text" name="price" id="price" placeholder="Precio" min="0" class="form-input" value="<%= locals.preregistro && preregistro.price ? preregistro.price : '' %>">
+                    <input type="text" name="price" id="price" placeholder="Ej: 1899.50" min="0" class="form-input" value="<%= locals.preregistro && preregistro.price ? preregistro.price : '' %>">
                     </p>
 
                     <p class="form-field col-50">
                     <label>Precio de oferta</label>
-                    <input type="text" name="price_offer" id="price_offer" placeholder="Precio de oferta" class="form-input" value="<%= locals.preregistro && preregistro.price_offer ? preregistro.price_offer : '' %>">
+                    <input type="text" name="price_offer" id="price_offer" placeholder="Ej: 1699.99" class="form-input" value="<%= locals.preregistro && preregistro.price_offer ? preregistro.price_offer : '' %>">
                     </p>
                 </div>
 
@@ -126,8 +126,8 @@
 
     </main>
 
-    <!-- Include Front End Validation 
-    <script src="/js/productsAddValidation.js"></script>-->
+    <!-- Include Front End Validation -->
+    <script src="/js/productsAddValidation.js"></script>
 
     <!-- Include Footer-->
     <%- include('../partials/footer') %>
