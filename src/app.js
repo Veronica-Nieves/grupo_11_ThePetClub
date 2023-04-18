@@ -32,7 +32,6 @@ const usersRouter = require('./routes/users.js'); // Rutas /users
 const apiRouter = require('./routes/apis.js'); // Rutas /users
 
 
-app.use(express.urlencoded({ extended: false }));
 app.use('/', mainRouter);
 app.use('/products', productsRouter);
 app.use('/users', usersRouter);

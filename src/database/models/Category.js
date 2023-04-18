@@ -1,7 +1,7 @@
 
 /* ----------DEFINIMOS EL MODELO DE CATEGORIAS----------- */
 module.exports = (sequelize, dataTypes) => {
-   
+
     let alias = 'category';
 
     let cols = {
@@ -39,7 +39,7 @@ module.exports = (sequelize, dataTypes) => {
         Category.hasMany(models.products, {
             as: "products", // alias de la relación
             foreignKey: "category_id",
-         });
+        });
     }
 
     return Category
