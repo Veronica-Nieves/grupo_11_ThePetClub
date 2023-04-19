@@ -73,17 +73,17 @@ User.findAll()
         body('passwordConfirmed').custom((value, { req }) => {
             if (req.body.password == value) {
               /* Si retorno falso no aparece el mensaje de error */
-              return true;
+                return true;
             } else {
               /* Si retorno true, aparece el mensaje de error */
-              return false;
+                return false;
             }
-          }).withMessage('Las contraseñas deben ser iguales'),
+        }).withMessage('Las contraseñas deben ser iguales'),
           /* Validación de extensiones de los archivos de los avatar */
           /* Con el método body obtengo el valor del campo de 'avatar'| Se utiliza el método "custom" para definir una función de validación personalizada que toma dos parámetros: el valor del campo "avatar" y el objeto de solicitud HTTP "req" */
-          body('avatar').custom(function (value, { req }) {
+        body('avatar').custom(function (value, { req }) {
             if (!req.file) {
-              return true;
+                return true;
             }
             let extension = "" + path.extname(req.file.filename).toLowerCase();
             if (
@@ -91,10 +91,10 @@ User.findAll()
                 extension == '.jpeg' || 
                 extension == '.png' || 
                 extension == '.gif') {
-              return true;
+                return true;
             }
             return false;
-          }).withMessage('Solo debe seleccionar archivos con extensión JPG, JPEG, PNG o GIF')
+        }).withMessage('Solo debe seleccionar archivos con extensión JPG, JPEG, PNG o GIF')
     ], usersController.create);
 })
 

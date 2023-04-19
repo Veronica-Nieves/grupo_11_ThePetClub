@@ -7,8 +7,8 @@ module.exports = [
     body('lastName').notEmpty().withMessage('Debes escribir tu apellido'),
     body('nameUser').notEmpty().withMessage('Debes escribir tu nombre de usuario'),
     body('email')
-      .notEmpty().withMessage('Debes escribir tu email').bail()
-      .isEmail().withMessage('Debes escribir un formato de correo válido'),
+        .notEmpty().withMessage('Debes escribir tu email').bail()
+        .isEmail().withMessage('Debes escribir un formato de correo válido'),
     body('password').notEmpty().withMessage('Debes escribir tu contraseña'),
     body('passwordConfirmed').notEmpty().withMessage('Debes escribir la confirmación de contraseña'),
     body('role').notEmpty().withMessage('Debes elegir un rol'),

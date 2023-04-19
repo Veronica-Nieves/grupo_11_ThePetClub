@@ -140,6 +140,7 @@ DROP TABLE IF EXISTS `species`;
 CREATE TABLE `species` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
+  `images` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -150,7 +151,7 @@ CREATE TABLE `species` (
 
 LOCK TABLES `species` WRITE;
 /*!40000 ALTER TABLE `species` DISABLE KEYS */;
-INSERT INTO `species` VALUES (1,'Perros'),(2,'Gatos'),(3,'Aves'),(4,'Peces'),(5,'Mamiferos'),(6,'Reptiles');
+INSERT INTO `species` VALUES (1,'Perros',''),(2,'Gatos',''),(3,'Aves',''),(4,'Peces',''),(5,'Mamiferos',''),(6,'Reptiles','');
 /*!40000 ALTER TABLE `species` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -165,7 +166,7 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(255) NOT NULL,
   `user_name` varchar(255) NOT NULL,
-  `fisrt_name` varchar(255) NOT NULL,
+  `first_name` varchar(255) NOT NULL,
   `last_name` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `password_confirmed` varchar(255) NOT NULL,
@@ -174,7 +175,7 @@ CREATE TABLE `users` (
   PRIMARY KEY (`id`),
   KEY `FK_9bbd3276-2cab-4b8a-8df3-0ffbebc65dd9` (`rol_id`),
   CONSTRAINT `FK_9bbd3276-2cab-4b8a-8df3-0ffbebc65dd9` FOREIGN KEY (`rol_id`) REFERENCES `roles` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -183,8 +184,17 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'beperez@gmail.com','BePerez','Belén','Perez','$2a$10$rF1Xg2oi.fkQgAr5EF6fUu1vG9jPgO4r5.NNAmnOnECysSDib3MSe','$2a$10$DlyhQlZYtw2nFF2Oyj4Vbe6H69ep3O4K6iDOZ36oJtraKiLQGpSHa',2,''),(2,'gab@gmail.com','Gabriel Coppola','Gabriel','Coppola','$2a$10$H10eVBwPs5tHrfj6xa0gbeqjBsaDwt2EOVbeO1771nMy7KEzK9oCq','$2a$10$alU9fs0tLYWmMstRlEjgUOZAIR7VTz./aehs7vlkLk/bJbTHx6EJu',2,'');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Dumping events for database 'the_pets_club'
+--
+
+--
+-- Dumping routines for database 'the_pets_club'
+--
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -195,4 +205,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-04-11 22:18:58
+-- Dump completed on 2023-04-13 21:42:08

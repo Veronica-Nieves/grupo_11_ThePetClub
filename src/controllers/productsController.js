@@ -1,6 +1,7 @@
 const fs=require('fs');
 const path = require('path');
 const { Association } = require('sequelize');
+const { validationResult } = require('express-validator');
 
 // Leemos los datos desde la base de datos de workbench a través de los modelos
 const db = require('../database/models');
@@ -18,6 +19,7 @@ const controller = {
       })
   },
 
+
 // Listado de todos los productos 
   list: (req, res) => {
     db.products.findAll()
@@ -28,6 +30,7 @@ const controller = {
         res.send(error)
       })
 	},
+
 
 // Vista del detalle del producto correpondiente al id pasado en la url
   detail: async(req, res) => {
@@ -40,7 +43,8 @@ const controller = {
       })
 	}, 
 
-// Crear un nuevo producto
+
+// Mostrar vista para crear un nuevo producto 
   create: async(req, res) => {
     db.species.findAll()
     .then(function(especies){
@@ -52,26 +56,49 @@ const controller = {
     
   },
 
-//Proceso de guardar al producto creado
-  processCreate: (req, res) => {
 
-    db.products.create({
-      sku: req.body.sku,
-      name: req.body.name,
-      description: req.body.description,
-      image: req.file ? req.file.filename : "product-default-image.jpg",
-      price: req.body.price,
-      price_offer: req.body.priceOffer,
-      specie_id: req.body.specie,
-      category_id: req.body.category,
-      offer: req.body.offer,
-      featured: req.body.featured,
-      pieces: req.body.pieces
-    })
-    res.redirect('/products');
+//Proceso de guardar al producto creado 
+  processCreate: (req, res) => {
+    let errors = validationResult (req);
+
+    if (errors.isEmpty()){
+      db.products.create({
+        sku: req.body.sku,
+        name: req.body.name,
+        description: req.body.description,
+        image: req.file ? req.file.filename : "product-default-image.jpg",
+        price: req.body.price,
+        price_offer: req.body.price_offer,
+        specie_id: req.body.specie,
+        category_id: req.body.category,
+        offer: req.body.offer,
+        featured: req.body.featured,
+        pieces: req.body.pieces
+      });
+      res.redirect('/products'); 
+
+    } else {
+      db.species.findAll()
+        .then(function(especies){
+
+      db.category.findAll()
+        .then(function(categorias){
+              
+        res.render('./products/products-create', {
+          especies: especies, 
+          categorias: categorias, 
+          errors: errors.array(),
+          preregistro: req.body
+        });
+
+      });
+      });
+    }
   }, 
 
-// Editar un producto
+
+
+// Mostrar vista de formulario de edición de producto
   edit: async(req, res) => {
 
     db.species.findAll()
@@ -90,28 +117,54 @@ const controller = {
       })
     },
 
-// Guardar un producto editado
-  update: (req,res) => {
-     
-    db.products.update({
-      sku: req.body.sku,
-      name: req.body.name,
-      description: req.body.description,
-      //image: req.file ? req.file.filename : "product-default-image.jpg",
-      price: req.body.price,
-      price_offer: req.body.priceOffer,
-      specie_id: req.body.specie,
-      category_id: req.body.category,
-      offer: req.body.offer,
-      featured: req.body.featured,
-      pieces: req.body.pieces
-    }, {
-      where: {
-        id: req.params.id
-      }
-    });
 
-    res.redirect("/products/detail/" + req.params.id)
+  // Guardar un producto editado 
+  update: (req,res) => {
+    let errors = validationResult (req);
+
+      if (errors.isEmpty()){
+        
+        db.products.update({
+          sku: req.body.sku,
+          name: req.body.name,
+          description: req.body.description,
+          //image: req.file ? req.file.filename : "product-default-image.jpg",
+          price: req.body.price,
+          price_offer: req.body.price_offer,
+          specie_id: req.body.specie,
+          category_id: req.body.category,
+          offer: req.body.offer,
+          featured: req.body.featured,
+          pieces: req.body.pieces
+        }, {
+          where: { id: req.params.id}
+        });
+        res.redirect("/products/detail/" + req.params.id)
+
+      } else { 
+         
+        db.species.findAll()
+          .then(function(especies){
+    
+        db.category.findAll()
+          .then(function(categorias){
+    
+        db.products.findByPk(req.params.id)
+          .then((productToEdit) => {
+    
+          res.render("./products/products-edit", {
+            productToEdit: req.body,
+            especies: especies,
+            categorias: categorias,
+            errors: errors.array(),
+            productId: productToEdit.id
+          });
+          
+        })
+        })
+        })
+    };
+
 
   },
 

@@ -1,7 +1,7 @@
 
 /* ----------DEFINIMOS EL MODELO DE SPECIE----------- */
 module.exports = (sequelize, dataTypes) => {
-   
+
     let alias = 'species';
 
     let cols = {
@@ -39,7 +39,7 @@ module.exports = (sequelize, dataTypes) => {
         Specie.hasMany(models.products, {
             as: "products", // alias de la relación
             foreignKey: "specie_id",
-         });
+        });
     }
 
     return Specie

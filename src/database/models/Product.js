@@ -2,7 +2,7 @@
 /* ----------DEFINIMOS EL MODELO DE PRODUCTOS----------- */
 
 module.exports = (sequelize, dataTypes) => {
-   
+
     let alias = 'products';
 
     let cols = {

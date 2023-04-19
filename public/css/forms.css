@@ -3,6 +3,40 @@ Vistas:
     archivo:products-create.ejs
 */
 
+
+/* Inicia Validaciones Front-End */
+.is-valid{
+    border: 2px #198754;
+}
+.is-invalid{
+    background-color: #ffffd9;
+    border: 2px solid red;
+}
+.warning-block{
+    background-color: #ffd2c0;
+    border-radius: 10px;
+    padding: 20px 7px;
+    margin: 25px;
+}
+.warning-title{
+    color: red;
+    text-align: center; 
+}
+.errors{
+    color:#842029;
+    list-style: none;
+    text-align: left;
+    padding: 5px 25px;
+}
+
+.hide{
+    display: none;
+}
+/* Termina Validaciones Front-End */
+
+
+
+
 .form-title-container{
     text-align: center;
     padding-top: 120px;
@@ -94,17 +128,20 @@ Vistas:
 
 .form-buttons-container{
     text-align: center;
+    
 }
 
 .form-button {
     background-color: var(--verde);
     border: none;
+    width: 100%;
     font-size: 15px;
     padding: 10px 15px;
-    margin: 7px 10px;
+    margin: 7px Auto;
     color: white;
     border-radius: 10px;
 }
+
 
 
 /* Formulario de crear y editar productos */
