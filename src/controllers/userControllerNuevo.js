@@ -69,8 +69,8 @@ const controller = {
             /* Para actualizar la contraseña, se debe validar la anterior contraseña (PENDIENTE)
             password: bcrypt.hashSync(req.body.password, 10),
             password_confirmed: bcrypt.hashSync(req.body.password, 10), */
-            avatar: req.file ? req.file.filename : '',
-            rol_id: req.body.role
+            // avatar: req.file ? req.file.filename : '',
+            // rol_id: req.body.role
         }, {
             where: {
                 /* Se utiliza params porque es la manera de acceder a parametros que nos llegan en la url */

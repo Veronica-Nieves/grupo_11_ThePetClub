@@ -2,10 +2,8 @@ const express= require('express');
 const router = express.Router();
 const multer = require ("multer");
 const path = require("path");
-//const guestMiddleware = require('../middlewares/routes/guestMiddleware');
-//const authMiddleware = require('../middlewares/routes/authMiddleware');
 
-const { check, body } = require('express-validator') 
+const { check } = require('express-validator') 
 
 const productsController = require('../controllers/productsController');
 
@@ -75,6 +73,10 @@ router.delete('/delete/:id', productsController.delete);
 /* OTROS */
 router.get('/carrito-compras', productsController.carrito);
 router.get('/conexion', productsController.conexion);
+
+/* VISTA DE ESPECIES - TEMPORAL */
+router.get('/species', productsController.species);
+
 
 
 /* -------------------- F I N   D E   R U T A S ---------------------*/

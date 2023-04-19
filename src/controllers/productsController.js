@@ -10,6 +10,7 @@ const db = require('../database/models');
 /* dentro de la variable controller listamos la lógica de cada método*/
 const controller = {
 
+// Comprobamos la conexion con las bases de datos  
   conexion:(req, res) => {
     db.products.findAll({
         include:["specie","category"],
@@ -180,6 +181,20 @@ const controller = {
         }
     })
     res.redirect("/products/");
+  },
+
+
+// Mostrar vista parcial de especies - temporal
+  species:(req, res) => {
+    //res.send("entramos a la vista de species")
+    //res.render("./partials/species")
+
+    db.species.findAll()
+      .then(function(specieList){
+        //res.send(productList)
+        res.render("./partials/species", {species: specieList})
+      })
+      
   },
 
 }
