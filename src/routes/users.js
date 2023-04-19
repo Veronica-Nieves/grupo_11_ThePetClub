@@ -99,7 +99,7 @@ User.findAll()
 })
 
 /* Ruta que se encarga de mostrar el formulario para modificar un usuario ya registrado*/
-router.get('/edit/:id', usersController.edit);
+router.get('/edit/:id/', usersController.edit);
 
 /* Ruta que se encarga de modificar los datos de un usuario ya registrado*/
 router.post('/edit/:id', usersController.update);

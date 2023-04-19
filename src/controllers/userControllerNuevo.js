@@ -57,14 +57,14 @@ const controller = {
         .catch(error => console.log(error))
     },
     edit: function(req, res) {
-        db.User.findbyPK(req.params.id)
+        db.User.findByPk(req.params.id)
         .then(function(users){
-            res.render(path.resolve(__dirname, "../views/user-edit"), { usuarios:users })
+            res.render("users/user-edit", { usuarios:users })
         })
-    },
+    },  
     update: function(req, res){
         db.User.update({
-            fisrt_name: req.body.firstName,
+            first_name: req.body.firstName,
             last_name: req.body.lastName,
             /* Para actualizar la contraseña, se debe validar la anterior contraseña (PENDIENTE)
             password: bcrypt.hashSync(req.body.password, 10),
@@ -76,8 +76,16 @@ const controller = {
                 /* Se utiliza params porque es la manera de acceder a parametros que nos llegan en la url */
                 id: req.params.id
             }
-        });
-        res.redirect('/users/profile' + req.params.id);
+        }).then(function() {
+            db.User.findByPk(req.params.id).then(function(user) {
+            return res.render('users/user-profile', { usuarios: user });
+            });
+            }).catch(function(error) {
+            console.log(error);
+            return res.status(500).send('Error interno del servidor');
+            });
+        /* ;
+        return res.render('users/user-profile', { usuarios:users }); */
     },
     delete: function(req, res){
         db.User.destroy({
@@ -85,7 +93,7 @@ const controller = {
                 id: req.params.id
             }
         });
-        res.redirect('/users/list');
+        res.redirect('/users/list', { usuarios:users });
     },
     login: function(req, res){
         res.render(path.resolve(__dirname, '../views/users/login'))
@@ -103,8 +111,8 @@ const controller = {
                     return user.email === req.body.email
                 });
                 /* Aquí se verifica si la contraseña que esta ingresando el usuario ya registrado, es la misma que está hasheada en la db | Se usa el compareSync que retorna un true ó false */
-                if(bcrypt.compareSync(req.body.password, userLogin[0].password)=== false){
-                    userLogin = [];
+                if(!userLogin[0] || bcrypt.compareSync(req.body.password, userLogin[0].password) === false){
+                    userLogin = [0];
                 }
             }
             /* Aquí se determina si el usuario fue encontrado ó no en la db */
