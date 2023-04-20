@@ -15,6 +15,10 @@ module.exports = (sequelize, dataTypes) => {
                 type: dataTypes.STRING(250),
                 allowNull: false
             },
+            images: {
+                type: dataTypes.STRING(250),
+                allowNull: false
+            },
             /*created_at: {
                 type: dataTypes.DATE,
             },

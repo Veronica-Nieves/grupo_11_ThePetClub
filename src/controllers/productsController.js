@@ -186,16 +186,36 @@ const controller = {
 
 // Mostrar vista parcial de especies - temporal
   species:(req, res) => {
-    //res.send("entramos a la vista de species")
-    //res.render("./partials/species")
 
     db.species.findAll()
       .then(function(specieList){
-        //res.send(productList)
         res.render("./partials/species", {species: specieList})
       })
       
   },
+
+  specieProductList: (req, res) => {
+    db.species.findOne({
+      where: {id: req.params.specieId}
+      })
+      .then(function(specie){
+
+    db.products.findAll({
+      where: {category_id: req.params.specieId}
+      })
+      .then(function(productList){
+        
+        res.render('./products/products-specie-list', {products: productList, specie: specie})
+      })
+      .catch((error) => {
+        res.send(error)
+      })
+
+    })
+	},
+
+
+
 
 }
 

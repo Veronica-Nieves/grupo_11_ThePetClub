@@ -19,9 +19,9 @@
                 <% species.forEach(especie => { %>
                     <article class="category-block">
                         <div class="category-img">
-                            <img href="/" src="/img/section-category/img-dog-category.png" alt="the pet's club-dog" class="img-dog-category">
+                            <img href="/" src="/img/section-category/<%=especie.images%>" alt="the pet's club-dog" class="img-dog-category">
                         </div>
-                        <a href="#" class="category-tittle"><%= especie.name %></a>
+                        <a href="/products/species/<%=especie.id%>" class="category-tittle"><%= especie.name %><br></a>
                     </article>
                 <% }) %>  
             </div>

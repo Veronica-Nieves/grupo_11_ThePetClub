@@ -76,6 +76,8 @@ router.get('/conexion', productsController.conexion);
 
 /* VISTA DE ESPECIES - TEMPORAL */
 router.get('/species', productsController.species);
+router.get('/species/:specieId', productsController.specieProductList);
+
 
 
 

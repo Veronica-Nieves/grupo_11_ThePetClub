@@ -11,7 +11,14 @@
     <!-- VISTA DÍNAMICA DE PRODUCTOS -->
     <section>
         <div class="page-title">
-            <h3>Todos los producto</h3>
+            <h3>Productos para <%= specie.name %></h3>
+            <div class="specie-contaniner">
+                <article class="category-block-specie">
+                    <div class="category-img-specie">
+                        <img href="/" src="/img/section-category/<%=specie.images%>" alt="the pet's club" class="img-category-specie">
+                    </div>
+                </article>
+            </div>
             <p class="form-buttons-container">
                 <a class="form-button" href="/products/create"> Agregar un nuevo producto</a>
             </p>
