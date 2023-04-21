@@ -16,6 +16,8 @@ const controller = {
 
 // Listado de productos en home
 	index: (req, res) => {
+		db.species.findAll()
+      		.then(function(species){
 
 		db.products.findAll({
 			where: { offer: "oferta en home" }
@@ -30,7 +32,9 @@ const controller = {
 			res.render("index", {
 				productsSale: homeOfferProducts,
 				productsFeatured: homeFeaturedProducts,
+				species: species,
 				});
+			})
 			})
 			})
 				
