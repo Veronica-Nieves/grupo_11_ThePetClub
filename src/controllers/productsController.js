@@ -184,7 +184,7 @@ const controller = {
   },
 
 
-// Mostrar vista parcial de especies - temporal
+// Mostrar vista de la seccionde categorías
   species:(req, res) => {
 
     db.species.findAll()
@@ -194,6 +194,7 @@ const controller = {
       
   },
 
+// Muestra el listado de productos por especie
   specieProductList: (req, res) => {
     db.species.findOne({
       where: {id: req.params.specieId}
@@ -201,7 +202,7 @@ const controller = {
       .then(function(specie){
 
     db.products.findAll({
-      where: {category_id: req.params.specieId}
+      where: {specie_id: req.params.specieId}
       })
       .then(function(productList){
         
