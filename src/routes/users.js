@@ -5,7 +5,7 @@ const bcrypt = require('bcryptjs');
 const fs = require('fs');
 const {check,validationResult, body} = require('express-validator');    
 /* Variable creada por sequelize para conectar la base de datos */
-const db  = require("../database/models/");
+const db = require("../database/models/");
 
 /* Asocia el modelo "User" de la base de datos "db" */
 const User = db.User;

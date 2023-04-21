@@ -73,13 +73,8 @@ users → array con la colección de usuarios, cada uno con:
                 userName: user.user_name,
                 name: user.first_name,
                 lastName: user.last_name,
-                avatar: "http://localhost:3002/api/users/" + user.id + "/avatar",
+                avatar: "http://localhost:3002/img/avatars/" + user.avatar,
             });
-        });
-    },
-    userAvatar: (req, res) => {
-        User.findByPk(req.params.id).then((user) => {
-            res.render("avatar", { avatar: user.avatar });
         });
     },
 
@@ -144,16 +139,12 @@ users → array con la colección de usuarios, cada uno con:
                             category: category,
                             specie: specie,
                         },
-                        image: "http://localhost:3002/api/products/" + product.id + "image",
+                        image: "http://localhost:3002/img/productslist/" + product.image,
                     });
                 });
             });
         });
-    },
-
-    productImage: (req, res) => {
-
-    },
+    }
 };
 
 module.exports = controller;

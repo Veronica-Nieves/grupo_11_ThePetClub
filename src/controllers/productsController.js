@@ -201,7 +201,7 @@ const controller = {
       .then(function(specie){
 
     db.products.findAll({
-      where: {category_id: req.params.specieId}
+      where: {specie_id: req.params.specieId}
       })
       .then(function(productList){
         
