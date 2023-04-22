@@ -1,35 +1,43 @@
 const db = require("../database/models");
+
 const User = db.User;
+const UserFA/*FindAll*/= User.findAll();
+
 const Product = db.products;
+const ProductFA = Product.findAll();
+
 const Category = db.category;
+const CategoryFA = Category.findAll();
+
 const Specie = db.species;
+const SpecieFA = Specie.findAll();
 
 const controller = {
     index: (req, res) => {
-        User.findAll().then((users) => {
+        Promise.all([UserFA, ProductFA]).then(([users, products]) => {
             users = users.map((user) => {
                 return {
                     detail: "http://localhost:3002/api/users/" + user.id,
-                    avatar: "http://localhost:3002/api/users/" + user.id + "/avatar",
+                    avatar: "http://localhost:3002/img/avatars/" + user.avatar,
                 };
             });
-            Product.findAll().then((product) => {
-                product = product.map((user) => {
-                    return {
-                        detail: "http://localhost:3002/api/products/" + user.id,
-                        image: "http://localhost:3002/api/products/" + user.id + "/image",
-                    };
-                });
-                res.json({
-                    apiUsers: {
-                        link: "http://localhost:3002/api/users",
-                        detailAvatar: users,
-                    },
-                    apiProducts: {
-                        link: "http://localhost:3002/api/products",
-                        detailImage: product,
-                    },
-                });
+
+            products = products.map((product) => {
+                return {
+                    detail: "http://localhost:3002/api/products/" + product.id,
+                    image: "http://localhost:3002/img/productslist/" + product.image,
+                };
+            });
+
+            res.json({
+                apiUsers: {
+                    link: "http://localhost:3002/api/users",
+                    detailAvatar: users,
+                },
+                apiProducts: {
+                    link: "http://localhost:3002/api/products",
+                    detailImage: products,
+                },
             });
         });
     },
@@ -43,15 +51,13 @@ users → array con la colección de usuarios, cada uno con:
 - name
 - email
 - detail → URL para obtener el detalle. .*/
-        User.findAll().then((users) => {
-            users = users.map((user) => {
-                return {
-                    id: user.id,
-                    name: user.first_name,
-                    email: user.email,
-                    detail: "http://localhost:3002/api/users/" + user.id,
-                };
-            });
+        UserFA.then((users) => {
+            users = users.map((user) => ({
+                id: user.id,
+                name: user.first_name,
+                email: user.email,
+                detail: "http://localhost:3002/api/users/" + user.id,
+            }));
 
             res.json({
                 count: users.length,
@@ -90,36 +96,32 @@ users → array con la colección de usuarios, cada uno con:
     - description
     - un array con principal relación de uno a muchos (ej: categories).
     - detail → URL para obtener el detalle.*/
-        Product.findAll().then((products) => {
-            Category.findAll().then((categories) => {
-                Specie.findAll().then((species) => {
-                    let count = {};
+        Promise.all([ProductFA, CategoryFA, SpecieFA]).then(([products, categories, species]) => {
+            let count = {};
 
-                    products = products.map((product) => {
-                        let category = categories[product.category_id - 1];
-                        let categoryName = category.name;
+            products = products.map((product) => {
+                let category = categories[product.category_id - 1];
+                let categoryName = category.name;
+            
+                if (count[categoryName]) count[categoryName]++;
+                else count[categoryName] = 1;
+            
+                return {
+                    id: product.id,
+                    name: product.name,
+                    description: product.description,
+                    relaciones: {
+                        category: category,
+                        specie: species[product.specie_id - 1],
+                    },
+                    detail: "http://localhost:3002/api/products/" + product.id,
+                };
+            });
 
-                        if (count[categoryName]) count[categoryName]++;
-                        else count[categoryName] = 1;
-
-                        return {
-                            id: product.id,
-                            name: product.name,
-                            description: product.description,
-                            relaciones: {
-                                category: category,
-                                specie: species[product.specie_id - 1],
-                            },
-                            detail: "http://localhost:3002/api/products/" + product.id,
-                        };
-                    });
-
-                    res.json({
-                        count: products.length,
-                        countByCategory: count,
-                        products: products,
-                    });
-                });
+            res.json({
+                count: products.length,
+                countByCategory: count,
+                products
             });
         });
     },
@@ -131,20 +133,21 @@ users → array con la colección de usuarios, cada uno con:
     - un array por cada relación de uno a muchos (categories, colors, sizes, etc)
     - Una URL para la imagen del producto (para mostrar la imagen).*/
         Product.findByPk(req.params.id).then((product) => {
-            Category.findByPk(product.category_id).then((category) => {
-                Specie.findByPk(product.specie_id).then((specie) => {
-                    res.json({
-                        product,
-                        relaciones: {
-                            category: category,
-                            specie: specie,
-                        },
-                        image: "http://localhost:3002/img/productslist/" + product.image,
-                    });
+            let promiseCategory = Product.findByPk(product.category_id);
+            let promiseSpecie = Product.findByPk(product.specie_id);
+            
+            Promise.all([promiseCategory, promiseSpecie]).then(([category, specie]) => {
+                res.json({
+                    product,
+                    relaciones: {
+                        category: category,
+                        specie: specie,
+                    },
+                    image: "http://localhost:3002/img/productslist/" + product.image,
                 });
             });
         });
-    }
+    },
 };
 
 module.exports = controller;
