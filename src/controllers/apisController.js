@@ -1,7 +1,7 @@
 const db = require("../database/models");
 
 const User = db.User;
-const UserFA/*FindAll*/= User.findAll();
+const UserFA/*UserFindAll*/= User.findAll();
 
 const Product = db.products;
 const ProductFA = Product.findAll();
@@ -97,14 +97,14 @@ users → array con la colección de usuarios, cada uno con:
     - un array con principal relación de uno a muchos (ej: categories).
     - detail → URL para obtener el detalle.*/
         Promise.all([ProductFA, CategoryFA, SpecieFA]).then(([products, categories, species]) => {
-            let count = {};
+            let countBC = {};
 
             products = products.map((product) => {
                 let category = categories[product.category_id - 1];
                 let categoryName = category.name;
             
-                if (count[categoryName]) count[categoryName]++;
-                else count[categoryName] = 1;
+                if (countBC[categoryName]) countBC[categoryName]++;
+                else countBC[categoryName] = 1;
             
                 return {
                     id: product.id,
@@ -120,7 +120,7 @@ users → array con la colección de usuarios, cada uno con:
 
             res.json({
                 count: products.length,
-                countByCategory: count,
+                countByCategory: countBC,
                 products
             });
         });
@@ -148,6 +148,26 @@ users → array con la colección de usuarios, cada uno con:
             });
         });
     },
+    species: (req, res) => {
+        Promise.all([ProductFA, SpecieFA]).then(([products, species]) => {
+            let countBS = {};
+
+            products.forEach((product) => {
+                let specie = species[product.specie_id - 1];
+                let specieName = specie.name;
+            
+                if (countBS[specieName]) countBS[specieName]++;
+                else countBS[specieName] = 1;
+            })
+
+            res.json({
+                count: species.length,
+                countBySpecie: countBS,
+                species
+            });
+        })
+
+    }
 };
 
 module.exports = controller;
