@@ -57,7 +57,7 @@ var conexion = mysql2.createConnection({
 
 // ************ Set the server to listen ************
 
-let port = process.env.PORT || 3002
+let port = process.env.PORT || 3001
 //port es para desplegar el proyecto sin problemas
 
 app.listen(port, () => {
