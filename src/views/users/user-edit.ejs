@@ -12,6 +12,15 @@
         <!-- FORMULARIO SIGN UP - REGISTER-->
         <div class="register-container"> 
             <div class="form-title-container"><h3>  Editar el usuario  </h3></div>
+            <!-- Errores de db --> 
+            <% if(typeof(errors) != 'undefined'){%>
+                <ul class="alert alert-danger">
+                    <% errors.forEach(error => { %>
+                        <li><%= error.msg%></li>
+                    <%});%>
+                </ul>
+            <%}%>
+            <!-- Fin de mostrar los errores -->
             <form action="/users/edit/<%=usuarios.id%>" method="POST" enctype="multipart/form-data" class="sing-up-form-container">
                 <p class="register-form-field">
                     <input type="text" 
@@ -53,11 +62,12 @@
 
                 <p class="register-form-field">
                     <label for="avatarRegister" class="form-label-avatar">Imagen de perfil: </label> 
-                    <input type="file" id="avatarRegister" name="avatar" >
+                    <input type="file" id="avatarRegister" name="avatar" value="<%=usuarios.avatar%>">
                 </p>
+    
                 <!--Botón de formulario -->
                 <p class="register-button-container">
-                    <a href="/profile"><button type="submit" class="form-button"> Editar usuario </button></a>
+                    <button type="submit" class="form-button"> Editar usuario </button>
                 </p>
 -
             </form>

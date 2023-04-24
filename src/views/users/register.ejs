@@ -12,6 +12,10 @@
         <!-- FORMULARIO SIGN UP - REGISTER-->
         <div class="register-container"> 
             <div class="form-title-container"><h3>  Registrate en The Pet's Club  </h3></div>
+            <!-- Errores del lado del Front -->
+            <div>
+                <ul id="errores"></ul>
+            </div>
             <!-- Errores de db -->
             <% if(typeof(errors) != 'undefined'){%>
                 <ul class="alert alert-danger">
