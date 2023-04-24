@@ -1,7 +1,9 @@
 const db = require("../database/models");
 
+const port = process.env.PORT || 3001;
+
 const User = db.User;
-const UserFA/*UserFindAll*/= User.findAll();
+const UserFA /*UserFindAll*/ = User.findAll();
 
 const Product = db.products;
 const ProductFA = Product.findAll();
@@ -17,25 +19,25 @@ const controller = {
         Promise.all([UserFA, ProductFA]).then(([users, products]) => {
             users = users.map((user) => {
                 return {
-                    detail: "http://localhost:3002/api/users/" + user.id,
-                    avatar: "http://localhost:3002/img/avatars/" + user.avatar,
+                    detail: "http://localhost:" + port + "/api/users/" + user.id,
+                    avatar: "http://localhost:" + port + "/img/avatars/" + user.avatar,
                 };
             });
 
             products = products.map((product) => {
                 return {
-                    detail: "http://localhost:3002/api/products/" + product.id,
-                    image: "http://localhost:3002/img/productslist/" + product.image,
+                    detail: "http://localhost:" + port + "/api/products/" + product.id,
+                    image: "http://localhost:" + port + "/img/productslist/" + product.image,
                 };
             });
 
             res.json({
                 apiUsers: {
-                    link: "http://localhost:3002/api/users",
+                    link: "http://localhost:" + port + "/api/users",
                     detailAvatar: users,
                 },
                 apiProducts: {
-                    link: "http://localhost:3002/api/products",
+                    link: "http://localhost:" + port + "/api/products",
                     detailImage: products,
                 },
             });
@@ -56,7 +58,7 @@ users → array con la colección de usuarios, cada uno con:
                 id: user.id,
                 name: user.first_name,
                 email: user.email,
-                detail: "http://localhost:3002/api/users/" + user.id,
+                detail: "http://localhost:" + port + "/api/users/" + user.id,
             }));
 
             res.json({
@@ -79,7 +81,7 @@ users → array con la colección de usuarios, cada uno con:
                 userName: user.user_name,
                 name: user.first_name,
                 lastName: user.last_name,
-                avatar: "http://localhost:3002/img/avatars/" + user.avatar,
+                avatar: "http://localhost:" + port + "/img/avatars/" + user.avatar,
             });
         });
     },
@@ -102,10 +104,10 @@ users → array con la colección de usuarios, cada uno con:
             products = products.map((product) => {
                 let category = categories[product.category_id - 1];
                 let categoryName = category.name;
-            
+
                 if (countBC[categoryName]) countBC[categoryName]++;
                 else countBC[categoryName] = 1;
-            
+
                 return {
                     id: product.id,
                     name: product.name,
@@ -114,14 +116,17 @@ users → array con la colección de usuarios, cada uno con:
                         category: category,
                         specie: species[product.specie_id - 1],
                     },
-                    detail: "http://localhost:3002/api/products/" + product.id,
+                    detail: "http://localhost:" + port + "/api/products/" + product.id,
+                    price: product.price,
+                    sku: product.sku,
+                    piece: product.pieces,
                 };
             });
 
             res.json({
                 count: products.length,
                 countByCategory: countBC,
-                products
+                products,
             });
         });
     },
@@ -135,7 +140,7 @@ users → array con la colección de usuarios, cada uno con:
         Product.findByPk(req.params.id).then((product) => {
             let promiseCategory = Product.findByPk(product.category_id);
             let promiseSpecie = Product.findByPk(product.specie_id);
-            
+
             Promise.all([promiseCategory, promiseSpecie]).then(([category, specie]) => {
                 res.json({
                     product,
@@ -143,7 +148,7 @@ users → array con la colección de usuarios, cada uno con:
                         category: category,
                         specie: specie,
                     },
-                    image: "http://localhost:3002/img/productslist/" + product.image,
+                    image: "http://localhost:" + port + "/img/productslist/" + product.image,
                 });
             });
         });
@@ -155,19 +160,18 @@ users → array con la colección de usuarios, cada uno con:
             products.forEach((product) => {
                 let specie = species[product.specie_id - 1];
                 let specieName = specie.name;
-            
+
                 if (countBS[specieName]) countBS[specieName]++;
                 else countBS[specieName] = 1;
-            })
+            });
 
             res.json({
                 count: species.length,
                 countBySpecie: countBS,
-                species
+                species,
             });
-        })
-
-    }
+        });
+    },
 };
 
 module.exports = controller;
