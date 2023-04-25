@@ -63,14 +63,39 @@ const controller = {
         })
     },  
     update: function(req, res){
+        let errors = validationResult(req);
+        if(!errors.isEmpty()){
+            return res.render(path.resolve(__dirname, '../views/users/edit'), {
+                errors: errors.errors, old: req.body
+            });
+        }
+        let user = {
+            first_name: req.body.firstName,
+            last_name: req.body.lastName,
+            user_name: req.body.nameUser,
+            email: req.body.email,
+            avatar: req.file ? req.file.filename : '',
+            rol_id: req.body.role
+        }
+        db.User.update(user, {
+            where: {id: req.params.id}
+        })
+        .then(() => {
+            return res.redirect('/users/profile/' + req.params.id);
+        })
+        .catch(error => console.log(error))
+    },
+
+    
+    uapdateOtro: function(req, res){
         db.User.update({
             first_name: req.body.firstName,
             last_name: req.body.lastName,
             /* Para actualizar la contraseña, se debe validar la anterior contraseña (PENDIENTE)
             password: bcrypt.hashSync(req.body.password, 10),
             password_confirmed: bcrypt.hashSync(req.body.password, 10), */
-            // avatar: req.file ? req.file.filename : '',
-            // rol_id: req.body.role
+            avatar: req.file ? req.file.filename : '',
+            rol_id: req.body.role
         }, {
             where: {
                 /* Se utiliza params porque es la manera de acceder a parametros que nos llegan en la url */
@@ -86,6 +111,42 @@ const controller = {
             });
         /* ;
         return res.render('users/user-profile', { usuarios:users }); */
+    },
+
+    uepdateOtroDos: (req, res) => {
+        let errors = validationResult(req);
+
+        if (errors.isEmpty()) {
+            db.User.update(
+                {
+                    first_name: req.body.firstName,
+                    last_name: req.body.lastName,
+                    /* Para actualizar la contraseña, se debe validar la anterior contraseña (PENDIENTE)
+                    password: bcrypt.hashSync(req.body.password, 10),
+                    password_confirmed: bcrypt.hashSync(req.body.password, 10), */
+                    avatar: req.file ? req.file.filename : '',
+                    rol_id: req.body.role
+                },
+                {
+                    where: { id: req.params.id },
+                }
+            );
+            res.redirect('/users/user-profile' + req.params.id);
+        } else {
+            db.species.findAll().then(function (especies) {
+                db.category.findAll().then(function (categorias) {
+                    db.products.findByPk(req.params.id).then((productToEdit) => {
+                        res.render("./products/products-edit", {
+                            productToEdit: req.body,
+                            especies: especies,
+                            categorias: categorias,
+                            errors: errors.array(),
+                            productId: productToEdit.id,
+                        });
+                    });
+                });
+            });
+        }
     },
     delete: function(req, res){
         db.User.destroy({
