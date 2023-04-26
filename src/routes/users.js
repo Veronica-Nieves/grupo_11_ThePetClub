@@ -25,9 +25,43 @@ const upload = multer({ storage });
 /* Nuevo controlador */
 const usersController = require(path.resolve(__dirname, '../controllers/userControllerNuevo'));
 
-//Middlewares
-const guestMiddleware = require('../middlewares/routes/guestMiddleware');
-/* const authMiddleware = require('../middlewares/routes/authMiddleware'); */
+/* Validaciones desde la db */
+const validateUser = [
+    /* Validaciones para realizar el registro */
+    check('firstName').isLength({ min: 1 }).withMessage('El campo nombre no puede estar vacío'),
+    check('lastName').isLength({ min: 1 }).withMessage('El campo apellido no puede estar vacío'),
+    check('nameUser').isLength({ min: 1 }).withMessage('El campo nombre de usuario no puede estar vacío'),
+
+    // /* Validación de contraseña y confirmación de contraseña*/
+    // check('password').isLength({ min: 6 }).withMessage('La contraseña debe tener un mínimo de 6 caracteres, al menos una letra y un número'),
+    // /* check('confirm_password').isLength({ min: 6 }).withMessage('La confirmación de la contraseña debe tener un mínimo de 6 caracteres'), */
+    // /* Aquí valido que ambas contraseñas sean iguales. El value viene a ser el valor del name"" en el InputDeviceInfo. El valor {req} corresponde a lo que viene desde el formulario. */
+    // body('passwordConfirmed').custom((value, { req }) => {
+    //     if (req.body.password == value) {
+    //       /* Si retorno falso no aparece el mensaje de error */
+    //         return true;
+    //     } else {
+    //       /* Si retorno true, aparece el mensaje de error */
+    //         return false;
+    //     }
+    // }).withMessage('Las contraseñas deben ser iguales'),
+      /* Validación de extensiones de los archivos de los avatar */
+      /* Con el método body obtengo el valor del campo de 'avatar'| Se utiliza el método "custom" para definir una función de validación personalizada que toma dos parámetros: el valor del campo "avatar" y el objeto de solicitud HTTP "req" */
+    body('avatar').custom(function (value, { req }) {
+        if (!req.file) {
+            return true;
+        }
+        let extension = "" + path.extname(req.file.filename).toLowerCase();
+        if (
+            extension == '.jpg' || 
+            extension == '.jpeg' || 
+            extension == '.png' || 
+            extension == '.gif') {
+            return true;
+        }
+        return false;
+    }).withMessage('Solo debe seleccionar archivos con extensión JPG, JPEG, PNG o GIF')
+];
 
 /* ------------------- Listado de rutas de users --------------------*/
 
@@ -102,7 +136,7 @@ User.findAll()
 router.get('/edit/:id/', usersController.edit);
 
 /* Ruta que se encarga de modificar los datos de un usuario ya registrado*/
-router.post('/edit/:id', usersController.update);
+router.post('/edit/:id', validateUser, usersController.update);
 
 /* Ruta que se encarga de modificar los datos de un usuario ya registrado*/
 router.post('/delete/:id', usersController.delete);
