@@ -61,59 +61,9 @@ const controller = {
         .then(function(users){
             res.render("users/user-edit", { usuarios:users })
         })
-    },  
-    update: function(req, res){
-        let errors = validationResult(req);
-        if(!errors.isEmpty()){
-            return res.render(path.resolve(__dirname, '../views/users/edit'), {
-                errors: errors.errors, old: req.body
-            });
-        }
-        let user = {
-            first_name: req.body.firstName,
-            last_name: req.body.lastName,
-            user_name: req.body.nameUser,
-            email: req.body.email,
-            avatar: req.file ? req.file.filename : '',
-            rol_id: req.body.role
-        }
-        db.User.update(user, {
-            where: {id: req.params.id}
-        })
-        .then(() => {
-            return res.redirect('/users/profile/' + req.params.id);
-        })
-        .catch(error => console.log(error))
-    },
+    }, 
 
-    
-    uapdateOtro: function(req, res){
-        db.User.update({
-            first_name: req.body.firstName,
-            last_name: req.body.lastName,
-            /* Para actualizar la contraseña, se debe validar la anterior contraseña (PENDIENTE)
-            password: bcrypt.hashSync(req.body.password, 10),
-            password_confirmed: bcrypt.hashSync(req.body.password, 10), */
-            avatar: req.file ? req.file.filename : '',
-            rol_id: req.body.role
-        }, {
-            where: {
-                /* Se utiliza params porque es la manera de acceder a parametros que nos llegan en la url */
-                id: req.params.id
-            }
-        }).then(function() {
-            db.User.findByPk(req.params.id).then(function(user) {
-            return res.render('users/user-profile', { usuarios: user });
-            });
-            }).catch(function(error) {
-            console.log(error);
-            return res.status(500).send('Error interno del servidor');
-            });
-        /* ;
-        return res.render('users/user-profile', { usuarios:users }); */
-    },
-
-    uepdateOtroDos: (req, res) => {
+    update: (req, res) => {
         let errors = validationResult(req);
 
         if (errors.isEmpty()) {
@@ -125,29 +75,81 @@ const controller = {
                     password: bcrypt.hashSync(req.body.password, 10),
                     password_confirmed: bcrypt.hashSync(req.body.password, 10), */
                     avatar: req.file ? req.file.filename : '',
-                    rol_id: req.body.role
+                    /* rol_id: req.body.role */
                 },
                 {
                     where: { id: req.params.id },
-                }
-            );
-            res.redirect('/users/user-profile' + req.params.id);
-        } else {
-            db.species.findAll().then(function (especies) {
-                db.category.findAll().then(function (categorias) {
-                    db.products.findByPk(req.params.id).then((productToEdit) => {
-                        res.render("./products/products-edit", {
-                            productToEdit: req.body,
-                            especies: especies,
-                            categorias: categorias,
+                });
+            res.redirect("/user-profile/" + req.params.id);
+        }   else {
+                    db.User.findByPk(req.params.id).then((userToEdit) => {
+                        res.render("users/user-edit", {
+                            usuarios:users,
+                            userToEdit: req.body,
+                            userId: userToEdit.id,
+                            /* productToEdit: req.body, */
                             errors: errors.array(),
-                            productId: productToEdit.id,
+                            /* productId: productToEdit.id, */
                         });
                     });
-                });
-            });
-        }
-    },
+                };
+            },
+
+    
+
+
+    // update: function(req, res){
+    //     db.User.update({
+    //         first_name: req.body.firstName,
+    //         last_name: req.body.lastName,
+    //         /* Para actualizar la contraseña, se debe validar la anterior contraseña (PENDIENTE)
+    //         password: bcrypt.hashSync(req.body.password, 10),
+    //         password_confirmed: bcrypt.hashSync(req.body.password, 10), */
+    //         avatar: req.file ? req.file.filename : '',
+    //         rol_id: req.body.role
+    //     }, {
+    //         where: {
+    //             /* Se utiliza params porque es la manera de acceder a parametros que nos llegan en la url */
+    //             id: req.params.id
+    //         }
+    //     }).then(function() {
+    //         db.User.findByPk(req.params.id).then(function(user) {
+    //         return res.render('users/user-profile', { usuarios: user });
+    //         });
+    //         }).catch(function(error) {
+    //         console.log(error);
+    //         return res.status(500).send('Error interno del servidor');
+    //         });
+    //     /* ;
+    //     return res.render('users/user-profile', { usuarios:users }); */
+    // },
+
+    // update: (req, res) => {
+    //     let errors = validationResult(req);
+
+    //     if (errors.isEmpty()) {
+    //         db.User.update(
+    //             {
+    //                 first_name: req.body.firstName,
+    //                 last_name: req.body.lastName,
+    //                 /* Para actualizar la contraseña, se debe validar la anterior contraseña (PENDIENTE)
+    //                 password: bcrypt.hashSync(req.body.password, 10),
+    //                 password_confirmed: bcrypt.hashSync(req.body.password, 10), */
+    //                 avatar: req.file ? req.file.filename : '',
+    //                 rol_id: req.body.role
+    //             },
+    //             {
+    //                 where: { id: req.params.id },
+    //             }
+    //         );
+    //         return res.redirect('/users/profile/' + req.params.id);
+    //     } else {
+    //         db.User.findByPk(req.params.id)
+    //         .then(function(users){
+    //             res.render("users/user-edit", { usuarios:users })
+    //         })} 
+    // },
+
     delete: function(req, res){
         db.User.destroy({
             where: {
