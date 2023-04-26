@@ -138,8 +138,8 @@ users → array con la colección de usuarios, cada uno con:
     - un array por cada relación de uno a muchos (categories, colors, sizes, etc)
     - Una URL para la imagen del producto (para mostrar la imagen).*/
         Product.findByPk(req.params.id).then((product) => {
-            let promiseCategory = Product.findByPk(product.category_id);
-            let promiseSpecie = Product.findByPk(product.specie_id);
+            let promiseCategory = Category.findByPk(product.category_id);
+            let promiseSpecie = Specie.findByPk(product.specie_id);
 
             Promise.all([promiseCategory, promiseSpecie]).then(([category, specie]) => {
                 res.json({
