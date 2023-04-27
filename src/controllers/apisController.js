@@ -17,14 +17,14 @@ const SpecieFA = Specie.findAll();
 const controller = {
     index: (req, res) => {
         Promise.all([UserFA, ProductFA]).then(([users, products]) => {
-            users = users.map((user) => {
+            users = users.map(user => {
                 return {
                     detail: "http://localhost:" + port + "/api/users/" + user.id,
                     avatar: "http://localhost:" + port + "/img/avatars/" + user.avatar,
                 };
             });
 
-            products = products.map((product) => {
+            products = products.map(product => {
                 return {
                     detail: "http://localhost:" + port + "/api/products/" + product.id,
                     image: "http://localhost:" + port + "/img/productslist/" + product.image,
@@ -40,6 +40,12 @@ const controller = {
                     link: "http://localhost:" + port + "/api/products",
                     detailImage: products,
                 },
+                apiSpecies: {
+                    link: "http://localhost:" + port + "/api/species",
+                },
+                apiCategories: {
+                    link: "http://localhost:" + port + "/api/categories",
+                },
             });
         });
     },
@@ -53,8 +59,8 @@ users → array con la colección de usuarios, cada uno con:
 - name
 - email
 - detail → URL para obtener el detalle. .*/
-        UserFA.then((users) => {
-            users = users.map((user) => ({
+        UserFA.then(users => {
+            users = users.map(user => ({
                 id: user.id,
                 name: user.first_name,
                 email: user.email,
@@ -74,7 +80,7 @@ users → array con la colección de usuarios, cada uno con:
     - Una propiedad por cada campo en base
     - Una URL para la imagen de perfil (para mostrar la imagen)
     - Sin información sensible (ej: password y categoría).*/
-        User.findByPk(req.params.id).then((user) => {
+        User.findByPk(req.params.id).then(user => {
             res.json({
                 id: user.id,
                 email: user.email,
@@ -85,7 +91,6 @@ users → array con la colección de usuarios, cada uno con:
             });
         });
     },
-
     products: (req, res) => {
         /* consigna:
     api/products/
@@ -101,7 +106,7 @@ users → array con la colección de usuarios, cada uno con:
         Promise.all([ProductFA, CategoryFA, SpecieFA]).then(([products, categories, species]) => {
             let countBC = {};
 
-            products = products.map((product) => {
+            products = products.map(product => {
                 let category = categories[product.category_id - 1];
                 let categoryName = category.name;
 
@@ -130,14 +135,13 @@ users → array con la colección de usuarios, cada uno con:
             });
         });
     },
-
     productDetail: (req, res) => {
         /* consignas:
     Deberá devolver un objeto literal con la siguiente estructura:
     - una propiedad por cada campo en base
     - un array por cada relación de uno a muchos (categories, colors, sizes, etc)
     - Una URL para la imagen del producto (para mostrar la imagen).*/
-        Product.findByPk(req.params.id).then((product) => {
+        Product.findByPk(req.params.id).then(product => {
             let promiseCategory = Category.findByPk(product.category_id);
             let promiseSpecie = Specie.findByPk(product.specie_id);
 
@@ -154,10 +158,10 @@ users → array con la colección de usuarios, cada uno con:
         });
     },
     species: (req, res) => {
-        Promise.all([ProductFA, SpecieFA]).then(([products, species]) => {
+        Promise.all([ProductFA, CategoryFA]).then(([products, species]) => {
             let countBS = {};
 
-            products.forEach((product) => {
+            products.forEach(product => {
                 let specie = species[product.specie_id - 1];
                 let specieName = specie.name;
 
@@ -169,6 +173,25 @@ users → array con la colección de usuarios, cada uno con:
                 count: species.length,
                 countBySpecie: countBS,
                 species,
+            });
+        });
+    },
+    categories: (req, res) => {
+        Promise.all([ProductFA, SpecieFA]).then(([products, categories]) => {
+            let countBC = {};
+
+            products.forEach(product => {
+                let category = categories[product.category_id - 1];
+                let categoryName = category.name;
+
+                if (countBC[categoryName]) countBC[categoryName]++;
+                else countBC[categoryName] = 1;
+            });
+
+            res.json({
+                count: categories.length,
+                countBySpecie: countBC,
+                categories,
             });
         });
     },
