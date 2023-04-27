@@ -29,7 +29,7 @@
         
                 <p class="form-field">
                 <label>Descripción</label>
-                <input name="description" placeholder="Indica las características del prodcuto como color, peso, sabor, contenido, talla, etc. " class="form-input-text-area" value="<%= productToEdit.description %>">
+                <input name="description" placeholder="Indica las características del producto como color, peso, sabor, contenido, talla, etc. " class="form-input-text-area" value="<%= productToEdit.description %>">
                 </p>
                 
                 <!-- El editar imagen queda pendiente
@@ -54,63 +54,59 @@
                 <div class="form-2-columns-container">
                     <p class="form-field col-50">
                         <label>Especie</label>
-                        <select name="specie" class="form-input">
-                            <%for(let i=0; i< especies.length; i++){ %>
-                                <option value="<%=especies[i].id%>" class="form-input-option" <%= locals.productToEdit && productToEdit.specie == especies[i].id ? 'selected' : '' %> >
-                                    <%= especies[i].name%>
+                        <select name="specie_id" class="form-input">
+                            <% especies.forEach(especie => { %>
+                                <option value="<%=especie.id%>" class="form-input-option" <%= locals.productToEdit && productToEdit.specie_id == especie.id ? 'selected' : '' %> >
+                                    <%= especie.name%>
                                 </option>
-                            <% } %>
+                            <% }) %>
                         </select>       
                     </p>      
 
                     <p class="form-field col-50">
-                        <label><strong>Categorías</strong></label>
-                        <select name="category" class="form-input">
-                            <%for(let i=0; i< categorias.length; i++){ %>
-                                <option value="<%=categorias[i].id%>" class="form-input-option" <%= locals.productToEdit && productToEdit.category == categorias[i].id ? 'selected' : '' %>> 
-                                    <%= categorias[i].name%>
+                        <label>Categorías</label>
+                        <select name="category_id" class="form-input">
+                            <% categorias.forEach(categoria => { %>
+                                <option value="<%=categoria.id%>" class="form-input-option" <%= locals.productToEdit && productToEdit.category_id == categoria.id ? 'selected' : '' %>> 
+                                    <%= categoria.name%>
                                 </option>
-                            <% } %>
+                            <% }) %>
                         </select>
                     </p>
                 </div>
         
                 <div class="form-3-columns-container">
                     <p class="form-field col-30">
-						<label><strong>En oferta: </label></strong></label>
+						<label>En oferta</label>
 						<select name="offer" id="offer" class="form-input" >
-                            
-                            <% if (productToEdit.offer == "si") { %>
+                            <% if (productToEdit.offer == "si" || productToEdit.offer  == "oferta en home") { %>
                                 <option value="si" selected>Sí</option>
                                 <option value="no">No</option>     
                             <% } else { %>
                                 <option value="si">Sí</option>
                                 <option value="no" selected>No</option>           
                             <% } %>
-
 						</select>
 					</p>
                     <p class="form-field col-30">
-						<label><strong>Destacado </label></strong></label>
+						<label>Destacado</label>
 						<select name="featured" id="featured" class="form-input">
-                            
-                            <% if (productToEdit.featured == "si"){%>
+                            <% if (productToEdit.featured == "si" || productToEdit.featured == "destacado de home"){%>
                                 <option value="si" class="form-input-option" selected>Sí</option>
-							    <option value="no" class="form-input-option">No</option>   
+                                <option value="no" class="form-input-option">No</option>   
                             <% } else { %>
                                 <option value="si" class="form-input-option">Sí</option>
-							    <option value="no" class="form-input-option" selected>No</option>           
+                                <option value="no" class="form-input-option" selected>No</option>           
                             <% } %>
-
 						</select>
 					</p>
                     <p class="form-field col-30">
-                        <label><strong>Piezas </label></strong></label>
+                        <label>Piezas</label>
                         <input type="text" name="pieces" id="pieces" placeholder="Ej:12" class="form-input" value="<%= productToEdit.pieces %>">
                     </p>
                 </div>
                 
-                <!--boton de formulario -->
+                <!--botón de formulario -->
                 <p class="form-buttons-container">
                 <button type="submit" class="form-button"> Guardar producto</button>
                 </p>
@@ -125,13 +121,15 @@
                             <%= error.msg %>
                         </li>
                     <% }) %>
+                        </ul>
+                    </div>
                 <% } %>
 
 
-                <!-- Mostrar alertas Validación Frot End -->
+                <!-- Mostrar alertas Validación Front End -->
                 <div class="warning-block hide">
                     <strong class="warning-title">¡¡ ADVERTENCIA !!</strong>
-                    <ul class="errors hide"><ul></ul>
+                    <ul class="errors hide"></ul>
                 </div>
 
                 
