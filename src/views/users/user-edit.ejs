@@ -28,7 +28,7 @@
                             id="name" 
                             placeholder="Nombre"  
                             class="" 
-                            value="<%=usuarios.first_name%>" >
+                            value="<%= typeof old != 'undefined' ? old.firstName : '' %>" >
                 </p>
                 <p class="register-form-field">
                     <input type="text"
@@ -36,7 +36,7 @@
                             id="name" 
                             placeholder="Apellido"  
                             class=""
-                            value="<%=usuarios.last_name%>">
+                            value="<%= typeof old != 'undefined' ? old.lastName : '' %>">
                 </p>
 
                 <p class="register-form-field">
@@ -44,7 +44,7 @@
                             name="nameUser"
                             id="name" placeholder="Nombre de usuario" 
                             class=""
-                            value="<%=usuarios.user_name%>">
+                            value="<%= typeof old != 'undefined' ? old.nameUser : '' %>">
                 </p>
                 <!-- Para modificar la contraseña, hay que verificar la anterior contraseña (PENDIENTE) 
                     <p class="register-form-field">
@@ -62,14 +62,13 @@
 
                 <p class="register-form-field">
                     <label for="avatarRegister" class="form-label-avatar">Imagen de perfil: </label> 
-                    <input type="file" id="avatarRegister" name="avatar" value="<%=usuarios.avatar%>">
+                    <input type="file" id="avatarRegister" name="avatar">
                 </p>
     
                 <!--Botón de formulario -->
                 <p class="register-button-container">
                     <button type="submit" class="form-button"> Editar usuario </button>
                 </p>
--
             </form>
         </div>
     </body>

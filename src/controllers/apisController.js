@@ -144,7 +144,7 @@ users → array con la colección de usuarios, cada uno con:
             Promise.all([promiseCategory, promiseSpecie]).then(([category, specie]) => {
                 res.json({
                     product,
-                    relaciones: {
+                    relations: {
                         category: category,
                         specie: specie,
                     },
