@@ -1,7 +1,5 @@
 const db = require("../database/models");
 
-const port = process.env.PORT || 3001;
-
 const User = db.User;
 const UserFA /*UserFindAll*/ = User.findAll();
 
@@ -13,6 +11,8 @@ const CategoryFA = Category.findAll();
 
 const Specie = db.species;
 const SpecieFA = Specie.findAll();
+
+const port = process.env.PORT || 3001;
 
 const controller = {
     index: (req, res) => {
@@ -158,7 +158,7 @@ users → array con la colección de usuarios, cada uno con:
         });
     },
     species: (req, res) => {
-        Promise.all([ProductFA, CategoryFA]).then(([products, species]) => {
+        Promise.all([ProductFA, SpecieFA]).then(([products, species]) => {
             let countBS = {};
 
             products.forEach(product => {
@@ -177,7 +177,7 @@ users → array con la colección de usuarios, cada uno con:
         });
     },
     categories: (req, res) => {
-        Promise.all([ProductFA, SpecieFA]).then(([products, categories]) => {
+        Promise.all([ProductFA, CategoryFA]).then(([products, categories]) => {
             let countBC = {};
 
             products.forEach(product => {
@@ -190,7 +190,7 @@ users → array con la colección de usuarios, cada uno con:
 
             res.json({
                 count: categories.length,
-                countBySpecie: countBC,
+                countByCategory: countBC,
                 categories,
             });
         });

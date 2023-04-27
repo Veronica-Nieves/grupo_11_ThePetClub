@@ -14,7 +14,7 @@ router.get("/products/:id", apisController.productDetail); // DETALLE
 router.get("/species", apisController.species);
 
 // LISTA DE CATEGORÍAS
-router.get("/species", apisController.categories);
+router.get("/categories", apisController.categories);
 
 // LISTA DE APIS
 router.get("/", apisController.index);
