@@ -13,11 +13,7 @@
         top: -19px;
     }
 
-    .subheader-left {
-        display: block;
-        flex-direction: column;
-    }
-    
+
 
     /*--Categorías--*/
     .category-block {
@@ -63,8 +59,17 @@
         top: -15px;
     }
 
+    .subheader-li {
+        display: block;
+        margin-top: 10px;
+    }
+
     .hamburger-menu {
         display: none;
+    }
+
+    .cross {
+        display: none; 
     }
 
     .logo {
@@ -85,13 +90,18 @@
     .subheader-left {
         display: block;
         display: flex;
+        flex-wrap: nowrap;
         background-color: none;
         align-items: center;
         flex-direction: row;
-        margin-top: 0px;
-        margin-left: -50px;
-    }
+        margin-top: 146px;
+        margin-left: -31px;
+        width: 40vh;
+        padding: 0px;
+        justify-content: space-around;
+       }
 
+   
     .right-navbar {
         display: flex;
         flex-wrap: wrap;
