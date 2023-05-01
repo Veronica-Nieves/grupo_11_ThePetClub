@@ -23,8 +23,8 @@ router.get("/register", usersController.add); //muestra el formulario
 router.post("/register", upload.single("avatar"), validateRegister, usersController.create); //valida formulario y crea usuario o muestra los errores
 
 // EDITAR
-router.get("/edit/:id", usersController.edit); //muestra el formulario
-router.post("/edit/:id", upload.single("avatar"), validateEdit, usersController.update); //procesa formulario
+router.get("/edit", usersController.edit); //muestra el formulario
+router.post("/edit", upload.single("avatar"), validateEdit, usersController.update); //procesa formulario
 
 //ELIMINAR
 router.post("/delete/:id", usersController.delete);

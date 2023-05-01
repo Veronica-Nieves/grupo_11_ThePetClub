@@ -51,7 +51,7 @@ const controller = {
     },
     /* Renderiza vista para editar */
     edit: (req, res) => {
-        User.findByPk(req.params.id).then(user => {
+        User.findByPk(req.session.id).then(user => {
             res.render("users/user-edit", { usuarios: user });
         });
     },
@@ -92,24 +92,20 @@ const controller = {
     },
     /* Valida login */
     loginPost: (req, res) => {
+        let errors = validationResult(req);
+        /* En errors se guardan los errores que ingresan desde la ruta con el uso de validationResult */
+        if (!errors.isEmpty()) {
+            return res.render("users/login", {
+                errors: errors.errors,
+                email: req.body.email,
+            });
+        }
         User.findOne({ where: { email: req.body.email } }).then(user => {
-            /* En errors se guardan los errores que ingresan desde la ruta con el uso de validationResult */
-            let errors = validationResult(req);
-
-            if (!errors.isEmpty()) {
-                return res.render("users/login", {
-                    errors: errors.mapped(),
-                    email: req.body.email,
-                });
-            }
-
             res.session.user = user; // Aquí se guarda el usuario logueado en Session
-
             /* Aquí se verifica si el usuario escogió la opción de ser recordado */
             if (req.body.remember_user) {
-                res.cookie("email", user.id, { maxAge: 1000 * 60 * 10 });
+                res.cookie("email", user, { maxAge: 1000 * 60 * 10 });
             }
-
             /* Aquí se redirige al usuario al perfil del usuario */
             return res.redirect("/users/profile/");
         });
