@@ -5,7 +5,7 @@ const multer = require("multer");
 const { check, validationResult, body } = require("express-validator");
 
 /* Variable creada por sequelize para conectar la base de datos */
-const db = require("../database/models/");
+const db  = require("../database/models/")
 
 /* Asocia el modelo "User" de la base de datos "db" */
 const User = db.User;
@@ -98,8 +98,10 @@ const controller = {
 
             let userLogin;
 
-            if (errors.isEmpty()) {
-                userLogin = users.find(user => user.email === req.body.email);
+            if(req.body.email != '' && req.body.password != ''){
+                userLogin = users.filter(function(user){
+                    return user.email === req.body.email
+                });
                 /* Aquí se verifica si la contraseña que esta ingresando el usuario ya registrado, es la misma que está hasheada en la db | Se usa el compareSync que retorna un true ó false */
                 if (bcrypt.compareSync(req.body.password, userLogin.password) === false) {
                     return res.render("users/login", {
@@ -108,17 +110,21 @@ const controller = {
                 }
             }
             /* Aquí se determina si el usuario fue encontrado ó no en la db */
-            if (userLogin.length === 0) {
-                
-            } else req.session.usuario = userLogin; // Aquí se guarda el usuario logueado en Session
-
-            /* Aquí se verifica si el usuario escogió la opción de ser recordado */
-            if (req.body.remember_user) {
-                res.cookie("email", userLogin.email, { maxAge: 1000 * 60 * 2 });
+            if(userLogin.length === 0){
+                return res.render(path.resolve(__dirname,'../views/users/login'), {
+                    errors: [{ msg: 'Las credenciales son inválidas' }]}); 
+            } else {
+                /* Aquí se guarda el usuario logueado en Session */
+                req.session.usuario = userLogin[0];
             }
+            /* Aquí se verifica si el usuario escogio la opción de ser recordado */
+            if(req.body.remember_user){
+                res.cookie('email', userLogin[0].email,{ maxAge: (1000 * 60) * 2 })
+            }
+            console.log(userLogin[0])
             /* Aquí se redirige al usuario al perfil del usuario */
-            return res.redirect("/users/profile/" + userLogin.id);
-        });
+            return res.redirect('/users/profile/' + userLogin[0].id);
+            })
     },
     /* Renderiza perfil */
     profile: (req, res) => {
