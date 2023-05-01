@@ -8,10 +8,18 @@
 
 <main>
     <div class="gap"></div>
+
     <!-- VISTA DÍNAMICA DE PRODUCTOS -->
     <section>
         <div class="page-title">
             <h3>Productos para <%= specie.name %></h3>
+
+            <!-- Botón agregar nuevo producto -->
+            <p class="form-buttons-container">
+                <a class="form-button" href="/products/create"> Agregar un nuevo producto</a>
+            </p>
+
+            <!-- Imagen de categoría seleccionada -->
             <div class="specie-contaniner">
                 <article class="category-block-specie">
                     <div class="category-img-specie">
@@ -19,13 +27,21 @@
                     </div>
                 </article>
             </div>
-            <!-- Para regresar al inicio 
+
+            <!-- boton para regresar al inicio 
             <p class="form-buttons-container">
                 <a class="form-button" href="/"> Regresar al inicio</a>
             </p>-->
-            <p class="form-buttons-container">
-                <a class="form-button" href="/products/create"> Agregar un nuevo producto</a>
-            </p>
+
+            <!--Listado botones de todas las especies -->
+            <h3> Explorar otras especies </h3>
+            <div class="category-list">
+                <% species.forEach(especie => { %>
+                        <a class="specie-button" href="/products/species/<%=especie.id%>"> <%= especie.name %></a>
+                <% }) %>  
+            </div>
+
+            
         </div>
         <section class="product-list-container">
 
