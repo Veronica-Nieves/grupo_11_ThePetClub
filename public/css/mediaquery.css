@@ -262,8 +262,8 @@
 /*-------- Breakpoint-Smaller-smartphones 0-480 --------*/
 @media (min-width: 480px) {
     .section-tittle{
-        font-size: 18px;
-        margin: 100px 180px 100px 180px;
+        font-size: 16px;
+        margin: 20px 95px 20px 95px;
     }
     /* - - - Ofertas - - - */
     .section-article-sale {
@@ -383,8 +383,8 @@
 @media (min-width: 768px){
 
 .section-tittle {
-    font-size: 20px;
-    margin: 150px 350px 150px 350px;
+    font-size: 16px;
+    margin: 30px 160px 30px 160px;
 }
 /* - - - Ofertas - - - */
 

@@ -169,7 +169,7 @@ header {
 .sample-banner {
     width: 100%;
     position: relative;
-    top:85px;
-    left: -2px;
+    /* top:85px;
+    left: -2px; */
     z-index:inherit
 }
