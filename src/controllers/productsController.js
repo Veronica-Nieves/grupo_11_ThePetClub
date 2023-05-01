@@ -168,24 +168,20 @@ const controller = {
     },
 
     specieProductList: (req, res) => {
-        db.species
-            .findOne({
-                where: { id: req.params.specieId },
-            })
-            .then(function (specie) {
-                db.products
-                    .findAll({
-                        where: { specie_id: req.params.specieId },
-                    })
+        db.species.findAll().then(function (especies) {
+            db.species.findOne({ where: { id: req.params.specieId } }).then(function (specie) {
+                db.products.findAll({ where: { specie_id: req.params.specieId } })
                     .then(function (productList) {
                         res.render("./products/products-specie-list", {
                             products: productList,
                             specie: specie,
+                            species: especies,
                         });
                     })
                     .catch((error) => {
                         res.send(error);
                     });
+                });
             });
     },
 };

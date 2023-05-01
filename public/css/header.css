@@ -52,10 +52,36 @@ header {
     padding: 5px;
     padding-left: 35px ;
     border-radius: 30px;
-    margin-top: -20px;
-    margin-left: -70px;
+    margin: 150px;
+    margin-left: -46px;
+    top: -110px;
+    position:fixed;
+    width: 25vh;
     display: none;
 }
+
+.subheader-left-click {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;
+    padding-top: 40px;
+    padding-left: 45px ;
+    border-radius: 30px;
+    margin: 200px;
+    margin-left: -50px;
+    top: -170px;
+    position:fixed;
+    width: 25vh;
+    display: block;
+}
+
+.cross {
+    font-size: 25px;
+    margin: -30px;
+    color: var(--verde);
+    display: flex;
+}
+
 
 .right-navbar {
     display: flex;

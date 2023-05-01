@@ -94,7 +94,6 @@
 }
 
 /* Clases para las vistas de productos por categoria = especie */
-
 .specie-contaniner{
     text-align: center;
     display: flex;
@@ -117,7 +116,7 @@
     justify-content: center;
     align-items: center;
     box-shadow: inset 0px 4px 12px 2px rgb(0 0 0);
-    margin-bottom: 25px;
+    margin-bottom: 5px;
     
 }
 .img-category-specie {
@@ -125,6 +124,26 @@
     margin-top: 0px;
     border-radius: 50%;
     filter: drop-shadow(0px 4px 6px black);
+}
+
+/*boton de todas las especies en vista de productos seleccionados de una especie.*/
+.category-list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10 25px;
+}
+
+.specie-button {
+    background-color: var(--amarillo);
+    border: none;
+    width: 120px;
+    font-size: 15px;
+    padding: 10px 15px;
+    margin: 7px 10px;
+    color: var(--verde);
+    border-radius: 10px;
 }
 
 
@@ -137,6 +156,12 @@
         width: 45%;
         padding: 8px;
         margin: 20px 8px;
+    }
+    .category-block-specie {
+        width: 30vw;
+    }
+    .category-img-specie {
+        height: 30vw;
     }
 }
 
@@ -155,6 +180,10 @@
     .category-img-specie {
         height: 20vw;
     }
+
+    .specie-button {
+        width: 150px;
+    }
 }
 
 
@@ -166,9 +195,13 @@
         margin: 20px 10px;
     }
     .category-block-specie {
-        width: 15vw;
+        width: 13vw;
     }
     .category-img-specie {
-        height: 15vw;
+        height: 13vw;
+    }
+
+    .specie-button {
+        width: 170px;
     }
 }

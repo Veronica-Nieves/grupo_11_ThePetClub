@@ -54,7 +54,7 @@
                 <div class="form-2-columns-container">
                     <p class="form-field col-50">
                         <label>Especie</label>
-                        <select name="specie_id" class="form-input">
+                        <select name="specie" class="form-input">
                             <% especies.forEach(especie => { %>
                                 <option value="<%=especie.id%>" class="form-input-option" <%= locals.productToEdit && productToEdit.specie_id == especie.id ? 'selected' : '' %> >
                                     <%= especie.name%>
@@ -65,7 +65,7 @@
 
                     <p class="form-field col-50">
                         <label>Categorías</label>
-                        <select name="category_id" class="form-input">
+                        <select name="category" class="form-input">
                             <% categorias.forEach(categoria => { %>
                                 <option value="<%=categoria.id%>" class="form-input-option" <%= locals.productToEdit && productToEdit.category_id == categoria.id ? 'selected' : '' %>> 
                                     <%= categoria.name%>
