@@ -29,8 +29,6 @@
     <!-- Link para mediaquery.css -->
     <link rel="stylesheet" href="/css/mediaquery.css">
 
-    <!-- Link para script -->
-    <script src="/public/script.js"></script>
 </head>
 
 <body>
@@ -69,8 +67,8 @@
     </header>
     <!--BANNER-->
 
-    <img href="/" src="/img/sample-banner.png" alt="sample-banner" class="sample-banner">
-
+    <!-- <img href="/" src="/img/sample-banner.png" alt="sample-banner" class="sample-banner"> -->
+    <img href="/" src="/img/banner.jpg" alt="sample-banner" class="sample-banner">
     <main>
 
     <!--Categorías-->
@@ -242,50 +240,13 @@
                 </article>
             </div>
         </div>
-
+        <script src="/public/script.js"></script>
         </body>
     </main>
 
-        <!--FOOTER-->
-    <footer>
-            <div class="containerfooter-menu">
-                <ul class="footer-menu">
-                    <li class=""><a href="#" class="footer-option"><i class="fas fa-chevron-right"></i>Tienda</a></li>
-                    <li class=""><a href="#" class="footer-option"><i class="fas fa-chevron-right"></i>Categorías</a></li>
-                    <li class=""><a href="#" class="footer-option"><i class="fas fa-chevron-right"></i>Servicios</a></li>
-                    <li class=""><a href="#" class="footer-option"><i class="fas fa-chevron-right"></i>Sobre nosotros</a></li>
-                    <li class=""><a href="#" class="footer-option"><i class="fas fa-chevron-right"></i>Ingresar</a></li>
-                </ul>
-            </div>
-
-            <div class="container-sections-footer">
-                <div class="container-RRSS">
-                    <p class="footer-section-title">Seguinos en redes sociales</p>
-                    <ul class="RRSS">
-                        <li class=""><a href="#" class="footer-option"><i class="fa-brands fa-instagram"></i> |thepet'sclub|</a></li>
-                        <li class=""><a href="#" class="footer-option"><i class="fa-brands fa-facebook"></i> Thepet'sclub</a></li> 
-                    </ul>
-                </div>
-                <div class="container-contact">
-                    <p class="footer-section-title">Contactanos</p>
-                    <ul class="contact">
-                        <li class=""><a href="#" class="footer-option"><i class="fa-brands fa-whatsapp"></i> +54 637292801</a></li>
-                        <li class=""><a href="#" class="footer-option"><i class="fas fa-envelope-open"></i> thepetsclub@gmail.com</a></li> 
-                    </ul>
-                </div>
-                <div class="container-download-app">
-                    <p class="footer-section-title">Descarga la app</p>
-                    <ul class="download-app">
-                        <li class=""><a href="#" class="footer-option"> App01</a></li>
-                        <li class=""><a href="#" class="footer-option"> App02</a></li> 
-                    </ul>
-                </div>
-            </div>
-            <div class="all-right-reserve" >
-                <img href="/" src="/img/dog-face.png" alt="the pet's club" class="dog-face">
-                <h4>Copyright &#169 2022 - Todos los derechos reservados</h4>
-            </div>
-    </footer>
+    <!-- Include Footer-->
+    <%- include('../partials/footer') %>
 
 </body>
+
 </html>

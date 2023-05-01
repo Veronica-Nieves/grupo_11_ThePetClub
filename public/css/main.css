@@ -11,7 +11,7 @@
     font-weight: bold;
     padding: 0px 46px;
     box-shadow: 0px 4px 15px 0px grey;
-    margin: 100px 140px 100px 140px
+    margin: 20px 140px 20px 140px
 
 }
 /* - - - Categorías - - - */
@@ -19,8 +19,8 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    padding: 30px 10px;
-    margin: 60px 0px;
+    /* padding: 30px 10px;
+    margin: 60px 0px; */
 }
 
 .category-block {
@@ -38,7 +38,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: inset 0px 4px 12px 2px rgb(0 0 0);
+    box-shadow: inset 0px 4px 12px 2px #064C3F;
     margin-bottom: 25px;
     
 }
@@ -46,7 +46,7 @@
     width: 100%;
     margin-top: 0px;
     border-radius: 50%;
-    filter: drop-shadow(0px 4px 6px black);
+    filter: drop-shadow(0px 4px 6px gray);
 }
 .img-dog-category {
     width: 140%;

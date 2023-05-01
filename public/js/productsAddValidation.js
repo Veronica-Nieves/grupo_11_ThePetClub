@@ -105,7 +105,7 @@ window.onload = function(){
         errors.push("Indique el inventario del producto.");
         form.pieces.classList.remove("is-valid")
         form.pieces.classList.add("is-invalid")
-    } else if ( !(Number(form.pieces.value)) || form.pieces.value <= 0) {
+    } else if ( form.pieces.value < 0) {
         errors.push("El número de piezas de inventario debe ser un valor numérico mayor o igual a cero.");
         form.pieces.classList.remove("is-valid")
         form.pieces.classList.add("is-invalid")
