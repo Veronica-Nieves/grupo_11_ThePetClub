@@ -59,3 +59,6 @@ Tengo 25 años, soy Licenciada en Administración y mamá de dos. Vivo en Barilo
 
 ## TABLERO DE TRABAJO
 https://trello.com/b/U1nTaPqm/tablero-1
+
+## REPOSITORIO DE DASHBOARD (Proyecto de React)
+https://github.com/Veronica-Nieves/grupo_11_dashboard_TPC

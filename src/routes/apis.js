@@ -1,21 +1,20 @@
 const express = require("express");
 const router = express.Router();
-const apisController = require('../controllers/apisController')
+const apisController = require("../controllers/apisController");
 
-// API LISTA DE USUARIOS
-router.get("/users", apisController.users);
+// USUARIOS
+router.get("/users", apisController.users);// LISTA
+router.get("/users/:id", apisController.userDetail);// DETALLE
 
-// API DETALLE DEL USUARIO
-router.get("/users/:id", apisController.userDetail);
+// PRODUCTOS
+router.get("/products", apisController.products); // LISTA
+router.get("/products/:id", apisController.productDetail); // DETALLE
 
-// API LISTA DE PRODUCTOS
-router.get("/products", apisController.products);
-
-// API DETALLE DEL PRODUCTO
-router.get("/products/:id", apisController.productDetail);
-
-// API DETALLE DE ESPECIES
+// LISTA DE ESPECIES
 router.get("/species", apisController.species);
+
+// LISTA DE CATEGORÍAS
+router.get("/categories", apisController.categories);
 
 // LISTA DE APIS
 router.get("/", apisController.index);
