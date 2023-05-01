@@ -245,8 +245,16 @@
     .subheader-left {
         display: block;
         display: flex;
+        flex-wrap: nowrap;
+        background-color: none;
+        align-items: center;
         flex-direction: row;
-    }
+        margin-top: 155px;
+        margin-left: -31px;
+        width: 55vh;
+        padding: 0px;
+        justify-content: space-around;
+       }
     
     .subheader ul {
         padding: 0;
