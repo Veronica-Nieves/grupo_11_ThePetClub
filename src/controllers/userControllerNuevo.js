@@ -5,7 +5,8 @@ const multer = require('multer');
 const {check,validationResult, body} = require('express-validator');
 
 /* Variable creada por sequelize para conectar la base de datos */
-const db  = require("../database/models/")
+const db  = require("../database/models/");
+const { log } = require('console');
 
 /* Asocia el modelo "User" de la base de datos "db" */
 const User = db.User;
@@ -169,7 +170,7 @@ const controller = {
 
             let userLogin = [];
 
-            if(req.body.email != '' && req.body.password != ''){
+            if(errors.isEmpty()){
                 userLogin = users.filter(function(user){
                     return user.email === req.body.email
                 });
@@ -181,7 +182,7 @@ const controller = {
             /* Aquí se determina si el usuario fue encontrado ó no en la db */
             if(userLogin.length === 0){
                 return res.render(path.resolve(__dirname,'../views/users/login'), {
-                    errors: [{ msg: 'Las credenciales son inválidas' }]}); 
+                    errors: errors.array()}); 
             } else {
                 /* Aquí se guarda el usuario logueado en Session */
                 req.session.usuario = userLogin[0];
@@ -190,8 +191,10 @@ const controller = {
             if(req.body.remember_user){
                 res.cookie('email', userLogin[0].email,{ maxAge: (1000 * 60) * 2 })
             }
+            console.log(userLogin[0])
             /* Aquí se redirige al usuario al perfil del usuario */
             return res.redirect('/users/profile/' + userLogin[0].id);
+
             })
     },
     profile: function(req, res) {
