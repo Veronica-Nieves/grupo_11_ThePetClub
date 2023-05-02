@@ -25,6 +25,7 @@ header {
     box-shadow: 4px 18px 31px -12px rgba(86, 148, 148, 1);
     width: 100%;
 
+
 }
 
 .hamburger-menu {
@@ -55,7 +56,6 @@ header {
     margin: 150px;
     margin-left: -46px;
     top: -110px;
-    position:fixed;
     width: 25vh;
     display: none;
 }
