@@ -38,7 +38,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: inset 0px 4px 12px 2px #064C3F;
+    box-shadow: inset 0px 4px 12px 2px #000000;
     margin-bottom: 25px;
     
 }
@@ -232,11 +232,11 @@ a {
     text-align: center;
 }
 .article-img-services {
-    width: 80%;
-    height: 435px;
+    width: 77%;
+    height: 356px;
     padding: 14px;
     background-color: white;
-    margin: 50px;
+    margin: 27px 50px;
     border-radius: 10px;
     border-radius: 100px;
     box-shadow: 0px 0px 30px -15px black;
@@ -274,8 +274,8 @@ a {
 .about-us {
     width: 85vw;
     color: white;
-    text-align: center;
-    font-size: 18px;
+    text-align: left;
+    font-size: 15px;
 }
 
 .text-about-us {
@@ -292,9 +292,9 @@ a {
 }
 
 .container-fix-height {
-    width: 95vw;
-    height: 100vw;
-    padding: 25px;
+    width: 83vw;
+    height: 78vw;
+    padding: 10px;
 }
 
 .review-block {
@@ -306,26 +306,39 @@ a {
 }
 
 .review-img {
-    width: 90vw;
-    height: 70vw;
-    border-radius: 15px;
-    box-shadow: 7px 23px 29px 0px rgb(100, 100, 100);
-    margin: 60px 0px;
-
-
-}
-
-.text-review {
-    width: 60%;
-    padding: 5%;
-    background-color: white;
-    border: solid 1px rgb(100, 100, 100);
+    width: 114%;
+    height: 250px;
+    /* background-color: white; */
+    box-sizing: border-box;
     border-radius: 6px;
     text-align: center;
     font-size: 15px;
+    position: relative;
+    /* left: 0%; */
+    bottom: -10px;
+    background: #FFFFFF;
+    /* border: 1px solid #ABABAB; */
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.28);
+    background: rgba(255, 255, 255, 0.82);
+    box-shadow: 0px 50px 30px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+}
 
+.text-review {
+    width: 86%;
+    padding: 5%;
+    background-color: white;
+    /* border: solid 1px rgb(100, 100, 100); */
+    border-radius: 6px;
+    text-align: center;
+    font-size: 15px;
     position: absolute;
-    left: 20%;
-    bottom: -60px;
+    bottom: -24%;
+    /* width: 30vw; */
+    /* border: 1px solid #ABABAB; */
+    /* box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.28); */
+    background: #FFFFFF;
+    /* border: 1px solid #ABABAB; */
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.28);
 }
 

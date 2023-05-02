@@ -65,8 +65,8 @@ h2.text-about-us {
     border-bottom: solid 2.5px var(--verde);
     font-size: 18px;
     font-weight: bold;
-    padding: 6px 10px;
-    margin: 5px;
+    padding: 6px 10px 6px 0px;
+    margin: 6px 10px 6px 0px;
 }
 
 /* h3 {
