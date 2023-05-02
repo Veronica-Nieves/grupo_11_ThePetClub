@@ -11,7 +11,7 @@
     font-weight: bold;
     padding: 0px 46px;
     box-shadow: 0px 4px 15px 0px grey;
-    margin: 20px 140px 20px 140px
+    margin: 70px 140px 20px 140px
 
 }
 /* - - - Categorías - - - */
@@ -262,11 +262,10 @@ a {
     flex-wrap: wrap;
     justify-content: center;
     padding: 25px;
-    margin: 20px 25px;
+    margin: 35px 25px;
     background-color: var(--verde);
     border-radius: 15px;
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
-    margin: 60px 0px;
 }
 
 .team-img {
@@ -289,15 +288,16 @@ a {
 
 /* - - - Reviews - - - */
 .review-section {
-    padding-top: 60px;
+    padding-top: 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    margin-bottom: 30px;
 }
 
 .container-fix-height {
     width: 83vw;
-    height: 78vw;
+    height: 100vw;
     padding: 10px;
 }
 
