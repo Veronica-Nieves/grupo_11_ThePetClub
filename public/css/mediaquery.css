@@ -181,8 +181,7 @@
     }
 
     .team-img {
-        width: 52vw;
-        height: 37vw;
+        width: 43vw;
     }
 
     .about-us {
@@ -192,40 +191,19 @@
     /* - - Reviews - - */
     .container-fix-height {
         width: 45vw;
-      height: 60vh;
+        height: 130vh;
     }
 
     .review-img {
-        width: 46vw;
-    height: 30vw;
-    background: rgba(255, 255, 255, 0.82);
-    box-shadow: 0px 50px 30px rgba(0, 0, 0, 0.25);
-    border-radius: 15px;
+        width: 40vw;
+        height: 30vw;
     }
 
     .text-review {
-        width: 37vw;
-    font-size: 15px;
-    /* left: 5vw; */
-    bottom: -23%;
-    position: absolute;
-    font-family: 'Roboto';
-    color: #ABABAB;
-    box-sizing: border-box;
-    background: #FFFFFF;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.28);
-    background: #FFFFFF;
-    /* border: 1px solid #ABABAB; */
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.28);
+        width: 30vw;
+        font-size: 18px;
     }
 
-    .review-section {
-        height: 530px;
-        padding-top: 60px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-    }
 
 
     /*footer*/
@@ -254,10 +232,7 @@
     .footer-section-title {
         font-size: 18px;
     }
-  footer{
-    margin-top: 140px;
 
- }
 }
 
 
@@ -272,8 +247,7 @@
         background-color: none;
         align-items: center;
         flex-direction: row;
-        margin-top: 147px;
-
+        margin-top: 155px;
         margin-left: -31px;
         width: 55vh;
         padding: 0px;
@@ -293,29 +267,9 @@
     }
     .main-navbar {
         position: relative;
-        top: -12px;
-        padding: 5px;
+        top: -5px;
     }
-    footer {
-        margin-top: 140px;
-    }
-    .text-review{
-        background: #FFFFFF;
-        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.28);
-        bottom: -83px;
-     font-size: 18px;
-     width: 95%;
-    }
-    .container-fix-height {
-        width: 45vw;
-        height: 40vh;
-    }
-    footer {
-        margin-top: 120px;
-    }
-    .review-img{
-        height: 28vw;
-    }
+
 }
 
 
@@ -439,6 +393,9 @@
         color: var(--amarillo);
         text-align: center;
     }
+    .container-fix-height {
+        height: 70vw;
+    }
 }
 
 /*-------- Breakpoint-Tablet & large smartphones 481-768 --------*/
@@ -446,7 +403,7 @@
 
 .section-tittle {
     font-size: 16px;
-    margin: 30px 380px 30px 380px;
+    margin: 30px 160px 30px 160px;
 }
 /* - - - Ofertas - - - */
 
@@ -542,11 +499,16 @@
     font-size: 24px;
     padding: 60px 10px;
 }
+.container-fix-height {
+    height: 40vw;
+}
+
 }
 /*-------- Breakpoint-Laptos, larger tablets, and small desktops 769-1279 --------*/
 @media (min-width: 1200px) {
     .section-tittle {
-        margin: 90px 550px 90px 550px;
+        margin: 180px 560px 180px 560px;
+        margin: 30px 160px 30px 160px;
         border-radius: 100px;
         box-shadow: 0px 15px 29px 0px #898989;
     }
@@ -573,7 +535,7 @@
     justify-content: space-around;
     align-items: center;
     margin: 60px 0px;
-    
+    padding-bottom: 90px;
 }
 .description-service {
     font-size: 30px;
@@ -581,18 +543,17 @@
     font-family: 'Roboto Condensed', sans-serif;
     font-weight: bolder;
     border-bottom: none;
-    padding: 27px 10px;
+    padding: 60px 10px;
     color: var(--amarillo);
     text-align: center;
-    margin: 80px;
 }
 .article-img-services {
-    
     width: 25%;
-    height: 436px;
+    height: 330px;
 }
-.team-img {
-    width: 47vw;
-    height: 30vw;
+.container-fix-height {
+    height: 40vw;
 }
+
+
 }
