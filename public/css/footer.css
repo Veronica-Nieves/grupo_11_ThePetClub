@@ -75,11 +75,25 @@ footer li {
 
 .all-right-reserve {
     padding-top: 10px;
-    /* border-top: solid 1px var(--verde); */
     text-align: center;
 }
 
 .dog-face {
     position: relative;
-    /* top:-35px; */
+
 }
+
+.container-sections-footer {
+    padding-bottom: 30px;
+}
+
+/*Footer contacto*/
+
+.footer-contacto {
+    width: 100%;
+    height: 25vh;
+    margin: 0px;
+    position: absolute;
+    bottom: 0;
+}
+

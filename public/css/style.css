@@ -30,7 +30,11 @@ body {
 background: linear-gradient(180deg, rgba(128, 128, 128, 0.37) 11.98%, rgba(204, 206, 206, 0.36546) 20.83%, rgba(231, 236, 236, 0.35865) 31.25%, rgba(229, 232, 232, 0.355477) 43.75%, rgba(226, 226, 226, 0.350635) 60.42%, rgba(218, 218, 218, 0.343028) 72.4%, rgba(207, 207, 207, 0.333) 78.65%, rgba(144, 145, 145, 0.37) 87.5%);
 border: 0.5px solid #000000;
 
+}
 
+.body-contacto {
+    margin: 0;
+    margin-bottom: 25vh;
 }
 
 /* .section-tittle {
