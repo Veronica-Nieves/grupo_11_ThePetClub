@@ -13,7 +13,9 @@ const db = require('../database/models');
 /* ------------------------ M É T O D O S ---------------------------*/
 /* dentro de la variable controller listamos la lógica de cada método*/
 const controller = {
-
+	contacto: (req, res) => {
+        res.render("contacto");
+    },
 // Listado de productos en home
 	index: (req, res) => {
 		db.species.findAll()

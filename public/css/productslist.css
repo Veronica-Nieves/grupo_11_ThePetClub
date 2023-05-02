@@ -85,12 +85,14 @@
 .product-price{
     height: 18px;
     font-size: 16px;
+    color: gray;
+    text-decoration: line-through;
 }
 
 .product-price-offer{
     height: 18px;
     font-size: 16px;
-    color:brown;
+    color: #198754;
 }
 
 /* Clases para las vistas de productos por categoria = especie */
