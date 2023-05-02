@@ -21,12 +21,13 @@ module.exports = [
             throw new Error("Las contraseñas no coinciden");
         }),
     body("avatar").custom((value, { req }) => {
-        if (!req.file) throw new Error("Debes subir una imagen");
-
-        let acceptedExtensions = [".jpg", ".jpeg", ".png", ".gif"];
-        let fileExtension = path.extname(req.file.originalname);
-        if (acceptedExtensions.includes(fileExtension)) return true;
-
-        throw new Error("Las extensiones de archivos permitidas son " + acceptedExtensions.join("  "));
+        if (req.file) {
+            let acceptedExtensions = [".jpg", ".jpeg", ".png", ".gif"];
+            let fileExtension = path.extname(req.file.originalname);
+            if (!acceptedExtensions.includes(fileExtension))
+                throw new Error("Las extensiones de archivos permitidas son " + acceptedExtensions.join("  "));
+            
+        }
+        return true;
     })
 ]

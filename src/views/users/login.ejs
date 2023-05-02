@@ -11,7 +11,10 @@
     <body>
         <!-- FORMULARIO LOGIN-->
         <div> 
-            <div class="form-title-container"><h3>  Iniciar Sesión  </h3></div>
+            <div class="register-container"> 
+                <div class="form-title-container">
+                    <h3 class="tittleRegister">  Inicia sesión en The Pet's Club  </h3>
+                </div>
 
             <form action="/users/login/" method="POST" class="form-container">
 
@@ -19,11 +22,11 @@
                 <input type="email" 
                         name="email"   
                         id="email" 
-                        placeholder="Correo electrónico" required 
-                        class="form-input" value="">
-                <% if (typeof(errors) != 'undefined'){ %>
+                        placeholder="Correo electrónico"  
+                        class="form-input" value="<%= locals.email ? email : '' %>">
+                <% if (locals.errors && errors.email ){ %>
                     <div class="error-message">
-                        <%= errors[0].msg %> 
+                        <%= errors.email.msg %> 
                     </div>
                 <% } %>
             </div>
@@ -32,15 +35,15 @@
                 <input type="password" 
                         name="password" 
                         id="password" 
-                        placeholder="Contraseña" required 
+                        placeholder="Contraseña"  
                         class="form-input">
             </div>
             
             <!--Mostrar errores cuando haya-->
             <div>
-                <% if (typeof(errors) != 'undefined'){ %>
+                <% if (locals.errors && errors.password){ %>
                     <div class="error-message">
-                        <%= errors[0].msg %> 
+                        <%= errors.password.msg %> 
                     </div>
                 <% } %>
             </div>
