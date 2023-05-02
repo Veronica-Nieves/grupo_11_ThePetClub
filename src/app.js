@@ -33,6 +33,7 @@ app.use("/products", productsRouter);
 app.use("/users", usersRouter);
 app.use("/api", apiRouter);
 
+
 // ********** Probamos conexion  con la base de datos local **********
 var mysql2 = require("mysql2"); //<----- requiere: npm install mysql2
 
