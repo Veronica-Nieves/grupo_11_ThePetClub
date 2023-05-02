@@ -182,7 +182,7 @@
 
     .team-img {
         width: 52vw;
-        height: 40vw;
+        height: 37vw;
     }
 
     .about-us {
@@ -272,7 +272,8 @@
         background-color: none;
         align-items: center;
         flex-direction: row;
-        margin-top: 155px;
+        margin-top: 147px;
+
         margin-left: -31px;
         width: 55vh;
         padding: 0px;
@@ -292,7 +293,8 @@
     }
     .main-navbar {
         position: relative;
-        top: -5px;
+        top: -12px;
+        padding: 5px;
     }
     footer {
         margin-top: 140px;
@@ -309,7 +311,7 @@
         height: 40vh;
     }
     footer {
-        margin-top: 250px;
+        margin-top: 120px;
     }
     .review-img{
         height: 28vw;
@@ -571,7 +573,7 @@
     justify-content: space-around;
     align-items: center;
     margin: 60px 0px;
-    padding-bottom: 90px;
+    
 }
 .description-service {
     font-size: 30px;
@@ -579,13 +581,18 @@
     font-family: 'Roboto Condensed', sans-serif;
     font-weight: bolder;
     border-bottom: none;
-    padding: 60px 10px;
+    padding: 27px 10px;
     color: var(--amarillo);
     text-align: center;
+    margin: 80px;
 }
 .article-img-services {
+    
     width: 25%;
-    height: 330px;
+    height: 436px;
 }
-
+.team-img {
+    width: 47vw;
+    height: 30vw;
+}
 }

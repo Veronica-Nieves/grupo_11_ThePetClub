@@ -31,42 +31,31 @@
             <div class="section-tittle"><h3>Ofertas</h3></div>
             <!-- Mostrar los productos en OFERTA dinámicamente -->
             <section class="section-article-sale">
+                <section class="product-list-container">
                 <% productsSale.forEach(producto => { %>
-                <article class="article-img-sale">
+                <article class="product-card">
                     <a href="/products/detail/<%= producto.id %>">
-                    <img class="img-product-sale" src="img/productslist/<%= producto.image %>" alt="img-sale-dog">
-                    <article class="box-description-sale">
-                        <article class="price-and-discounts">
-                            <p class="description-product-sale"><%= producto.name %></p>
-                            <h2 class="price-product-sale">$ <%= producto.price_offer %></h2>
-                            <h3 class="discounts-product-sale"><%= producto.discounts %> %</h3>
+                    <div class="product-image-wrapper">
+                    <img class="product-image" src="img/productslist/<%= producto.image %>" alt="img-sale-dog">
+                    </div>
+                    <article class="product-detail-wrapper">
+                        <article class="price-of-product">
+                            <p class="product-name"><%= producto.name %></p>
+                            
+                            <div class="product-price-wrapper">
+                                <p class="product-price"><strong>Precio: $<%= producto.price %></strong></p>
+                                <p class="product-price-offer"><strong>Oferta: $<%= producto.price_offer %></strong></p>
+                            </div>
+
+                            <!-- <h2 class="price-of-product">$ <%= producto.price %></h2>
+                            <h2 class="price-product-sale">$ <%= producto.price_offer %></h2> -->
+                            <!-- <h3 class="discounts-product-sale"><%= producto.discounts %></h3> -->
                         </article>
                     </a>
                     </article>
                 </article>
                 <% }) %>
-                <!-- <article class="article-img-sale">
-                    <a href="/products/detail/">
-                    <img class="img-product-sale" src="img/section-sale/pack-royal-canin-cat.png" alt="img-sale-cat">
-                    <article class="box-description-sale">
-                        <article class="price-and-discounts">
-                            <h2 class="price-product-sale">$ 2500</h2>
-                            <h3 class="discounts-product-sale">30%</h3>
-                        </article>
-                    </article>
-                    </a>
-                </article>
-                <article class="article-img-sale">
-                    <a href="/products/detail/">
-                    <img class="img-product-sale" src="img/section-sale/fish-food.jpg" alt="img-sale-fish">
-                    <article class="box-description-sale">
-                        <article class="price-and-discounts">
-                            <h2 class="price-product-sale">$ 1900</h2>
-                            <h3 class="discounts-product-sale">15%</h3>
-                        </article>
-                        </a>
-                    </article>
-                </article> -->
+            </section>
             </section>
         </section>
 
@@ -75,7 +64,34 @@
             <div class="section-tittle"><h3>Productos</h3></div>
             <!-- Mostrar los productos de home dinámicamente -->
             <section class="section-article-products">
-                <% productsFeatured.forEach(producto => { %>
+                <section class="product-list-container">
+                    <% productsFeatured.forEach(producto => { %>
+                    <article class="product-card">
+                        <a href="/products/detail/<%= producto.id %>">
+                        <div class="product-image-wrapper">
+                        <img class="product-image" src="img/productslist/<%= producto.image %>" alt="img-sale-dog">
+                        </div>
+                        <article class="product-detail-wrapper">
+                            <article class="price-of-product">
+                                <p class="product-name"><%= producto.name %></p>
+                                
+                                <div class="product-price-wrapper">
+                                    <p class="product-price-home"><strong>Precio: $<%= producto.price %></strong></p>
+                            
+                                </div>
+    
+                                <!-- <h2 class="price-of-product">$ <%= producto.price %></h2>
+                                <h2 class="price-product-sale">$ <%= producto.price_offer %></h2> -->
+                                <!-- <h3 class="discounts-product-sale"><%= producto.discounts %></h3> -->
+                            </article>
+                        </a>
+                        </article>
+                    </article>
+                    <% }) %>
+                </section>
+
+
+                <!-- <% productsFeatured.forEach(producto => { %>
                 <article class="article-img-product"> 
                     <a href="/products/detail/<%= producto.id %>">
                     <img class="img-product-product" src="img/productslist/<%= producto.image %>" alt="img-sale-dog">
@@ -86,7 +102,7 @@
                     </article>
                     </a>
                 </article>
-                <% }) %>
+                <% }) %> -->
         
             </section>
         </section>
