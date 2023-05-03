@@ -97,3 +97,24 @@ footer li {
     bottom: 0;
 }
 
+.container-RRSS-contacto, .container-contact-contacto {
+    color: var(--verde);
+    width: 100%;
+
+}
+
+.container-sections-footer-contacto {
+    border-top: 2px solid var(--verde);
+}
+
+.contact-contacto {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.RRSS-contacto, .contact-contacto {
+    justify-content: space-around;
+    margin: 0;
+    padding-bottom: 10px;
+}

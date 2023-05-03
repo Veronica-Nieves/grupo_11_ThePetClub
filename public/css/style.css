@@ -33,8 +33,8 @@ border: 0.5px solid #000000;
 }
 
 .body-contacto {
-    margin: 0;
     margin-bottom: 25vh;
+    border: none;
 }
 
 /* .section-tittle {
