@@ -10,8 +10,11 @@
 
     <body>
         <!-- FORMULARIO SIGN UP - REGISTER-->
-        <div class="register-container"> 
-            <div class="form-title-container"><h3>  Editar el usuario  </h3></div>
+        <section class="section-profile">
+            <div class="register-container"> 
+                <div class="form-title-container">
+                    <h3 class="tittleRegister">  Editar usuario  </h3>
+                </div>
             <!-- Errores de db --> 
             <% if(typeof(errors) != 'undefined'){%>
                 <ul class="alert alert-danger">
@@ -21,13 +24,13 @@
                 </ul>
             <%}%>
             <!-- Fin de mostrar los errores -->
-            <form action="/users/edit/<%=usuarios.id%>" method="POST" enctype="multipart/form-data" class="sing-up-form-container">
+            <form action="/users/edit/<%=usuarios.id%>" method="POST" enctype="multipart/form-data" class="sing-up-form-container form-container">
                 <p class="register-form-field">
                     <input type="text" 
                             name="firstName" 
                             id="name" 
                             placeholder="Nombre"  
-                            class=""
+                            class="form-input-register"
                             value="<%= typeof old != 'undefined' ? old.firstName : '' %>" >
                 </p>
                 <p class="register-form-field">
@@ -35,7 +38,7 @@
                             name="lastName"
                             id="name" 
                             placeholder="Apellido"  
-                            class=""
+                            class="form-input-register"
                             value="<%= typeof old != 'undefined' ? old.lastName : '' %>">
                 </p>
 
@@ -43,7 +46,7 @@
                     <input type="text"
                             name="nameUser"
                             id="name" placeholder="Nombre de usuario" 
-                            class=""
+                            class="form-input-register"
                             value="<%= typeof old != 'undefined' ? old.nameUser : '' %>">
                 </p>
                 <!-- Para modificar la contraseña, hay que verificar la anterior contraseña (PENDIENTE) 
@@ -71,6 +74,7 @@
                 </p>
             </form>
         </div>
+    </section>
     </body>
 
     <!-- Include Footer-->
