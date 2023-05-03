@@ -9,23 +9,28 @@
     <%- include('../partials/header') %>
 
     <body>
-        <div class="gap"></div>
         <!-- PERFIL DE USUARIO - solo se debe mostrar para los usuarios logueados -->
-        <div> 
-            <div class="form-title-container"><h3>  Hola <%= usuarios.first_name %> <%= usuarios.last_name %>! </h3></div>
+        <section class="section-profile">
+        <div class="profile-user-container"> 
+            <div class="register-container-profile"> 
+                <div class="form-title-container">
+                    <h3 class="tittleRegister-profile">  Hola <%= usuarios.first_name %> <%= usuarios.last_name %>! </h3>
+                </div>
+            <!-- <div class="form-title-container"><h3>  Hola <%= usuarios.first_name %> <%= usuarios.last_name %>! </h3></div> -->
 
-            <img src="/img/avatars/<%= usuarios.avatar%> ">
+            <img class="img-profile" src="/img/avatars/<%= usuarios.avatar%> ">
 
-        </div>
-        
             <p class="register-button-container">
                 <a href="/users/edit"><button type="Editar" class="form-button"> Editar usuario </button></a>
             </p>
+        </div>
+        </div>
         
-    </body>
-
-    <!-- Include Footer-->
+        </section>
+        
+        <!-- Include Footer-->
     <%- include('../partials/footer') %>
+    </body>
     
 </body>
 
