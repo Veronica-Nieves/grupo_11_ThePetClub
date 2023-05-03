@@ -14,24 +14,30 @@
             <div class="register-container"> 
                 <div class="form-title-container">
                     <h3 class="tittleRegister">  Editar usuario  </h3>
+                    
                 </div>
             <!-- Errores de db --> 
+            
             <% if(typeof(errors) != 'undefined'){%>
-                <ul class="alert alert-danger">
+                <div class="warning-block">
+                    <strong class="warning-title">¡¡ ADVERTENCIA !!</strong>
+                <ul class="errors">
                     <% errors.forEach(error => { %>
-                        <li><%= error.msg%></li>
+                        <li><i class='fa-solid fa-triangle-exclamation' style='color: #eb0505;'></i>
+                            <%= error.msg%></li>
                     <%});%>
                 </ul>
+            </div>
             <%}%>
             <!-- Fin de mostrar los errores -->
-            <form action="/users/edit/<%=usuarios.id%>" method="POST" enctype="multipart/form-data" class="sing-up-form-container form-container">
+            <form action="/users/edit/" method="POST" enctype="multipart/form-data" class="sing-up-form-container form-container">
                 <p class="register-form-field">
                     <input type="text" 
                             name="firstName" 
                             id="name" 
                             placeholder="Nombre"  
                             class="form-input-register"
-                            value="<%= typeof old != 'undefined' ? old.firstName : '' %>" >
+                            value="<%= typeof usuarios != 'undefined' ? usuarios.firstName : '' %>" >
                 </p>
                 <p class="register-form-field">
                     <input type="text"
@@ -39,7 +45,7 @@
                             id="name" 
                             placeholder="Apellido"  
                             class="form-input-register"
-                            value="<%= typeof old != 'undefined' ? old.lastName : '' %>">
+                            value="<%= typeof usuarios != 'undefined' ? usuarios.lastName : '' %>">
                 </p>
 
                 <p class="register-form-field">
@@ -47,7 +53,7 @@
                             name="nameUser"
                             id="name" placeholder="Nombre de usuario" 
                             class="form-input-register"
-                            value="<%= typeof old != 'undefined' ? old.nameUser : '' %>">
+                            value="<%= typeof usuarios != 'undefined' ? usuarios.nameUser : '' %>">
                 </p>
                 <!-- Para modificar la contraseña, hay que verificar la anterior contraseña (PENDIENTE) 
                     <p class="register-form-field">
