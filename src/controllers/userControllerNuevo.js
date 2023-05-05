@@ -70,9 +70,10 @@ const controller = {
                 avatar: req.file ? req.file.filename : req.body.avatar,
             };
             User.update(user, { where: { id: req.session.user.id } });
-            return res.redirect("/users/user-profile");
+                return res.redirect("/users/profile/" );
         }
 
+        /*User.findByPk(req.params.id).then(user => {*/
         User.findByPk(req.session.user.id).then(user => {
             req.body.id = user.id;
             res.render("users/user-edit", {

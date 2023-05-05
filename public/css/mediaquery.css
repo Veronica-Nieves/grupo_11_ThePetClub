@@ -186,6 +186,8 @@
 
     .about-us {
         width: 37vw;
+        text-align: right;
+    
     }
 
     /* - - Reviews - - */
@@ -196,12 +198,12 @@
 
     .review-img {
         width: 40vw;
-        height: 30vw;
+        height: 28vw;
     }
 
     .text-review {
-        width: 30vw;
-        font-size: 17px;
+        width: 36vw;
+        font-size: 14px;
     }
 
 
@@ -403,7 +405,7 @@
 
 .section-tittle {
     font-size: 16px;
-    margin: 30px 160px 30px 160px;
+    margin: 30px 200px 30px 200px;
 }
 /* - - - Ofertas - - - */
 
@@ -507,8 +509,7 @@
 /*-------- Breakpoint-Laptos, larger tablets, and small desktops 769-1279 --------*/
 @media (min-width: 1200px) {
     .section-tittle {
-        margin: 180px 560px 180px 560px;
-        margin: 30px 160px 30px 160px;
+        margin: 30px 380px 30px 380px;
         border-radius: 100px;
         box-shadow: 0px 15px 29px 0px #898989;
     }
@@ -549,11 +550,13 @@
 }
 .article-img-services {
     width: 25%;
-    height: 330px;
+    height: 430px;
 }
 .container-fix-height {
     height: 40vw;
 }
-
+.text-review{
+    bottom: -25%;
+}
 
 }

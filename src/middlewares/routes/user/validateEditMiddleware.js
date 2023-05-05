@@ -6,7 +6,7 @@ module.exports = [
     body("lastName").notEmpty().withMessage("Debes ingresar tu apellido"),
     body("nameUser").notEmpty().withMessage("Debes ingresar un nombre de usuario"),
     body("avatar").custom((value, { req }) => {
-        if (!req.file) throw new Error("Debes subir una imagen");
+        if (!req.file) return true;
 
         let acceptedExtensions = [".jpg", ".jpeg", ".png", ".gif"];
         let fileExtension = path.extname(req.file.originalname);
