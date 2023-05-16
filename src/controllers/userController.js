@@ -1,7 +1,7 @@
 const bcrypt = require("bcryptjs");
 const { validationResult } = require("express-validator");
 
-const db = require("../database/models/"); /* Variable creada por sequelize para conectar la base de datos */
+const db = require("../database/models"); /* Variable creada por sequelize para conectar la base de datos */
 const User = db.User; /* Asocia el modelo "User" de la base de datos "db" */
 
 const controller = {
@@ -58,15 +58,20 @@ const controller = {
         let errors = validationResult(req);
 
         if (errors.isEmpty()) {
+            let avatar = req.file ? req.file.filename : req.session.user.avatar;
+            if (req.body.sinFoto) avatar = "dog-face.png";
+
             let user = {
+                ...req.session.user,
                 first_name: req.body.firstName,
                 last_name: req.body.lastName,
                 user_name: req.body.nameUser,
                 /* Para actualizar la contraseña, se debe validar la anterior contraseña (PENDIENTE)
                 password: bcrypt.hashSync(req.body.password, 10),
                 password_confirmed: bcrypt.hashSync(req.body.password, 10), */
-                avatar: req.file ? req.file.filename : req.body.avatar,
+                avatar,
             };
+            req.session.user = user;
             User.update(user, { where: { id: req.session.user.id } });
             return res.redirect("/users/profile");
         }
