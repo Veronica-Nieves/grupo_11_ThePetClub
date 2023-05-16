@@ -17,6 +17,8 @@ app.use(cookies());
 app.use(session({ secret: "The Pets Club", resave: false, saveUninitialized: true })); // para habilitar las sesiones
 
 // ************ Middlewares propios ************
+const userLoggedMiddleware = require("./middlewares/global/userLoggedMiddleware.js");
+app.use(userLoggedMiddleware)
 
 // ************ Template Engine ************
 app.set("view engine", "ejs"); // para indicarle que las vistas son de tipo ejs

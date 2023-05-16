@@ -102,13 +102,13 @@ const controller = {
             });
         }
         User.findOne({ where: { email: req.body.email } }).then(user => {
-            let usuario = user
-            delete usuario.password
-            delete usuario.password_confirmed
-            req.session.user = usuario; // Aquí se guarda el usuario logueado en Session
+            delete user.dataValues.password;
+            delete user.dataValues.password_confirmed;
+            req.session.user = user; // Aquí se guarda el usuario logueado en Session
+
             /* Aquí se verifica si el usuario escogió la opción de ser recordado */
             if (req.body.remember_user) {
-                res.cookie("email", usuario, { maxAge: 1000 * 60 * 10 });
+                res.cookie("id", user.id, { maxAge: 1000 * 60 * 10 });
             }
 
             /* Aquí se redirige al usuario al perfil del usuario */
