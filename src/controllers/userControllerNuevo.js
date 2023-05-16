@@ -120,7 +120,8 @@ const controller = {
         res.render("users/user-profile", { usuarios: req.session.user });
     },
     logout: (req, res) => {
-        req.session.destroy()
+        res.clearCookie("id");
+        req.session.destroy();
         return res.redirect("/users/login");
     },
 };
