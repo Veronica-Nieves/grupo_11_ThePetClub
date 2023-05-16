@@ -38,7 +38,7 @@ const controller = {
             email: req.body.email,
             password: bcrypt.hashSync(req.body.password, 10),
             password_confirmed: bcrypt.hashSync(req.body.passwordConfirmed, 10),
-            avatar: req.file ? req.file.filename : "1676995686017_img.png",
+            avatar: req.file ? req.file.filename : "dog-face.png",
             rol_id: req.body.role,
         };
 
