@@ -8,9 +8,7 @@ const usersController = require("../controllers/userControllerNuevo");
 const guestMiddleware = require("../middlewares/routes/guestMiddleware");
 const authMiddleware = require("../middlewares/routes/authMiddleware");
 const upload = require("../middlewares/routes/user/multerMiddleware");
-const validateRegister = require("../middlewares/routes/user/validateRegisterMiddleware");
-const validateEdit = require("../middlewares/routes/user/validateEditMiddleware");
-const validateLogin = require("../middlewares/routes/user/validateLoginMiddleware");
+const validate = require("../middlewares/routes/user/validationsMiddleware");
 
 // ******************** RUTAS ********************
 // MOSTRAR USUARIO/S
@@ -19,18 +17,18 @@ router.get("/list/:id", usersController.detailUser); //user detail
 
 // CREAR
 router.get("/register", guestMiddleware, usersController.add); //muestra el formulario
-router.post("/register", upload.single("avatar"), validateRegister, usersController.create); //valida formulario y crea usuario o muestra los errores
+router.post("/register", upload.single("avatar"), validate.register, usersController.create); //valida formulario y crea usuario o muestra los errores
 
 // EDITAR
 router.get("/edit", authMiddleware, usersController.edit); //muestra el formulario
-router.post("/edit", upload.single("avatar"), validateEdit, usersController.update); //procesa formulario
+router.post("/edit", upload.single("avatar"), validate.edit, usersController.update); //procesa formulario
 
 //ELIMINAR
 router.post("/delete/:id", usersController.delete);
 
 // LOGIN
 router.get("/login", guestMiddleware, usersController.login); //muestra login
-router.post("/login", validateLogin, usersController.loginPost); //valida login
+router.post("/login", validate.login, usersController.loginPost); //valida login
 
 // LOGOUT
 router.get("/logout", authMiddleware, usersController.logout);
