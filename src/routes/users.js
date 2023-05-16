@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 // ******************** CONTROLLER ********************
-const userController = require("../controllers/userControllerNuevo");
+const userController = require("../controllers/userController");
 
 // ******************** MIDDLEWARES ********************
 const guestMiddleware = require("../middlewares/routes/guestMiddleware");
