@@ -45,15 +45,13 @@ const controller = {
         User.create(user)
             .then(user => res.redirect("/users/login"))
             .catch(error => {
-                console.log(error)
-                res.send("Error al conectarse con la base de datos")
+                console.log("El error es: " + error);
+                res.send("Error al conectarse con la base de datos");
             });
     },
     /* Renderiza vista para editar */
     edit: (req, res) => {
-        User.findByPk(req.session.user.id).then(user => {
-            res.render("users/user-edit", { usuarios: user });
-        });
+        res.render("users/user-edit", { usuarios: req.session.user });
     },
     /* Procesa formulario para editar */
     update: (req, res) => {
@@ -70,16 +68,11 @@ const controller = {
                 avatar: req.file ? req.file.filename : req.body.avatar,
             };
             User.update(user, { where: { id: req.session.user.id } });
-                return res.redirect("/users/profile/" );
+            return res.redirect("/users/profile");
         }
-
-        /*User.findByPk(req.params.id).then(user => {*/
-        User.findByPk(req.session.user.id).then(user => {
-            req.body.id = user.id;
-            res.render("users/user-edit", {
-                usuarios: req.body,
-                errors: errors.array(),
-            });
+        res.render("users/user-edit", {
+            usuarios: req.body,
+            errors: errors.array(),
         });
     },
     /* Elimina usuario */
