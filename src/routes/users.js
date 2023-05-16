@@ -22,7 +22,7 @@ router.get("/register", guestMiddleware, usersController.add); //muestra el form
 router.post("/register", upload.single("avatar"), validateRegister, usersController.create); //valida formulario y crea usuario o muestra los errores
 
 // EDITAR
-router.get("/edit", usersController.edit); //muestra el formulario
+router.get("/edit", authMiddleware, usersController.edit); //muestra el formulario
 router.post("/edit", upload.single("avatar"), validateEdit, usersController.update); //procesa formulario
 
 //ELIMINAR
@@ -33,9 +33,9 @@ router.get("/login", guestMiddleware, usersController.login); //muestra login
 router.post("/login", validateLogin, usersController.loginPost); //valida login
 
 // LOGOUT
-router.get("/logout", authMiddleware,  usersController.logout);
+router.get("/logout", authMiddleware, usersController.logout);
 
 // PERFIL
-router.get("/profile", authMiddleware,  usersController.profile);
+router.get("/profile", authMiddleware, usersController.profile);
 
 module.exports = router;
